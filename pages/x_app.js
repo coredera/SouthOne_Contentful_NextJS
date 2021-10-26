@@ -1,15 +1,18 @@
 
 import { ChakraProvider } from "@chakra-ui/react";
-import { theme } from "../styles/theme";
-import Fonts from "./_fonts";
+import { customTheme } from "../styles/customTheme";
+//import Fonts from "./Fonts.js";
+
+import "@fontsource/roboto/latin.css";
 
  // TODO: Add custom theme configuration to "theme" prop.
  // https://chakra-ui.com/docs/getting-started#add-custom-theme-optional
 
+const theme = customTheme;
+
  function MyApp({ Component, pageProps }) {
    return (
-     <ChakraProvider resetCSS theme={theme}>
-       <Fonts />
+     <ChakraProvider theme={customTheme}>
        <Component {...pageProps} />
      </ChakraProvider>
    );

@@ -12,9 +12,9 @@ import {
 import Container from '../components/Container'
 
 
-import { ChakraProvider } from "@chakra-ui/react";
+//import { ChakraProvider } from "@chakra-ui/react";
 //import { theme } from "../styles/theme";
-import Fonts from "./Fonts.js";
+//import Fonts from "./Fonts.js";
 
 
 

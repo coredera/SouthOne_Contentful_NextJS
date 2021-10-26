@@ -11,10 +11,10 @@
  * Licenced to Guide Dogs The Guide Dogs for the Blind Association
  */
 
-
+import * as React from 'react'
 import { Global } from "@emotion/react"
 
-const Fonts = () => (
+export const Fonts = () => (
   <Global
     styles={`
     @font-face {

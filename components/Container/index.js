@@ -1,8 +1,16 @@
 //import ContentWrapperStyles from "@styles/ContentWrapper.module.css";
 import { ChakraProvider } from "@chakra-ui/react";
-import Fonts from "/pages/_fonts";
+import Fonts from "/pages/Fonts";
 
-export default function ContentWrapper({ children }) {
-  return <div className={ChakraProvider}><Fonts />{children}</div>;
-  //return <div className={ContentWrapperStyles.container}>{children}</div>;
+const Container = ({ children }) => {
+    
+    return (
+        <>
+            
+                {children}
+          
+        </>
+    )
 }
+
+export default Container
