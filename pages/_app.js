@@ -17,7 +17,7 @@ import Fonts from './Fonts.js'
 import customTheme from "../styles/customTheme";
 
 import Head from "next/head";
-import "../styles/global.css";
+//import "../styles/global.css";
 
 //const clientSideEmotionCache = createEmotionCache();
 
