@@ -7,7 +7,7 @@ import { AppProps } from "next/app";
 //import Head from "next/head";
 
 //import "@fontsource/roboto/latin.css";
-import Fonts from './Fonts.js'
+import Fonts from '../pages/Fonts.js'
 
 //import defaultSEOConfig from "../../next-seo.config";
 //import Layout from "components/layout";
