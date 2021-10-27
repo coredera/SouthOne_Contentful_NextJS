@@ -21,29 +21,15 @@ import "../styles/global.css";
 
 //const clientSideEmotionCache = createEmotionCache();
 
-interface MyAppProps extends AppProps {
- // emotionCache?: EmotionCache;
-}
 
-const MyApp = ({
-  Component,
-  pageProps,
- // emotionCache = clientSideEmotionCache,
-}: MyAppProps) => {
-  return (
-    
-      <ChakraProvider theme={customTheme}>
-       
-        <Fonts />
-        <Head />
-        <Component {...pageProps} />
-      </ChakraProvider>
-   
-  );
-};
 
-MyApp.defaultProps = {
-  //emotionCache: clientSideEmotionCache,
-};
+ function MyApp({ Component, pageProps }) {
+   return (
+     <ChakraProvider theme={customTheme}>
+       <Fonts />
+       <Component {...pageProps} />
+     </ChakraProvider>
+   );
+ }
 
-export default MyApp;
+ export default MyApp;
