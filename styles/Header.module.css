@@ -13,8 +13,9 @@
 .header__logoContainerLink {
   text-decoration: none;
   display: inline-flex;
-  width: 100%;
-  justify-content: center;
+  width: "162";
+  height: "74";
+  justify-content: left;
 }
 
 .header__logoContainerLink:focus {
@@ -85,3 +86,18 @@
   outline-width: 0;
   box-shadow: unset;
 }
+
+
+.svg {
+  width: 162px;
+  height: 74px;
+}
+
+.svg.delay #pictoGroup, .svg-logo.delay #textGroup, .svg-logo.delay #padGroup, .svg-logo.delay #pictoGroup > g {
+  opacity: 0;
+  animation: simpleFade 0.2s ease-in-out 1;
+  animation-delay: 7s;
+  animation-fill-mode: both;
+}
+
+
