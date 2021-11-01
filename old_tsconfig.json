@@ -33,7 +33,7 @@
       "**/*.tsx",
       "src", 
       "commitlint.config.js"
-, "pages/index.js"    ],
+, "pages/index.js", "pages/_app.js"    ],
     "exclude": [
       "node_modules"
     ]

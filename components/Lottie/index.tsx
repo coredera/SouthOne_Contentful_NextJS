@@ -14,7 +14,8 @@ const LottieControl = ({ data }): JSX.Element => {
   return (
     <div>
       <a href="/" title="Guide Dogs home page">
-        <Lottie options={defaultOptions} />
+        <Lottie options={defaultOptions} height={74}
+              width={162}/>
       </a>
     </div>
   );

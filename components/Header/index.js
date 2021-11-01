@@ -15,6 +15,7 @@ import {
   useColorMode,
   SimpleGrid,
   GridItem,
+  Spacer,
 } from "@chakra-ui/react";
 
 export default function Header() {
@@ -28,7 +29,7 @@ export default function Header() {
 
   return (
     <Box backgroundColor={"brand.100"}>
-      <Box backgroundColor={"brand.100"}>
+      <Box backgroundColor={"brand.100"} maxHeight="127">
         <SimpleGrid columns={2} padding={6}>
           <GridItem width="162" heigh="74">
             <Link href="/" width="162" heigh="74">
@@ -38,15 +39,15 @@ export default function Header() {
                 width="162"
                 heigh="74"
               >
-                <Logo width="162" heigh="74" />
+                <Logo maxWidth="162" maxHeight="74" />
               </a>
             </Link>
           </GridItem>
           <GridItem></GridItem>
         </SimpleGrid>
       </Box>
-      <Flex role="navigation">
-        <ul className={HeaderStyles.header__navList}>
+      <Flex role="navigation" backgroundColor={"brand.700"} align="center">
+       <Spacer />
           {Config.menuLinks.map((link) => {
             const onBlogPost =
               router.pathname === Config.pageMeta.post.slug &&
@@ -63,19 +64,25 @@ export default function Header() {
               : "";
 
             return (
-              <li
-                key={link.displayName}
-                className={HeaderStyles.header__navListItem + isActiveClass}
-              >
+              <>
+       
                 <Link href={link.path}>
                   <a className={HeaderStyles.header__navListItemLink}>
-                    {link.displayName}
+                    <Box
+                      key={link.displayName}
+                      className={
+                        HeaderStyles.header__navListItem + isActiveClass
+                      }
+                    >
+                      {link.displayName}
+                    </Box>
                   </a>
                 </Link>
-              </li>
+         
+              </>
             );
           })}
-        </ul>
+        <Spacer />
       </Flex>
     </Box>
   );
