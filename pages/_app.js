@@ -16,6 +16,8 @@ import Fonts from './Fonts.js'
  
 import customTheme from "../styles/customTheme";
 
+import "../scripts/all"
+
 import Head from "next/head";
 //import "../styles/global.css";
 
@@ -27,7 +29,9 @@ import Head from "next/head";
    return (
      <ChakraProvider theme={customTheme}>
        <Fonts />
+       
        <Component {...pageProps} />
+
      </ChakraProvider>
    );
  }

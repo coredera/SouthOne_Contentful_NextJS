@@ -8,6 +8,7 @@ import HeroBanner from "@components/HeroBanner";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 
+
 export default function Home(props) {
   const { pageContent, recentPosts, preview } = props;
 

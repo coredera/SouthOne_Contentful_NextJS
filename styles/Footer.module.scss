@@ -1,0 +1,35 @@
+.footer {
+  background-color: #002B5B;
+  color: var(--color-background);
+  padding: 2rem 2rem 4rem;
+
+  
+  display: flex;
+  flex-direction: column;
+}
+
+.icons{
+  
+  height: 20px;
+  width: 20px;
+}
+
+.links{
+align-content: center;
+font-weight: bold;
+font-size: 1.2rem;
+text-decoration: underline;
+}
+
+.footer__copyright {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-main);
+  color: var(--footer-copyright-color);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-bottom: 2rem;
+  text-align: center;
+}
