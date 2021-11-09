@@ -22,6 +22,7 @@ const customTheme = extendTheme({
     "5xl": "48px",
     "6xl": "64px"
   },
+  
 });
 
 export default customTheme;

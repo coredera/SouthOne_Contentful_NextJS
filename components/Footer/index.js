@@ -41,7 +41,10 @@ export default function Footer() {
         {/*Mobile size components*/}
         <Box display={{ base: "block", md: "none" }}>
           <Accordion defaultIndex={[0]} allowMultiple>
-            <AccordionItem className={FooterStyles.accordion}>
+            <AccordionItem
+              className={FooterStyles.accordion}
+              borderColor="#3D5370"
+            >
               {({ isExpanded }) => (
                 <>
                   <h2>
@@ -59,16 +62,78 @@ export default function Footer() {
                       )}
 
                       <Box flex="1" textAlign="left">
-                        {panel1title}
+                        <Heading fontSize="1.5rem" fontWeight="normal" pl={5}>
+                          {panel1title}
+                        </Heading>
                       </Box>
                     </AccordionButton>
                   </h2>
-                  <AccordionPanel pb={4}>{panel1body}</AccordionPanel>
+                  <AccordionPanel pb={4}>
+                    {panel1body}
+                    <SimpleGrid columns={2} pt={5} width="100%" rowGap={3}>
+                      <GridItem colSpan={colSpan}>
+                        <Flex className={FooterStyles.links}>
+                          <Box pr={3}>
+                            <img
+                              src="./images/icon-arrow-blue-tint.svg"
+                              className={FooterStyles.icons}
+                            />
+                          </Box>
+                          <Link href="https://www.guidedogs.org.uk/faqs/">
+                            FAQs
+                          </Link>
+                        </Flex>
+                      </GridItem>
+                      <GridItem colSpan={colSpan}>
+                        <Flex className={FooterStyles.links}>
+                          <Box pr={3}>
+                            <img
+                              src="./images/icon-arrow-blue-tint.svg"
+                              className={FooterStyles.icons}
+                            />
+                          </Box>
+                          <Link href="https://www.guidedogs.org.uk/news/">
+                            News
+                          </Link>
+                        </Flex>
+                      </GridItem>
+
+                      <GridItem colSpan={colSpan}>
+                        <Flex className={FooterStyles.links}>
+                          <Box pr={3}>
+                            <img
+                              src="./images/icon-arrow-blue-tint.svg"
+                              className={FooterStyles.icons}
+                            />
+                          </Box>
+                          <Link href="https://www.guidedogs.org.uk/about-us/careers/">
+                            Jobs
+                          </Link>
+                        </Flex>
+                      </GridItem>
+                      <GridItem colSpan={colSpan}>
+                        <Flex className={FooterStyles.links}>
+                          <Box pr={3}>
+                            <img
+                              src="./images/icon-arrow-blue-tint.svg"
+                              className={FooterStyles.icons}
+                            />
+                          </Box>
+                          <Link href="https://www.guidedogs.org.uk/inspiring-stories/">
+                            Inpsiring stories
+                          </Link>
+                        </Flex>
+                      </GridItem>
+                    </SimpleGrid>
+                  </AccordionPanel>
                 </>
               )}
             </AccordionItem>
-
-            <AccordionItem className={FooterStyles.accordion}>
+            <Box p={2}></Box>
+            <AccordionItem
+              className={FooterStyles.accordion}
+              borderColor="#3D5370"
+            >
               <h2>
                 <AccordionButton>
                   <Box flex="1" textAlign="left">
