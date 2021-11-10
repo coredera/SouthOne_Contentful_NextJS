@@ -35,6 +35,14 @@ export default function Footer() {
   const panel1body =
     "Want to find out more about Guide Dogs and sight loss? Here are other helpful links...";
 
+  const panel2title = "Keep in touch";
+  const panel2body =
+    "Do you have an enquiry? Why not contact a member of our friendly staff?";
+
+  const panel3title = "Social media";
+  const panel3body =
+    "Want to keep up to date with all the latest at Guide Dogs? Follow us on social media.";
+
   return (
     <footer className={FooterStyles.footer}>
       <Container maxWidth="max">
@@ -42,7 +50,7 @@ export default function Footer() {
         <Box display={{ base: "block", md: "none" }}>
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
-              className={FooterStyles.accordion}
+              className={FooterStyles.accordionitem}
               borderColor="#3D5370"
             >
               {({ isExpanded }) => (
@@ -68,7 +76,10 @@ export default function Footer() {
                       </Box>
                     </AccordionButton>
                   </h2>
-                  <AccordionPanel pb={4}>
+                  <AccordionPanel
+                    pb={4}
+                    className={FooterStyles.accordionpanel}
+                  >
                     {panel1body}
                     <SimpleGrid columns={2} pt={5} width="100%" rowGap={3}>
                       <GridItem colSpan={colSpan}>
@@ -79,9 +90,11 @@ export default function Footer() {
                               className={FooterStyles.icons}
                             />
                           </Box>
-                          <Link href="https://www.guidedogs.org.uk/faqs/">
-                            FAQs
-                          </Link>
+                          <Box className={FooterStyles.linktext}>
+                            <Link href="https://www.guidedogs.org.uk/faqs/">
+                              FAQs
+                            </Link>
+                          </Box>
                         </Flex>
                       </GridItem>
                       <GridItem colSpan={colSpan}>
@@ -92,9 +105,11 @@ export default function Footer() {
                               className={FooterStyles.icons}
                             />
                           </Box>
-                          <Link href="https://www.guidedogs.org.uk/news/">
-                            News
-                          </Link>
+                          <Box className={FooterStyles.linktext}>
+                            <Link href="https://www.guidedogs.org.uk/news/">
+                              News
+                            </Link>
+                          </Box>
                         </Flex>
                       </GridItem>
 
@@ -106,9 +121,11 @@ export default function Footer() {
                               className={FooterStyles.icons}
                             />
                           </Box>
-                          <Link href="https://www.guidedogs.org.uk/about-us/careers/">
-                            Jobs
-                          </Link>
+                          <Box className={FooterStyles.linktext}>
+                            <Link href="https://www.guidedogs.org.uk/about-us/careers/">
+                              Jobs
+                            </Link>
+                          </Box>
                         </Flex>
                       </GridItem>
                       <GridItem colSpan={colSpan}>
@@ -119,9 +136,11 @@ export default function Footer() {
                               className={FooterStyles.icons}
                             />
                           </Box>
-                          <Link href="https://www.guidedogs.org.uk/inspiring-stories/">
-                            Inpsiring stories
-                          </Link>
+                          <Box className={FooterStyles.linktext}>
+                            <Link href="https://www.guidedogs.org.uk/inspiring-stories/">
+                              Inspiring stories
+                            </Link>
+                          </Box>
                         </Flex>
                       </GridItem>
                     </SimpleGrid>
@@ -130,25 +149,109 @@ export default function Footer() {
               )}
             </AccordionItem>
             <Box p={2}></Box>
+
             <AccordionItem
-              className={FooterStyles.accordion}
+              className={FooterStyles.accordionitem}
               borderColor="#3D5370"
             >
-              <h2>
-                <AccordionButton>
-                  <Box flex="1" textAlign="left">
-                    Section 2 title
-                  </Box>
-                  <AccordionIcon />
-                </AccordionButton>
-              </h2>
-              <AccordionPanel pb={4}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </AccordionPanel>
+              {({ isExpanded }) => (
+                <>
+                  <h2>
+                    <AccordionButton>
+                      {isExpanded ? (
+                        <img
+                          src="./images/accordion-minus--blue-tint.svg"
+                          className={FooterStyles.icons}
+                        />
+                      ) : (
+                        <img
+                          src="./images/accordion-plus--blue-tint.svg"
+                          className={FooterStyles.icons}
+                        />
+                      )}
+
+                      <Box flex="1" textAlign="left">
+                        <Heading fontSize="1.5rem" fontWeight="normal" pl={5}>
+                          {panel2title}
+                        </Heading>
+                      </Box>
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel
+                    pb={4}
+                    className={FooterStyles.accordionpanel}
+                  >
+                    {panel2body}
+                    <Box pt={5}>
+                    <Flex className={FooterStyles.links} p={1}>
+                      <Box pr={3}>
+                        <img
+                          src="./images/icon-arrow-blue-tint.svg"
+                          className={FooterStyles.icons}
+                        />
+                      </Box>
+                      <Box className={FooterStyles.linktext}>
+                        <Link href="https://www.guidedogs.org.uk/contact-us/">
+                          Contact us
+                        </Link>
+                      </Box>
+                    </Flex>
+                    <Flex className={FooterStyles.links} p={1}>
+                      <Box pr={3}>
+                        <img
+                          src="./images/icon-email-blue-tint.svg"
+                          className={FooterStyles.icons}
+                        />
+                      </Box>
+                      <Box className={FooterStyles.linktext}>
+                        <Link href="https://www.guidedogs.org.uk/contact-us/email-updates/">
+                          Sign up to our email updates
+                        </Link>
+                      </Box>
+                    </Flex>
+                    </Box>
+                  </AccordionPanel>
+                </>
+              )}
             </AccordionItem>
+            <Box p={2}></Box>
+            <AccordionItem
+              className={FooterStyles.accordionitem}
+              borderColor="#3D5370"
+            >
+              {({ isExpanded }) => (
+                <>
+                  <h2>
+                    <AccordionButton>
+                      {isExpanded ? (
+                        <img
+                          src="./images/accordion-minus--blue-tint.svg"
+                          className={FooterStyles.icons}
+                        />
+                      ) : (
+                        <img
+                          src="./images/accordion-plus--blue-tint.svg"
+                          className={FooterStyles.icons}
+                        />
+                      )}
+
+                      <Box flex="1" textAlign="left">
+                        <Heading fontSize="1.5rem" fontWeight="normal" pl={5}>
+                          {panel3title}
+                        </Heading>
+                      </Box>
+                    </AccordionButton>
+                  </h2>
+                  <AccordionPanel
+                    pb={4}
+                    className={FooterStyles.accordionpanel}
+                  >
+                    {panel3body}
+                  </AccordionPanel>
+                </>
+              )}
+            </AccordionItem>
+            <Box p={2}></Box>
           </Accordion>
         </Box>
 
@@ -232,11 +335,8 @@ export default function Footer() {
                 pr={6}
                 className={FooterStyles.leftlinkpanel}
               >
-                <Heading fontSize="2.125rem">Keep in touch</Heading>
-                <Text>
-                  Do you have an enquiry? Why not contact a member of our
-                  friendly staff?
-                </Text>
+                <Heading fontSize="2.125rem">{panel2title}</Heading>
+                <Text>{panel2body}</Text>
                 <Flex className={FooterStyles.links} pt={5}>
                   <Box pr={3}>
                     <img

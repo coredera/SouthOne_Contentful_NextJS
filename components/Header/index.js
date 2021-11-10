@@ -55,7 +55,7 @@ export default function Header() {
           <Link href="https://www.guidedogs.org.uk/ensuring-our-website-is-accessible/">
             <a className={HeaderStyles.header_headerItem}>
               <Box className={HeaderStyles.header_headerItem}>
-                <u>Ensure our website is accessible</u>
+                <u>Ensuring our website is accessible</u>
               </Box>
             </a>
           </Link>
