@@ -136,24 +136,32 @@ export function getRichTextRenderOptions(links, options) {
         <p className={TypographyStyles.bodyCopy}>{children}</p>
       ),
       [BLOCKS.QUOTE]: (node, children) => (
-        <Box bgColor="brand.300" className={TypographyStyles.blockquotebox}>
-          <Flex p={5}>
-            <Box>
-              <img src="/images/quote-open.svg" />
-            </Box>
-            <Box>
-              <blockquote
-                display="none"
-                className={TypographyStyles.blockquote}
-                bgColor="brand.100"
-              >
-                {children}
-              </blockquote>
-            </Box>
-            <Box alignSelf="flex-end">
-              <img src="/images/quote-closed.svg" />
-            </Box>
-          </Flex>
+        <Box p={10}>
+          <Box
+            bgColor="brand.300"
+            className={TypographyStyles.blockquotebox}
+            p={5}
+          >
+            <Flex> 
+              <Box>
+                <img src="/images/quote-open.svg" />
+              </Box>
+              <Spacer />
+              <Box>
+                <blockquote
+                  display="none"
+                  className={TypographyStyles.blockquote}
+                  bgColor="brand.100"
+                >
+                  {children}
+                </blockquote>
+              </Box>
+              <Spacer />
+              <Box alignSelf="flex-end">
+                <img src="/images/quote-closed.svg" />
+              </Box>
+            </Flex>
+          </Box>
         </Box>
       ),
       [BLOCKS.UL_LIST]: (node, children) => (
