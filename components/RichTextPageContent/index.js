@@ -143,8 +143,8 @@ export function getRichTextRenderOptions(links, options) {
             p={5}
           >
             <Flex> 
-              <Box>
-                <img src="/images/quote-open.svg" />
+              <Box width="10em">
+                <img src="/images/quote-open.svg"/>
               </Box>
               <Spacer />
               <Box>
@@ -157,7 +157,7 @@ export function getRichTextRenderOptions(links, options) {
                 </blockquote>
               </Box>
               <Spacer />
-              <Box alignSelf="flex-end">
+              <Box alignSelf="flex-end" width="10em">
                 <img src="/images/quote-closed.svg" />
               </Box>
             </Flex>
