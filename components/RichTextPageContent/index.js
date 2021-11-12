@@ -2,10 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
-import TypographyStyles from "@styles/Typography.module.css";
+import TypographyStyles from "@styles/Typography.module.scss";
 import LinkIcon from "./svg/LinkIcon";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+
+import {
+  Box,
+  Flex,
+  Heading,
+  useBreakpointValue,
+  useColorMode,
+  SimpleGrid,
+  GridItem,
+  Spacer,
+  Icon,
+  Button,
+  VStack,
+  Text,
+  Container,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
+} from "@chakra-ui/react";
 
 function slugifyString(string) {
   return string
@@ -115,9 +136,25 @@ export function getRichTextRenderOptions(links, options) {
         <p className={TypographyStyles.bodyCopy}>{children}</p>
       ),
       [BLOCKS.QUOTE]: (node, children) => (
-        <blockquote className={TypographyStyles.blockquote}>
-          {children}
-        </blockquote>
+        <Box bgColor="brand.300" className={TypographyStyles.blockquotebox}>
+          <Flex p={5}>
+            <Box>
+              <img src="/images/quote-open.svg" />
+            </Box>
+            <Box>
+              <blockquote
+                display="none"
+                className={TypographyStyles.blockquote}
+                bgColor="brand.100"
+              >
+                {children}
+              </blockquote>
+            </Box>
+            <Box alignSelf="flex-end">
+              <img src="/images/quote-closed.svg" />
+            </Box>
+          </Flex>
+        </Box>
       ),
       [BLOCKS.UL_LIST]: (node, children) => (
         <ul className={RichTextPageContentStyles.page__ul}>{children}</ul>

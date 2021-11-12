@@ -59,12 +59,12 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                          src="./images/accordion-minus--blue-tint.svg"
+                          src="/images/accordion-minus--blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                          src="./images/accordion-plus--blue-tint.svg"
+                          src="/images/accordion-plus--blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       )}
@@ -86,7 +86,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="./images/icon-arrow-blue-tint.svg"
+                              src="/images/icon-arrow-blue-tint.svg"
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -101,7 +101,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="./images/icon-arrow-blue-tint.svg"
+                              src="/images/icon-arrow-blue-tint.svg"
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -117,7 +117,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="./images/icon-arrow-blue-tint.svg"
+                              src="/images/icon-arrow-blue-tint.svg"
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -132,7 +132,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="./images/icon-arrow-blue-tint.svg"
+                              src="/images/icon-arrow-blue-tint.svg"
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -160,12 +160,12 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                          src="./images/accordion-minus--blue-tint.svg"
+                          src="/images/accordion-minus--blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                          src="./images/accordion-plus--blue-tint.svg"
+                          src="/images/accordion-plus--blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       )}
@@ -183,32 +183,32 @@ export default function Footer() {
                   >
                     {panel2body}
                     <Box pt={5}>
-                    <Flex className={FooterStyles.links} p={1}>
-                      <Box pr={3}>
-                        <img
-                          src="./images/icon-arrow-blue-tint.svg"
-                          className={FooterStyles.icons}
-                        />
-                      </Box>
-                      <Box className={FooterStyles.linktext}>
-                        <Link href="https://www.guidedogs.org.uk/contact-us/">
-                          Contact us
-                        </Link>
-                      </Box>
-                    </Flex>
-                    <Flex className={FooterStyles.links} p={1}>
-                      <Box pr={3}>
-                        <img
-                          src="./images/icon-email-blue-tint.svg"
-                          className={FooterStyles.icons}
-                        />
-                      </Box>
-                      <Box className={FooterStyles.linktext}>
-                        <Link href="https://www.guidedogs.org.uk/contact-us/email-updates/">
-                          Sign up to our email updates
-                        </Link>
-                      </Box>
-                    </Flex>
+                      <Flex className={FooterStyles.links} p={1}>
+                        <Box pr={3}>
+                          <img
+                            src="/images/icon-arrow-blue-tint.svg"
+                            className={FooterStyles.icons}
+                          />
+                        </Box>
+                        <Box className={FooterStyles.linktext}>
+                          <Link href="https://www.guidedogs.org.uk/contact-us/">
+                            Contact us
+                          </Link>
+                        </Box>
+                      </Flex>
+                      <Flex className={FooterStyles.links} p={1}>
+                        <Box pr={3}>
+                          <img
+                            src="/images/icon-email-blue-tint.svg"
+                            className={FooterStyles.icons}
+                          />
+                        </Box>
+                        <Box className={FooterStyles.linktext}>
+                          <Link href="https://www.guidedogs.org.uk/contact-us/email-updates/">
+                            Sign up to our email updates
+                          </Link>
+                        </Box>
+                      </Flex>
                     </Box>
                   </AccordionPanel>
                 </>
@@ -225,12 +225,12 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                          src="./images/accordion-minus--blue-tint.svg"
+                          src="/images/accordion-minus--blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                          src="./images/accordion-plus--blue-tint.svg"
+                          src="/images/accordion-plus--blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       )}
@@ -274,7 +274,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="./images/icon-arrow-blue-tint.svg"
+                          src="/images/icon-arrow-blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -287,7 +287,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="./images/icon-arrow-blue-tint.svg"
+                          src="/images/icon-arrow-blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -301,7 +301,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="./images/icon-arrow-blue-tint.svg"
+                          src="/images/icon-arrow-blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -314,7 +314,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="./images/icon-arrow-blue-tint.svg"
+                          src="/images/icon-arrow-blue-tint.svg"
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -340,7 +340,7 @@ export default function Footer() {
                 <Flex className={FooterStyles.links} pt={5}>
                   <Box pr={3}>
                     <img
-                      src="./images/icon-arrow-blue-tint.svg"
+                      src="/images/icon-arrow-blue-tint.svg"
                       className={FooterStyles.icons}
                     />
                   </Box>
@@ -351,7 +351,7 @@ export default function Footer() {
                 <Flex className={FooterStyles.links}>
                   <Box pr={3}>
                     <img
-                      src="./images/icon-email-blue-tint.svg"
+                      src="/images/icon-email-blue-tint.svg"
                       className={FooterStyles.icons}
                     />
                   </Box>
@@ -375,7 +375,7 @@ export default function Footer() {
         </Box>
 
         <Flex pt={8} pb={10}>
-          <Box maxWidth="712" pr={5}>
+          <Box>
             <Box fontSize="lg" fontWeight="bold" pb={5}>
               © The Guide Dogs for the Blind Association 2021
             </Box>
@@ -387,47 +387,45 @@ export default function Footer() {
               in England and Wales (209617) and Scotland (SC038979)
             </Box>
           </Box>
-
-          <Box maxWidth="712" alignItems="center" pt={5}>
-            <Flex>
-              <Box className={FooterStyles.logos}>
-                <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                  <a>
-                    <img
-                      src="./images/footer-gift-aid.png"
-                      className={FooterStyles.logosize}
-                    />
-                  </a>
-                </Link>
-              </Box>
-              <Box className={FooterStyles.logos}>
-                <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                  <a>
-                    <img
-                      src="./images/footer-thawte.png"
-                      className={FooterStyles.logosize}
-                    />
-                  </a>
-                </Link>
-              </Box>
-              <Box className={FooterStyles.logos}>
-                <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                  <a>
-                    <img
-                      src="./images/footer-fundraising-regulator.png"
-                      className={FooterStyles.logosize}
-                    />
-                  </a>
-                </Link>
-              </Box>
-              <Box className={FooterStyles.logos}>
-                <img
-                  src="./images/business-disability-forum-logo.png"
-                  className={FooterStyles.logosize}
-                />
-              </Box>
-            </Flex>
-          </Box>
+          <Flex>
+            <Box className={FooterStyles.logos}>
+              <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                <a>
+                  <img
+                    src="/images/footer-gift-aid.png"
+                    className={FooterStyles.logosize}
+                  />
+                </a>
+              </Link>
+            </Box>
+            <Box className={FooterStyles.logos}>
+              <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                <a>
+                  <img
+                    src="/images/footer-thawte.png"
+                    className={FooterStyles.logosize}
+                  />
+                </a>
+              </Link>
+            </Box>
+       
+            <Box className={FooterStyles.logos}>
+              <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                <a>
+                  <img
+                    src="/images/footer-fundraising-regulator.png"
+                    className={FooterStyles.logosize}
+                  />
+                </a>
+              </Link>
+            </Box>
+            <Box className={FooterStyles.logos}>
+              <img
+                src="/images/business-disability-forum-logo.png"
+                className={FooterStyles.logosize}
+              />
+            </Box>
+          </Flex>
         </Flex>
 
         <Flex>

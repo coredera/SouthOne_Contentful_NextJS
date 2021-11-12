@@ -1,6 +1,6 @@
 import Image from "next/image";
 import AuthorStyles from "@styles/Author.module.css";
-import TypographyStyles from "@styles/Typography.module.css";
+import TypographyStyles from "@styles/Typography.module.scss";
 
 function renderTwitter(username) {
   return (

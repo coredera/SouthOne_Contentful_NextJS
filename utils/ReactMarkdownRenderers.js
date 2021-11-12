@@ -1,4 +1,4 @@
-import TypographyStyles from "@styles/Typography.module.css";
+import TypographyStyles from "@styles/Typography.module.scss";
 
 /*
  * The react-markdown package is used to render the blog post excerpt markdown field.
