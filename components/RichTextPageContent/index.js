@@ -138,7 +138,7 @@ export function getRichTextRenderOptions(links, options) {
       [BLOCKS.QUOTE]: (node, children) => (
         <Box p={10}>
           <Box
-            bgColor="brand.300"
+            bgColor="brand.700"
             className={TypographyStyles.blockquotebox}
             p={5}
           >
