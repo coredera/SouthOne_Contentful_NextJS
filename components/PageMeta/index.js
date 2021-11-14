@@ -33,7 +33,7 @@ export default function PageMeta(props) {
       <meta property="og:image" content={OpenGraph.generateImageUrl(title)} />
       <meta
         property="twitter:image"
-        content={OpenGraph.generateImageUrl(title)}
+        content={OpenGraph.generateImageUrl(title)} 
       />
 
       <meta name="twitter:card" content="summary_large_image" />
@@ -48,6 +48,8 @@ export default function PageMeta(props) {
 
       <link rel="icon" href="/favicon.ico" />
 
+      
+      {/*
       <link
         rel="apple-touch-icon"
         sizes="180x180"
@@ -69,6 +71,8 @@ export default function PageMeta(props) {
       <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0f111a" />
       <meta name="msapplication-TileColor" content="#002b5b" />
       <meta name="theme-color" content="#002b5b" />
+      */}
+      
     </Head>
   );
 }
