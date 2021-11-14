@@ -3,7 +3,7 @@ import OpenGraph from "@utils/OpenGraph";
 import { Config } from "@utils/Config";
 
 export default function PageMeta(props) {
-  const { title, description, url, canonical } = props;
+  const { title, description, url, canonical, image } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
 
   return (
@@ -30,7 +30,7 @@ export default function PageMeta(props) {
       <meta property="og:url" content={url} />
       <meta property="twitter:url" content={url} />
 
-      <meta property="og:image" content={OpenGraph.generateImageUrl(title)} />
+      <meta property="og:image" content={image} />
       <meta
         property="twitter:image"
         content={OpenGraph.generateImageUrl(title)} 
@@ -72,7 +72,7 @@ export default function PageMeta(props) {
       <meta name="msapplication-TileColor" content="#002b5b" />
       <meta name="theme-color" content="#002b5b" />
       */}
-      
+
     </Head>
   );
 }
