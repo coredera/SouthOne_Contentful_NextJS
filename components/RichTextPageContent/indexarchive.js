@@ -95,9 +95,31 @@ export function getRichTextRenderOptions(links, options) {
       [BLOCKS.HEADING_1]: (node, children) => (
         <h1 className={TypographyStyles.heading__h1}>{children}</h1>
       ),
-      [BLOCKS.HEADING_2]: (node, children) => (
-        <h2 className={TypographyStyles.heading__h2}>{children}</h2>
-      ),
+      [BLOCKS.HEADING_2]: (node, children) => {
+        if (renderH2Links) {
+          return (
+            <div
+              className={RichTextPageContentStyles.page__linkedHeaderContainer}
+            >
+              <h2
+                id={`${slugifyString(children[0])}`}
+                className={TypographyStyles.heading__h2}
+              >
+                {children}
+              </h2>
+              <a
+                className={`${RichTextPageContentStyles.page__headerLink} ${TypographyStyles.inlineLink}`}
+                href={`#${slugifyString(children[0])}`}
+                aria-label={children}
+              >
+                <LinkIcon />
+              </a>
+            </div>
+          );
+        } else {
+          return <h2 className={TypographyStyles.heading__h2}>{children}</h2>;
+        }
+      },
       [BLOCKS.HEADING_3]: (node, children) => (
         <h3 className={TypographyStyles.heading__h3}>{children}</h3>
       ),

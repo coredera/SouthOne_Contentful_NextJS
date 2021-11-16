@@ -40,6 +40,7 @@ export default function Header() {
         alignItems="center"
       >
         <Spacer />
+        
         <Box>
           <Link href="/">
             <a
@@ -110,6 +111,7 @@ export default function Header() {
         backgroundColor={"brand.700"}
         align="center"
         shadow="base"
+        display="none"
       >
         <Spacer />
 
