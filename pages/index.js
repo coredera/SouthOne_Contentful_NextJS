@@ -12,11 +12,11 @@ import PageContentWrapper from "@components/PageContentWrapper";
 export default function Home(props) {
   const { pageContent, recentPosts, preview } = props;
 
-  const pageTitle = pageContent ? pageContent.title : "Home";
+  const pageTitle = pageContent ? pageContent.title : "Homey";
 
   const pageDescription = pageContent
     ? pageContent.description
-    : "Welcome to the Next.js Contentful blog starter";
+    : "Welcome to the Guide Dogs UK Blog";
 
   return (
     <>
@@ -57,7 +57,7 @@ export async function getStaticProps({ preview = false }) {
       recentPosts,
     },
   };
-}
+} 
 
 /*
 

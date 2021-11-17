@@ -8,13 +8,13 @@
  * touching any of the functional code.
  *
  */
-
+ 
 const SITE_URL = "https://www.guidedogs.org.uk";
 
 export const Config = {
   site: {
     owner: "Guide Dogs UK",
-    title: "Guide Dogs UK Blog",
+    title: "Guide Dogs UK Blog in config file",
     domain: "guidedogs.org.uk",
     email: "jason.fang@guidedogs.org.uk",
     feedDescription: "RSS Feed for guidedogs.org.uk",

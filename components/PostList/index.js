@@ -32,7 +32,9 @@ export default function PostList(props) {
                 src={post.image.url}
                 width="1200"
                 height="400"
-                layout="responsive"/>
+                layout="responsive"
+                alt={post.image.description}
+                />
 
               </div>
               {post.contentfulMetadata.tags !== null && <Tags tags={post.contentfulMetadata.tags} />}
