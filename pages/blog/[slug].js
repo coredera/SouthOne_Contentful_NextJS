@@ -17,7 +17,7 @@ export default function PostWrapper(props) {
         canonical={post.externalUrl ? post.externalUrl : false}
         image={post.image.url}
       />
-      <ContentWrapper>
+      <ContentWrapper> 
         <Post post={post} />
         
       </ContentWrapper>
