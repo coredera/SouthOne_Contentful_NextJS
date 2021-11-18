@@ -13,8 +13,7 @@
 .header__logoContainerLink {
   text-decoration: none;
   display: inline-flex;
-  width: 100%;
-  justify-content: center;
+  justify-content: left;
 }
 
 .header__logoContainerLink:focus {
@@ -46,42 +45,91 @@
   padding: 0;
 }
 
+.header_headerItem {
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  padding: 1rem 3rem;
+}
+
+.header_headerButton:hover {
+  background-color: #002b5b;
+  color: #002b5b;
+}
+
+
+
 .header__navListItem {
-  padding: 0.8rem 1rem;
-  text-transform: uppercase;
-  color: var(--color-background);
+  border: "4px";
+  padding: 1rem 3rem;
+
   font-size: 1.4rem;
   line-height: 1;
   transition: color var(--global-transition-time) ease-in-out;
   display: inline-block;
   text-decoration: none;
   font-weight: var(--font-weight-bold);
+
+  border-bottom-style: solid;
+  border-bottom-color: #002b5b;
+  border-left-style: solid;
+  border-left-color: lightgrey;
+  border-right-style: solid;
+  border-right-color: lightgrey;
 }
 
 .header__navListItem.header__navListItem__active {
-  color: var(--header-nav-item-active-color);
+  border: "4px";
+
+  border-bottom-style: solid;
+  border-bottom-color: #002b5b;
+  border-left-style: solid;
+  border-left-color: lightgrey;
+  border-right-style: solid;
+  border-right-color: lightgrey;
 }
 
 .header__navListItemLink {
-  color: inherit;
+  border-right-style: solid;
+  border-right-color: lightgrey;
+
+  color: lightgrey;
   text-decoration: none;
 }
 
-.header__navListItemLink:visited {
-  color: inherit;
+.header__navListItemLink:hover {
+  color: #002b5b;
+  text-decoration: none;
+  background-color: #8fd8ff;
 }
 
-.header__navListItemLink:hover {
-  color: inherit;
+.header__navListItemLink:visited {
+  color: #002b5b;
 }
 
 .header__navListItemLink:focus {
   outline-width: 0;
   box-shadow: var(--color-primary) 0 0 0 0.25rem;
   transition: box-shadow var(--global-transition-time) ease 0s;
+  color: #002b5b;
 }
 
 .header__navListItemLink:focus:active {
   outline-width: 0;
   box-shadow: unset;
+}
+
+.svg {
+  width: 162px;
+  height: 74px;
+}
+
+.svg.delay #pictoGroup,
+.svg-logo.delay #textGroup,
+.svg-logo.delay #padGroup,
+.svg-logo.delay #pictoGroup > g {
+  opacity: 0;
+  animation: simpleFade 0.2s ease-in-out 1;
+  animation-delay: 7s;
+  animation-fill-mode: both;
 }

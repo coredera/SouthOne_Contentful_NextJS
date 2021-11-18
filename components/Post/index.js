@@ -2,7 +2,7 @@ import {FastCommentsCommentWidget} from 'fastcomments-react'
 import HyvorTalk from 'hyvor-talk-react'
 import { DiscussionEmbed } from "disqus-react";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
-import TypographyStyles from "@styles/Typography.module.css";
+import TypographyStyles from "@styles/Typography.module.scss";
 import Tags from "@components/Post/Tags";
 import PublishedDate from "@components/Post/PublishedDate";
 import Author from "@components/Post/Author";

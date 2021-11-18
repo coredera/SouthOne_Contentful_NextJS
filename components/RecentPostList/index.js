@@ -43,6 +43,7 @@ export default function RecentPostList(props) {
                   width="1200"
                   height="400"
                   layout="responsive"
+                  alt={post.image.description}
                 />
               </div>
               {post.contentfulMetadata.tags !== null && (

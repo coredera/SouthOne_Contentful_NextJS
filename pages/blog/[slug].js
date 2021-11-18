@@ -15,8 +15,9 @@ export default function PostWrapper(props) {
         description={post.excerpt}
         url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
         canonical={post.externalUrl ? post.externalUrl : false}
+        image={post.image.url}
       />
-      <ContentWrapper>
+      <ContentWrapper> 
         <Post post={post} />
         
       </ContentWrapper>
@@ -35,7 +36,7 @@ export async function getStaticPaths() {
   // on production
   return {
     paths,
-    fallback: "blocking",
+    fallback: "blocking", 
   };
 }
 

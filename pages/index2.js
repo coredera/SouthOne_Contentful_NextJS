@@ -1,40 +1,40 @@
+//import Document, { Html, Head, Main, NextScript } from "next/document"
 import Head from 'next/head'
+
 import {
-  useColorMode,
   Heading,
   Text,
+  extendTheme,
   Flex,
   Stack
 } from '@chakra-ui/react'
 
 import Container from '../components/Container'
 
+
+import { ChakraProvider } from "@chakra-ui/react";
+//import { theme } from "../styles/theme";
+import Fonts from "./Fonts.js";
+
+
+
+
 export default function Index() {
 
   return (
+
+  
     <Container>
       <Head>
         <title>Home - Benjamin Carlson</title>
       </Head>
-      <Stack
-        as="main"
-        spacing={8}
-        justifyContent="center"
-        alignItems="flex-start"
-        m="0 auto 4rem auto"
-        maxWidth="700px"
-        px={2}
-      >
-        <Flex
-          flexDirection="column"
-          justifyContent="flex-start"
-          alignItems="flex-start"
-          maxWidth="700px"
-        >
-          <Heading mb={2}>Hi, I'm Benjamin Carlson</Heading>
+     
+          <Heading>Hi, I'm Benjamin Carlson</Heading>
           <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ante nunc, finibus sit amet purus quis, congue vulputate ipsum. Phasellus lobortis bibendum orci, quis imperdiet lectus imperdiet porttitor.</Text>
-        </Flex>
-      </Stack>
+      
+      
     </Container>
+   
+
   )
 }
