@@ -58,7 +58,7 @@ export default async function preview(req, res) {
    * mode, and the behavior for statically generated pages
    * will change.
    *
-   * To end Next.js preview mode, navigate to /api/endpreview.
+   * To end Next.js preview mode, navigate to /api/endpreview. 
    */
 
   res.setPreviewData({});

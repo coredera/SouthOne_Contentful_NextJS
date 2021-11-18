@@ -7,7 +7,7 @@
  * without editing HTML, or change the page size on /blog without
  * touching any of the functional code.
  *
- */
+ */ 
  
 const SITE_URL = "https://www.guidedogs.org.uk";
 
