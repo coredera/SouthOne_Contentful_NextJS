@@ -23,16 +23,22 @@ import Head from "next/head";
 
 //const clientSideEmotionCache = createEmotionCache();
 
+import GoogleTagManager from "../components/GTM";
+
 
 
  function MyApp({ Component, pageProps }) {
    return (
+    <GoogleTagManager>
+
      <ChakraProvider theme={customTheme}>
        <Fonts />
        
        <Component {...pageProps} />
 
      </ChakraProvider>
+     </GoogleTagManager>
+
    );
  }
 
