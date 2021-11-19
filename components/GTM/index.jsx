@@ -1,7 +1,8 @@
 import React from "react";
  import { useRouter } from "next/router";
 
- import { pageView } from "./gtm";
+// import { pageView } from "./gtm";
+ import { pageView } from "../../lib/gtm";
 
  const GTM = ({ children }) => {
    const { events } = useRouter();
