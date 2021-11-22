@@ -10,9 +10,9 @@ export default function PageMeta(props) {
   const articleStructuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: {siteTitle},
-    description: {description},
-    image: {image},
+    headline: siteTitle,
+    description: description,
+    image: image,
     datePublished: new Date("2021-09-04T09:25:01.340Z").toISOString(),
     author: {
       "@type": "Person",
