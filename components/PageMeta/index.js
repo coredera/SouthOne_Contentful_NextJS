@@ -6,7 +6,7 @@ export default function PageMeta(props) {
   const { title, description, url, canonical, image } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
 
-  /** 
+ 
   const articleStructuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -21,8 +21,7 @@ export default function PageMeta(props) {
     },
   };
 
-  */
-
+ /** 
   const articleStructuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -36,6 +35,7 @@ export default function PageMeta(props) {
       url: "https://twitter.com/johnny_reilly",
     },
   };
+  */
 
 
   return (
