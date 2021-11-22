@@ -6,6 +6,23 @@ export default function PageMeta(props) {
   const { title, description, url, canonical, image } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
 
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Structured data for you",
+    description: "This is an article that demonstrates structured data.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/40/JSON-LD.svg",
+    datePublished: new Date("2021-09-04T09:25:01.340Z").toISOString(),
+    author: {
+      "@type": "Person",
+      name: "John Reilly",
+      url: "https://twitter.com/johnny_reilly",
+    },
+  };
+
+
+
+
   return (
     <Head>
       <title>{siteTitle}</title>
@@ -48,6 +65,10 @@ export default function PageMeta(props) {
 
       <link rel="icon" href="/favicon.ico" />
 
+      <script type="application/ld+json">
+        {JSON.stringify(articleStructuredData)}
+      </script>
+    
       
       {/*
       <link
