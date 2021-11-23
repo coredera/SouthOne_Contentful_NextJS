@@ -18,7 +18,7 @@ export default function PostWrapper(props) {
         image={post.image.url}
         authortype={post.author.type}
         authorname={post.author.name}
-        authorurl={post.author.url}
+        authorurl={post.author.websiteUrl}
       />
       <ContentWrapper> 
         <Post post={post} />

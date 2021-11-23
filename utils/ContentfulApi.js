@@ -531,6 +531,7 @@ export default class ContentfulApi {
 
           externalUrl
           author {
+            type
             name
             description
             twitchUsername
