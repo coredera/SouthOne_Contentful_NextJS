@@ -3,7 +3,7 @@ import OpenGraph from "@utils/OpenGraph";
 import { Config } from "@utils/Config";
 
 export default function PageMeta(props) {
-  const { title, description, url, canonical, image } = props;
+  const { title, description, url, canonical, image, authortype, authorname, authorurl } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
 
  
@@ -15,9 +15,9 @@ export default function PageMeta(props) {
     image: image,
     datePublished: new Date("2021-09-04T09:25:01.340Z").toISOString(),
     author: {
-      "@type": "Person",
-      name: "John Reilly",
-      url: "https://twitter.com/johnny_reilly",
+      "@type": authortype,
+      name: authorname,
+      url: authorurl,
     },
   };
 
