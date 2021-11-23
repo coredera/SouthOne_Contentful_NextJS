@@ -3,7 +3,7 @@ import OpenGraph from "@utils/OpenGraph";
 import { Config } from "@utils/Config";
 
 export default function PageMeta(props) {
-  const { title, description, url, canonical, image, authortype, authorname, authorurl } = props;
+  const { title, description, url, canonical, image, date, authortype, authorname, authorurl } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
 
  
@@ -13,7 +13,7 @@ export default function PageMeta(props) {
     headline: siteTitle,
     description: description,
     image: image,
-    datePublished: new Date("2021-09-04T09:25:01.340Z").toISOString(),
+    datePublished: date,
     author: {
       "@type": authortype,
       name: authorname,
