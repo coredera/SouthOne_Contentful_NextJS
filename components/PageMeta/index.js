@@ -13,7 +13,7 @@ export default function PageMeta(props) {
     headline: siteTitle,
     description: description,
     image: image,
-    datePublished: new Date(date).toISOString(),
+    datePublished: date,
     author: {
       "@type": authortype,
       name: authorname,
