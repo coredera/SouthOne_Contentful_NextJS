@@ -3,7 +3,7 @@ import OpenGraph from "@utils/OpenGraph";
 import { Config } from "@utils/Config";
 
 export default function PageMeta(props) {
-  const { title, description, url, canonical, image, date, authortype, authorname, authorurl } = props;
+  const { title, description, url, canonical, image, date, authortype, authorname, authorurl, metatitle, metadescription } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
 
  
@@ -40,7 +40,7 @@ export default function PageMeta(props) {
 
   return (
     <Head>
-      <title>{siteTitle}</title>
+      <title>{metatitle}</title>
 
       {canonical && <link rel="canonical" href={canonical} />}
 
@@ -51,11 +51,11 @@ export default function PageMeta(props) {
         href={`https://${Config.site.domain}/feed.xml`}
       />
 
-      <meta name="title" content={siteTitle} />
+      <meta name="title" content={metatitle} />
       <meta property="og:title" content={title} />
       <meta property="twitter:title" content={title} />
 
-      <meta name="description" content={description} />
+      <meta name="description" content={metadescription} />
       <meta property="og:description" content={description} />
       <meta property="twitter:description" content={description} />
 

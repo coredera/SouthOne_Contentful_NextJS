@@ -20,6 +20,8 @@ export default function PostWrapper(props) {
         authortype={post.author.type}
         authorname={post.author.name}
         authorurl={post.author.websiteUrl}
+        metatitle={post.metaTitle}
+        metadescription={post.metaDescription}
       />
       <ContentWrapper> 
         <Post post={post} />

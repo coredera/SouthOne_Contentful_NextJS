@@ -526,9 +526,10 @@ export default class ContentfulApi {
           }
           date
           title
+          metaTitle
+          metaDescription
           slug
           excerpt
-
           externalUrl
           author {
             type
