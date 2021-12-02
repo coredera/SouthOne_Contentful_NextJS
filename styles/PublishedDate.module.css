@@ -1,5 +1,5 @@
 .publishedDate {
-  font-size: 1rem;
+  font-size: inherit;
   line-height: 1.4;
   margin-bottom: 2rem;
   font-weight: var(--font-weight-normal);

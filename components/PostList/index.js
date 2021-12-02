@@ -83,7 +83,7 @@ export default function PostList(props) {
                   </Link>
                 </Box>
                 <Spacer />
-                <Box alignSelf="center">
+                <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
                   <PublishedDate date={post.date} alignSelf="center"/>
                 </Box>
               </Flex>

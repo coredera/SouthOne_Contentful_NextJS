@@ -9,17 +9,46 @@ import Author from "@components/Post/Author";
 import ExternalUrl from "@components/Post/ExternalUrl";
 import RichTextPageContent from "@components/RichTextPageContent";
 
+import {
+  Box,
+  Flex,
+  Heading,
+  useBreakpointValue,
+  useColorMode,
+  SimpleGrid,
+  GridItem,
+  Spacer,
+  Icon,
+  Button,
+  VStack,
+  Text,
+  Container,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
+} from "@chakra-ui/react";
+
 export default function Post(props) {
   const { post } = props;
 
   return (
+    <>
+    <Flex pt={10} />
     <article className={RichTextPageContentStyles.page}>
       {post.externalUrl && <ExternalUrl url={post.externalUrl} />}
-      <PublishedDate date={post.date} />
+      <h1 className={TypographyStyles.heading__h1}>{post.title}</h1>
+      <Flex>
+        <Box className={TypographyStyles.heading__h5}>{post.author.name}</Box>
+        <Spacer />
+        <Box>
+          <PublishedDate date={post.date} />
+        </Box>
+      </Flex>
       {post.contentfulMetadata.tags !== null && (
         <Tags tags={post.contentfulMetadata.tags} />
       )}{" "}
-      <h1 className={TypographyStyles.heading__h1}>{post.title}</h1>
       <RichTextPageContent richTextBodyField={post.body} renderH2Links={true} />
       {post.author !== null && <Author author={post.author} />}
       {/*<DiscussionEmbed
@@ -35,5 +64,6 @@ export default function Post(props) {
       </div>
       {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
     </article>
+    </>
   );
 }
