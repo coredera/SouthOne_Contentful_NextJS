@@ -77,7 +77,7 @@ export default function BlogIndex(props) {
       </ContentWrapper>
     </MainLayout>
   );
-}
+} 
 
 export async function getStaticProps({ preview = false }) {
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
