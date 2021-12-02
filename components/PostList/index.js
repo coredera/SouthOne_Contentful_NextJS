@@ -7,6 +7,28 @@ import Pagination from "@components/PostList/Pagination";
 import ContentListStyles from "@styles/ContentList.module.css";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import { Config } from "@utils/Config";
+import TypographyStyles from "@styles/Typography.module.scss";
+
+import {
+  Box,
+  Flex,
+  Heading,
+  useBreakpointValue,
+  useColorMode,
+  SimpleGrid,
+  GridItem,
+  Spacer,
+  Icon,
+  Button,
+  VStack,
+  Text,
+  Container,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
+} from "@chakra-ui/react";
 
 export default function PostList(props) {
   const { posts, currentPage, totalPages } = props;
@@ -19,7 +41,20 @@ export default function PostList(props) {
         {posts.map((post) => (
           <li key={post.sys.id}>
             <article className={ContentListStyles.contentList__post}>
-              <PublishedDate date={post.date} />
+              <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+                <a>
+                  <Image
+                    src={post.image.url}
+                    width="60em"
+                    height="30em"
+                    layout="responsive"
+                    objectFit="contain"
+                    alt={post.image.description}
+                  />
+                </a>
+              </Link>
+
+              <Flex p={2} />
               <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
                 <a className={ContentListStyles.contentList__titleLink}>
                   <h2 className={ContentListStyles.contentList__title}>
@@ -27,23 +62,31 @@ export default function PostList(props) {
                   </h2>
                 </a>
               </Link>
-              <div>
-              <Image
-                src={post.image.url}
-                width="1200"
-                height="400"
-                layout="responsive"
-                alt={post.image.description}
-                />
-
-              </div>
-              {post.contentfulMetadata.tags !== null && <Tags tags={post.contentfulMetadata.tags} />}
+              <Box className={ContentListStyles.contentList__author}>Author: {post.author.name}</Box>
+              {post.contentfulMetadata.tags !== null && (
+                <Tags tags={post.contentfulMetadata.tags} />
+              )}
               <div className={ContentListStyles.contentList__excerpt}>
                 <ReactMarkdown
                   children={post.excerpt}
                   renderers={ReactMarkdownRenderers(post.excerpt)}
                 />
               </div>
+              <Flex alignItems="center">
+                <Box alignSelf="center">
+                  <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+                    <a>
+                      <h3 className={ContentListStyles.contentList__readmorelink}>
+                        Read more
+                      </h3>
+                    </a>
+                  </Link>
+                </Box>
+                <Spacer />
+                <Box alignSelf="center">
+                  <PublishedDate date={post.date} alignSelf="center"/>
+                </Box>
+              </Flex>
             </article>
           </li>
         ))}

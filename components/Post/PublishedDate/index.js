@@ -15,4 +15,4 @@ export default function PublishedDate(props) {
       {formatPublishedDateForDisplay(date)}
     </time>
   );
-}
+}  

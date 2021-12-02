@@ -20,7 +20,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
+      <Html lang="en" >
         <Head>
           {/* Google Tag Manager - Global base code */}
           <script

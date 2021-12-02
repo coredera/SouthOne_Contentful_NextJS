@@ -47,7 +47,7 @@ export default function Footer() {
     <footer className={FooterStyles.footer}>
       <Container maxWidth="max">
         {/*Mobile size components*/}
-        <Box display={{ base: "block", md: "none" }}>
+        <Box display={{ base: "none", md: "none" }}>
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
               className={FooterStyles.accordionitem}
@@ -257,7 +257,7 @@ export default function Footer() {
 
         {/*Desktop size components*/}
 
-        <Box display={{ base: "none", md: "block" }}>
+        <Box display={{ base: "none", md: "none" }}>
           <Flex className={FooterStyles.linkpanels} pt={8} pb={10}>
             <Spacer />
             <Box maxWidth="475">

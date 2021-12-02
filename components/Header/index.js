@@ -32,16 +32,17 @@ export default function Header() {
   //};
 
   return (
-    <Box backgroundColor={"brand.100"}>
+    <>
       <Flex
         backgroundColor={"brand.100"}
         maxHeight="180"
         height="142"
         alignItems="center"
+        alignContent="start"
       >
-        <Spacer />
         
-        <Box>
+        
+        <Box alignSelf="center" p={10}> 
           <Link href="/">
             <a
               className={HeaderStyles.header__logoContainerLink}
@@ -52,6 +53,8 @@ export default function Header() {
           </Link>
         </Box>
         <Spacer />
+        
+        <Flex display="none">
         <Box>
           <Link href="https://www.guidedogs.org.uk/ensuring-our-website-is-accessible/">
             <a className={HeaderStyles.header_headerItem}>
@@ -103,6 +106,7 @@ export default function Header() {
             </a>
           </Link>
         </Box>
+        </Flex>
         <Spacer />
       </Flex>
 
@@ -161,6 +165,6 @@ export default function Header() {
 
         <Spacer />
       </Flex>
-    </Box>
+    </>
   );
 }

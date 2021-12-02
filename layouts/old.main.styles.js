@@ -9,8 +9,6 @@ export default css.global`
     --color-foreground: #002B5B;
     --color-background: #ffffff;
     --color-muted: #666666;
-    --color-button: #8FD8FF;
-    --color-buttonhover: #4EA8DD;
 
     --grid-unit: 0.5rem;
 
@@ -18,9 +16,12 @@ export default css.global`
     --font-weight-normal: 400;
     --font-weight-bold: 700;
 
-    --font-family-headingh: castledown-heavy, "Trebuchet MS";
-    --font-family-headingb: castledown-bold, "Trebuchet MS";
-    --font-family-body: castledown-regular, "Trebuchet MS";
+    --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
+    --font-family-body: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+      "Segoe UI Symbol";
     --font-family-code: Consolas, Monaco, "Andale Mono", "Ubuntu Mono",
       monospace;
 

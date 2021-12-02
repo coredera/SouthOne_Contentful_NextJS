@@ -1,5 +1,5 @@
-import {FastCommentsCommentWidget} from 'fastcomments-react'
-import HyvorTalk from 'hyvor-talk-react'
+import { FastCommentsCommentWidget } from "fastcomments-react";
+import HyvorTalk from "hyvor-talk-react";
 import { DiscussionEmbed } from "disqus-react";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
 import TypographyStyles from "@styles/Typography.module.scss";
@@ -30,17 +30,10 @@ export default function Post(props) {
           title: post.title,
         }}
       />*/}
-      <HyvorTalk.Embed 
-          websiteId={4965}
-         
-        />
-
-{/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
-
-
-
-
-
+      <div className={TypographyStyles.bodyCopy}>
+        <HyvorTalk.Embed websiteId={4965} />
+      </div>
+      {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
     </article>
   );
 }

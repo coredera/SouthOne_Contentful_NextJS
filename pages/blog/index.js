@@ -9,6 +9,28 @@ import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
+import TypographyStyles from "@styles/Typography.module.scss";
+
+import {
+  Box,
+  Flex,
+  Heading,
+  useBreakpointValue,
+  useColorMode,
+  SimpleGrid,
+  GridItem,
+  Spacer,
+  Icon,
+  Button,
+  VStack,
+  Text,
+  Container,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
+} from "@chakra-ui/react";
 
 export default function BlogIndex(props) {
   const { postSummaries, currentPage, totalPages, pageContent, preview } =
@@ -36,6 +58,12 @@ export default function BlogIndex(props) {
       )}
 
       <ContentWrapper>
+        <Box pb={10} pt={7}>
+          <h1 className={TypographyStyles.heading__h1}>Welcome to Guide Dogs Blog</h1>
+          <body className={TypographyStyles.heading__h4}>
+          Discover true stories, big issues, actioning change and more.......
+          </body>
+        </Box>
         {pageContent.body && (
           <PageContentWrapper>
             <RichTextPageContent richTextBodyField={pageContent.body} />

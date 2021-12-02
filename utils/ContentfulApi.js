@@ -657,7 +657,9 @@ export default class ContentfulApi {
             title
             slug
             excerpt
-
+            author{
+              name
+            }
           }
         }
       }`;
