@@ -129,6 +129,26 @@
   word-break: break-word;
 }
 
+.bodyCopyS {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-weight: var(--font-weight-light);
+  font-family: var(--font-family-main);
+  color: var(--color-foreground);
+  word-break: break-word;
+}
+
+.bodyCopySS {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-weight: var(--font-weight-light);
+  font-family: var(--font-family-main);
+  color: var(--color-foreground);
+  word-break: break-word;
+}
+
 .bodyCopy__bold {
   /* font-weight: var(--font-weight-bold);*/
   font-weight: bold;

@@ -2,6 +2,7 @@ import SocialLinks from "@components/SocialLinks";
 import FooterStyles from "@styles/Footer.module.scss";
 import ButtonStyles from "@styles/Button.module.css";
 import { Config } from "@utils/Config";
+import TypographyStyles from "@styles/Typography.module.scss";
 
 import {
   Box,
@@ -46,6 +47,7 @@ export default function Footer() {
   return (
     <footer className={FooterStyles.footer}>
       <Container maxWidth="max">
+        
         {/*Mobile size components*/}
         <Box display={{ base: "none", md: "none" }}>
           <Accordion defaultIndex={[0]} allowMultiple>
@@ -376,10 +378,10 @@ export default function Footer() {
 
         <Flex pt={8} pb={10}>
           <Box>
-            <Box fontSize="lg" fontWeight="bold" pb={5}>
+            <Box className={TypographyStyles.bodyCopy} color="white" marginBottom={1} pb={5}>
               © The Guide Dogs for the Blind Association 2021
             </Box>
-            <Box fontWeight="semibold">
+            <Box className={TypographyStyles.bodyCopySS} color="white">
               Guide Dogs is a working name of The Guide Dogs for the Blind
               Association. Registered Office: Hillfields, Burghfield Common,
               Reading, Berkshire RG7 3YG. A company limited by guarantee
