@@ -48,12 +48,12 @@ export default function Header() {
                 <a href="/covid19">Coronavirus (COVID-19) and Guide Dogs</a>
               </li>
               <li>
-                <a href="#content" class="skip-to-content" target="_self">
+                <a href="#content" class="skip-to-content">
                   Skip to content
                 </a>
               </li>
               <li>
-                <a href="#footer" class="skip-to-content" target="_self">
+                <a href="#footer" class="skip-to-content">
                   Skip to footer
                 </a>
               </li>

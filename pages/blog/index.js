@@ -53,9 +53,12 @@ export default function BlogIndex(props) {
         url={Config.pageMeta.blogIndex.url}
       />
 
+
+
       {pageContent.heroBanner !== null && (
         <HeroBanner data={pageContent.heroBanner} />
       )}
+
 
       <ContentWrapper>
         <Box pb={10} pt={7}>
