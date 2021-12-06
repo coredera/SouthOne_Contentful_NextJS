@@ -63,6 +63,8 @@ export default class ContentfulApi {
           }
           title
           description
+          metaTitle
+          metaDescription
           slug
           body {
             json
@@ -183,6 +185,145 @@ export default class ContentfulApi {
   }
 
   /**
+   * Fetch a batch of blog post slugs (by given page number).
+   *
+   * This method queries the GraphQL API for a single batch of blog post slugs.
+   *
+   * The query limit of 100 is the maximum number of slugs
+   * we can fetch with this query due to GraphQL complexity costs.
+   *
+   * For more information about GraphQL query complexity, visit:
+   * https://www.contentful.com/developers/videos/learn-graphql/#graphql-fragments-and-query-complexity
+   *
+   * param: page (number)
+   *
+   */
+  static async getPaginatedUniquePostTags(page) {
+    const queryLimit = 100;
+    const skipMultiplier = page === 1 ? 0 : page - 1;
+    const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
+
+    const query = `{
+        blogPostCollection(limit: ${queryLimit}, skip: ${skip}, order: date_DESC) {
+          total
+          items {
+            
+            contentfulMetadata{
+              tags {
+                id
+                name
+              }
+            }
+            }
+          }
+        }`;
+
+    const response = await this.callContentful(query);
+
+    console.log("reponse:");
+    console.log(response);
+    //console.log(response.data.blogPostCollection.items[0].contentfulMetadata.tags[0].id,);
+    //console.log(response.data.blogPostCollection.items[1].contentfulMetadata.tags[0].id,);
+    //console.log(response.data.blogPostCollection.items[2].contentfulMetadata.tags[0].id,);
+
+    const { total } = response.data.blogPostCollection;
+
+    const tags = response.data.blogPostCollection.items
+      ? response.data.blogPostCollection.items.map(
+          (item) =>
+            // function(item.contentfulMetadata.tags) {
+            //return
+            item.contentfulMetadata.tags.map((item2) => item2),
+          //}
+        )
+      : //(item) => item.contentfulMetadata.tags[0].id)
+        [];
+
+    var merged = [].concat.apply([], tags);
+
+    let foo = new Map();
+    for (const val of merged) {
+      foo.set(val.id, val);
+    }
+    let final = [...foo.values()];
+
+    const tagtotal = final.length;
+
+    console.log("tags:");
+    console.log(tags);
+    console.log("merged:");
+    console.log(merged);
+    console.log("final:");
+    console.log(final);
+    console.log("tagtotal:");
+    console.log(tagtotal);
+    return { final, tagtotal };
+  }
+
+  /**
+   * Fetch all unique blog post tags.
+   *
+   * This method queries the GraphQL API for blog post slugs
+   * in batches that accounts for the query complexity cost,
+   * and returns them in one array.
+   *
+   * This method is used on pages/blog/[slug] inside getStaticPaths() to
+   * generate all dynamic blog post routes.
+   *
+   * For more information about GraphQL query complexity, visit:
+   * https://www.contentful.com/developers/videos/learn-graphql/#graphql-fragments-and-query-complexity
+   *
+   */
+
+  static async getAllUniquePostTags() {
+    let page = 1;
+    let shouldQueryMoreTags = true;
+    let returnTags = [];
+
+    while (shouldQueryMoreTags) {
+      const response = await this.getPaginatedUniquePostTags(page);
+
+      console.log("response:");
+      console.log(response);
+      /**
+      if (response.slugs.length > 0) {
+        returnSlugs.push(...response.slugs);
+      }
+**/
+      //if (response.slugs.length > 0) {
+        returnTags.push(...response.final);
+      //}
+
+      shouldQueryMoreTags = returnTags.length < response.total;
+      page++;
+    }
+
+    //return returnSlugs;
+
+    /**
+      const { tags, total } = await this.getPaginatedUniquePostTags(page);
+
+      console.log("const tags:");
+      console.log(tags);
+
+      // slugs: Array<string>
+      if (tags.id.length > 0) {
+        returnTags = [...returnTags];
+      }
+
+      console.log("returnTags:");
+      console.log(returnTags);
+
+      shouldQueryMoreTags = returnTags.length < total;
+      page++;
+    }
+**/
+    console.log("returnTags:");
+    console.log(returnTags);
+    return returnTags;
+  }
+
+  /**
    * Fetch a batch of blog posts (by given page number).
    *
    * This method queries the GraphQL API for a single batch of blog posts.
@@ -208,11 +349,26 @@ export default class ContentfulApi {
             sys {
               id
             }
+            contentfulMetadata{
+              tags {
+                id
+                name
+              }
+            }
+            image {
+              title
+              description
+              contentType
+              fileName
+              size
+              url
+              width
+              height
+            }
             date
             title
             slug
             excerpt
-            tags
             externalUrl
             author {
               name
@@ -353,13 +509,31 @@ export default class ContentfulApi {
           sys {
             id
           }
+          contentfulMetadata{
+            tags {
+              id
+              name
+            }
+          }
+          image {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
           date
           title
+          metaTitle
+          metaDescription
           slug
           excerpt
-          tags
           externalUrl
           author {
+            type
             name
             description
             twitchUsername
@@ -464,11 +638,29 @@ export default class ContentfulApi {
             sys {
               id
             }
+            contentfulMetadata{
+              tags {
+                id
+                name
+              }
+            }
+            image {
+              title
+              description
+              contentType
+              fileName
+              size
+              url
+              width
+              height
+            }
             date
             title
             slug
             excerpt
-            tags
+            author{
+              name
+            }
           }
         }
       }`;
@@ -496,6 +688,22 @@ export default class ContentfulApi {
     const query = `{
       blogPostCollection(limit: ${Config.pagination.recentPostsSize}, order: date_DESC) {
         items {
+          contentfulMetadata{
+            tags {
+              id
+              name
+            }
+          }
+          image {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
           sys {
             id
           }
@@ -503,7 +711,8 @@ export default class ContentfulApi {
           title
           slug
           excerpt
-          tags
+
+
         }
       }
     }`;
@@ -513,7 +722,6 @@ export default class ContentfulApi {
     const recentPosts = response.data.blogPostCollection.items
       ? response.data.blogPostCollection.items
       : [];
-
     return recentPosts;
   }
 

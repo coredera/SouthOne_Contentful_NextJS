@@ -15,13 +15,21 @@ export default function PostWrapper(props) {
         description={post.excerpt}
         url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
         canonical={post.externalUrl ? post.externalUrl : false}
+        image={post.image.url}
+        date={post.date}
+        authortype={post.author.type}
+        authorname={post.author.name}
+        authorurl={post.author.websiteUrl}
+        metatitle={post.metaTitle}
+        metadescription={post.metaDescription} 
       />
-      <ContentWrapper>
+      <ContentWrapper> 
         <Post post={post} />
+        
       </ContentWrapper>
     </MainLayout>
   );
-}
+} 
 
 export async function getStaticPaths() {
   const blogPostSlugs = await ContentfulApi.getAllPostSlugs();
@@ -34,7 +42,7 @@ export async function getStaticPaths() {
   // on production
   return {
     paths,
-    fallback: "blocking",
+    fallback: "blocking", 
   };
 }
 

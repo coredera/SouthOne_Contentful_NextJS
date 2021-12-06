@@ -8,14 +8,15 @@ import HeroBanner from "@components/HeroBanner";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 
+
 export default function Home(props) {
   const { pageContent, recentPosts, preview } = props;
 
-  const pageTitle = pageContent ? pageContent.title : "Home";
+  const pageTitle = pageContent ? pageContent.title : "Homey";
 
   const pageDescription = pageContent
     ? pageContent.description
-    : "Welcome to the Next.js Contentful blog starter";
+    : "Welcome to the Guide Dogs UK Blog";
 
   return (
     <>
@@ -25,10 +26,6 @@ export default function Home(props) {
           description={pageDescription}
           url={Config.pageMeta.home.url}
         />
-
-        {pageContent && pageContent.heroBanner !== null && (
-          <HeroBanner data={pageContent.heroBanner} />
-        )}
 
         <ContentWrapper>
           {pageContent && pageContent.body && (
@@ -60,4 +57,12 @@ export async function getStaticProps({ preview = false }) {
       recentPosts,
     },
   };
-}
+} 
+
+/*
+
+  {pageContent && pageContent.heroBanner !== null && (
+          <HeroBanner data={pageContent.heroBanner} />
+        )}
+
+        */

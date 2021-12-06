@@ -1,7 +1,8 @@
 .author {
   display: flex;
   flex-direction: row;
-  border-top: 0.5rem solid var(--color-primary);
+  /*border-top: 0.5rem solid var(--color-primary);*/
+  border-top: 2px rgb(232, 232, 232) dotted;
   padding-top: 2rem;
 }
 
@@ -19,6 +20,7 @@
 }
 
 .author__links {
+  font-size: 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
