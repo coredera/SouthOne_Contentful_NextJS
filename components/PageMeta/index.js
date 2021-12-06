@@ -6,7 +6,7 @@ export default function PageMeta(props) {
   const { title, description, url, canonical, image, date, authortype, authorname, authorurl, metatitle, metadescription } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
   
-
+ 
  
   const articleStructuredData = {
     "@context": "https://schema.org",

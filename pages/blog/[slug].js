@@ -29,7 +29,7 @@ export default function PostWrapper(props) {
       </ContentWrapper>
     </MainLayout>
   );
-}
+} 
 
 export async function getStaticPaths() {
   const blogPostSlugs = await ContentfulApi.getAllPostSlugs();
