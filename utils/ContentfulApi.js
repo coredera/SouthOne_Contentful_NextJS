@@ -63,6 +63,8 @@ export default class ContentfulApi {
           }
           title
           description
+          metaTitle
+          metaDescription
           slug
           body {
             json

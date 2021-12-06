@@ -51,8 +51,10 @@ export default function BlogIndex(props) {
         title={pageTitle}
         description={pageDescription}
         url={Config.pageMeta.blogIndex.url}
+        metatitle={pageContent.metaTitle}
+        metadescription={pageContent.metaDescription} 
       />
-
+ 
 
 
       {pageContent.heroBanner !== null && (
