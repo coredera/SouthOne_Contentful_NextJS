@@ -62,7 +62,7 @@ export default function PostList(props) {
                   </h2>
                 </a>
               </Link>
-              <Box className={ContentListStyles.contentList__author}>Author: {post.author.name}</Box>
+              <Box className={ContentListStyles.contentList__author}>{post.author !== null && <> Author: {post.author.name}</>}</Box>
               {post.contentfulMetadata.tags !== null && (
                 <Tags tags={post.contentfulMetadata.tags} />
               )}
