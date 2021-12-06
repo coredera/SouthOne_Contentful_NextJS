@@ -63,6 +63,8 @@ export default class ContentfulApi {
           }
           title
           description
+          metaTitle
+          metaDescription
           slug
           body {
             json
@@ -220,9 +222,9 @@ export default class ContentfulApi {
 
     console.log("reponse:");
     console.log(response);
-    console.log(response.data.blogPostCollection.items[0].contentfulMetadata.tags[0].id,);
-    console.log(response.data.blogPostCollection.items[1].contentfulMetadata.tags[0].id,);
-    console.log(response.data.blogPostCollection.items[2].contentfulMetadata.tags[0].id,);
+    //console.log(response.data.blogPostCollection.items[0].contentfulMetadata.tags[0].id,);
+    //console.log(response.data.blogPostCollection.items[1].contentfulMetadata.tags[0].id,);
+    //console.log(response.data.blogPostCollection.items[2].contentfulMetadata.tags[0].id,);
 
     const { total } = response.data.blogPostCollection;
 
@@ -279,26 +281,26 @@ export default class ContentfulApi {
     let returnTags = [];
 
     while (shouldQueryMoreTags) {
-
       const response = await this.getPaginatedUniquePostTags(page);
 
-      console.log('response:');
+      console.log("response:");
       console.log(response);
-/**
+      /**
       if (response.slugs.length > 0) {
         returnSlugs.push(...response.slugs);
       }
 **/
-      returnTags.push(...response.final);
+      //if (response.slugs.length > 0) {
+        returnTags.push(...response.final);
+      //}
+
       shouldQueryMoreTags = returnTags.length < response.total;
       page++;
-
     }
 
     //return returnSlugs;
 
-
-/**
+    /**
       const { tags, total } = await this.getPaginatedUniquePostTags(page);
 
       console.log("const tags:");
@@ -320,7 +322,6 @@ export default class ContentfulApi {
     console.log(returnTags);
     return returnTags;
   }
-
 
   /**
    * Fetch a batch of blog posts (by given page number).
@@ -526,11 +527,13 @@ export default class ContentfulApi {
           }
           date
           title
+          metaTitle
+          metaDescription
           slug
           excerpt
-
           externalUrl
           author {
+            type
             name
             description
             twitchUsername
@@ -655,7 +658,9 @@ export default class ContentfulApi {
             title
             slug
             excerpt
-
+            author{
+              name
+            }
           }
         }
       }`;

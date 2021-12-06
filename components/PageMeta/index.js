@@ -3,12 +3,45 @@ import OpenGraph from "@utils/OpenGraph";
 import { Config } from "@utils/Config";
 
 export default function PageMeta(props) {
-  const { title, description, url, canonical, image } = props;
+  const { title, description, url, canonical, image, date, authortype, authorname, authorurl, metatitle, metadescription } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
+  
+ 
+ 
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: siteTitle,
+    description: description,
+    image: image,
+    datePublished: date,
+    author: {
+      "@type": authortype,
+      name: authorname,
+      url: authorurl,
+    },
+  };
+
+ /** 
+  const articleStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Structured data for you",
+    description: "This is an article that demonstrates structured data.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/40/JSON-LD.svg",
+    datePublished: new Date("2021-09-04T09:25:01.340Z").toISOString(),
+    author: {
+      "@type": "Person",
+      name: "John Reilly",
+      url: "https://twitter.com/johnny_reilly",
+    },
+  };
+  */
+
 
   return (
     <Head>
-      <title>{siteTitle}</title>
+      <title>{metatitle}</title>
 
       {canonical && <link rel="canonical" href={canonical} />}
 
@@ -19,11 +52,11 @@ export default function PageMeta(props) {
         href={`https://${Config.site.domain}/feed.xml`}
       />
 
-      <meta name="title" content={siteTitle} />
+      <meta name="title" content={metatitle} />
       <meta property="og:title" content={title} />
       <meta property="twitter:title" content={title} />
 
-      <meta name="description" content={description} />
+      <meta name="description" content={metadescription} />
       <meta property="og:description" content={description} />
       <meta property="twitter:description" content={description} />
 
@@ -48,6 +81,10 @@ export default function PageMeta(props) {
 
       <link rel="icon" href="/favicon.ico" />
 
+      <script type="application/ld+json">
+        {JSON.stringify(articleStructuredData)}
+      </script>
+    
       
       {/*
       <link

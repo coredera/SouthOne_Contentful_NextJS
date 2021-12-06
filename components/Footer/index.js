@@ -2,6 +2,7 @@ import SocialLinks from "@components/SocialLinks";
 import FooterStyles from "@styles/Footer.module.scss";
 import ButtonStyles from "@styles/Button.module.css";
 import { Config } from "@utils/Config";
+import TypographyStyles from "@styles/Typography.module.scss";
 
 import {
   Box,
@@ -45,9 +46,10 @@ export default function Footer() {
 
   return (
     <footer className={FooterStyles.footer}>
+      <div id="footer" />
       <Container maxWidth="max">
         {/*Mobile size components*/}
-        <Box display={{ base: "block", md: "none" }}>
+        <Box display={{ base: "none", md: "none" }}>
           <Accordion defaultIndex={[0]} allowMultiple>
             <AccordionItem
               className={FooterStyles.accordionitem}
@@ -257,7 +259,7 @@ export default function Footer() {
 
         {/*Desktop size components*/}
 
-        <Box display={{ base: "none", md: "block" }}>
+        <Box display={{ base: "none", md: "none" }}>
           <Flex className={FooterStyles.linkpanels} pt={8} pb={10}>
             <Spacer />
             <Box maxWidth="475">
@@ -374,61 +376,76 @@ export default function Footer() {
           </Flex>
         </Box>
 
-        <Flex pt={8} pb={10}>
-          <Box>
-            <Box fontSize="lg" fontWeight="bold" pb={5}>
-              © The Guide Dogs for the Blind Association 2021
-            </Box>
-            <Box fontWeight="semibold">
-              Guide Dogs is a working name of The Guide Dogs for the Blind
-              Association. Registered Office: Hillfields, Burghfield Common,
-              Reading, Berkshire RG7 3YG. A company limited by guarantee
-              registered in England and Wales (291646) and a charity registered
-              in England and Wales (209617) and Scotland (SC038979)
-            </Box>
-          </Box>
+        <Flex
+          pt={8}
+          pb={10}
+          maxWidth="1200"
+          direction={{ base: "column", lg: "row" }}
+        >
           <Flex>
-            <Box className={FooterStyles.logos}>
-              <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                <a>
-                  <img
-                    src="/images/footer-gift-aid.png"
-                    className={FooterStyles.logosize}
-                  />
-                </a>
-              </Link>
+            <Box pr={8}>
+              <Box
+                className={TypographyStyles.bodyCopy}
+                color="white"
+                marginBottom={1}
+                pb={5}
+              >
+                © The Guide Dogs for the Blind Association 2021
+              </Box>
+              <Box className={TypographyStyles.bodyCopySS} color="white">
+                Guide Dogs is a working name of The Guide Dogs for the Blind
+                Association. Registered Office: Hillfields, Burghfield Common,
+                Reading, Berkshire RG7 3YG. A company limited by guarantee
+                registered in England and Wales (291646) and a charity
+                registered in England and Wales (209617) and Scotland (SC038979)
+              </Box>
             </Box>
-            <Box className={FooterStyles.logos}>
-              <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                <a>
-                  <img
-                    src="/images/footer-thawte.png"
-                    className={FooterStyles.logosize}
-                  />
-                </a>
-              </Link>
-            </Box>
-       
-            <Box className={FooterStyles.logos}>
-              <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                <a>
-                  <img
-                    src="/images/footer-fundraising-regulator.png"
-                    className={FooterStyles.logosize}
-                  />
-                </a>
-              </Link>
-            </Box>
-            <Box className={FooterStyles.logos}>
-              <img
-                src="/images/business-disability-forum-logo.png"
-                className={FooterStyles.logosize}
-              />
-            </Box>
+          </Flex>
+          <Flex alignItems="center" direction={{ base: "column", md: "row" }}>
+            <Flex>
+              <Box className={FooterStyles.logos}>
+                <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                  <a>
+                    <img
+                      src="/images/footer-gift-aid.png"
+                      className={FooterStyles.logosize}
+                    />
+                  </a>
+                </Link>
+              </Box>
+              <Box className={FooterStyles.logos}>
+                <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                  <a>
+                    <img
+                      src="/images/footer-thawte.png"
+                      className={FooterStyles.logosize}
+                    />
+                  </a>
+                </Link>
+              </Box>
+            </Flex>
+            <Flex>
+              <Box className={FooterStyles.logos}>
+                <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                  <a>
+                    <img
+                      src="/images/footer-fundraising-regulator.png"
+                      className={FooterStyles.logosize}
+                    />
+                  </a>
+                </Link>
+              </Box>
+              <Box className={FooterStyles.logos}>
+                <img
+                  src="/images/business-disability-forum-logo.png"
+                  className={FooterStyles.logosize}
+                />
+              </Box>
+            </Flex>
           </Flex>
         </Flex>
 
-        <Flex>
+        <Flex direction={{ base: "column", md: "row" }}>
           <Box className={FooterStyles.bottomlinks}>
             <Link href="https://www.guidedogs.org.uk/sitemap">Sitemap</Link>
           </Box>

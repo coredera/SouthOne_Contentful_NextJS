@@ -9,9 +9,12 @@ export default function MainLayout(props) {
     <>
       {preview && <PreviewBanner />}
       <Header />
+      <div id="content" />
       <main>{props.children}</main>
+     
       <Footer />
-
+       
+     
       <style jsx global>
         {GlobalStyles}
       </style>

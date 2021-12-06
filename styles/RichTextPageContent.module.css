@@ -28,7 +28,8 @@
   margin-bottom: 2rem;
   margin-top: 2rem;
   border-color: transparent;
-  border-bottom: 0.25rem solid var(--color-primary);
+  border-bottom: 2px rgb(232, 232, 232) dotted;
+/*  border-bottom: 0.25rem solid var(--color-primary);*/
 }
 
 .page__ul {

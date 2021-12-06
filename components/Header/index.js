@@ -1,4 +1,4 @@
-import HeaderStyles from "@styles/Header.module.css";
+import HeaderStyles from "@styles/Header.module.scss";
 import Link from "next/link";
 import SocialLinks from "@components/SocialLinks";
 import { useRouter } from "next/router";
@@ -32,16 +32,37 @@ export default function Header() {
   //};
 
   return (
-    <Box backgroundColor={"brand.100"}>
+    <>
       <Flex
         backgroundColor={"brand.100"}
         maxHeight="180"
         height="142"
         alignItems="center"
+        alignContent="start"
       >
-        <Spacer />
-        
-        <Box>
+        <Box maxWidth="1px" maxHeight="1px" margin="0">
+          <div className={HeaderStyles.skipLinks}>
+            <div className={HeaderStyles.skipLinkslink}>
+            <ul>
+              <li>
+                <a href="/covid19">Coronavirus (COVID-19) and Guide Dogs</a>
+              </li>
+              <li>
+                <a href="#content" class="skip-to-content">
+                  Skip to content
+                </a>
+              </li>
+              <li>
+                <a href="#footer" class="skip-to-content">
+                  Skip to footer
+                </a>
+              </li>
+            </ul>
+            </div>
+          </div>
+        </Box>
+
+        <Box alignSelf="center" p={10}>
           <Link href="/">
             <a
               className={HeaderStyles.header__logoContainerLink}
@@ -52,57 +73,60 @@ export default function Header() {
           </Link>
         </Box>
         <Spacer />
-        <Box>
-          <Link href="https://www.guidedogs.org.uk/ensuring-our-website-is-accessible/">
-            <a className={HeaderStyles.header_headerItem}>
-              <Box className={HeaderStyles.header_headerItem}>
-                <u>Ensuring our website is accessible</u>
-              </Box>
-            </a>
-          </Link>
-        </Box>
-        <Box>
-          <Link
-            href="https://guidedogsshop.com/?_ga=2.12167092.1043349381.1635768433-1104808427.1634557046"
-            passHref
-          >
-            <a
-              className={HeaderStyles.header_headerItem}
-              target="_blank"
-              rel="noreferrer"
+
+        <Flex display="none">
+          <Box>
+            <Link href="https://www.guidedogs.org.uk/ensuring-our-website-is-accessible/">
+              <a className={HeaderStyles.header_headerItem}>
+                <Box className={HeaderStyles.header_headerItem}>
+                  <u>Ensuring our website is accessible</u>
+                </Box>
+              </a>
+            </Link>
+          </Box>
+          <Box>
+            <Link
+              href="https://guidedogsshop.com/?_ga=2.12167092.1043349381.1635768433-1104808427.1634557046"
+              passHref
             >
-              <Box className={HeaderStyles.header_headerItem}>
-                <u>Shop</u>
-                <Icon as={MdOpenInNew} />
-              </Box>
-            </a>
-          </Link>
-        </Box>
-        <Box>
-          <a className={HeaderStyles.header_headerItem}>
-            <Box className={HeaderStyles.header_headerItemm}>
-              <u>Search</u>
-            </Box>
-          </a>
-        </Box>
-        <Box>
-          <Link href="https://www.guidedogs.org.uk/how-you-can-help/donating/sponsor-a-puppy/">
+              <a
+                className={HeaderStyles.header_headerItem}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Box className={HeaderStyles.header_headerItem}>
+                  <u>Shop</u>
+                  <Icon as={MdOpenInNew} />
+                </Box>
+              </a>
+            </Link>
+          </Box>
+          <Box>
             <a className={HeaderStyles.header_headerItem}>
-              <Box color="brand.100">
-                <Button
-                  bgColor="#8FD8FF"
-                  fontSize="xl"
-                  fontWeight="bold"
-                  padding="7"
-                  aria-label="Sponsor a puppy"
-                  className={HeaderStyles.header__headerButton}
-                >
-                  Sponsor a puppy
-                </Button>
+              <Box className={HeaderStyles.header_headerItemm}>
+                <u>Search</u>
               </Box>
             </a>
-          </Link>
-        </Box>
+          </Box>
+          <Box>
+            <Link href="https://www.guidedogs.org.uk/how-you-can-help/donating/sponsor-a-puppy/">
+              <a className={HeaderStyles.header_headerItem}>
+                <Box color="brand.100">
+                  <Button
+                    bgColor="#8FD8FF"
+                    fontSize="xl"
+                    fontWeight="bold"
+                    padding="7"
+                    aria-label="Sponsor a puppy"
+                    className={HeaderStyles.header__headerButton}
+                  >
+                    Sponsor a puppy
+                  </Button>
+                </Box>
+              </a>
+            </Link>
+          </Box>
+        </Flex>
         <Spacer />
       </Flex>
 
@@ -161,6 +185,6 @@ export default function Header() {
 
         <Spacer />
       </Flex>
-    </Box>
+    </>
   );
 }

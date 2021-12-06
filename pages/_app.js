@@ -7,7 +7,7 @@ import { AppProps } from "next/app";
 //import Head from "next/head";
 
 //import "@fontsource/roboto/latin.css";
-import Fonts from './Fonts.js'
+import Fonts from '../styles/Fonts.js'
 
 //import defaultSEOConfig from "../../next-seo.config";
 //import Layout from "components/layout";
@@ -23,16 +23,22 @@ import Head from "next/head";
 
 //const clientSideEmotionCache = createEmotionCache();
 
+import GoogleTagManager from "../components/GTM";
+
 
 
  function MyApp({ Component, pageProps }) {
    return (
+    <GoogleTagManager>
+
      <ChakraProvider theme={customTheme}>
        <Fonts />
        
        <Component {...pageProps} />
 
      </ChakraProvider>
+     </GoogleTagManager>
+
    );
  }
 

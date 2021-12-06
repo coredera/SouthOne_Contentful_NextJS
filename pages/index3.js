@@ -7,7 +7,7 @@ import {
   Stack,
   Text,
 } from '@chakra-ui/react'
-import Fonts from './Fonts.js'
+import Fonts from '../styles/Fonts.js'
 
 const theme = extendTheme({
   fonts: {

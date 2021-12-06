@@ -68,7 +68,7 @@ export function getRichTextRenderOptions(links, options) {
     renderMark: {
       [MARKS.BOLD]: (text) => (
         <b
-          className={`${TypographyStyles.bodyCopy} ${TypographyStyles.bodyCopy__bold}`}
+          className={`${TypographyStyles.bodyCopyS} ${TypographyStyles.bodyCopy__bold}`}
         >
           {text}
         </b>
@@ -111,7 +111,7 @@ export function getRichTextRenderOptions(links, options) {
         <h6 className={TypographyStyles.heading__h6}>{children}</h6>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => (
-        <p className={TypographyStyles.bodyCopy}>{children}</p>
+        <p className={TypographyStyles.bodyCopyS}>{children}</p>
       ),
       [BLOCKS.QUOTE]: (node, children) => (
         <Box p={10}>
