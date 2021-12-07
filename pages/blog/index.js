@@ -48,8 +48,8 @@ export default function BlogIndex(props) {
   return (
     <MainLayout preview={preview}>
       <PageMeta
-        title={pageTitle}
-        description={pageDescription}
+        title={pageContent.title}
+        description={pageContent.description}
         url={Config.pageMeta.blogIndex.url}
         metatitle={pageContent.metaTitle}
         metadescription={pageContent.metaDescription} 
