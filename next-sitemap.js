@@ -3,7 +3,7 @@ module.exports = {
   generateRobotsTxt: true, // (optional)
   robotsTxtOptions: {
    // policies: [{ userAgent: "*", disallow: "/api" }],
-   policies: [{ userAgent: "*", disallow: "/" }],
+   policies: [{ userAgent: "*", disallow: '/' }],
   },
   exclude: ["/api/*", "/server-sitemap.xml"],
   robotsTxtOptions: {
