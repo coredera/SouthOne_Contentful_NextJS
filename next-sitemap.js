@@ -5,10 +5,10 @@ module.exports = {
    // policies: [{ userAgent: "*", disallow: "/api" }],
    policies: [{ userAgent: "*", disallow: '/' }],
   },
-  exclude: ["/api/*", "/server-sitemap.xml"],
-  robotsTxtOptions: {
-    additionalSitemaps: [
-      "https://www.guidedogs.org.uk",
-    ],
-  },
+  //exclude: ["/api/*", "/server-sitemap.xml"],
+  //robotsTxtOptions: {
+  //  additionalSitemaps: [
+  //    "https://www.guidedogs.org.uk",
+  //  ],
+  //},
 };
