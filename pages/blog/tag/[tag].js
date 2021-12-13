@@ -120,7 +120,7 @@ export async function getStaticProps({ params, preview = false }) {
   const posts = await ContentfulApi.getAllBlogPosts();
 
   const relatedPosts = posts.reduce((acc, post) => {
-    if (
+    if ( 
       post.contentfulMetadata &&
       post.contentfulMetadata.tags &&
       post.contentfulMetadata.tags.find(({ id }) => id === params.tag)
