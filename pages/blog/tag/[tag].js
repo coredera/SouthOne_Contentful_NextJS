@@ -42,6 +42,34 @@ export default function PostWrapper(props) {
     <MainLayout preview={preview}>
       <PageMeta title={"Tag"} description={""} url={""} canonical={false} />
       <ContentWrapper>
+      <Flex
+        alignItems="center"
+       
+        pb={20}
+        pt={5}
+      >
+        <Box alignSelf="center">
+          <Link href={`${Config.pageMeta.blogIndex.slug}`}>
+            <a>
+              <h3 className={ContentListStyles.contentList__readmorelink}>
+              
+                <Image
+                  src="/images/arrow-left--left-small.svg"
+                  height="10em"
+                  width="10em"
+                  
+                />
+        
+              
+                 {" "}Go to home
+                
+                 
+              </h3>
+            </a>
+          </Link>
+        </Box>
+        <Spacer />
+      </Flex>
       <ol className={ContentListStyles.contentList}>
         {posts.map((post) => (
           <li key={post.sys.id}>

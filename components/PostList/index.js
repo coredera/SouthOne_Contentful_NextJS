@@ -37,6 +37,8 @@ export default function PostList(props) {
 
   return (
     <>
+     
+
       <ol className={ContentListStyles.contentList}>
         {posts.map((post) => (
           <li key={post.sys.id}>
@@ -48,7 +50,7 @@ export default function PostList(props) {
                     width="60em"
                     height="30em"
                     layout="responsive"
-                    objectFit="contain" 
+                    objectFit="contain"
                     alt={post.image.description}
                   />
                 </a>
@@ -62,7 +64,9 @@ export default function PostList(props) {
                   </h2>
                 </a>
               </Link>
-              <Box className={ContentListStyles.contentList__author}>{post.author !== null && <> Author: {post.author.name}</>}</Box>
+              <Box className={ContentListStyles.contentList__author}>
+                {post.author !== null && <> Author: {post.author.name}</>}
+              </Box>
               {post.contentfulMetadata.tags !== null && (
                 <Tags tags={post.contentfulMetadata.tags} />
               )}
@@ -76,7 +80,9 @@ export default function PostList(props) {
                 <Box alignSelf="center">
                   <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
                     <a>
-                      <h3 className={ContentListStyles.contentList__readmorelink}>
+                      <h3
+                        className={ContentListStyles.contentList__readmorelink}
+                      >
                         Read more
                       </h3>
                     </a>
@@ -84,7 +90,7 @@ export default function PostList(props) {
                 </Box>
                 <Spacer />
                 <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-                  <PublishedDate date={post.date} alignSelf="center"/>
+                  <PublishedDate date={post.date} alignSelf="center" />
                 </Box>
               </Flex>
             </article>

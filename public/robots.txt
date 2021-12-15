@@ -1,10 +1,9 @@
 # *
 User-agent: *
-Allow: /
+Disallow: /
 
 # Host
 Host: https://www.guidedogs.org.uk
 
 # Sitemaps
 Sitemap: https://www.guidedogs.org.uk/sitemap.xml
-Sitemap: https://www.guidedogs.org.uk

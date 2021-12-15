@@ -9,7 +9,7 @@ import Author from "@components/Post/Author";
 import ExternalUrl from "@components/Post/ExternalUrl";
 import RichTextPageContent from "@components/RichTextPageContent";
 
-import {
+import { 
   Box,
   Flex,
   Heading,
@@ -32,6 +32,8 @@ import {
 
 export default function Post(props) {
   const { post } = props;
+  const hyvor = `${process.env.NEXT_PUBLIC_HYVOR_ID}`;
+  
 
   return (
     <>
@@ -60,7 +62,7 @@ export default function Post(props) {
         }}
       />*/}
       <div className={TypographyStyles.bodyCopy}>
-        <HyvorTalk.Embed websiteId={4965} />
+        <HyvorTalk.Embed websiteId={hyvor} />
       </div>
       {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
     </article>
