@@ -8,6 +8,32 @@ import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
 
+import Image from "next/image";
+import ContentListStyles from "@styles/ContentList.module.css";
+import Link from "next/link";
+import {
+  Box,
+  Flex,
+  Heading,
+  useBreakpointValue,
+  useColorMode,
+  SimpleGrid,
+  GridItem,
+  Spacer,
+  Icon,
+  Button,
+  VStack,
+  Text,
+  Container,
+  Accordion,
+  AccordionItem,
+  AccordionButton,
+  AccordionIcon,
+  AccordionPanel,
+} from "@chakra-ui/react";
+
+
+
 export default function BlogIndexPage(props) {
   const {
     postSummaries,
@@ -44,6 +70,34 @@ export default function BlogIndexPage(props) {
             <RichTextPageContent richTextBodyField={pageContent.body} />
           </PageContentWrapper>
         )}
+         <Flex
+        alignItems="center"
+        style={{ display: currentPage === "1" ? "none" : "block" }}
+        pb={20}
+        pt={5}
+      >
+        <Box alignSelf="center">
+          <Link href={`${Config.pageMeta.blogIndex.slug}`}>
+            <a>
+              <h3 className={ContentListStyles.contentList__readmorelink}>
+              
+                <Image
+                  src="/images/arrow-left--left-small.svg"
+                  height="10em"
+                  width="10em"
+                  
+                />
+        
+              
+                 {" "}Go to home
+                
+                 
+              </h3>
+            </a>
+          </Link>
+        </Box>
+        <Spacer />
+      </Flex>
         <PostList
           posts={postSummaries}
           totalPages={totalPages}

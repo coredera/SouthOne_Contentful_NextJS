@@ -1,3 +1,5 @@
+/*
+
 import * as React from 'react'
 import {
   ChakraProvider,
@@ -38,3 +40,4 @@ export default function App() {
     </ChakraProvider>
   )
 }
+*/
