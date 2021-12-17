@@ -3,6 +3,7 @@ import FooterStyles from "@styles/Footer.module.scss";
 import ButtonStyles from "@styles/Button.module.css";
 import { Config } from "@utils/Config";
 import TypographyStyles from "@styles/Typography.module.scss";
+import Image from "next/image";
 
 import {
   Box,
@@ -406,9 +407,11 @@ export default function Footer() {
               <Box className={FooterStyles.logos}>
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
-                    <img
+                    <Image
                       src="/images/footer-gift-aid.png"
                       className={FooterStyles.logosize}
+                      width="20px"
+                      height="20px"
                     />
                   </a>
                 </Link>
