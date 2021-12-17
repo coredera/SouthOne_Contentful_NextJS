@@ -35,7 +35,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             }}
           />
         
-        <base href="https://gd-blog.netlify.app/" ></base>
+        <base href="https://gd-blog.netlify.app/blog/" ></base>
         </Head>
 
         <body>
