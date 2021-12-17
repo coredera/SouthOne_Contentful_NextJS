@@ -407,7 +407,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
                     <img
-                      src="/images/footer-gift-aid.png"
+                      src="./images/footer-gift-aid.png"
                       className={FooterStyles.logosize}
                     />
                   </a>
@@ -417,7 +417,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
                     <img
-                      src="/images/footer-thawte.png"
+                      src="./images/footer-thawte.png"
                       className={FooterStyles.logosize}
                     />
                   </a>
@@ -429,7 +429,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
                     <img
-                      src="/images/footer-fundraising-regulator.png"
+                      src="./images/footer-fundraising-regulator.png"
                       className={FooterStyles.logosize}
                     />
                   </a>
@@ -437,7 +437,7 @@ export default function Footer() {
               </Box>
               <Box className={FooterStyles.logos}>
                 <img
-                  src="/images/business-disability-forum-logo.png"
+                  src="./images/business-disability-forum-logo.png"
                   className={FooterStyles.logosize}
                 />
               </Box>
