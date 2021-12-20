@@ -440,7 +440,7 @@ export default function Footer() {
               </Box>
               <Box className={FooterStyles.logos}>
                 <img
-                  src="./images/business-disability-forum-logo.png"
+                  src="https://gd-blog.netlify.app/blog/images/business-disability-forum-logo.png"
                   className={FooterStyles.logosize}
                 />
               </Box>
