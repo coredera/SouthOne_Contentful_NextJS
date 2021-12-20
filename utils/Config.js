@@ -28,8 +28,8 @@ export const Config = {
       slug: "/",
     },
     blogIndex: {
-      url: `${SITE_URL}/`,
-      slug: "/",
+      url: `${SITE_URL}/blog`,
+      slug: "/blog",
     },
     blogIndexPage: {
       slug: "/blog/page/[page]",
