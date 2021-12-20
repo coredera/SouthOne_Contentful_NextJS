@@ -8,9 +8,9 @@ export default function Pagination(props) {
 
   const prevPageUrl =
     currentPage === "2"
-      ? "/blog"
-      : `/blog/page/${parseInt(currentPage, 10) - 1}`;
-  const nextPageUrl = `/blog/page/${parseInt(currentPage, 10) + 1}`;
+      ? "/"
+      : `/page/${parseInt(currentPage, 10) - 1}`;
+  const nextPageUrl = `/page/${parseInt(currentPage, 10) + 1}`;
 
   return (
     <div className={PaginationStyles.pagination}>
