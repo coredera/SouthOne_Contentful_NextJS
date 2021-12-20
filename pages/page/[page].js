@@ -77,7 +77,7 @@ export default function BlogIndexPage(props) {
         pt={5}
       >
         <Box alignSelf="center">
-          <Link href={`${Config.pageMeta.blogIndex.slug}`}>
+          <Link href={`${Config.pageMeta.home.slug}`}>
             <a>
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
