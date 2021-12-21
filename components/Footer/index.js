@@ -408,7 +408,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
                     <Image
-                      src="/images/footer-gift-aid.png"
+                      src="https://gd-blog.netlify.app/images/footer-gift-aid.png"
                       className={FooterStyles.logosize}
                       width="20px"
                       height="20px"
