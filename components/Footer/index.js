@@ -5,6 +5,7 @@ import { Config } from "@utils/Config";
 import TypographyStyles from "@styles/Typography.module.scss";
 import Image from "next/image";
 
+
 import {
   Box,
   Flex,
@@ -407,12 +408,12 @@ export default function Footer() {
               <Box className={FooterStyles.logos}>
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
-                    <Image
+                    <div>
+                    <img
                       src="https://gd-blog.netlify.app/images/footer-gift-aid.png"
                       className={FooterStyles.logosize}
-                      width="20px"
-                      height="20px"
                     />
+                    </div>
                   </a>
                 </Link>
               </Box>
@@ -420,7 +421,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                 <a>
                     <img
-                      src="https://images.ctfassets.net/e1jkpkpbs14h/6GVoB0SfkWbkNV0Tz4sZuK/d906a420510f25cabc476e457f18609b/footer-fundraising-regulator.png"
+                      src="https://gd-blog.netlify.app/images/footer-fundraising-regulator.png"
                       className={FooterStyles.logosize}
                     />
                   </a>
@@ -432,7 +433,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
                     <img
-                      src="./images/footer-fundraising-regulator.png"
+                      src="https://gd-blog.netlify.app/images/footer-fundraising-regulator.png"
                       className={FooterStyles.logosize}
                     />
                   </a>
