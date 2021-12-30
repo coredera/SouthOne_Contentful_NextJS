@@ -54,7 +54,7 @@ export default function PostWrapper(props) {
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
                 <Image
-                  src="/images/arrow-left--left-small.svg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
                   height="10em"
                   width="10em"
                   

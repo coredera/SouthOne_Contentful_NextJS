@@ -81,8 +81,8 @@ export default function BlogIndexPage(props) {
             <a>
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
-                <Image
-                  src="/images/arrow-left--left-small.svg"
+              <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
                   height="10em"
                   width="10em"
                   
