@@ -63,12 +63,14 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                          src="/images/accordion-minus--blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
+                        
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                          src="/images/accordion-plus--blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
+                        
                           className={FooterStyles.icons}
                         />
                       )}
@@ -90,7 +92,8 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="/images/icon-arrow-blue-tint.svg"
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                             
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -105,7 +108,8 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="/images/icon-arrow-blue-tint.svg"
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                    
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -121,7 +125,8 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="/images/icon-arrow-blue-tint.svg"
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                           
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -136,7 +141,8 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                              src="/images/icon-arrow-blue-tint.svg"
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                            
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -164,12 +170,14 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                          src="/images/accordion-minus--blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
+                
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                          src="/images/accordion-plus--blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
+                   
                           className={FooterStyles.icons}
                         />
                       )}
@@ -190,7 +198,8 @@ export default function Footer() {
                       <Flex className={FooterStyles.links} p={1}>
                         <Box pr={3}>
                           <img
-                            src="/images/icon-arrow-blue-tint.svg"
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                          
                             className={FooterStyles.icons}
                           />
                         </Box>
@@ -203,7 +212,8 @@ export default function Footer() {
                       <Flex className={FooterStyles.links} p={1}>
                         <Box pr={3}>
                           <img
-                            src="/images/icon-email-blue-tint.svg"
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
+                          
                             className={FooterStyles.icons}
                           />
                         </Box>
@@ -229,12 +239,14 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                          src="/images/accordion-minus--blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
+                      
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                          src="/images/accordion-plus--blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
+                       
                           className={FooterStyles.icons}
                         />
                       )}
@@ -278,7 +290,8 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="/images/icon-arrow-blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                       
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -291,7 +304,8 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="/images/icon-arrow-blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                         
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -305,7 +319,8 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="/images/icon-arrow-blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                    
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -318,7 +333,8 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                          src="/images/icon-arrow-blue-tint.svg"
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                        
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -344,7 +360,8 @@ export default function Footer() {
                 <Flex className={FooterStyles.links} pt={5}>
                   <Box pr={3}>
                     <img
-                      src="/images/icon-arrow-blue-tint.svg"
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                 
                       className={FooterStyles.icons}
                     />
                   </Box>
@@ -355,7 +372,8 @@ export default function Footer() {
                 <Flex className={FooterStyles.links}>
                   <Box pr={3}>
                     <img
-                      src="/images/icon-email-blue-tint.svg"
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
+                    
                       className={FooterStyles.icons}
                     />
                   </Box>

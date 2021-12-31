@@ -122,7 +122,9 @@ export function getRichTextRenderOptions(links, options) {
           >
             <Flex> 
               <Box width="10em">
-                <img src="/images/quote-open.svg"/>
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-open.svg`}/>
+
+                
               </Box>
               <Spacer />
               <Box>
@@ -136,7 +138,7 @@ export function getRichTextRenderOptions(links, options) {
               </Box>
               <Spacer />
               <Box alignSelf="flex-end" width="10em">
-                <img src="/images/quote-closed.svg" />
+                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-closed.svg`} />
               </Box>
             </Flex>
           </Box>

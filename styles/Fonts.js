@@ -19,8 +19,8 @@ export const Fonts = () => (
     styles={`
     @font-face {
         font-family: 'castledown-heavy';
-        src: url('/fonts/castledown/castledown-heavy.woff2') format('woff2'),
-             url('/fonts/castledown/castledown-heavy.woff') format('woff');
+        src: url('${process.env.NEXT_PUBLIC_BASE_PATH}/fonts/castledown/castledown-heavy.woff2') format('woff2'),
+             url('${process.env.NEXT_PUBLIC_BASE_PATH}/fonts/castledown/castledown-heavy.woff') format('woff');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -28,8 +28,8 @@ export const Fonts = () => (
     
     @font-face {
         font-family: 'castledown-bold';
-        src: url('/fonts/castledown/castledown-bold.woff2') format('woff2'),
-             url('/fonts/castledown/castledown-bold.woff') format('woff');
+        src: url('${process.env.NEXT_PUBLIC_BASE_PATH}/fonts/castledown/castledown-bold.woff2') format('woff2'),
+             url('${process.env.NEXT_PUBLIC_BASE_PATH}/fonts/castledown/castledown-bold.woff') format('woff');
         font-weight: normal;
         font-style: normal;
         font-display: swap;
@@ -37,8 +37,8 @@ export const Fonts = () => (
     
     @font-face {
         font-family: 'castledown-regular';
-        src: url('/fonts/castledown/castledown-regular.woff2') format('woff2'),
-             url('/fonts/castledown/castledown-regular.woff') format('woff');
+        src: url('${process.env.NEXT_PUBLIC_BASE_PATH}/fonts/castledown/castledown-regular.woff2') format('woff2'),
+             url('${process.env.NEXT_PUBLIC_BASE_PATH}/fonts/castledown/castledown-regular.woff') format('woff');
         font-weight: normal;
         font-style: normal;
         font-display: swap;

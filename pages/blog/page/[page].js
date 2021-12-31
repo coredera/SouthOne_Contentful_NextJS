@@ -47,6 +47,9 @@ export default function BlogIndexPage(props) {
    * This provides some fallback values to PageMeta so that a pageContent
    * entry is not required for /blog
    */
+
+
+
   const pageTitle = pageContent ? pageContent.title : "Blog";
   const pageDescription = pageContent
     ? pageContent.description
@@ -82,7 +85,7 @@ export default function BlogIndexPage(props) {
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
                 <Image
-                  src="/images/arrow-left--left-small.svg"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
                   height="10em"
                   width="10em"
                   

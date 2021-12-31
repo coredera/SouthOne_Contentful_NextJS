@@ -52,7 +52,7 @@ export default function PostList(props) {
                     layout="responsive"
                     objectFit="contain"
                     alt={post.image.description}
-                  />
+                  /> 
                 </a>
               </Link>
 
@@ -78,7 +78,7 @@ export default function PostList(props) {
               </div>
               <Flex alignItems="center">
                 <Box alignSelf="center">
-                  <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+                  <Link href={`/${post.slug}`}>
                     <a>
                       <h3
                         className={ContentListStyles.contentList__readmorelink}
