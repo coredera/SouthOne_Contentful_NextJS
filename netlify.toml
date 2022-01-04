@@ -28,11 +28,11 @@
   
 # Rewrite for blog
 [[redirects]]
-	from = '/bf/*'
+	from = '/blogfolder/*'
 	to = 'https://gd-blog.netlify.app/blog/:splat'
 	status = 200
 	
 [[redirects]]
-	from = '/br/*'
+	from = '/blogroot/*'
 	to = 'https://gd-blog.netlify.app/:splat'
 	status = 200
