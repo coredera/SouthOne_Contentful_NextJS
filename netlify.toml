@@ -26,13 +26,3 @@
   to = "/.netlify/functions/:splat"
   status = 200
   
-# Rewrite for blog
-[[redirects]]
-	from = '/blogfolder/*'
-	to = 'https://gd-blog.netlify.app/blogfolder/:splat'
-	status = 200
-	
-[[redirects]]
-	from = '/br/*'
-	to = 'https://gd-blog.netlify.app/:splat'
-	status = 200
