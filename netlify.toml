@@ -28,7 +28,7 @@
   
 # Rewrite for blog
 [[redirects]]
-	from = '/bf/*'
+	from = '/rewrite/*'
 	to = 'https://gd-blog.netlify.app/blogfolder/:splat'
 	status = 200
 	
