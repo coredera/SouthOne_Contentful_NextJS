@@ -65,6 +65,7 @@ export default function PostWrapper(props) {
               
                 <Image
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
                   height="10em"
                   width="10em"
                   

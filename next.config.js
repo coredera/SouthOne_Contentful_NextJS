@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: '/blogfolder',
+  basePath: '/blog',
   images: {
     domains: ["images.ctfassets.net"],
   },
