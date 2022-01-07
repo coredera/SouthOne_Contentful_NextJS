@@ -6,8 +6,8 @@ module.exports = {
   async rewrites() {
     return [
       {
-        source: 'https://www.guidedogs.org.uk/:path*',
-        destination: 'https://gd-blog.netlify.app/:path*',
+        source: 'https://www.guidedogs.org.uk/blog/:path*',
+        destination: 'https://gd-blog.netlify.app/blog/:path*',
       },
     ]
   },
