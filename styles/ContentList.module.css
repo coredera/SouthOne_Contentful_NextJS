@@ -90,7 +90,7 @@
 
 .contentList__title {
   font-weight: var(--font-weight-normal);
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-body);
   color: var(--color-foreground);
   font-size: 2.125rem;
   line-height: 1.6;
@@ -98,7 +98,7 @@
 
 .contentList__author {
   font-weight: var(--font-weight-normal);
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-body);
   color: var(--color-foreground);
   font-size: 1.2rem;
   line-height: 1.6;
@@ -111,6 +111,6 @@
   line-height: 1.8rem;
   margin-bottom: 2rem;
   font-weight: var(--font-weight-light);
-  font-family: var(--font-family-main);
+  font-family: var(--font-family-body);
   color: var(--color-foreground);
 }
