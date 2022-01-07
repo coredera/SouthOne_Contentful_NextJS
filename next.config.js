@@ -1,6 +1,6 @@
 module.exports = {
   basePath: '/blog',
   images: {
-    domains: ["images.ctfassets.net"],
+    domains: ["images.ctfassets.net", "gd-blog.netlify.app"],
   },
 };
