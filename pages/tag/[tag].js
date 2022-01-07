@@ -74,7 +74,7 @@ export default function PostWrapper(props) {
         {posts.map((post) => (
           <li key={post.sys.id}>
             <article className={ContentListStyles.contentList__post}>
-            <Link href={`/${post.slug}`}>
+            <Link href={`../${post.slug}`}>
                 <a>
                   <Image
                     src={post.image.url}
@@ -88,7 +88,7 @@ export default function PostWrapper(props) {
               </Link>
 
               <Flex p={2} />
-              <Link href={`/${post.slug}`}>
+              <Link href={`../${post.slug}`}>
                 <a className={ContentListStyles.contentList__titleLink}>
                   <h2 className={ContentListStyles.contentList__title}>
                     {post.title}
@@ -107,7 +107,7 @@ export default function PostWrapper(props) {
               </div>
               <Flex alignItems="center">
                 <Box alignSelf="center">
-                  <Link href={`/${post.slug}`}>
+                  <Link href={`../${post.slug}`}>
                     <a>
                       <h3 className={ContentListStyles.contentList__readmorelink}>
                         Read more
