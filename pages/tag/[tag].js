@@ -74,7 +74,7 @@ export default function PostWrapper(props) {
         {posts.map((post) => (
           <li key={post.sys.id}>
             <article className={ContentListStyles.contentList__post}>
-              <Link href={`/${post.slug}`}>
+            <Link href={`${Config.pageMeta.blogIndex.url}/${post.slug}`}>
                 <a>
                   <Image
                     src={post.image.url}
@@ -83,21 +83,19 @@ export default function PostWrapper(props) {
                     layout="responsive"
                     objectFit="contain"
                     alt={post.image.description}
-                  /> 
+                  />
                 </a>
-              </Link> 
+              </Link>
 
               <Flex p={2} />
-              <Link href={`/${post.slug}`}>
+              <Link href={`${Config.pageMeta.blogIndex.url}/${post.slug}`}>
                 <a className={ContentListStyles.contentList__titleLink}>
                   <h2 className={ContentListStyles.contentList__title}>
                     {post.title}
                   </h2>
                 </a>
               </Link>
-              <Box className={ContentListStyles.contentList__author}>
-                {post.author !== null && <> Author: {post.author.name}</>}
-              </Box>
+              <Box className={ContentListStyles.contentList__author}>Author: {post.author.name}</Box>
               {post.contentfulMetadata.tags !== null && (
                 <Tags tags={post.contentfulMetadata.tags} />
               )}
@@ -109,11 +107,9 @@ export default function PostWrapper(props) {
               </div>
               <Flex alignItems="center">
                 <Box alignSelf="center">
-                  <Link href={`/${post.slug}`}>
+                  <Link href={`${Config.pageMeta.blogIndex.url}/${post.slug}`}>
                     <a>
-                      <h3
-                        className={ContentListStyles.contentList__readmorelink}
-                      >
+                      <h3 className={ContentListStyles.contentList__readmorelink}>
                         Read more
                       </h3>
                     </a>
@@ -121,7 +117,7 @@ export default function PostWrapper(props) {
                 </Box>
                 <Spacer />
                 <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-                  <PublishedDate date={post.date} alignSelf="center" />
+                  <PublishedDate date={post.date} alignSelf="center"/>
                 </Box>
               </Flex>
             </article>
