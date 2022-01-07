@@ -5,7 +5,6 @@ import PageMeta from "@components/PageMeta";
 import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 
-
 import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
 import Link from "next/link";
@@ -30,9 +29,6 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 
-
-
-
 export default function PostWrapper(props) {
   const { post, preview } = props;
 
@@ -49,44 +45,31 @@ export default function PostWrapper(props) {
         authorname={post.author.name}
         authorurl={post.author.websiteUrl}
         metatitle={post.metaTitle}
-        metadescription={post.metaDescription} 
+        metadescription={post.metaDescription}
       />
-      <ContentWrapper> 
-      <Flex
-        alignItems="center"
-       
-        pb={20}
-        pt={5}
-      >
-        <Box alignSelf="center">
-          <Link href={`${Config.pageMeta.home.slug}`}>
-            <a>
-              <h3 className={ContentListStyles.contentList__readmorelink}>
-              
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
-                  height="10em"
-                  width="10em"
-                  
-                />
-        
-              
-                 {" "}Go to home
-                
-                 
-              </h3>
-            </a>
-          </Link>
-        </Box>
-        <Spacer />
-      </Flex>
+      <ContentWrapper>
+        <Flex alignItems="center" pb={20} pt={5}>
+          <Box alignSelf="center">
+            <Link href={`${Config.pageMeta.home.slug}`}>
+              <a>
+                <h3 className={ContentListStyles.contentList__readmorelink}>
+                  <Image
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
+                    height="10em"
+                    width="10em"
+                  />{" "}
+                  Go to home
+                </h3>
+              </a>
+            </Link>
+          </Box>
+          <Spacer />
+        </Flex>
         <Post post={post} />
-        
       </ContentWrapper>
     </MainLayout>
   );
-} 
+}
 
 export async function getStaticPaths() {
   const blogPostSlugs = await ContentfulApi.getAllPostSlugs();
@@ -99,7 +82,7 @@ export async function getStaticPaths() {
   // on production
   return {
     paths,
-    fallback: "blocking", 
+    fallback: "blocking",
   };
 }
 
