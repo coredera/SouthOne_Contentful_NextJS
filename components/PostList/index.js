@@ -54,7 +54,7 @@ export default function PostList(props) {
                     alt={post.image.description}
                   /> 
                 </a>
-              </Link>
+              </Link> 
 
               <Flex p={2} />
               <Link href={`/${post.slug}`}>
