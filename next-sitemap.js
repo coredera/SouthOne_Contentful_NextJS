@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://www.guidedogs.org.uk",
+  siteUrl: "https://www.guidedogs.org.uk/blog",
   generateRobotsTxt: true, // (optional)
   robotsTxtOptions: {
    // policies: [{ userAgent: "*", disallow: "/api" }],
