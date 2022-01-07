@@ -43,7 +43,7 @@ export default function PostList(props) {
         {posts.map((post) => (
           <li key={post.sys.id}>
             <article className={ContentListStyles.contentList__post}>
-              <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+              <Link href={`/${post.slug}`}>
                 <a>
                   <Image
                     src={post.image.url}
@@ -57,7 +57,7 @@ export default function PostList(props) {
               </Link>
 
               <Flex p={2} />
-              <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+              <Link href={`/${post.slug}`}>
                 <a className={ContentListStyles.contentList__titleLink}>
                   <h2 className={ContentListStyles.contentList__title}>
                     {post.title}
