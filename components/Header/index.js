@@ -63,7 +63,7 @@ export default function Header() {
         </Box>
 
         <Box alignSelf="center" p={10}>
-          <Link href="/">
+          <Link href="https://www.guidedogs.org.uk">
             <a
               className={HeaderStyles.header__logoContainerLink}
               aria-label="Navigate to home page"
