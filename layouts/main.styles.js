@@ -1,7 +1,7 @@
 import css from "styled-jsx/css";
 import "prismjs/themes/prism-okaidia.css";
 
-export default css.global`
+export default css.global` 
   :root {
     --color-primary: #84b9f5;
     --color-secondary: #16875d;
