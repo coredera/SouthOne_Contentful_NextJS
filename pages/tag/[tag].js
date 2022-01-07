@@ -74,7 +74,7 @@ export default function PostWrapper(props) {
         {posts.map((post) => (
           <li key={post.sys.id}>
             <article className={ContentListStyles.contentList__post}>
-            <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+            <Link href={`/${post.slug}`}>
                 <a>
                   <Image
                     src={post.image.url}
