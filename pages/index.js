@@ -65,7 +65,7 @@ export default function BlogIndex(props) {
       <ContentWrapper>
         <Box pb={10} pt={7}>
           <h1 className={TypographyStyles.heading__h1}>Welcome to Guide Dogs Blog</h1>
-          <body className={TypographyStyles.heading__h4}>
+          <body className={TypographyStyles.bodyCopy}>
           Discover true stories, big issues, actioning change and more.......
           </body>
         </Box>
