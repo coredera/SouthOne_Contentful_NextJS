@@ -1,8 +1,8 @@
 import Head from "next/head";
-import OpenGraph from "@utils/OpenGraph";
+//import OpenGraph from "@utils/OpenGraph";
 import { Config } from "@utils/Config";
 
-export default function PageMeta(props) {
+export default function PageMeta(props) { 
   const { title, description, url, canonical, image, date, authortype, authorname, authorurl, metatitle, metadescription } = props;
   const siteTitle = `${title} | ${Config.site.title}`;
   

@@ -42,7 +42,7 @@ import {
   WhatsappIcon,
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
-} from "next-share";
+} from "react-share";
 
 export default function Post(props) {
   const { post } = props;

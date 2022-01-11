@@ -34,12 +34,12 @@ import {
 
 
 
-export default function PostWrapper(props) {
+export default function PostWrapper(props) { 
   const { post, preview } = props;
 
   return (
     <MainLayout preview={preview}>
-      <PageMeta
+      <PageMeta 
         title={post.title}
         description={post.excerpt}
         url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
