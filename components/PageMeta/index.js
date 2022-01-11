@@ -38,6 +38,11 @@ export default function PageMeta(props) {
   };
   */
 
+ // <meta
+ // property="twitter:image"
+ // content={OpenGraph.generateImageUrl(title)} 
+///>
+
 
   return (
     <Head>
@@ -66,7 +71,7 @@ export default function PageMeta(props) {
       <meta property="og:image" content={image} />
       <meta
         property="twitter:image"
-        content={OpenGraph.generateImageUrl(title)} 
+        content={image} 
       />
 
       <meta name="twitter:card" content="summary_large_image" />
