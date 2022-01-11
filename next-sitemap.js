@@ -1,6 +1,6 @@
 module.exports = {
   siteUrl: "https://www.guidedogs.org.uk/blog",
-  ourDir: "/blog",
+  ourDir: "/public/blog",
   generateRobotsTxt: true, // (optional)
 
   robotsTxtOptions: {
