@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <rss version="2.0"
+      xmlns:atom="http://www.w3.org/2005/Atom"
+      xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+      <title>Guide Dogs UK Blog in config file</title>
+      <atom:link href="https://guidedogs.org.uk/feed.xml" rel="self" type="application/rss+xml" />
+      <link>https://guidedogs.org.uk</link>
+      <description>RSS Feed for guidedogs.org.uk</description>
+      
+        <item>
+          <title>4th Blog Post edited</title>
+          <description>4th Blog post excerpt</description>
+          <author>jason.fang@guidedogs.org.uk (Guide Dogs UK)</author>
+          <link>https://guidedogs.org.uk/blog/4th-blog-post</link>
+          <guid>https://guidedogs.org.uk/blog/4th-blog-post</guid>
+          <pubDate>2021-12-09T00:00:00.000Z</pubDate>
+          undefined
+          
+  <content:encoded><![CDATA[ 
+    <p class="Typography_bodyCopyS__UdCb2">test of Rich Text field</p>
+  ]]></content:encoded>
+        </item>
+        
+        <item>
+          <title>Volunteer</title>
+          <description>We have 100 different volunteering roles and we’re so grateful for any time you can give us whether it’s months, days or hours. However you choose to get involved, you’ll be making a real difference.</description>
+          <author>jason.fang@guidedogs.org.uk (Guide Dogs UK)</author>
+          <link>https://guidedogs.org.uk/blog/volunteer</link>
+          <guid>https://guidedogs.org.uk/blog/volunteer</guid>
+          <pubDate>2021-06-11T00:00:00.000Z</pubDate>
+          undefined
+          
+  <content:encoded><![CDATA[ 
+    <h1 class="Typography_heading__h1__J_E8O">Heading 1</h1><p class="Typography_bodyCopyS__UdCb2"></p><div class="RichTextPageContent_page__imgContainer__gwz1i"><img src="https://images.ctfassets.net/e1jkpkpbs14h/6GVoB0SfkWbkNV0Tz4sZuK/d906a420510f25cabc476e457f18609b/footer-fundraising-regulator.png" height="46" width="150"/></div><div class="RichTextPageContent_page__imgContainer__gwz1i"><img src="https://images.ctfassets.net/e1jkpkpbs14h/4iMynnnxyyFenWIz7pPQt0/565a254cb20d97f6aee07ad20022773d/business-disability-forum-logo.png" height="46" width="94"/></div><div class="RichTextPageContent_page__imgContainer__gwz1i"><img src="https://images.ctfassets.net/e1jkpkpbs14h/1SOX9icLhTMaXJK8uk1Xxs/9c125a4e3c6d696d1a9a88dabce397bb/footer-gift-aid.png" height="34" width="99"/></div><div class="RichTextPageContent_page__imgContainer__gwz1i"><img src="https://images.ctfassets.net/e1jkpkpbs14h/5RM1MlXxUGSxjthg8HdyYH/2b2e17c5a12299f6a27778c2f31f5da2/footer-thawte.png" height="29" width="117"/></div><p class="Typography_bodyCopyS__UdCb2"></p><h2 class="Typography_heading__h2__e2EL9">Heading 2</h2><h3 class="Typography_heading__h3__bW_RF">Heading 3</h3><h4 class="Typography_heading__h4__AH6Vu">Heading 4</h4><h5 class="Typography_heading__h5__SdKkj">Heading 5</h5><h6 class="Typography_heading__h6__L9zrm">Heading 6</h6><p class="Typography_bodyCopyS__UdCb2"></p><p class="Typography_bodyCopyS__UdCb2">We rely on our brilliant volunteers who give their time to help our charity in so many ways. There are many great volunteering opportunities to get involved in, even an hour makes a big difference.</p><p class="Typography_bodyCopyS__UdCb2">Our volunteers can transform the lives of people living with sight loss, whether it is raising our puppies, sighted guiding, collecting funds or cheering on our event participants. There really is something for everyone!</p><p class="Typography_bodyCopyS__UdCb2">We recognise the extraordinary efforts of all of our volunteers and we&#x27;re really proud to have achieved the <b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05">Investing in Volunteers</b> accreditation for good practice in volunteer management.</p><p class="Typography_bodyCopyS__UdCb2">We know that without our volunteers, our charity could not continue its life changing work.</p><p class="Typography_bodyCopyS__UdCb2"><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05">We need your help.</b></p><p class="Typography_bodyCopyS__UdCb2"><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05"></b></p><style data-emotion="css nk32ej">.css-nk32ej{padding:10px;}</style><div class="css-nk32ej"><style data-emotion="css 1vp56sy">.css-1vp56sy{background-color:brand.700;padding:5px;}</style><div class="Typography_blockquotebox__8M9zu css-1vp56sy"><style data-emotion="css k008qs">.css-k008qs{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</style><div class="css-k008qs"><style data-emotion="css 1xg0bcw">.css-1xg0bcw{width:10em;}</style><div class="css-1xg0bcw"><img src="/blog/images/quote-open.svg"/></div><style data-emotion="css 17xejub">.css-17xejub{-webkit-flex:1;-ms-flex:1;flex:1;justify-self:stretch;-webkit-align-self:stretch;-ms-flex-item-align:stretch;align-self:stretch;}</style><div class="css-17xejub"></div><div class="css-0"><blockquote class="Typography_blockquote__QWqRZ" bgColor="brand.100"><p class="Typography_bodyCopyS__UdCb2"><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05">Hello this is a quote, trying to make this quote longer now to see how it stretches across the flex component.</b></p><p class="Typography_bodyCopyS__UdCb2">Jason, the developer</p></blockquote></div><div class="css-17xejub"></div><style data-emotion="css 1lza2hg">.css-1lza2hg{-webkit-align-self:flex-end;-ms-flex-item-align:flex-end;align-self:flex-end;width:10em;}</style><div class="css-1lza2hg"><img src="/blog/images/quote-closed.svg"/></div></div></div></div><p class="Typography_bodyCopyS__UdCb2"></p><ul class="RichTextPageContent_page__ul___DOJe"><li class="Typography_bodyCopy__Ma_4N RichTextPageContent_page__li__JEIly"><p class="Typography_bodyCopyS__UdCb2"><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05">Bulleted list</b></p></li><li class="Typography_bodyCopy__Ma_4N RichTextPageContent_page__li__JEIly"><p class="Typography_bodyCopyS__UdCb2"><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05">1</b></p></li><li class="Typography_bodyCopy__Ma_4N RichTextPageContent_page__li__JEIly"><p class="Typography_bodyCopyS__UdCb2"><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05">2</b></p></li></ul><p class="Typography_bodyCopyS__UdCb2"></p><ol class="RichTextPageContent_page__ol__Ls9Jq"><li class="Typography_bodyCopy__Ma_4N RichTextPageContent_page__li__JEIly"><p class="Typography_bodyCopyS__UdCb2">numbered list</p></li><li class="Typography_bodyCopy__Ma_4N RichTextPageContent_page__li__JEIly"><p class="Typography_bodyCopyS__UdCb2">1</p></li><li class="Typography_bodyCopy__Ma_4N RichTextPageContent_page__li__JEIly"><p class="Typography_bodyCopyS__UdCb2">2</p></li><li class="Typography_bodyCopy__Ma_4N RichTextPageContent_page__li__JEIly"><p class="Typography_bodyCopyS__UdCb2"></p></li></ol><p class="Typography_bodyCopyS__UdCb2"><a class="Typography_inlineLink__kAtcS" href="www.google.com" target="_blank" rel="nofollow noreferrer">this is a hyperlink</a><a class="Typography_inlineLink__kAtcS" href="www.google.com" target="_blank" rel="nofollow noreferrer"></a></p><p class="Typography_bodyCopyS__UdCb2"><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05">Bold</b></p><p class="Typography_bodyCopyS__UdCb2"><i>Italic</i></p><p class="Typography_bodyCopyS__UdCb2"><u>underline</u></p><p class="Typography_bodyCopyS__UdCb2"><i><b class="Typography_bodyCopyS__UdCb2 Typography_bodyCopy__bold__1xj05"><u>All</u></b></i></p><p class="Typography_bodyCopyS__UdCb2">Button</p><hr class="RichTextPageContent_page__hr__jCO5V"/><p class="Typography_bodyCopyS__UdCb2">Here is a video entry embedded as an entry in the Rich Text field ed</p><p class="Typography_bodyCopyS__UdCb2"></p><p class="Typography_bodyCopyS__UdCb2">itor.</p><div class="VideoEmbed_videoEmbed__feuTD"><iframe class="VideoEmbed_videoEmbed__iframe__9yUcW" src="https://www.youtube.com/embed/0fEpQuSGWkE" height="100%" width="100%" frameBorder="0" scrolling="no" title="Example video embed" allowfullscreen=""></iframe></div><p class="Typography_bodyCopyS__UdCb2">Here is an image asset.</p><div class="RichTextPageContent_page__imgContainer__gwz1i"><img src="https://images.ctfassets.net/e1jkpkpbs14h/77rLNe4b3ymC0vdnNk9gc9/f5c129454a5014d8a3c3d9297ec8191c/image.png" alt="Donate" height="438" width="781"/></div><p class="Typography_bodyCopyS__UdCb2"></p><p class="Typography_bodyCopyS__UdCb2">Please see this blog post <a class="Typography_inlineLink__kAtcS" href="/blog/blog/sponsor-a-puppy">Sponsor a Puppy</a></p><p class="Typography_bodyCopyS__UdCb2"><a class="Typography_inlineLink__kAtcS" href="/blog/blog/volunteer">Volunteer</a></p><p class="Typography_bodyCopyS__UdCb2">Another blog....<a class="Typography_inlineLink__kAtcS" href="/blog/blog/donate">Donate change schedule</a></p><p class="Typography_bodyCopyS__UdCb2">another blog: <a class="Typography_inlineLink__kAtcS" href="/blog/blog/donate">Donate change schedule</a></p>
+  ]]></content:encoded>
+        </item>
+        
+        <item>
+          <title>Sponsor a Puppy</title>
+          <description>Please sponsor a puppy..</description>
+          <author>jason.fang@guidedogs.org.uk (Guide Dogs UK)</author>
+          <link>https://guidedogs.org.uk/blog/sponsor-a-puppy</link>
+          <guid>https://guidedogs.org.uk/blog/sponsor-a-puppy</guid>
+          <pubDate>2021-05-15T00:00:00.000Z</pubDate>
+          undefined
+          
+  <content:encoded><![CDATA[ 
+    <p class="Typography_bodyCopyS__UdCb2">Please sponsor a puppy</p><hr class="RichTextPageContent_page__hr__jCO5V"/><h2 class="Typography_heading__h2__e2EL9">How to sponsor a puppy</h2><h3 class="Typography_heading__h3__bW_RF">Step 1</h3><p class="Typography_bodyCopyS__UdCb2">Pick a puppy</p><div class="RichTextPageContent_page__imgContainer__gwz1i"><img src="https://images.ctfassets.net/e1jkpkpbs14h/51a60ICRSLdgpYtXfUFhXp/0cd81e712e622a092068388921d48585/image.png" alt="sponsor a puppy" height="318" width="570"/></div><p class="Typography_bodyCopyS__UdCb2"></p><p class="Typography_bodyCopyS__UdCb2"></p>
+  ]]></content:encoded>
+        </item>
+        
+        <item>
+          <title>Donate change schedule</title>
+          <description>We can only provide our services with your support. You can help by donating now and making a big difference to someone’s life.</description>
+          <author>jason.fang@guidedogs.org.uk (Guide Dogs UK)</author>
+          <link>https://guidedogs.org.uk/blog/donate</link>
+          <guid>https://guidedogs.org.uk/blog/donate</guid>
+          <pubDate>2021-02-02T00:00:00.000Z</pubDate>
+          undefined
+          
+  <content:encoded><![CDATA[ 
+    <p class="Typography_bodyCopyS__UdCb2">Please donate <a class="Typography_inlineLink__kAtcS" href="https://www.guidedogs.org.uk/donate-now/single-donation/" target="_blank" rel="nofollow noreferrer">here</a></p><h2 class="Typography_heading__h2__e2EL9"></h2><p class="Typography_bodyCopyS__UdCb2"></p>
+  ]]></content:encoded>
+        </item>
+        
+    </channel>
+    </rss>
