@@ -43,7 +43,7 @@ export default function BlogIndex(props) {
   const pageTitle = pageContent ? pageContent.title : "Blog";
   const pageDescription = pageContent
     ? pageContent.description
-    : "Articles | Next.js Contentful blog starter";
+    : "Guidedogs UK Blog";
 
   return (
     <MainLayout preview={preview}>
