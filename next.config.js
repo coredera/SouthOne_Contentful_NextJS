@@ -14,8 +14,8 @@ module.exports = {
     return {
       '/': { page: '/' },
       
-      '/blog/4th-blog-post': { page: '/blog', query: { title: '4th-blog-post' } },
-      '/blog/volunteer': { page: '/blog', query: { title: 'volunteer' } },
+      '/4th-blog-post': { page: '/', query: { title: '4th-blog-post' } },
+      '/volunteer': { page: '/', query: { title: 'volunteer' } },
      
     }
   },
