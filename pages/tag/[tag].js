@@ -5,6 +5,7 @@ import { Config } from "@utils/Config";
 import PageMeta from "@components/PageMeta";
 import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
+
 import ContentListStyles from "@styles/ContentList.module.css";
 import PublishedDate from "@components/Post/PublishedDate";
 import Link from "next/link";
@@ -146,7 +147,7 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+} 
 
 export async function getStaticProps({ params, preview = false }) {
   const posts = await ContentfulApi.getAllBlogPosts();
