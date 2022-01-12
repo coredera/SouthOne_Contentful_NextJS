@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import PublishedDate from "@components/Post/PublishedDate";
@@ -45,7 +45,7 @@ export default function PostList(props) {
             <article className={ContentListStyles.contentList__post}>
               <Link href={`/${post.slug}`}>
                 <a>
-                  <Image
+                  <img
                     src={post.image.url}
                     width="60em"
                     height="30em"

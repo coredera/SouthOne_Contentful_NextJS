@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import Link from "next/link";
 import HeroBannerStyles from "@styles/HeroBanner.module.css";
 import ButtonStyles from "@styles/Button.module.css";
@@ -15,7 +15,7 @@ export default function HeroBanner(props) {
 
   return (
     <section className={HeroBannerStyles.heroBanner}>
-      <Image
+      <img
         className={HeroBannerStyles.heroBanner__bgImg}
         layout="fill"
         priority={true}

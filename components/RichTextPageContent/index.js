@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
@@ -202,7 +202,7 @@ export function getRichTextRenderOptions(links, options) {
         } else {
           return (
             <div className={RichTextPageContentStyles.page__imgContainer}>
-              <Image
+              <img
                 src={url}
                 alt={description}
                 height={height}

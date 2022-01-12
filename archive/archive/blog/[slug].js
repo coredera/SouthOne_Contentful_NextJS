@@ -6,7 +6,7 @@ import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 
 
-import Image from "next/image";
+//import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
 import Link from "next/link";
 import {
@@ -63,7 +63,7 @@ export default function PostWrapper(props) {
             <a>
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
-                <Image
+                <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
                   height="10em"
                   width="10em"
@@ -98,7 +98,7 @@ export async function getStaticPaths() {
   // on production
   return {
     paths,
-    fallback: "blocking", 
+    fallback: "false", 
   };
 }
 

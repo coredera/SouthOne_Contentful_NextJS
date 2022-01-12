@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import RecentPostListStyles from "@styles/RecentPostList.module.css";
@@ -38,7 +38,7 @@ export default function RecentPostList(props) {
               </div>
 
               <div>
-                <Image
+                <img
                   src={post.image.url}
                   width="1200"
                   height="400"
