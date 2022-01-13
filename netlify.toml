@@ -29,7 +29,7 @@
 # Rewrite for blog
 [[redirects]]
 	from = '/blog/*'
-	to = 'https://gracious-golick-56c5e9.netlify.app/blog/:splat'
+	to = 'https://blog-booe627v9-jazzybuilds.vercel.app/blog/:splat'
 	status = 200
 
   #
