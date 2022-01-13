@@ -1,4 +1,4 @@
-[headers]]
+[[headers]]
   for = "*" # js files should be set this way
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
