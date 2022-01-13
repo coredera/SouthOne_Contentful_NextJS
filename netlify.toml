@@ -31,6 +31,3 @@
 	from = '/blog/*'
 	to = 'https://blog-booe627v9-jazzybuilds.vercel.app/blog/:splat'
 	status = 200
-
-  #
-	
