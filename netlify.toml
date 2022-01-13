@@ -33,8 +33,3 @@
   to = "/.netlify/functions/:splat"
   status = 200
   
-# Rewrite for blog
-[[redirects]]
-	from = '/blog/*'
-	to = 'https://blog-booe627v9-jazzybuilds.vercel.app/blog/:splat'
-	status = 200
