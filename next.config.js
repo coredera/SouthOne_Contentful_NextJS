@@ -7,18 +7,18 @@ module.exports = {
   },
   //crossOrigin: 'anonymous'
 
-  exportPathMap: async function (
-    defaultPathMap,
-    { dev, dir, outDir, distDir, buildId }
-  ) {
-    return {
-      '/': { page: '/' },
-      
-      '/4th-blog-post': { page: '/', query: { title: '4th-blog-post' } },
-      '/volunteer': { page: '/', query: { title: 'volunteer' } },
-     
-    }
-  },
+  //exportPathMap: async function (
+  //  defaultPathMap,
+  //  { dev, dir, outDir, distDir, buildId }
+  //) {
+  //  return {
+  //    '/': { page: '/' },
+  //    
+  //    '/4th-blog-post': { page: '/', query: { title: '4th-blog-post' } },
+  //    '/volunteer': { page: '/', query: { title: 'volunteer' } },
+  //   
+  //  }
+  //},
 
 
 
