@@ -97,7 +97,7 @@ export default function Post(props) {
           </Box>
           <Box p={3}>
             <TwitterShareButton
-              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              url={`/blog/${post.slug}`}
               title={`${post.title}`}
             >
               <TwitterIcon size={50} round />
