@@ -97,7 +97,7 @@ export default function Post(props) {
           </Box>
           <Box p={3}>
             <TwitterShareButton
-              url={`/blog/${post.slug}`}
+              url={`https://gd-hotfix.guidedogs.org.uk/blog/${post.slug}`}
               title={`${post.title}`}
             >
               <TwitterIcon size={50} round />
