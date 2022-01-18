@@ -32,7 +32,7 @@ import {
  
 
 
-
+ 
 
 export default function PostWrapper(props) { 
   const { post, preview } = props;
@@ -57,14 +57,21 @@ export default function PostWrapper(props) {
           <Box alignSelf="center">
             <Link href={`${Config.pageMeta.home.slug}`}>
               <a>
-                <h3 className={ContentListStyles.contentList__readmorelink}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
-                    height="10em"
-                    width="10em"
-                  />{" "}
-                  Go to home
-                </h3>
+              <Flex>
+                  <h3 className={ContentListStyles.contentList__readmorelink}>
+                    <Box alignSelf="center" pr={1.5}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
+                        width={15}
+                        height={15}
+                      />
+                    </Box>
+                    <Box>
+                    {" "}
+                    Go to home
+                    </Box>
+                  </h3>
+                </Flex>
               </a>
             </Link>
           </Box>
