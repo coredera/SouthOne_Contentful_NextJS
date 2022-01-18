@@ -428,7 +428,7 @@ export default function Footer() {
                   <a>
                     <div>
                     <img
-                      src="https://gd-blog.netlify.app/images/footer-gift-aid.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-gift-aid.png`}
                       className={FooterStyles.logosize}
                     />
                     </div>
@@ -439,7 +439,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                 <a>
                     <img
-                      src="https://gd-blog.netlify.app/images/footer-fundraising-regulator.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
                       className={FooterStyles.logosize}
                     />
                   </a>
@@ -451,7 +451,7 @@ export default function Footer() {
                 <Link href="https://www.guidedogs.org.uk/getting-support/#">
                   <a>
                     <img
-                      src="https://gd-blog.netlify.app/images/footer-fundraising-regulator.png"
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
                       className={FooterStyles.logosize}
                     />
                   </a>
@@ -459,7 +459,7 @@ export default function Footer() {
               </Box>
               <Box className={FooterStyles.logos}>
                 <img
-                  src="https://gd-blog.netlify.app/images/business-disability-forum-logo.png"
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/business-disability-forum-logo.png`}
                   className={FooterStyles.logosize}
                 />
               </Box>
