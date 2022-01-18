@@ -5,12 +5,13 @@ import { Config } from "@utils/Config";
 import PageMeta from "@components/PageMeta";
 import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
+
 import ContentListStyles from "@styles/ContentList.module.css";
 import PublishedDate from "@components/Post/PublishedDate";
 import Link from "next/link";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+//import Image from "next/image";
 import Tags from "@components/Post/Tags";
 import TypographyStyles from "@styles/Typography.module.scss";
 
@@ -51,20 +52,21 @@ export default function PostWrapper(props) {
         <Box alignSelf="center">
           <Link href={`${Config.pageMeta.home.slug}`}>
             <a>
-              <h3 className={ContentListStyles.contentList__readmorelink}>
-              
-                <Image
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
-                  height="10em"
-                  width="10em"
-                  
-                />
-        
-              
-                 {" "}Go to home
-                
-                 
-              </h3>
+            <Flex>
+                  <h3 className={ContentListStyles.contentList__readmorelink}>
+                    <Box alignSelf="center" pr={1.5}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
+                        width={15}
+                        height={15}
+                      />
+                    </Box>
+                    <Box>
+                    {" "}
+                    Go to home
+                    </Box>
+                  </h3>
+                </Flex>
             </a>
           </Link>
         </Box>
@@ -76,13 +78,13 @@ export default function PostWrapper(props) {
             <article className={ContentListStyles.contentList__post}>
               <Link href={`/${post.slug}`}>
                 <a>
-                  <Image
-                    src={post.image.url}
-                    width="60em"
-                    height="30em"
-                    layout="responsive"
-                    objectFit="contain"
-                    alt={post.image.description}
+                  <img
+                     src={post.image.url}
+                     width={post.image.width}
+                     height={post.image.height}
+                     layout="responsive"
+                     objectFit="contain"
+                     alt={post.image.description}
                   /> 
                 </a>
               </Link> 
@@ -146,7 +148,7 @@ export async function getStaticPaths() {
     paths,
     fallback: false,
   };
-}
+} 
 
 export async function getStaticProps({ params, preview = false }) {
   const posts = await ContentfulApi.getAllBlogPosts();
@@ -179,3 +181,4 @@ export async function getStaticProps({ params, preview = false }) {
     },
   };
 }
+ 

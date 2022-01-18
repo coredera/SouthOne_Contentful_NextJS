@@ -10,7 +10,7 @@ import PublishedDate from "@components/Post/PublishedDate";
 import Link from "next/link";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
-import Image from "next/image";
+//import Image from "next/image";
 import Tags from "@components/Post/Tags";
 import TypographyStyles from "@styles/Typography.module.scss";
 
@@ -53,7 +53,7 @@ export default function PostWrapper(props) {
             <a>
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
-                <Image
+                <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
                   height="10em"
                   width="10em"
@@ -76,7 +76,7 @@ export default function PostWrapper(props) {
             <article className={ContentListStyles.contentList__post}>
             <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
                 <a>
-                  <Image
+                  <img
                     src={post.image.url}
                     width="60em"
                     height="30em"
@@ -140,7 +140,7 @@ export async function getStaticPaths() {
   // on production
   return {
     paths,
-    fallback: false,
+    fallback: "false",
   };
 }
 

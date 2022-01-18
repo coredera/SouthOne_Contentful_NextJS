@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import AuthorStyles from "@styles/Author.module.css";
 import TypographyStyles from "@styles/Typography.module.scss";
 
@@ -65,7 +65,7 @@ export default function Author(props) {
     <>
       <div className={AuthorStyles.author}>
         <div className={AuthorStyles.author__imgContainer}>
-          <Image
+          <img
             className={AuthorStyles.author__img}
             src={`${author.image.url}?w=350`}
             alt={author.image.description}

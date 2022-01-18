@@ -8,7 +8,7 @@ import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
 
-import Image from "next/image";
+//import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
 import Link from "next/link";
 import {
@@ -84,7 +84,7 @@ export default function BlogIndexPage(props) {
             <a>
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
-                <Image
+                <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
                   height="10em"
                   width="10em"

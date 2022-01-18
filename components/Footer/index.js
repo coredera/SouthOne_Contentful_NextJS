@@ -3,7 +3,7 @@ import FooterStyles from "@styles/Footer.module.scss";
 import ButtonStyles from "@styles/Button.module.css";
 import { Config } from "@utils/Config";
 import TypographyStyles from "@styles/Typography.module.scss";
-import Image from "next/image";
+//import Image from "next/image";
 
 
 import {
