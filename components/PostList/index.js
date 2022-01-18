@@ -47,8 +47,8 @@ export default function PostList(props) {
                 <a>
                   <img
                     src={post.image.url}
-                    width="60em"
-                    height="30em"
+                    width={post.image.width}
+                    height={post.image.height}
                     layout="responsive"
                     objectFit="contain"
                     alt={post.image.description}

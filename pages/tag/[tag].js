@@ -52,20 +52,21 @@ export default function PostWrapper(props) {
         <Box alignSelf="center">
           <Link href={`${Config.pageMeta.home.slug}`}>
             <a>
-              <h3 className={ContentListStyles.contentList__readmorelink}>
-              
-                <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
-                  height="10em"
-                  width="10em"
-                  
-                />
-        
-              
-                 {" "}Go to home
-                
-                 
-              </h3>
+            <Flex>
+                  <h3 className={ContentListStyles.contentList__readmorelink}>
+                    <Box alignSelf="center" pr={1.5}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
+                        width={15}
+                        height={15}
+                      />
+                    </Box>
+                    <Box>
+                    {" "}
+                    Go to home
+                    </Box>
+                  </h3>
+                </Flex>
             </a>
           </Link>
         </Box>
@@ -78,12 +79,12 @@ export default function PostWrapper(props) {
               <Link href={`/${post.slug}`}>
                 <a>
                   <img
-                    src={post.image.url}
-                    width="60em"
-                    height="30em"
-                    layout="responsive"
-                    objectFit="contain"
-                    alt={post.image.description}
+                     src={post.image.url}
+                     width={post.image.width}
+                     height={post.image.height}
+                     layout="responsive"
+                     objectFit="contain"
+                     alt={post.image.description}
                   /> 
                 </a>
               </Link> 
@@ -180,3 +181,4 @@ export async function getStaticProps({ params, preview = false }) {
     },
   };
 }
+ 
