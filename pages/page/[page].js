@@ -78,22 +78,22 @@ export default function BlogIndexPage(props) {
       >
         <Box alignSelf="center">
           <Link href={`${Config.pageMeta.home.slug}`}>
-            <a><Flex>
-              <h3 className={ContentListStyles.contentList__readmorelink}>
-              
-              <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
-                width={20}
-                height={20}
-                  
-                />
-        
-              
-                 {" "}Go to home
-                
-                 
-              </h3>
-              </Flex>
+            <a>
+            <Flex>
+                  <h3 className={ContentListStyles.contentList__readmorelink}>
+                    <Box alignSelf="center" pr={1.5}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
+                        width={15}
+                        height={15}
+                      />
+                    </Box>
+                    <Box>
+                    {" "}
+                    Go to home
+                    </Box>
+                  </h3>
+                </Flex>              
             </a>
           </Link>
         </Box>
