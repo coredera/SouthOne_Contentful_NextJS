@@ -31,11 +31,11 @@ import {
 } from "@chakra-ui/react";
 
 export default function PostList(props) {
-  const { posts, currentPage, totalPages } = props;
+  const { postListType, posts, currentPage, totalPages } = props;
   const nextDisabled = parseInt(currentPage, 10) === parseInt(totalPages, 10);
   const prevDisabled = parseInt(currentPage, 10) === 1;
 
-  return (
+  return ( 
     <>
      
 
@@ -49,7 +49,7 @@ export default function PostList(props) {
                     src={post.image.url}
                     width={post.image.width}
                     height={post.image.height}
-                    layout="responsive"
+                    layout="responsive" 
                     objectFit="contain"
                     alt={post.image.description}
                   /> 
@@ -99,6 +99,7 @@ export default function PostList(props) {
       </ol>
 
       <Pagination
+        postListType={postListType}
         totalPages={totalPages}
         currentPage={currentPage}
         nextDisabled={nextDisabled}

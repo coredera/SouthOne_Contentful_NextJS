@@ -4,13 +4,15 @@ import ChevronLeft from "./svg/ChevronLeft";
 import ChevronRight from "./svg/ChevronRight";
 
 export default function Pagination(props) {
-  const { totalPages, currentPage, prevDisabled, nextDisabled } = props;
+  const { postListType, totalPages, currentPage, prevDisabled, nextDisabled } = props;
+
+
 
   const prevPageUrl =
     currentPage === "2"
-      ? "/"
-      : `/page/${parseInt(currentPage, 10) - 1}`;
-  const nextPageUrl = `/page/${parseInt(currentPage, 10) + 1}`;
+      ? `${postListType}`
+      : `${postListType}page/${parseInt(currentPage, 10) - 1}`;
+  const nextPageUrl = `${postListType}page/${parseInt(currentPage, 10) + 1}`;
 
   return (
     <div className={PaginationStyles.pagination}>
@@ -24,7 +26,7 @@ export default function Pagination(props) {
                 <ChevronLeft />
               </span>
               <span>Previous page</span>
-            </span>
+            </span> 
           )}
           {!prevDisabled && (
             <Link href={`${prevPageUrl}`}>

@@ -36,6 +36,9 @@ export default function BlogIndex(props) {
   const { postSummaries, currentPage, totalPages, pageContent, preview } =
     props;
 
+   
+  const postListType = "/";
+
   /**
    * This provides some fallback values to PageMeta so that a pageContent
    * entry is not required for /blog
@@ -75,6 +78,7 @@ export default function BlogIndex(props) {
           </PageContentWrapper>
         )} 
         <PostList
+          postListType = {postListType}
           posts={postSummaries}
           totalPages={totalPages}
           currentPage={currentPage}
@@ -107,3 +111,4 @@ export async function getStaticProps({ preview = false }) {
     },
   };
 }
+ 
