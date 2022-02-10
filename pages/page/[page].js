@@ -32,16 +32,9 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 
-
-
 export default function BlogIndexPage(props) {
-  const {
-    postSummaries,
-    totalPages,
-    currentPage,
-    pageContent,
-    preview,
-  } = props;
+  const { postSummaries, totalPages, currentPage, pageContent, preview } =
+    props;
 
   /**
    * This provides some fallback values to PageMeta so that a pageContent
@@ -51,6 +44,8 @@ export default function BlogIndexPage(props) {
   const pageDescription = pageContent
     ? pageContent.description
     : "Articles | Next.js Contentful blog starter";
+
+  const postListType = "/";
 
   return (
     <MainLayout preview={preview}>
@@ -70,16 +65,16 @@ export default function BlogIndexPage(props) {
             <RichTextPageContent richTextBodyField={pageContent.body} />
           </PageContentWrapper>
         )}
-         <Flex
-        alignItems="center"
-        style={{ display: currentPage === "1" ? "none" : "block" }}
-        pb={20}
-        pt={5}
-      >
-        <Box alignSelf="center">
-          <Link href={`${Config.pageMeta.home.slug}`}>
-            <a>
-            <Flex>
+        <Flex
+          alignItems="center"
+          style={{ display: currentPage === "1" ? "none" : "block" }}
+          pb={20}
+          pt={5}
+        >
+          <Box alignSelf="center">
+            <Link href={`${Config.pageMeta.home.slug}`}>
+              <a>
+                <Flex>
                   <h3 className={ContentListStyles.contentList__readmorelink}>
                     <Box alignSelf="center" pr={1.5}>
                       <img
@@ -88,18 +83,16 @@ export default function BlogIndexPage(props) {
                         height={15}
                       />
                     </Box>
-                    <Box>
-                    {" "}
-                    Go to home
-                    </Box>
+                    <Box> Go to home</Box>
                   </h3>
-                </Flex>              
-            </a>
-          </Link>
-        </Box>
-        <Spacer />
-      </Flex>
+                </Flex>
+              </a>
+            </Link>
+          </Box>
+          <Spacer />
+        </Flex>
         <PostList
+          postListType={postListType}
           posts={postSummaries}
           totalPages={totalPages}
           currentPage={currentPage}

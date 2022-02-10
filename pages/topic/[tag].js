@@ -5,6 +5,7 @@ import { Config } from "@utils/Config";
 import PageMeta from "@components/PageMeta";
 import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
+import PostList from "@components/PostList";
 
 import ContentListStyles from "@styles/ContentList.module.css";
 import PublishedDate from "@components/Post/PublishedDate";
@@ -37,7 +38,9 @@ import {
 } from "@chakra-ui/react";
 
 export default function PostWrapper(props) {
-  const { preview, posts } = props;
+  const { preview, currentPage, totalPages, posts, tag } = props;
+
+  const postListType = `/topic/${tag}/`;
 
   return (
     <MainLayout preview={preview}>
@@ -72,64 +75,12 @@ export default function PostWrapper(props) {
         </Box>
         <Spacer />
       </Flex>
-      <ol className={ContentListStyles.contentList}>
-        {posts.map((post) => (
-          <li key={post.sys.id}>
-            <article className={ContentListStyles.contentList__post}>
-              <Link href={`/${post.slug}`}>
-                <a>
-                  <img
-                     src={post.image.url}
-                     width={post.image.width}
-                     height={post.image.height}
-                     layout="responsive"
-                     objectFit="contain"
-                     alt={post.image.description}
-                  /> 
-                </a>
-              </Link> 
-
-              <Flex p={2} />
-              <Link href={`/${post.slug}`}>
-                <a className={ContentListStyles.contentList__titleLink}>
-                  <h2 className={ContentListStyles.contentList__title}>
-                    {post.title}
-                  </h2>
-                </a>
-              </Link>
-              <Box className={ContentListStyles.contentList__author}>
-                {post.author !== null && <> Author: {post.author.name}</>}
-              </Box>
-              {post.contentfulMetadata.tags !== null && (
-                <Tags tags={post.contentfulMetadata.tags} />
-              )}
-              <div className={ContentListStyles.contentList__excerpt}>
-                <ReactMarkdown
-                  children={post.excerpt}
-                  renderers={ReactMarkdownRenderers(post.excerpt)}
-                />
-              </div>
-              <Flex alignItems="center">
-                <Box alignSelf="center">
-                  <Link href={`/${post.slug}`}>
-                    <a>
-                      <h3
-                        className={ContentListStyles.contentList__readmorelink}
-                      >
-                        Read more
-                      </h3>
-                    </a>
-                  </Link>
-                </Box>
-                <Spacer />
-                <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-                  <PublishedDate date={post.date} alignSelf="center" />
-                </Box>
-              </Flex>
-            </article>
-          </li>
-        ))}
-      </ol>
+      <PostList
+          postListType = {postListType}
+          posts={posts}
+          totalPages={totalPages}
+          currentPage={currentPage}
+        />
       </ContentWrapper>
     </MainLayout>
   );
@@ -153,6 +104,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params, preview = false }) {
   const posts = await ContentfulApi.getAllBlogPosts();
 
+  const acc =[];
+
+  var totalPages = Math.ceil(
+    acc.length / Config.pagination.pageSize,
+  );
+
   const relatedPosts = posts.reduce((acc, post) => {
     if ( 
       post.contentfulMetadata &&
@@ -160,10 +117,24 @@ export async function getStaticProps({ params, preview = false }) {
       post.contentfulMetadata.tags.find(({ id }) => id === params.tag)
     ) {
       acc.push(post);
+
+      console.log("ACC.........");
+      console.log(acc);
+
+      totalPages = Math.ceil(
+        acc.length / Config.pagination.pageSize,
+      );
       return acc;
     }
+    totalPages = Math.ceil(
+      acc.length / Config.pagination.pageSize,
+    );
+
     return acc;
   }, []);
+
+  const paginatedRelatedPosts = relatedPosts.slice(0, Config.pagination.pageSize);
+
 
   // Add this with fallback: "blocking"
   // So that if we do not have a post on production,
@@ -174,11 +145,18 @@ export async function getStaticProps({ params, preview = false }) {
     };
   }
 
+
+  console.log("totalPages:")
+  console.log(totalPages);
+  
   return {
     props: {
       preview,
-      posts: relatedPosts,
+      totalPages,
+      currentPage: "1",
+      posts: paginatedRelatedPosts,
+      tag: params.tag,
     },
   };
 }
- 
+  
