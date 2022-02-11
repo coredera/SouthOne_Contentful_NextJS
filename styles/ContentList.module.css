@@ -86,6 +86,9 @@
    
   }
 
+.contentList__capitalize{
+  text-transform: capitalize;
+}
 
 
 .contentList__title {

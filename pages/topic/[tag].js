@@ -75,6 +75,8 @@ export default function PostWrapper(props) {
         </Box>
         <Spacer />
       </Flex>
+      <h1 className={TypographyStyles.heading__h1}> Here is a list of ''<text className={ContentListStyles.contentList__capitalize}>{tag}</text>'' posts! </h1>
+      <br></br>
       <PostList
           postListType = {postListType}
           posts={posts}
