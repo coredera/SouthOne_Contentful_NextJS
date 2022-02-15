@@ -7,7 +7,21 @@
 
 .contentList__post {
   margin-bottom: 4rem;
+  
 }
+
+.contentList__topSection {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100rem;
+  padding: 2rem;
+  
+}
+
+.contentList__featuredPost {
+  
+}
+
 
 .contentList__titleLink {
   cursor: pointer;

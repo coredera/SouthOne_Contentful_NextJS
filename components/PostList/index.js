@@ -34,7 +34,7 @@ export default function PostList(props) {
   const { postListType, posts, currentPage, totalPages } = props;
   const nextDisabled = parseInt(currentPage, 10) === parseInt(totalPages, 10);
   const prevDisabled = parseInt(currentPage, 10) === 1;
-
+ 
   return ( 
     <>
      
