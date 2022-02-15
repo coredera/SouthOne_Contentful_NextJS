@@ -1,3 +1,4 @@
+import { createNoSubstitutionTemplateLiteral } from "typescript";
 import { Config } from "./Config";
 
 /**
@@ -291,7 +292,7 @@ export default class ContentfulApi {
       }
 **/
       //if (response.slugs.length > 0) {
-        returnTags.push(...response.final);
+      returnTags.push(...response.final);
       //}
 
       shouldQueryMoreTags = returnTags.length < response.total;
@@ -602,6 +603,169 @@ export default class ContentfulApi {
       : [];
 
     return post.pop();
+  }
+
+  /**
+   * Fetch a featured blog post.
+   *
+   * This method is used on blog landing page to fetch the data for
+   * individual blog posts at build time, which are prerendered as
+   * static HTML.
+   *
+   * The content type uses the powerful Rich Text field type for the
+   * body of the post.
+   *
+   * This query fetches linked assets (i.e. images) and entries
+   * (i.e. video embed and code block entries) that are embedded
+   * in the Rich Text field. This is rendered to the page using
+   * @components/RichTextPageContent.
+   *
+   * For more information on Rich Text fields in Contentful, view the
+   * documentation here: https://www.contentful.com/developers/docs/concepts/rich-text/
+   *
+   * Linked assets and entries are parsed and rendered using the npm package
+   * @contentful/rich-text-react-renderer
+   *
+   * https://www.npmjs.com/package/@contentful/rich-text-react-renderer
+   *
+   * param: not required
+   *
+   */
+  static async getFeaturedPost() {
+    const fquery = `{
+      featuredPostCollection {
+        total
+        items {
+          featuredPost {
+            slug
+            sys {
+              id
+            }
+          }
+        }
+      }
+    }`;
+
+    const fresponse = await this.callContentful(fquery);
+
+    console.log("fresponse:");
+    console.log(fresponse.data.featuredPostCollection.items[0].featuredPost);
+
+    //const fpostid = `a`;
+
+    if (fresponse.data.featuredPostCollection.items[0].featuredPost !== null) {
+      const fpostid =
+        fresponse.data.featuredPostCollection.items[0].featuredPost.slug;
+
+      console.log("fpostid:");
+      console.log(fpostid);
+
+      const query = `{
+      blogPostCollection(limit: 1, where: {slug: "${fpostid}"}) {
+        total
+        items {
+          sys {
+            id
+          }
+          contentfulMetadata{
+            tags {
+              id
+              name
+            }
+          }
+          image {
+            title
+            description
+            contentType
+            fileName
+            size
+            url
+            width
+            height
+          }
+          date
+          title
+          metaTitle
+          metaDescription
+          slug
+          excerpt
+          externalUrl
+          author {
+            type
+            name
+            description
+            twitchUsername
+            twitterUsername
+            gitHubUsername
+            websiteUrl
+            image {
+              url
+              title
+              width
+              height
+              description
+            }
+          }
+          body {
+            json
+            links {
+              entries {
+                inline {
+                  sys {
+                    id
+                  }
+                  __typename
+                  ... on BlogPost {
+                    title
+                    slug
+                  }
+                }
+                block {
+                  sys {
+                    id
+                  }
+                  __typename
+                  ... on VideoEmbed {
+                    title
+                    embedUrl
+                  }
+                  ... on CodeBlock {
+                    description
+                    language
+                    code
+                  }
+                }
+              }
+              assets {
+                block {
+                  sys {
+                    id
+                  }
+                  url
+                  title
+                  width
+                  height
+                  description
+                }
+              }
+            }
+          }
+        }
+      }
+    }`;
+
+      const response = await this.callContentful(query);
+
+      console.log(response);
+
+      const post = response.data.blogPostCollection.items
+        ? response.data.blogPostCollection.items
+        : [];
+
+      return post.pop();
+    } else {
+      return null;
+    }
   }
 
   /**
