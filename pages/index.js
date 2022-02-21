@@ -226,13 +226,25 @@ export default function BlogIndex(props) {
             </article>
           </Flex>
         </Box>
-        <Box>
+        <Box className={ContentListStyles.contentList__topSection}>
           <Flex>
-                <h2 className={TypographyStyles.heading__h2}>
-                    Popular Categories
-                </h2>
-
-
+            <h2 className={TypographyStyles.heading__h2}>Popular Categories</h2>
+          </Flex>
+          <Flex>
+            
+            <Link href={`/topic/inspiring-people`} className={TypographyStyles.inlineLink}><a className={TypographyStyles.inlineLink}>
+            Inspiring People (fundraising, celebrities, volunteers)
+            </a></Link>
+            <Spacer />
+            <Link href={`/topic/eye-health`}><a className={TypographyStyles.inlineLink}>Eye Health</a></Link>
+            <Spacer />
+            <Link href={`/topic/news`}><a className={TypographyStyles.inlineLink}>News (fundraising, services)</a></Link> 
+            <Spacer />
+            <Link href={`/topic/technology`}><a className={TypographyStyles.inlineLink}>Technology</a></Link> 
+            <Spacer />
+            <Link href={`/topic/campaigning`}><a className={TypographyStyles.inlineLink}>Campaigning</a></Link> 
+            <Spacer />
+            <Link href={`/topic/dogs`}><a className={TypographyStyles.inlineLink}>Dogs</a></Link>
           </Flex>
         </Box>
 
