@@ -38,7 +38,7 @@ import {
 } from "@chakra-ui/react";
 
 export default function PostWrapper(props) {
-  const { preview, currentPage, totalPages, posts, tag } = props;
+  const { preview, currentPage, totalPages, posts, tag, tagname } = props;
 
   const postListType = `/topic/${tag}/`;
 
@@ -75,7 +75,7 @@ export default function PostWrapper(props) {
         </Box>
         <Spacer />
       </Flex>
-      <h1 className={TypographyStyles.heading__h1}> Here is a list of ''<text className={ContentListStyles.contentList__capitalize}>{tag}</text>'' posts! </h1>
+      <h1 className={TypographyStyles.heading__h1}> Here is a list of ''<text className={ContentListStyles.contentList__capitalize}>{tagname}</text>'' posts! </h1>
       <br></br>
       <PostList
           postListType = {postListType}
@@ -104,6 +104,8 @@ export async function getStaticPaths() {
 } 
 
 export async function getStaticProps({ params, preview = false }) {
+  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+
   const posts = await ContentfulApi.getAllBlogPosts();
 
   const acc =[];
@@ -148,9 +150,14 @@ export async function getStaticProps({ params, preview = false }) {
   }
 
 
-  console.log("totalPages:")
-  console.log(totalPages);
+  console.log("relatedPosts:")
+  console.log(relatedPosts);
+
+
   
+  const tagrecord = blogPostTags.find(({ id }) => id === params.tag);
+  const tagname = tagrecord.name;
+
   return {
     props: {
       preview,
@@ -158,6 +165,7 @@ export async function getStaticProps({ params, preview = false }) {
       currentPage: "1",
       posts: paginatedRelatedPosts,
       tag: params.tag,
+      tagname: tagname,
     },
   };
 }
