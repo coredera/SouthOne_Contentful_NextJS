@@ -16,6 +16,7 @@ import Tags from "@components/Post/Tags";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
+import router, { useRouter } from "next/router";
 
 import {
   Box,
@@ -26,6 +27,10 @@ import {
   SimpleGrid,
   GridItem,
   Spacer,
+  Select,
+  //Link,
+  LinkBox,
+  LinkOverlay,
   Icon,
   Button,
   VStack,
@@ -40,7 +45,10 @@ import {
 
 export default function BlogIndex(props) {
   const {
+    sortedBlogPostTags,
+    blogPostTags,
     featuredPost,
+    topPostsArray,
     postSummaries,
     currentPage,
     totalPages,
@@ -50,8 +58,9 @@ export default function BlogIndex(props) {
 
   const postListType = "/";
 
-  console.log("featuredPost:");
-  console.log(featuredPost);
+  //console.log("featuredPost:");
+  //console.log(featuredPost);
+
   /**
    * This provides some fallback values to PageMeta so that a pageContent
    * entry is not required for /blog
@@ -231,31 +240,94 @@ export default function BlogIndex(props) {
             <h2 className={TypographyStyles.heading__h2}>Popular Categories</h2>
           </Flex>
           <Flex>
-            
-            <Link href={`/topic/inspiring-people`} className={TypographyStyles.inlineLink}><a className={TypographyStyles.inlineLink}>
-            Inspiring People (fundraising, celebrities, volunteers)
-            </a></Link>
+            <Link
+              href={`/topic/inspiring-people`}
+              className={TypographyStyles.inlineLink}
+            >
+              <a className={TypographyStyles.inlineLink}>
+                Inspiring People (fundraising, celebrities, volunteers)
+              </a>
+            </Link>
             <Spacer />
-            <Link href={`/topic/eye-health`}><a className={TypographyStyles.inlineLink}>Eye Health</a></Link>
+            <Link href={`/topic/eye-health`}>
+              <a className={TypographyStyles.inlineLink}>Eye Health</a>
+            </Link>
             <Spacer />
-            <Link href={`/topic/news`}><a className={TypographyStyles.inlineLink}>News (fundraising, services)</a></Link> 
+            <Link href={`/topic/news`}>
+              <a className={TypographyStyles.inlineLink}>
+                News (fundraising, services)
+              </a>
+            </Link>
             <Spacer />
-            <Link href={`/topic/technology`}><a className={TypographyStyles.inlineLink}>Technology</a></Link> 
+            <Link href={`/topic/technology`}>
+              <a className={TypographyStyles.inlineLink}>Technology</a>
+            </Link>
             <Spacer />
-            <Link href={`/topic/campaigning`}><a className={TypographyStyles.inlineLink}>Campaigning</a></Link> 
+            <Link href={`/topic/campaigning`}>
+              <a className={TypographyStyles.inlineLink}>Campaigning</a>
+            </Link>
             <Spacer />
-            <Link href={`/topic/dogs`}><a className={TypographyStyles.inlineLink}>Dogs</a></Link>
+            <Link href={`/topic/dogs`}>
+              <a className={TypographyStyles.inlineLink}>Dogs</a>
+            </Link>
           </Flex>
         </Box>
+        <Flex className={ContentListStyles.contentList__topSection}>
+          <Box>
+            <Select
+              placeholder="Select a Category"
+              id="selectBox"
+              onChange={() => changeFunc()}
+            >
+              {sortedBlogPostTags.map((tag) => (
+                <option value={tag.id} key={tag.id}>
+                  {tag.name}
+                </option>
+              ))}
+            </Select>
+          </Box>
 
-        <ContentWrapper>
-          <PostList
-            postListType={postListType}
-            posts={postSummaries}
-            totalPages={totalPages}
-            currentPage={currentPage}
-          />
-        </ContentWrapper>
+          <Spacer />
+        </Flex>
+        <Flex>
+          <Box>
+            <ContentWrapper>
+              <PostList
+                postListType={postListType}
+                posts={postSummaries}
+                totalPages={totalPages}
+                currentPage={currentPage}
+              />
+            </ContentWrapper>
+          </Box>
+
+          <Box w="30rem" p={5}>
+          <h2 className={ContentListStyles.contentList__title}>
+                       Popular Posts
+                      </h2>
+            {topPostsArray.map((post) => (
+              <div key={post.sys.id}>
+                <article className={ContentListStyles.contentList__post}>
+                  <Flex p={2} />
+                  <Link href={`/${post.slug}`}>
+                    <a className={ContentListStyles.contentList__titleLink}>
+                      <h3 className={ContentListStyles.contentList__title}>
+                        {post.title}
+                      </h3>
+                    </a>
+                  </Link>
+
+                  <div className={ContentListStyles.contentList__excerpt}>
+                    <ReactMarkdown
+                      children={post.excerpt}
+                      renderers={ReactMarkdownRenderers(post.excerpt)}
+                    />
+                  </div>
+                </article>
+              </div>
+            ))}
+          </Box>
+        </Flex>
       </MainLayout>
     );
   } else {
@@ -302,6 +374,12 @@ export default function BlogIndex(props) {
 }
 
 export async function getStaticProps({ preview = false }) {
+  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const posts = await ContentfulApi.getAllBlogPosts();
+
+  console.log("blogPostTags");
+  console.log(blogPostTags);
+
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
   const pageContent = await ContentfulApi.getPageContentBySlug(
     Config.pageMeta.blogIndex.slug,
@@ -316,9 +394,88 @@ export async function getStaticProps({ preview = false }) {
 
   const featuredPost = await ContentfulApi.getFeaturedPost();
 
+  //const topPosts = await ContentfulApi.getTopPosts();
+
+  //  console.log("topPosts");
+  //console.log(topPosts);
+
+  const topPostsIds = await ContentfulApi.getTopPostsIds();
+
+  console.log("topPostsIds");
+  console.log(topPostsIds);
+  //console.log(topPostsIds.length);
+
+  const topPostId1 = topPostsIds.tpostid1;
+  const topPostId2 = topPostsIds.tpostid2;
+  const topPostId3 = topPostsIds.tpostid3;
+  const topPostId4 = topPostsIds.tpostid4;
+  const topPostId5 = topPostsIds.tpostid5;
+
+  console.log("topPostId1");
+  console.log(topPostId1);
+
+  console.log("topPostId2");
+  console.log(topPostId2);
+
+  console.log("posts");
+  console.log(posts);
+
+  const topPost1 = posts.find((p) => p.sys.id === topPostId1);
+  const topPost2 = posts.find((p) => p.sys.id === topPostId2);
+  const topPost3 = posts.find((p) => p.sys.id === topPostId3);
+  const topPost4 = posts.find((p) => p.sys.id === topPostId4);
+  const topPost5 = posts.find((p) => p.sys.id === topPostId5);
+
+  console.log("topPost1:");
+  console.log(topPost1);
+
+  const topPostsIdsArray = [
+    topPostId1,
+    topPostId2,
+    topPostId3,
+    topPostId4,
+    topPostId5,
+  ];
+
+  const topPostsArray = [topPost1, topPost2, topPost3, topPost4, topPost5];
+
+  const topPosts = posts.reduce((acc, post) => {
+    // for (var i = 0; i < 4; i++) {
+    //  console.log(i);
+    //  console.log("entering loop");
+    if (post.sys.id === topPostsIdsArray[0]) {
+      acc.push(post);
+
+      console.log("ACC.........");
+      console.log(acc);
+
+      // totalPages = Math.ceil(
+      //  acc.length / Config.pagination.pageSize,
+      //);
+      return acc;
+    } else if (post.sys.id === topPostsIdsArray[1]) {
+      acc.push(post);
+
+      console.log("ACC.........");
+      console.log(acc);
+
+      // totalPages = Math.ceil(
+      //  acc.length / Config.pagination.pageSize,
+      //);
+      return acc;
+    }
+    return acc;
+  }, []);
+
+  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+
   return {
     props: {
+      sortedBlogPostTags,
       featuredPost,
+      topPostsArray,
       preview,
       postSummaries: postSummaries.items,
       totalPages,
@@ -326,4 +483,12 @@ export async function getStaticProps({ preview = false }) {
       pageContent: pageContent || null,
     },
   };
+}
+
+export async function changeFunc(tagid) {
+  var selectBox = document.getElementById("selectBox");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  // alert(selectedValue);
+
+  router.push(`/topic/${selectedValue}`);
 }

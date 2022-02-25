@@ -768,6 +768,326 @@ export default class ContentfulApi {
     }
   }
 
+/**
+   * Fetch the top posts IDs.
+   *
+   * This method is used on blog landing page to fetch the data for
+   * the top posts at build time, which are prerendered as
+   * static HTML.
+   *
+   * The content type uses the powerful Rich Text field type for the
+   * body of the post.
+   *
+   * This query fetches linked assets (i.e. images) and entries
+   * (i.e. video embed and code block entries) that are embedded
+   * in the Rich Text field. This is rendered to the page using
+   * @components/RichTextPageContent.
+   *
+   * For more information on Rich Text fields in Contentful, view the
+   * documentation here: https://www.contentful.com/developers/docs/concepts/rich-text/
+   *
+   * Linked assets and entries are parsed and rendered using the npm package
+   * @contentful/rich-text-react-renderer
+   *
+   * https://www.npmjs.com/package/@contentful/rich-text-react-renderer
+   *
+   * param: not required
+   *
+   */
+ static async getTopPostsIds() {
+  const tquery = `{
+    topPostsCollection {
+      total
+      items {
+        post1 {
+          sys {
+            id
+            
+          }
+          slug
+        }
+        post2 {
+          sys {
+            id
+          }
+           slug
+        }
+        post3 {
+          sys {
+            id
+          }
+           slug
+        }
+        post4 {
+          sys {
+            id
+          }
+           slug
+        }
+        post5 {
+          sys {
+            id
+          }
+           slug
+        }
+      }
+    }
+  }`;
+
+  const tresponse = await this.callContentful(tquery);
+
+  console.log("tresponse:");
+  console.log(tresponse.data.topPostsCollection.items[0].post1);
+
+  //const fpostid = `a`;
+
+  if (tresponse.data.topPostsCollection.items[0].post1 !== null) {
+    const tpostid1 =
+      tresponse.data.topPostsCollection.items[0].post1.sys.id;
+
+    const tpostid2 =
+      tresponse.data.topPostsCollection.items[0].post2.sys.id;
+
+      const tpostid3 =
+      tresponse.data.topPostsCollection.items[0].post3.sys.id;
+
+      const tpostid4 =
+      tresponse.data.topPostsCollection.items[0].post4.sys.id;
+
+      const tpostid5 =
+      tresponse.data.topPostsCollection.items[0].post5.sys.id;
+
+    console.log("tpostid1:");
+    console.log(tpostid1);
+
+   
+
+
+
+
+      return { tpostid1, tpostid2, tpostid3, tpostid4, tpostid5 };
+  } else {
+    return null;
+  }
+}
+
+
+
+/**
+   * Fetch the top posts.
+   *
+   * This method is used on blog landing page to fetch the data for
+   * the top posts at build time, which are prerendered as
+   * static HTML.
+   *
+   * The content type uses the powerful Rich Text field type for the
+   * body of the post.
+   *
+   * This query fetches linked assets (i.e. images) and entries
+   * (i.e. video embed and code block entries) that are embedded
+   * in the Rich Text field. This is rendered to the page using
+   * @components/RichTextPageContent.
+   *
+   * For more information on Rich Text fields in Contentful, view the
+   * documentation here: https://www.contentful.com/developers/docs/concepts/rich-text/
+   *
+   * Linked assets and entries are parsed and rendered using the npm package
+   * @contentful/rich-text-react-renderer
+   *
+   * https://www.npmjs.com/package/@contentful/rich-text-react-renderer
+   *
+   * param: not required
+   *
+   */
+ static async getTopPosts() {
+  const tquery = `{
+    topPostsCollection {
+      total
+      items {
+        post1 {
+          sys {
+            id
+            
+          }
+          slug
+        }
+        post2 {
+          sys {
+            id
+          }
+           slug
+        }
+        post3 {
+          sys {
+            id
+          }
+           slug
+        }
+        post4 {
+          sys {
+            id
+          }
+           slug
+        }
+        post5 {
+          sys {
+            id
+          }
+           slug
+        }
+      }
+    }
+  }`;
+
+  const tresponse = await this.callContentful(tquery);
+
+  console.log("tresponse:");
+  console.log(tresponse.data.topPostsCollection.items[0].post1);
+
+  //const fpostid = `a`;
+
+  if (tresponse.data.topPostsCollection.items[0].post1 !== null) {
+    const tpostid1 =
+      tresponse.data.topPostsCollection.items[0].post1.sys.id;
+
+    const tpostid2 =
+      tresponse.data.topPostsCollection.items[0].post2.sys.id;
+
+      const tpostid3 =
+      tresponse.data.topPostsCollection.items[0].post3.sys.id;
+
+      const tpostid4 =
+      tresponse.data.topPostsCollection.items[0].post4.sys.id;
+
+      const tpostid5 =
+      tresponse.data.topPostsCollection.items[0].post5.sys.id;
+
+    console.log("tpostid1:");
+    console.log(tpostid1);
+
+   
+
+
+
+    const query = `{
+    blogPostCollection(limit: 5,  where: {
+      sys: {
+        id_in: ["${tpostid1}", "${tpostid2}", "${tpostid3}", "${tpostid4}", "${tpostid5}"]
+      }
+    })
+    {
+      total
+      items {
+        sys {
+          id
+        }
+        contentfulMetadata{
+          tags {
+            id
+            name
+          }
+        }
+        image {
+          title
+          description
+          contentType
+          fileName
+          size
+          url
+          width
+          height
+        }
+        date
+        title
+        metaTitle
+        metaDescription
+        slug
+        excerpt
+        externalUrl
+        author {
+          type
+          name
+          description
+          twitchUsername
+          twitterUsername
+          gitHubUsername
+          websiteUrl
+          image {
+            url
+            title
+            width
+            height
+            description
+          }
+        }
+        body {
+          json
+          links {
+            entries {
+              inline {
+                sys {
+                  id
+                }
+                __typename
+                ... on BlogPost {
+                  title
+                  slug
+                }
+              }
+              block {
+                sys {
+                  id
+                }
+                __typename
+                ... on VideoEmbed {
+                  title
+                  embedUrl
+                }
+                ... on CodeBlock {
+                  description
+                  language
+                  code
+                }
+              }
+            }
+            assets {
+              block {
+                sys {
+                  id
+                }
+                url
+                title
+                width
+                height
+                description
+              }
+            }
+          }
+        }
+      }
+    }
+  }`;
+
+    const response = await this.callContentful(query);
+
+    console.log(response);
+
+    const posts = response.data.blogPostCollection.items
+      ? response.data.blogPostCollection.items
+      : [];
+
+
+
+      return { posts };
+  } else {
+    return null;
+  }
+}
+
+
+
+
+
   /**
    * Fetch n post summaries that are displayed on pages/blog.js.
    *
