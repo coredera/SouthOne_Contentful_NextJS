@@ -19,7 +19,8 @@
 }
 
 .contentList__featuredPost {
-  
+  border: 0.25rem solid var(--color-button);
+  border-radius: 2rem;
 }
 
 
@@ -110,6 +111,14 @@
   font-family: var(--font-family-body);
   color: var(--color-foreground);
   font-size: 2.125rem;
+  line-height: 1.6;
+}
+
+.contentList__topposttitle {
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family-body);
+  color: var(--color-foreground);
+  font-size: 1.5rem;
   line-height: 1.6;
 }
 

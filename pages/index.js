@@ -104,9 +104,10 @@ export default function BlogIndex(props) {
             )}
           </Flex>
 
-          <Flex display={{ base: "none", md: "block" }}>
+          <Flex display={{ base: "none", md: "block" }} className={ContentListStyles.contentList__featuredPost} p={3}>
+
             <article
-              className={ContentListStyles.contentList__featuredPost}
+              
               style={{ display: featuredPost === null ? "none" : "block" }}
             >
               <Link href={`/${featuredPost.slug}`}>
@@ -170,6 +171,7 @@ export default function BlogIndex(props) {
                         layout="responsive"
                         objectFit="contain"
                         alt={featuredPost.image.description}
+                        style={{borderRadius:'20px'}}
                       />
                     </a>
                   </Link>
@@ -237,7 +239,7 @@ export default function BlogIndex(props) {
         </Box>
         <Box className={ContentListStyles.contentList__topSection}>
           <Flex>
-            <h2 className={TypographyStyles.heading__h2}>Popular Categories</h2>
+            <h2 className={TypographyStyles.heading__h2}>Popular Topics</h2>
           </Flex>
           <Flex>
             <Link
@@ -275,7 +277,7 @@ export default function BlogIndex(props) {
         <Flex className={ContentListStyles.contentList__topSection}>
           <Box>
             <Select
-              placeholder="Select a Category"
+              placeholder="Select a Topic"
               id="selectBox"
               onChange={() => changeFunc()}
             >
@@ -301,32 +303,91 @@ export default function BlogIndex(props) {
             </ContentWrapper>
           </Box>
 
-          <Box w="30rem" p={5}>
-          <h2 className={ContentListStyles.contentList__title}>
-                       Popular Posts
-                      </h2>
+          <Box w="30rem" p={5} display={{ base: "none", md: "block" }}>
+            <h2 className={ContentListStyles.contentList__title}>
+              Popular Posts
+            </h2>
+            {topPostsArray.map((post) => (
+              <div key={post.sys.id}>
+                <Link href={`/${post.slug}`}>
+                  <a className={ContentListStyles.contentList__titleLink}>
+                    <h3 className={ContentListStyles.contentList__topposttitle}>
+                      {post.title}
+                    </h3>
+                  </a>
+                </Link>
+              </div>
+            ))}
+          </Box>
+        </Flex>
+        <Flex direction="column" display={{base: 'block,', md: 'none'}}>
+          <ContentWrapper>
+            <h2 className={ContentListStyles.contentList__title}>
+              Popular Posts
+            </h2>
             {topPostsArray.map((post) => (
               <div key={post.sys.id}>
                 <article className={ContentListStyles.contentList__post}>
-                  <Flex p={2} />
                   <Link href={`/${post.slug}`}>
-                    <a className={ContentListStyles.contentList__titleLink}>
-                      <h3 className={ContentListStyles.contentList__title}>
-                        {post.title}
-                      </h3>
+                    <a>
+                      <img
+                        src={post.image.url}
+                        width={post.image.width}
+                        height={post.image.height}
+                        layout="responsive"
+                        objectFit="contain"
+                        alt={post.image.description}
+                        style={{borderRadius:'20px'}}
+                      />
                     </a>
                   </Link>
 
+                  <Flex p={2} />
+                  <Link href={`/${post.slug}`}>
+                    <a className={ContentListStyles.contentList__titleLink}>
+                      <h2 className={ContentListStyles.contentList__title}>
+                        {post.title}
+                      </h2>
+                    </a>
+                  </Link>
+                  <Box className={ContentListStyles.contentList__author}>
+                    {post.author !== null && <> Author: {post.author.name}</>}
+                  </Box>
+                  {post.contentfulMetadata.tags !== null && (
+                    <Tags tags={post.contentfulMetadata.tags} />
+                  )}
                   <div className={ContentListStyles.contentList__excerpt}>
                     <ReactMarkdown
                       children={post.excerpt}
                       renderers={ReactMarkdownRenderers(post.excerpt)}
                     />
                   </div>
+                  <Flex alignItems="center">
+                    <Box alignSelf="center">
+                      <Link href={`/${post.slug}`}>
+                        <a>
+                          <h3
+                            className={
+                              ContentListStyles.contentList__readmorelink
+                            }
+                          >
+                            Read more
+                          </h3>
+                        </a>
+                      </Link>
+                    </Box>
+                    <Spacer />
+                    <Box
+                      alignSelf="center"
+                      className={TypographyStyles.bodyCopy}
+                    >
+                      <PublishedDate date={post.date} alignSelf="center" />
+                    </Box>
+                  </Flex>
                 </article>
               </div>
             ))}
-          </Box>
+          </ContentWrapper>
         </Flex>
       </MainLayout>
     );

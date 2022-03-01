@@ -52,6 +52,7 @@ export default function PostList(props) {
                     layout="responsive" 
                     objectFit="contain"
                     alt={post.image.description}
+                    style={{borderRadius:'20px'}}
                   /> 
                 </a>
               </Link> 
