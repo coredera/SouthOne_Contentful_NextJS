@@ -18,9 +18,24 @@
   
 }
 
-.contentList__featuredPost {
-  border: 0.25rem solid var(--color-button);
+.contentList__topSectionblue {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100rem;
+  padding: 2rem;
+  
   border-radius: 2rem;
+  
+}
+
+.contentList__selectTopic {
+  padding: 2rem;
+  padding-left: 0rem;
+  
+}
+
+.contentList__featuredPost {
+
 }
 
 

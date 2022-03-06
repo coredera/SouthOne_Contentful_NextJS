@@ -42,6 +42,8 @@ const DynamicCodeBlock = dynamic(() => import("./CodeBlock"));
 
 const DynamicVideoEmbed = dynamic(() => import("./VideoEmbed"));
 
+const DynamicButtonEmbed = dynamic(() => import("./ButtonEmbed"));
+
 export function getRichTextRenderOptions(links, options) {
   const { renderH2Links, renderNativeImg } = options;
 
@@ -120,16 +122,15 @@ export function getRichTextRenderOptions(links, options) {
             className={TypographyStyles.blockquotebox}
             p={5}
           >
-            <Flex> 
+            <Flex>
               <Box width="10em">
-                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-open.svg`}/>
-
-                
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-open.svg`}
+                />
               </Box>
               <Spacer />
               <Box>
                 <blockquote
-              
                   className={TypographyStyles.blockquote}
                   bgColor="brand.100"
                 >
@@ -138,7 +139,9 @@ export function getRichTextRenderOptions(links, options) {
               </Box>
               <Spacer />
               <Box alignSelf="flex-end" width="10em">
-                <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-closed.svg`} />
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-closed.svg`}
+                />
               </Box>
             </Flex>
           </Box>
@@ -168,6 +171,19 @@ export function getRichTextRenderOptions(links, options) {
                 <a className={TypographyStyles.inlineLink}>{entry.title}</a>
               </Link>
             );
+          case "VideoEmbed":
+            title = entry.title;
+            embedUrl = entry.embedUrl;
+            return <DynamicVideoEmbed embedUrl={embedUrl} title={title} />;
+          case "Button":
+            const { embedUrl, title } = entry;
+            console.log(entry.embedURL);
+
+            return <DynamicButtonEmbed embedUrl={embedUrl} title={title} />;
+          case "CodeBlock":
+            const { language, code } = entry;
+
+            return <DynamicCodeBlock language={language} code={code} />;
           default:
             return null;
         }
@@ -175,11 +191,24 @@ export function getRichTextRenderOptions(links, options) {
       [BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
         const entry = entryMap.get(node.data.target.sys.id);
         const { __typename } = entry;
+        var { embedUrl, title } = [];
 
         switch (__typename) {
+          case "BlogPost":
+            return (
+              <Link href={`/blog/${entry.slug}`}>
+                <a className={TypographyStyles.inlineLink}>{entry.title}</a>
+              </Link>
+            );
           case "VideoEmbed":
-            const { embedUrl, title } = entry;
+            title = entry.title;
+            embedUrl = entry.embedUrl;
             return <DynamicVideoEmbed embedUrl={embedUrl} title={title} />;
+          case "Button":
+            title = entry.title;
+            embedUrl = entry.embedUrl;
+
+            return <DynamicButtonEmbed embedUrl={embedUrl} title={title} />;
           case "CodeBlock":
             const { language, code } = entry;
 
@@ -229,4 +258,3 @@ export default function RichTextPageContent(props) {
     </div>
   );
 }
- 

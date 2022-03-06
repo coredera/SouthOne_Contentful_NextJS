@@ -17,6 +17,7 @@ import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
 import router, { useRouter } from "next/router";
+import FeaturedPost from "@components/FeaturedPost";
 
 import {
   Box,
@@ -89,208 +90,78 @@ export default function BlogIndex(props) {
           <Flex>
             <Box pb={10} pt={7}>
               <h1 className={TypographyStyles.heading__h1}>
-                Welcome to the Guide Dogs Blog
+                {pageContent.title}
               </h1>
-              <text className={TypographyStyles.bodyCopy}>
-                Discover true stories, big issues, actioning change and
-                more.......
-              </text>
+              {pageContent.body && (
+             
+             <RichTextPageContent richTextBodyField={pageContent.body} className={TypographyStyles.bodyCopy}/>
+            
+         )}
             </Box>
 
-            {pageContent.body && (
-              <PageContentWrapper>
-                <RichTextPageContent richTextBodyField={pageContent.body} />
-              </PageContentWrapper>
-            )}
+            
           </Flex>
 
-          <Flex display={{ base: "none", md: "block" }} className={ContentListStyles.contentList__featuredPost} p={3}>
+          <FeaturedPost featuredPost={featuredPost}/>
 
-            <article
-              
-              style={{ display: featuredPost === null ? "none" : "block" }}
-            >
-              <Link href={`/${featuredPost.slug}`}>
-                <a className={ContentListStyles.contentList__titleLink}>
-                  <h2 className={ContentListStyles.contentList__title}>
-                    {featuredPost.title}
-                  </h2>
-                </a>
-              </Link>
-
-              <Flex justifyContent>
-                <Box pr={30}>
-                  <Box className={ContentListStyles.contentList__author}>
-                    {featuredPost.author !== null && (
-                      <> Author: {featuredPost.author.name}</>
-                    )}
-                  </Box>
-                  {featuredPost.contentfulMetadata.tags !== null && (
-                    <Tags tags={featuredPost.contentfulMetadata.tags} />
-                  )}
-                  <div className={ContentListStyles.contentList__excerpt}>
-                    <ReactMarkdown
-                      children={featuredPost.excerpt}
-                      renderers={ReactMarkdownRenderers(featuredPost.excerpt)}
-                    />
-                  </div>
-                  <Flex alignItems="center">
-                    <Box alignSelf="center">
-                      <Link href={`/${featuredPost.slug}`}>
-                        <a>
-                          <h3
-                            className={
-                              ContentListStyles.contentList__readmorelink
-                            }
-                          >
-                            Read more
-                          </h3>
-                        </a>
-                      </Link>
-                    </Box>
-                    <Spacer />
-                    <Box
-                      alignSelf="center"
-                      className={TypographyStyles.bodyCopy}
-                    >
-                      <PublishedDate
-                        date={featuredPost.date}
-                        alignSelf="center"
-                      />
-                    </Box>
-                  </Flex>
-                </Box>
-                <Spacer />
-                <Box pl={30} width="70rem">
-                  <Link href={`/${featuredPost.slug}`}>
-                    <a>
-                      <img
-                        src={featuredPost.image.url}
-                        width={featuredPost.image.width}
-                        height={featuredPost.image.height}
-                        layout="responsive"
-                        objectFit="contain"
-                        alt={featuredPost.image.description}
-                        style={{borderRadius:'20px'}}
-                      />
-                    </a>
-                  </Link>
-                </Box>
-              </Flex>
-            </article>
-          </Flex>
-
-          <Flex display={{ base: "block", md: "none" }}>
-            <article className={ContentListStyles.contentList__post}>
-              <Link href={`/${featuredPost.slug}`}>
-                <a>
-                  <img
-                    src={featuredPost.image.url}
-                    width={featuredPost.image.width}
-                    height={featuredPost.image.height}
-                    layout="responsive"
-                    objectFit="contain"
-                    alt={featuredPost.image.description}
-                  />
-                </a>
-              </Link>
-
-              <Flex p={2} />
-              <Link href={`/${featuredPost.slug}`}>
-                <a className={ContentListStyles.contentList__titleLink}>
-                  <h2 className={ContentListStyles.contentList__title}>
-                    {featuredPost.title}
-                  </h2>
-                </a>
-              </Link>
-              <Box className={ContentListStyles.contentList__author}>
-                {featuredPost.author !== null && (
-                  <> Author: {featuredPost.author.name}</>
-                )}
-              </Box>
-              {featuredPost.contentfulMetadata.tags !== null && (
-                <Tags tags={featuredPost.contentfulMetadata.tags} />
-              )}
-              <div className={ContentListStyles.contentList__excerpt}>
-                <ReactMarkdown
-                  children={featuredPost.excerpt}
-                  renderers={ReactMarkdownRenderers(featuredPost.excerpt)}
-                />
-              </div>
-              <Flex alignItems="center">
-                <Box alignSelf="center">
-                  <Link href={`/${featuredPost.slug}`}>
-                    <a>
-                      <h3
-                        className={ContentListStyles.contentList__readmorelink}
-                      >
-                        Read more
-                      </h3>
-                    </a>
-                  </Link>
-                </Box>
-                <Spacer />
-                <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-                  <PublishedDate date={featuredPost.date} alignSelf="center" />
-                </Box>
-              </Flex>
-            </article>
-          </Flex>
         </Box>
-        <Box className={ContentListStyles.contentList__topSection}>
+        <Flex
+          className={ContentListStyles.contentList__topSectionblue}
+          backgroundColor="brand.50"
+          direction="column"
+        >
           <Flex>
             <h2 className={TypographyStyles.heading__h2}>Popular Topics</h2>
           </Flex>
           <Flex>
             <Link
               href={`/topic/inspiring-people`}
-              className={TypographyStyles.inlineLink}
+              className={TypographyStyles.popularTopics}
             >
-              <a className={TypographyStyles.inlineLink}>
-                Inspiring People (fundraising, celebrities, volunteers)
-              </a>
+              <a className={TypographyStyles.popularTopics}>Inspiring People</a>
             </Link>
             <Spacer />
             <Link href={`/topic/eye-health`}>
-              <a className={TypographyStyles.inlineLink}>Eye Health</a>
+              <a className={TypographyStyles.popularTopics}>Eye Health</a>
             </Link>
             <Spacer />
             <Link href={`/topic/news`}>
-              <a className={TypographyStyles.inlineLink}>
-                News (fundraising, services)
-              </a>
+              <a className={TypographyStyles.popularTopics}>News</a>
             </Link>
             <Spacer />
             <Link href={`/topic/technology`}>
-              <a className={TypographyStyles.inlineLink}>Technology</a>
+              <a className={TypographyStyles.popularTopics}>Technology</a>
             </Link>
             <Spacer />
             <Link href={`/topic/campaigning`}>
-              <a className={TypographyStyles.inlineLink}>Campaigning</a>
+              <a className={TypographyStyles.popularTopics}>Campaigning</a>
             </Link>
             <Spacer />
             <Link href={`/topic/dogs`}>
-              <a className={TypographyStyles.inlineLink}>Dogs</a>
+              <a className={TypographyStyles.popularTopics}>Dogs</a>
             </Link>
           </Flex>
-        </Box>
-        <Flex className={ContentListStyles.contentList__topSection}>
-          <Box>
-            <Select
-              placeholder="Select a Topic"
-              id="selectBox"
-              onChange={() => changeFunc()}
-            >
-              {sortedBlogPostTags.map((tag) => (
-                <option value={tag.id} key={tag.id}>
-                  {tag.name}
-                </option>
-              ))}
-            </Select>
-          </Box>
+          <Flex>
+            <Box className={ContentListStyles.contentList__selectTopic}>
+              <Select
+                placeholder="Select a topic"
+                id="selectBox"
+                onChange={() => changeFunc()}
+                bgColor="white"
+                fontFamily="Trebuchet MS"
+              >
+                {sortedBlogPostTags.map((tag) => (
+                  <option value={tag.id} key={tag.id}>
+                    {tag.name}
+                  </option>
+                ))}
+              </Select>
+            </Box>
 
-          <Spacer />
+            <Spacer />
+          </Flex>
         </Flex>
+
         <Flex>
           <Box>
             <ContentWrapper>
@@ -320,7 +191,7 @@ export default function BlogIndex(props) {
             ))}
           </Box>
         </Flex>
-        <Flex direction="column" display={{base: 'block,', md: 'none'}}>
+        <Flex direction="column" display={{ base: "block,", md: "none" }}>
           <ContentWrapper>
             <h2 className={ContentListStyles.contentList__title}>
               Popular Posts
@@ -337,7 +208,7 @@ export default function BlogIndex(props) {
                         layout="responsive"
                         objectFit="contain"
                         alt={post.image.description}
-                        style={{borderRadius:'20px'}}
+                        style={{ borderRadius: "20px" }}
                       />
                     </a>
                   </Link>

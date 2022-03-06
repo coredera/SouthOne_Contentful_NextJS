@@ -90,6 +90,7 @@ export async function getStaticPaths() {
     return { params: { slug } };
   });
 
+ 
   // Using fallback: "blocking" here enables preview mode for unpublished blog slugs
   // on production
   return {
@@ -103,6 +104,7 @@ export async function getStaticProps({ params, preview = false }) {
     preview: preview,
   });
 
+  
   // Add this with fallback: "blocking"
   // So that if we do not have a post on production,
   // the 404 is served
