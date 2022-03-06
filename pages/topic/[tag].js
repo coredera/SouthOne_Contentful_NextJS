@@ -44,7 +44,13 @@ export default function PostWrapper(props) {
 
   return (
     <MainLayout preview={preview}>
-      <PageMeta title={"Tag"} description={""} url={""} canonical={false} />
+      <PageMeta 
+        metatitle={`Read The Latest ${tag} Articles On Our Blog`} 
+        metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`} url={""} canonical={false} 
+        title={`Read The Latest ${tag} Articles On Our Blog`}
+        description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
+        />
+      
       <ContentWrapper>
       <Flex
         alignItems="center"
@@ -75,7 +81,7 @@ export default function PostWrapper(props) {
         </Box>
         <Spacer />
       </Flex>
-      <h1 className={TypographyStyles.heading__h1}> Here is a list of ''<text className={ContentListStyles.contentList__capitalize}>{tagname}</text>'' posts! </h1>
+      <h1 className={TypographyStyles.heading__h1}> Latest ''<text className={ContentListStyles.contentList__capitalize}>{tagname}</text>'' articles </h1>
       <br></br>
       <PostList
           postListType = {postListType}

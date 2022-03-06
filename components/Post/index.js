@@ -48,6 +48,8 @@ export default function Post(props) {
   const { post } = props;
   const hyvor = `${process.env.NEXT_PUBLIC_HYVOR_ID}`;
 
+  console.log(post.body.links.entries.block[0].title);
+
   return (
     <>
       <Flex pt={10} />

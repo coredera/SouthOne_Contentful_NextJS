@@ -71,6 +71,24 @@ export default class ContentfulApi {
             json
             links {
               entries {
+                inline {
+                  sys {
+                    id
+                  }
+                  __typename
+                  ... on VideoEmbed {
+                    title
+                    embedUrl
+                  }
+                  ... on BlogPost {
+                    title
+                    slug
+                  }
+                  ... on Button {
+                    title
+                    embedUrl
+                  }
+                }
                 block {
                   sys {
                     id
@@ -84,6 +102,10 @@ export default class ContentfulApi {
                     description
                     language
                     code
+                  }
+                  ... on Button {
+                    title
+                    embedUrl
                   }
                 }
               }
@@ -562,6 +584,10 @@ export default class ContentfulApi {
                     title
                     slug
                   }
+                  ... on Button {
+                    title
+                    embedUrl
+                  }
                 }
                 block {
                   sys {
@@ -576,6 +602,10 @@ export default class ContentfulApi {
                     description
                     language
                     code
+                  }
+                  ... on Button {
+                    title
+                    embedUrl
                   }
                 }
               }
@@ -601,6 +631,8 @@ export default class ContentfulApi {
     const post = response.data.blogPostCollection.items
       ? response.data.blogPostCollection.items
       : [];
+
+     
 
     return post.pop();
   }
