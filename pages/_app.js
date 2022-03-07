@@ -29,6 +29,10 @@ import GoogleTagManager from "../components/GTM";
 
  function MyApp({ Component, pageProps }) {
    return (
+     <>
+     <Head>
+     <meta name = "viewport" content = "user-scalable=no, width=device-width" />
+     </Head>
     <GoogleTagManager>
 
      <ChakraProvider theme={customTheme}>
@@ -38,6 +42,7 @@ import GoogleTagManager from "../components/GTM";
 
      </ChakraProvider>
      </GoogleTagManager>
+     </>
 
    );
  }
