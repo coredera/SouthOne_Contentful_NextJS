@@ -309,8 +309,8 @@ export async function getStaticProps({ preview = false }) {
   const blogPostTags = await ContentfulApi.getAllUniquePostTags();
   const posts = await ContentfulApi.getAllBlogPosts();
 
-  console.log("blogPostTags");
-  console.log(blogPostTags);
+ // console.log("blogPostTags");
+ // console.log(blogPostTags);
 
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
   const pageContent = await ContentfulApi.getPageContentBySlug(
@@ -333,8 +333,8 @@ export async function getStaticProps({ preview = false }) {
 
   const topPostsIds = await ContentfulApi.getTopPostsIds();
 
-  console.log("topPostsIds");
-  console.log(topPostsIds);
+//  console.log("topPostsIds");
+ // console.log(topPostsIds);
   //console.log(topPostsIds.length);
 
   const topPostId1 = topPostsIds.tpostid1;
@@ -343,14 +343,14 @@ export async function getStaticProps({ preview = false }) {
   const topPostId4 = topPostsIds.tpostid4;
   const topPostId5 = topPostsIds.tpostid5;
 
-  console.log("topPostId1");
-  console.log(topPostId1);
+ // console.log("topPostId1");
+ // console.log(topPostId1);
 
-  console.log("topPostId2");
-  console.log(topPostId2);
+//  console.log("topPostId2");
+//  console.log(topPostId2);
 
-  console.log("posts");
-  console.log(posts);
+ // console.log("posts");
+ // console.log(posts);
 
   const topPost1 = posts.find((p) => p.sys.id === topPostId1);
   const topPost2 = posts.find((p) => p.sys.id === topPostId2);
@@ -358,8 +358,8 @@ export async function getStaticProps({ preview = false }) {
   const topPost4 = posts.find((p) => p.sys.id === topPostId4);
   const topPost5 = posts.find((p) => p.sys.id === topPostId5);
 
-  console.log("topPost1:");
-  console.log(topPost1);
+//  console.log("topPost1:");
+//  console.log(topPost1);
 
   const topPostsIdsArray = [
     topPostId1,
@@ -378,8 +378,8 @@ export async function getStaticProps({ preview = false }) {
     if (post.sys.id === topPostsIdsArray[0]) {
       acc.push(post);
 
-      console.log("ACC.........");
-      console.log(acc);
+    //  console.log("ACC.........");
+    //  console.log(acc);
 
       // totalPages = Math.ceil(
       //  acc.length / Config.pagination.pageSize,
@@ -388,8 +388,8 @@ export async function getStaticProps({ preview = false }) {
     } else if (post.sys.id === topPostsIdsArray[1]) {
       acc.push(post);
 
-      console.log("ACC.........");
-      console.log(acc);
+    //  console.log("ACC.........");
+    //  console.log(acc);
 
       // totalPages = Math.ceil(
       //  acc.length / Config.pagination.pageSize,

@@ -128,8 +128,8 @@ export async function getStaticProps({ params, preview = false }) {
     ) {
       acc.push(post);
 
-      console.log("ACC.........");
-      console.log(acc);
+     // console.log("ACC.........");
+     // console.log(acc);
 
       totalPages = Math.ceil(
         acc.length / Config.pagination.pageSize,
@@ -156,8 +156,8 @@ export async function getStaticProps({ params, preview = false }) {
   }
 
 
-  console.log("relatedPosts:")
-  console.log(relatedPosts);
+//  console.log("relatedPosts:")
+//  console.log(relatedPosts);
 
 
   

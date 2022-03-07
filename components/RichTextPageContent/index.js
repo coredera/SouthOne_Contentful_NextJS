@@ -177,7 +177,7 @@ export function getRichTextRenderOptions(links, options) {
             return <DynamicVideoEmbed embedUrl={embedUrl} title={title} />;
           case "Button":
             const { embedUrl, title } = entry;
-            console.log(entry.embedURL);
+         //   console.log(entry.embedURL);
 
             return <DynamicButtonEmbed embedUrl={embedUrl} title={title} />;
           case "CodeBlock":

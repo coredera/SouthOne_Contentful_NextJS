@@ -243,8 +243,8 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    console.log("reponse:");
-    console.log(response);
+   // console.log("reponse:");
+   // console.log(response);
     //console.log(response.data.blogPostCollection.items[0].contentfulMetadata.tags[0].id,);
     //console.log(response.data.blogPostCollection.items[1].contentfulMetadata.tags[0].id,);
     //console.log(response.data.blogPostCollection.items[2].contentfulMetadata.tags[0].id,);
@@ -272,6 +272,8 @@ export default class ContentfulApi {
 
     const tagtotal = final.length;
 
+
+    /** 
     console.log("tags:");
     console.log(tags);
     console.log("merged:");
@@ -280,6 +282,7 @@ export default class ContentfulApi {
     console.log(final);
     console.log("tagtotal:");
     console.log(tagtotal);
+    **/
     return { final, tagtotal };
   }
 
@@ -306,8 +309,8 @@ export default class ContentfulApi {
     while (shouldQueryMoreTags) {
       const response = await this.getPaginatedUniquePostTags(page);
 
-      console.log("response:");
-      console.log(response);
+     // console.log("response:");
+     // console.log(response);
       /**
       if (response.slugs.length > 0) {
         returnSlugs.push(...response.slugs);
@@ -341,8 +344,8 @@ export default class ContentfulApi {
       page++;
     }
 **/
-    console.log("returnTags:");
-    console.log(returnTags);
+  //  console.log("returnTags:");
+   // console.log(returnTags);
     return returnTags;
   }
 
@@ -680,8 +683,8 @@ export default class ContentfulApi {
 
     const fresponse = await this.callContentful(fquery);
 
-    console.log("fresponse:");
-    console.log(fresponse.data.featuredPostCollection.items[0].featuredPost);
+   // console.log("fresponse:");
+   // console.log(fresponse.data.featuredPostCollection.items[0].featuredPost);
 
     //const fpostid = `a`;
 
@@ -689,8 +692,8 @@ export default class ContentfulApi {
       const fpostid =
         fresponse.data.featuredPostCollection.items[0].featuredPost.slug;
 
-      console.log("fpostid:");
-      console.log(fpostid);
+   //   console.log("fpostid:");
+   //   console.log(fpostid);
 
       const query = `{
       blogPostCollection(limit: 1, where: {slug: "${fpostid}"}) {
@@ -788,7 +791,7 @@ export default class ContentfulApi {
 
       const response = await this.callContentful(query);
 
-      console.log(response);
+    //  console.log(response);
 
       const post = response.data.blogPostCollection.items
         ? response.data.blogPostCollection.items
@@ -868,8 +871,8 @@ export default class ContentfulApi {
 
   const tresponse = await this.callContentful(tquery);
 
-  console.log("tresponse:");
-  console.log(tresponse.data.topPostsCollection.items[0].post1);
+ // console.log("tresponse:");
+ // console.log(tresponse.data.topPostsCollection.items[0].post1);
 
   //const fpostid = `a`;
 
@@ -889,8 +892,8 @@ export default class ContentfulApi {
       const tpostid5 =
       tresponse.data.topPostsCollection.items[0].post5.sys.id;
 
-    console.log("tpostid1:");
-    console.log(tpostid1);
+  //  console.log("tpostid1:");
+  //  console.log(tpostid1);
 
    
 
@@ -973,8 +976,8 @@ export default class ContentfulApi {
 
   const tresponse = await this.callContentful(tquery);
 
-  console.log("tresponse:");
-  console.log(tresponse.data.topPostsCollection.items[0].post1);
+ // console.log("tresponse:");
+ // console.log(tresponse.data.topPostsCollection.items[0].post1);
 
   //const fpostid = `a`;
 
@@ -994,8 +997,8 @@ export default class ContentfulApi {
       const tpostid5 =
       tresponse.data.topPostsCollection.items[0].post5.sys.id;
 
-    console.log("tpostid1:");
-    console.log(tpostid1);
+    //console.log("tpostid1:");
+    //console.log(tpostid1);
 
    
 
@@ -1102,7 +1105,7 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    console.log(response);
+    //console.log(response);
 
     const posts = response.data.blogPostCollection.items
       ? response.data.blogPostCollection.items
