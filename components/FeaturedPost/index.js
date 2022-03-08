@@ -1,12 +1,4 @@
-import ContentfulApi from "@utils/ContentfulApi";
-import { Config } from "@utils/Config";
-import PageMeta from "@components/PageMeta";
-import PostList from "@components/PostList";
-import RichTextPageContent from "@components/RichTextPageContent";
-import MainLayout from "@layouts/main";
-import ContentWrapper from "@components/ContentWrapper";
-import PageContentWrapper from "@components/PageContentWrapper";
-import HeroBanner from "@components/HeroBanner";
+
 import TypographyStyles from "@styles/Typography.module.scss";
 import ContentListStyles from "@styles/ContentList.module.css";
 import Link from "next/link";
@@ -14,7 +6,7 @@ import Tags from "@components/Post/Tags";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
-import router, { useRouter } from "next/router";
+
 
 import {
   Box,

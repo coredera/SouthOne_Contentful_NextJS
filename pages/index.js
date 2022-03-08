@@ -108,37 +108,44 @@ export default function BlogIndex(props) {
           <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
           <Flex>
             <Box p={5}>
-            
-              
-                <PostList
-                  postListType={postListType}
-                  posts={postSummaries}
-                  totalPages={totalPages}
-                  currentPage={currentPage}
-                />
-             
-             
+              <PostList
+                postListType={postListType}
+                posts={postSummaries}
+                totalPages={totalPages}
+                currentPage={currentPage}
+              />
             </Box>
 
             <Box w="100rem" p={10} display={{ base: "none", md: "block" }}>
-              <Box pb={5}>
-                <h2 className={ContentListStyles.contentList__title}>
-                  Popular Posts
-                </h2>
+              <Box className={ContentListStyles.contentList__popularPosts}>
+                <Box pb={3}>
+                  <h2
+                    className={
+                      ContentListStyles.contentList__popularPostHeading
+                    }
+                  >
+                    Popular Posts
+                  </h2>
+                </Box>
+                {topPostsArray.map((post) => (
+                  <div
+                    key={post.sys.id}
+                    className={ContentListStyles.contentList__popularPost}
+                  >
+                    <Link href={`/${post.slug}`}>
+                      <a className={ContentListStyles.contentList__titleLink}>
+                        <h3
+                          className={
+                            ContentListStyles.contentList__topposttitle
+                          }
+                        >
+                          {post.title}
+                        </h3>
+                      </a>
+                    </Link>
+                  </div>
+                ))}
               </Box>
-              {topPostsArray.map((post) => (
-                <div key={post.sys.id}>
-                  <Link href={`/${post.slug}`}>
-                    <a className={ContentListStyles.contentList__titleLink}>
-                      <h3
-                        className={ContentListStyles.contentList__topposttitle}
-                      >
-                        {post.title}
-                      </h3>
-                    </a>
-                  </Link>
-                </div>
-              ))}
             </Box>
           </Flex>
           <Flex direction="column" display={{ base: "block,", md: "none" }}>
@@ -260,7 +267,12 @@ export default function BlogIndex(props) {
             </ContentWrapper>
           </Box>
 
-          <Box w="30rem" p={5} display={{ base: "none", md: "block" }}>
+          <Box
+            w="30rem"
+            p={5}
+            display={{ base: "none", md: "block" }}
+            className={ContentListStyles.contentList__popularPosts}
+          >
             <h2 className={ContentListStyles.contentList__title}>
               Popular Posts
             </h2>
@@ -277,7 +289,7 @@ export default function BlogIndex(props) {
             ))}
           </Box>
         </Flex>
-        <Flex direction="column" display={{ base: "block,", md: "none" }}>
+        <Flex direction="column" display={{ base: "block", md: "none" }}>
           <ContentWrapper>
             <h2 className={ContentListStyles.contentList__title}>
               Popular Posts
