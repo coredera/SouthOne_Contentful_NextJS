@@ -7,16 +7,16 @@ import { AppProps } from "next/app";
 //import Head from "next/head";
 
 //import "@fontsource/roboto/latin.css";
-import Fonts from '../styles/Fonts.js'
+import Fonts from "../styles/Fonts.js";
 
 //import defaultSEOConfig from "../../next-seo.config";
 //import Layout from "components/layout";
 //import createEmotionCache from "styles/createEmotionCache";
 //import customTheme from "../styles/customTheme";
- 
+
 import customTheme from "../styles/customTheme";
 
-import "../scripts/all"
+import "../scripts/all";
 
 import Head from "next/head";
 //import "../styles/global.css";
@@ -25,26 +25,24 @@ import Head from "next/head";
 
 import GoogleTagManager from "../components/GTM";
 
+function MyApp({ Component, pageProps }) {
+  return (
+    <>
+      <Head>
+        <meta
+          name="viewport"
+          content="user-scalable=no, width=device-width, initial-scale=1.0"
+        />
+      </Head>
+      <GoogleTagManager>
+        <ChakraProvider theme={customTheme}>
+          <Fonts />
 
+          <Component {...pageProps} />
+        </ChakraProvider>
+      </GoogleTagManager>
+    </>
+  );
+}
 
- function MyApp({ Component, pageProps }) {
-   return (
-     <>
-     <Head>
-     <meta name = "viewport" content = "user-scalable=no, width=device-width, initial-scale=1.0" />
-     </Head>
-    <GoogleTagManager>
-
-     <ChakraProvider theme={customTheme}>
-       <Fonts />
-       
-       <Component {...pageProps} />
-
-     </ChakraProvider>
-     </GoogleTagManager>
-     </>
-
-   );
- }
-
- export default MyApp;
+export default MyApp;

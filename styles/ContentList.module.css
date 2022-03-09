@@ -71,9 +71,9 @@
   color: var(--color-foreground);
   font-size: 1.5rem;
   line-height: 1.6;
-  border-bottom: 0.1rem solid lightgrey;
-  border-left:0.1rem solid lightgrey;
-  border-right: 0.1rem solid lightgrey;
+  border-bottom: 0.15rem solid #EBEBEB;
+  border-left:0.15rem solid #EBEBEB;
+  border-right: 0.15rem solid #EBEBEB;
 }
 
 
