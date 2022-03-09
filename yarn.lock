@@ -3109,10 +3109,10 @@ human-signals@^2.1.0:
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-2.1.0.tgz#dc91fcba42e4d06e4abaed33b3e7a3c02f514ea0"
   integrity sha512-B4FFZ6q/T2jhhksgkbEW3HBvWIfDW85snkQgawt07S7J5QXTk6BkNV+0yAeZrM5QpMAdYlocGoljn0sJ/WQkFw==
 
-hyvor-talk-react@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/hyvor-talk-react/-/hyvor-talk-react-1.0.3.tgz#0f5561519971ff885412361ec349c0ffdcf845a0"
-  integrity sha512-r5iv5kX2ZrHUCGPSsfNhPDY/+YjP7TGJZ2uJJm1/xayBbQLV/QiYEBOABNJojZ39kH4NZVvVx3kS5ljmK280nQ==
+hyvor-talk-react@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/hyvor-talk-react/-/hyvor-talk-react-2.0.0.tgz#20071c112e81a7cfb319c68d16ea84cd8ca05a7c"
+  integrity sha512-Ez3cTi8TmjILRZWbbi6KCQkVLf+oy7KCSBRtUZg7XRznd46MPZHBQiX0BJlRHJA9wz2xaUrk/1up9OXHrMj+VA==
 
 iconv-lite@0.4.24:
   version "0.4.24"

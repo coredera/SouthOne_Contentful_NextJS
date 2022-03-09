@@ -1,5 +1,5 @@
 import { FastCommentsCommentWidget } from "fastcomments-react";
-import HyvorTalk from "hyvor-talk-react";
+import { Embed } from "hyvor-talk-react";
 import { DiscussionEmbed } from "disqus-react";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
 import TypographyStyles from "@styles/Typography.module.scss";
@@ -49,16 +49,13 @@ export default function Post(props) {
   const { post } = props;
   const hyvor = `${process.env.NEXT_PUBLIC_HYVOR_ID}`;
 
-//  console.log(post.body.links.entries.block[0].title);
+  //  console.log(post.body.links.entries.block[0].title);
 
   return (
     <>
       <Flex pt={10} />
 
-      
       <article className={RichTextPageContentStyles.page}>
-       
-
         <RichTextPageContent
           richTextBodyField={post.body}
           renderH2Links={true}
@@ -118,7 +115,10 @@ export default function Post(props) {
           </Box>
         </Flex>
         <div className={TypographyStyles.bodyCopy}>
-          <HyvorTalk.Embed websiteId={hyvor} />
+          <Embed
+            websiteId={hyvor}
+            authorEmail="SmFzb24uTWVzc2luZ2hhbUBndWlkZWRvZ3Mub3JnLnVr"
+          />
         </div>
         {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
       </article>
