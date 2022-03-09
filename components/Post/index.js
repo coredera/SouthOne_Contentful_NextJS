@@ -9,6 +9,7 @@ import Author from "@components/Post/Author";
 import ExternalUrl from "@components/Post/ExternalUrl";
 import RichTextPageContent from "@components/RichTextPageContent";
 import { Config } from "@utils/Config";
+import PostTopSection from "@components/PostTopSection";
 
 import {
   Box,
@@ -53,19 +54,11 @@ export default function Post(props) {
   return (
     <>
       <Flex pt={10} />
+
+      
       <article className={RichTextPageContentStyles.page}>
-        {post.externalUrl && <ExternalUrl url={post.externalUrl} />}
-        <h1 className={TypographyStyles.heading__h1}>{post.title}</h1>
-        <Flex>
-          <Box className={TypographyStyles.heading__h5}>{post.author.name}</Box>
-          <Spacer />
-          <Box>
-            <PublishedDate date={post.date} />
-          </Box>
-        </Flex>
-        {post.contentfulMetadata.tags !== null && (
-          <Tags tags={post.contentfulMetadata.tags} />
-        )}{" "}
+       
+
         <RichTextPageContent
           richTextBodyField={post.body}
           renderH2Links={true}
