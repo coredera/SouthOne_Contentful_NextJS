@@ -1,4 +1,4 @@
-import { DiscussionEmbed } from 'disqus-react';
+//import { DiscussionEmbed } from 'disqus-react';
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
 import TypographyStyles from "@styles/Typography.module.scss";
 import Tags from "@components/Post/Tags";
