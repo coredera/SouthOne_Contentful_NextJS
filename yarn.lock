@@ -1235,11 +1235,6 @@ htmlparser2@^7.0:
     domutils "^2.8.0"
     entities "^3.0.1"
 
-hyvor-talk-react@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/hyvor-talk-react/-/hyvor-talk-react-2.0.0.tgz#20071c112e81a7cfb319c68d16ea84cd8ca05a7c"
-  integrity sha512-Ez3cTi8TmjILRZWbbi6KCQkVLf+oy7KCSBRtUZg7XRznd46MPZHBQiX0BJlRHJA9wz2xaUrk/1up9OXHrMj+VA==
-
 immutable@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0.tgz#b86f78de6adef3608395efb269a91462797e2c23"
