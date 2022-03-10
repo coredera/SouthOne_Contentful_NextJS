@@ -32,6 +32,7 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 
+/*
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -44,6 +45,7 @@ import {
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
 } from "react-share";
+*/
 
 export default function Post(props) {
   const { post } = props;
@@ -70,6 +72,7 @@ export default function Post(props) {
         }}
       />*/}
         <Flex p={7}>
+          {/*
           <Box p={3}>
             <FacebookShareButton
               url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
@@ -113,6 +116,7 @@ export default function Post(props) {
               <EmailIcon size={50} round />
             </EmailShareButton>
           </Box>
+    */}
         </Flex>
         <div className={TypographyStyles.bodyCopy}>
           <Embed
