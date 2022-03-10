@@ -1,5 +1,5 @@
 //import { FastCommentsCommentWidget } from "fastcomments-react";
-import { Embed } from "hyvor-talk-react";
+//import { Embed } from "hyvor-talk-react";
 //import { DiscussionEmbed } from "disqus-react";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
 import TypographyStyles from "@styles/Typography.module.scss";
@@ -118,12 +118,14 @@ export default function Post(props) {
           </Box>
     */}
         </Flex>
+{/*
         <div className={TypographyStyles.bodyCopy}>
           <Embed
             websiteId={hyvor}
             authorEmail="SmFzb24uTWVzc2luZ2hhbUBndWlkZWRvZ3Mub3JnLnVr"
           />
-        </div>
+  </div>*/}
+
         {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
       </article>
     </>
