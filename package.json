@@ -16,17 +16,15 @@
   "dependencies": {
     "@chakra-ui/react": "^1.6.7",
     "@contentful/rich-text-react-renderer": "^14.1.2",
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
+  
     
    
-    "framer-motion": "^4.1.17",
    
     "hyvor-talk-react": "^2.0.0",
     "next": "^12.0.7",
     "next-share": "^0.12.2",
     "next-sitemap": "^1.6.9",
-    "prismjs": "^1.23.0",
+  
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-icons": "^4.3.1",
