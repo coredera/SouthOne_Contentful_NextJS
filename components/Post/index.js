@@ -1,6 +1,6 @@
-import { FastCommentsCommentWidget } from "fastcomments-react";
+//import { FastCommentsCommentWidget } from "fastcomments-react";
 import { Embed } from "hyvor-talk-react";
-import { DiscussionEmbed } from "disqus-react";
+//import { DiscussionEmbed } from "disqus-react";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
 import TypographyStyles from "@styles/Typography.module.scss";
 import Tags from "@components/Post/Tags";
