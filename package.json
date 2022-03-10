@@ -24,7 +24,7 @@
    
     "hyvor-talk-react": "^2.0.0",
     "next": "^12.0.7",
-    "next-share": "^0.12.2",
+    
     "next-sitemap": "^1.6.9",
   
     "react": "^17.0.2",
@@ -32,7 +32,7 @@
     "react-icons": "^4.3.1",
     "react-lottie": "^1.2.3",
     "react-markdown": "^5.0.3",
-    "react-share": "^4.4.0",
+    
     "sass": "^1.43.4"
   },
   "license": "MIT",
