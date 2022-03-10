@@ -1,5 +1,5 @@
 import css from "styled-jsx/css";
-import "prismjs/themes/prism-okaidia.css";
+//import "prismjs/themes/prism-okaidia.css";
 
 export default css.global` 
   :root {

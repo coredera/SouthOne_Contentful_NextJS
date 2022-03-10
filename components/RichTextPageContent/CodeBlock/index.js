@@ -1,10 +1,10 @@
 import CodeBlockStyles from "./CodeBlock.module.css";
-import Prism from "prismjs";
+//import Prism from "prismjs";
 import { useEffect } from "react";
 
 export default function CodeBlock(props) {
   useEffect(() => {
-    Prism.highlightAll();
+ //   Prism.highlightAll();
   }, []);
 
   const { language, code } = props;
