@@ -1,5 +1,5 @@
 //import { FastCommentsCommentWidget } from "fastcomments-react";
-//import { Embed } from "hyvor-talk-react";
+import { Embed } from "hyvor-talk-react";
 //import { DiscussionEmbed } from "disqus-react";
 import RichTextPageContentStyles from "@styles/RichTextPageContent.module.css";
 import TypographyStyles from "@styles/Typography.module.scss";
@@ -32,7 +32,7 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 
-/*
+
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -45,7 +45,7 @@ import {
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
 } from "react-share";
-*/
+
 
 export default function Post(props) {
   const { post } = props;
@@ -72,7 +72,7 @@ export default function Post(props) {
         }}
       />*/}
         <Flex p={7}>
-          {/*
+          
           <Box p={3}>
             <FacebookShareButton
               url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
@@ -116,15 +116,15 @@ export default function Post(props) {
               <EmailIcon size={50} round />
             </EmailShareButton>
           </Box>
-    */}
+    
         </Flex>
-{/*
+
         <div className={TypographyStyles.bodyCopy}>
           <Embed
             websiteId={hyvor}
             authorEmail="SmFzb24uTWVzc2luZ2hhbUBndWlkZWRvZ3Mub3JnLnVr"
           />
-  </div>*/}
+  </div>
 
         {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
       </article>
