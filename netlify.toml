@@ -9,6 +9,11 @@
   to = 'https://www.guidedogs.org.uk/404/'
   status = 404
 
+[[redirects]]
+    from = "/*"
+    to = "https://www.guidedogs.org.uk/404/"
+    status = 404
+
 
 # Proxy for media items
 #[[redirects]]
