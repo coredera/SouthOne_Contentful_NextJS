@@ -5,7 +5,7 @@
    
 
 [[redirects]]
-  from = '/*'
+  from = '/404'
   to = 'https://www.guidedogs.org.uk/404/'
   status = 404
 
