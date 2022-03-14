@@ -4,6 +4,10 @@
 #    Cache-Control = "public, max-age=0, must-revalidate"
    
 
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
 
 
 # Proxy for media items
