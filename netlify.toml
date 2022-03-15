@@ -1,3 +1,8 @@
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
+
 #[[headers]]
 #  for = "*" # js files should be set this way
 #  [headers.values]
