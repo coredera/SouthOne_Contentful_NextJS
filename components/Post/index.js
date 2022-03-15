@@ -133,7 +133,7 @@ export default function Post(props) {
         <div className={TypographyStyles.bodyCopy}>
           <Embed
             websiteId={hyvor}
-            authorEmail={email2}
+            authorEmail="Y2VudTMyMEBndWlkZWRvZ3Mub3JnLnVr"
           />
   </div>
 
