@@ -55,9 +55,12 @@ export default function Post(props) {
 
 
   let email1 = post.author.email;
-  let email2 = Buffer.from(email1).toString('base64');
+ 
+  // let email2 = Buffer.from(email1).toString('base64');
 
+  let email2 = btoa(email1);
 
+  console.log(email2);
 
   return (
     <>
