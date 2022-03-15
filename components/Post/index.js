@@ -53,9 +53,17 @@ export default function Post(props) {
 
   //  console.log(post.body.links.entries.block[0].title);
 
+
+  let email1 = post.author.email;
+  let email2 = Buffer.from(email1).toString('base64');
+
+
+
   return (
     <>
       <Flex pt={10} />
+
+      {email2}
 
       <article className={RichTextPageContentStyles.page}>
         <RichTextPageContent
@@ -122,7 +130,7 @@ export default function Post(props) {
         <div className={TypographyStyles.bodyCopy}>
           <Embed
             websiteId={hyvor}
-            authorEmail="SmFzb24uTWVzc2luZ2hhbUBndWlkZWRvZ3Mub3JnLnVr"
+            authorEmail={email2}
           />
   </div>
 

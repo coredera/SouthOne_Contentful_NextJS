@@ -566,6 +566,7 @@ export default class ContentfulApi {
             twitterUsername
             gitHubUsername
             websiteUrl
+            email
             image {
               url
               title
