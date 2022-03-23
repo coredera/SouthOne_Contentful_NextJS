@@ -5,6 +5,7 @@ import Tags from "@components/Post/Tags";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
+import ContentWrapper from "@components/ContentWrapper";
 
 import {
   Box,
@@ -32,56 +33,61 @@ export default function PostTopSection(props) {
 
   return (
     <>
-      <Flex display={{ base: "none", md: "block" }} p={0}>
-        <article>
-          <Flex pb={5} className={TypographyStyles.heading_h1}>
-            <h1 className={TypographyStyles.heading__h1}>
+      <Box display={{ base: "none", lg: "block" }}>
+        <ContentWrapper>
+        <Flex>
+          <Box maxWidth={600}>
+            <h1 className={TypographyStyles.heading__h1post}>
               {featuredPost.title}
             </h1>
-          </Flex>
-          <Flex>
-            <Box pr={30}>
-              <Flex>
-                <Box className={ContentListStyles.contentList__author}>
-                  {featuredPost.author !== null && (
-                    <> Author: {featuredPost.author.name}</>
-                  )}
-                </Box>
-                <Spacer />
-                <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-                  <PublishedDate date={featuredPost.date} alignSelf="center" />
-                </Box>
-              </Flex>
 
-              {featuredPost.contentfulMetadata.tags !== null && (
-                <Tags tags={featuredPost.contentfulMetadata.tags} />
+            <Box className={TypographyStyles.author}>
+              {featuredPost.author !== null && (
+                <>
+                  {" "}
+                  <b>Author:</b> {featuredPost.author.name}
+                </>
               )}
-              <div className={ContentListStyles.contentList__excerpt}>
-                <ReactMarkdown
-                  children={featuredPost.excerpt}
-                  renderers={ReactMarkdownRenderers(featuredPost.excerpt)}
-                />
-              </div>
             </Box>
-            <Spacer />
-            <Box pl={30} width="80rem">
-              <img
-                src={featuredPost.image.url}
-                width={featuredPost.image.width}
-                height={featuredPost.image.height}
-                layout="responsive"
-                objectFit="contain"
-                alt={featuredPost.image.description}
-                style={{ borderRadius: "20px" }}
-              />
-            </Box>
-          </Flex>
-        </article>
-      </Flex>
 
-      <Flex display={{ base: "block", md: "none" }}>
+            <Box alignSelf="center" className={TypographyStyles.date}>
+              <b>Date: </b>
+              <PublishedDate date={featuredPost.date} alignSelf="center" />
+            </Box>
+
+            {featuredPost.contentfulMetadata.tags !== null && (
+              <Tags tags={featuredPost.contentfulMetadata.tags} />
+            )}
+          </Box>
+          <Spacer />
+          <Box maxWidth={600}>
+            <img
+              src={featuredPost.image.url}
+              width="1200"
+              layout="responsive"
+              objectFit="contain"
+              alt={featuredPost.image.description}
+              style={{ borderRadius: "20px" }}
+            />
+          </Box>
+        </Flex>
+        </ContentWrapper>
+      </Box>
+
+      <Flex display={{ base: "block", lg: "none" }}>
+        <ContentWrapper>
         <article className={ContentListStyles.contentList__post}>
-          <h1 className={TypographyStyles.heading__h1}>{featuredPost.title}</h1>
+        <img
+            src={featuredPost.image.url}
+            width={featuredPost.image.width}
+            height={featuredPost.image.height}
+            layout="responsive"
+            objectFit="contain"
+            alt={featuredPost.image.description}
+            style={{ borderRadius: "20px" }}
+          />
+          <Flex pt={5}/>
+          <h1 className={TypographyStyles.heading__h1post}>{featuredPost.title}</h1>
           <Flex>
             <Box className={ContentListStyles.contentList__author}>
               {featuredPost.author !== null && (
@@ -100,19 +106,9 @@ export default function PostTopSection(props) {
 
           <Flex p={2} />
 
-          <img
-            src={featuredPost.image.url}
-            width={featuredPost.image.width}
-            height={featuredPost.image.height}
-            layout="responsive"
-            objectFit="contain"
-            alt={featuredPost.image.description}
-            style={{ borderRadius: "20px" }}
-          />
-
-      
-    
+          
         </article>
+        </ContentWrapper>
       </Flex>
     </>
   );

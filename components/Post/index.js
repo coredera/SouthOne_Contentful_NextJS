@@ -32,7 +32,6 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 
-
 import {
   FacebookShareButton,
   FacebookIcon,
@@ -45,7 +44,7 @@ import {
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
 } from "react-share";
-
+//import { cp } from "fs";
 
 export default function Post(props) {
   const { post } = props;
@@ -53,37 +52,28 @@ export default function Post(props) {
 
   //  console.log(post.body.links.entries.block[0].title);
 
-
   let email1 = post.author.email;
- 
+
   // let email2 = Buffer.from(email1).toString('base64');
 
   let email2 = btoa(email1);
 
-  console.log(email2);
+  //console.log(email2);
+
+  const id = `${post.title} by ${email1}`;
 
   return (
     <>
-      <Flex pt={10} />
-
-      {email2}
-
+  
       <article className={RichTextPageContentStyles.page}>
+       
         <RichTextPageContent
           richTextBodyField={post.body}
           renderH2Links={true}
         />
-        {post.author !== null && <Author author={post.author} />}
-        {/*<DiscussionEmbed
-        shortname="guidedogsdev"
-        config={{
-          url: post.url,
-          identifier: post.id,
-          title: post.title,
-        }}
-      />*/}
+       
+       
         <Flex p={7}>
-          
           <Box p={3}>
             <FacebookShareButton
               url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
@@ -127,18 +117,24 @@ export default function Post(props) {
               <EmailIcon size={50} round />
             </EmailShareButton>
           </Box>
-    
         </Flex>
 
         <div className={TypographyStyles.bodyCopy}>
-          <Embed
-            websiteId={hyvor}
-            authorEmail="Y2VudTMyMEBndWlkZWRvZ3Mub3JnLnVr"
-          />
-  </div>
+          <Embed websiteId={hyvor} authorEmail={email2} title={id} />
+        </div>
+     
+        {/*<DiscussionEmbed
+        shortname="guidedogsdev"
+        config={{
+          url: post.url,
+          identifier: post.id,
+          title: post.title,
+        }}
+      />*/}
 
         {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
       </article>
+      
     </>
   );
 }

@@ -3,4 +3,6 @@
   margin-right: auto;
   max-width: var(--wrapper-max-width);
   padding: 2rem;
+  padding-bottom: 0rem;
+  padding-top: 0rem;
 }

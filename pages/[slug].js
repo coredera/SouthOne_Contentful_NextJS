@@ -6,6 +6,7 @@ import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 import PopularTopics from "@components/PopularTopics";
 import PostTopSection from "@components/PostTopSection";
+import Author from "@components/Post/Author";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -49,53 +50,66 @@ export default function PostWrapper(props) {
         metatitle={post.metaTitle}
         metadescription={post.metaDescription}
       />
-      <Box className={ContentListStyles.contentList__topSection}>
-        <Flex alignItems="center" pb={20} pt={5}>
-          <Box alignSelf="center">
-            <Link href={`${Config.pageMeta.home.slug}`}>
-              <a>
-                <Flex>
-                  <h3 className={ContentListStyles.contentList__readmorelink}>
-                    <Box alignSelf="center" pr={1.5}>
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
-                        width={15}
-                        height={15}
-                      />
-                    </Box>
-                    <Box> Go to home</Box>
-                  </h3>
-                </Flex>
-              </a>
-            </Link>
-          </Box>
-          <Spacer />
-        </Flex>
 
-        <PostTopSection post={post} />
-
-        <Flex>
-          <Box>
-            <Post post={post} />
-          </Box>
-          <Box>
-            {topPostsArray.map((post) => (
-              <div
-                key={post.sys.id}
-                className={ContentListStyles.contentList__popularPost}
-              >
-                <Link href={`/${post.slug}`}>
-                  <a className={ContentListStyles.contentList__titleLink}>
-                    <h3 className={ContentListStyles.contentList__topposttitle}>
-                      {post.title}
-                    </h3>
+      <Box
+        backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
+        bgRepeat="no-repeat"
+        bgPos="top-left"
+        className={ContentListStyles.contentList__postTopSection}
+      >
+        <Box bgColor={{ base: "#FFDF7F", lg: "transparent" }}>
+          <ContentWrapper>
+            <Flex alignItems="center" pb={10} pt={5}>
+              <Box alignSelf="center">
+                <Link href={`${Config.pageMeta.home.slug}`}>
+                  <a>
+                    <Flex>
+                      <h3
+                        className={ContentListStyles.contentList__homelink}
+                      >
+                        
+                        <Box> Home</Box>
+                      </h3>
+                    </Flex>
                   </a>
                 </Link>
-              </div>
-            ))}
-          </Box>
-        </Flex>
+              </Box>
+              <Spacer />
+            </Flex>
+          </ContentWrapper>
+          <PostTopSection post={post} />
+        </Box>
+        <ContentWrapper>
+          <Flex pt={20}>
+            <Box pr={20} width="full">
+              <Post post={post} />
+            </Box>
+           <Spacer />
+            <Box minWidth={300} maxWidth={300}>
+              {topPostsArray.map((post) => (
+                <div
+                  key={post.sys.id}
+                  className={ContentListStyles.contentList__popularPost}
+                >
+                  <Link href={`/${post.slug}`}>
+                    <a className={ContentListStyles.contentList__titleLink}>
+                      <h3
+                        className={ContentListStyles.contentList__topposttitle}
+                      >
+                        {post.title}
+                      </h3>
+                    </a>
+                  </Link>
+                </div>
+              ))}
+            </Box>
+          </Flex>
+        </ContentWrapper>
       </Box>
+      <Box bgColor="brand.100" p={7} pb={14}>
+        {post.author !== null && <Author author={post.author} />}
+      </Box>
+      <Flex p={10}></Flex>
     </MainLayout>
   );
 }

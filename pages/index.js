@@ -74,6 +74,13 @@ export default function BlogIndex(props) {
 
   //console.log(featuredPost);
 
+  console.log(pageContent.heroBanner.image.url);
+
+  // Original hero banner code
+  //  {pageContent.heroBanner !== null && (
+  //    <HeroBanner data={pageContent.heroBanner} />
+  //  )}
+
   if (featuredPost) {
     return (
       <MainLayout preview={preview}>
@@ -85,25 +92,55 @@ export default function BlogIndex(props) {
           metadescription={pageContent.metaDescription}
         />
 
-        {pageContent.heroBanner !== null && (
-          <HeroBanner data={pageContent.heroBanner} />
-        )}
+        <Box
+          backgroundImage={pageContent.heroBanner.image.url}
+          height="450"
+          bgRepeat="no-repeat"
+          bgSize="cover"
+          bgPosition="center"
+        >
+          <Box
+            backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
+            bgSize="contain"
+            bgRepeat="no-repeat"
+            bgPos="top-left"
+            className={ContentListStyles.contentList__landingTopSection}
+            height="430"
+          >
+            <ContentWrapper>
+              <Flex alignItems="center" pb={0} pt={5}>
+                <Box alignSelf="center">
+                  <Link href={`${Config.pageMeta.home.slug}`}>
+                    <a>
+                      <Flex>
+                        <h3 className={ContentListStyles.contentList__homelink}>
+                          <Box> Home</Box>
+                        </h3>
+                      </Flex>
+                    </a>
+                  </Link>
+                </Box>
+                <Spacer />
+              </Flex>
+              <Flex>
+                <Box pb={10} pt={7} maxWidth="600" pl={0}>
+                  <h1 className={TypographyStyles.heading__h1}>
+                    {pageContent.title}
+                  </h1>
+                  {pageContent.body && (
+                    <RichTextPageContent
+                      richTextBodyField={pageContent.body}
+                      className={TypographyStyles.bodyCopy}
+                    />
+                  )}
+                </Box>
+                <Box></Box>
+              </Flex>
+            </ContentWrapper>
+          </Box>
+        </Box>
 
-        <Box className={ContentListStyles.contentList__topSection}>
-          <Flex>
-            <Box pb={10} pt={7}>
-              <h1 className={TypographyStyles.heading__h1}>
-                {pageContent.title}
-              </h1>
-              {pageContent.body && (
-                <RichTextPageContent
-                  richTextBodyField={pageContent.body}
-                  className={TypographyStyles.bodyCopy}
-                />
-              )}
-            </Box>
-          </Flex>
-
+        <ContentWrapper>
           <FeaturedPost featuredPost={featuredPost} />
           <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
           <Flex>
@@ -219,7 +256,7 @@ export default function BlogIndex(props) {
               ))}
             </ContentWrapper>
           </Flex>
-        </Box>
+        </ContentWrapper>
       </MainLayout>
     );
   } else {
