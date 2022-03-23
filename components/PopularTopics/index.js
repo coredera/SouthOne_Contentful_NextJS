@@ -1,7 +1,7 @@
-
 import TypographyStyles from "@styles/Typography.module.scss";
 import ContentListStyles from "@styles/ContentList.module.css";
 import Link from "next/link";
+import ContentWrapper from "@components/ContentWrapper";
 
 import router, { useRouter } from "next/router";
 
@@ -36,79 +36,119 @@ export default function PopularTopics(props) {
 
   return (
     <>
-      <Flex
-        className={ContentListStyles.contentList__topSectionblue}
-        backgroundColor="brand.50"
-        direction="column"
-       
-      >
-        <Flex>
-          <h2 className={TypographyStyles.heading__h2}>Popular Topics</h2>
-        </Flex>
-        <Flex>
-          <Wrap spacing="1.8rem" justify="center" align="center">
-            <WrapItem>
-              <Link
-                href={`/topic/inspiring-people`}
-                className={TypographyStyles.popularTopics}
+      <Box bgColor="brand.100">
+        <ContentWrapper>
+          <Box pb={20} pt={5}>
+            <Flex color="white" pt={10}>
+              <h2 className={TypographyStyles.heading__h2}>Popular Topics</h2>
+            </Flex>
+            <Flex color="white" alignSelf="center">
+              <Box>
+                <Flex>
+                  <Box pr={5} alignSelf="center">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                      width="15"
+                    />
+                  </Box>
+
+                  <Link
+                    href={`/topic/inspiring-people`}
+                    className={TypographyStyles.popularTopics}
+                  >
+                    <a className={TypographyStyles.popularTopics}>
+                      Inspiring People
+                    </a>
+                  </Link>
+                </Flex>
+                <Box pt={4}></Box>
+                <Flex>
+                  <Box pr={5} alignSelf="center">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                      width="15"
+                    />
+                  </Box>
+                  <Link href={`/topic/eye-health`}>
+                    <a className={TypographyStyles.popularTopics}>Eye Health</a>
+                  </Link>
+                </Flex>
+              </Box>
+              <Spacer />
+              <Box>
+                <Flex>
+                  <Box pr={5} alignSelf="center">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                      width="15"
+                    />
+                  </Box>
+                  <Link href={`/topic/news`}>
+                    <a className={TypographyStyles.popularTopics}>News</a>
+                  </Link>
+                </Flex>
+                <Flex>
+                  <Box pr={5} alignSelf="center">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                      width="15"
+                    />
+                  </Box>
+                  <Link href={`/topic/technology`}>
+                    <a className={TypographyStyles.popularTopics}>Technology</a>
+                  </Link>
+                </Flex>
+              </Box>
+              <Spacer />
+              <Box>
+                <Flex>
+                  <Box pr={5} alignSelf="center">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                      width="15"
+                    />
+                  </Box>
+                  <Link href={`/topic/campaigning`}>
+                    <a className={TypographyStyles.popularTopics}>
+                      Campaigning
+                    </a>
+                  </Link>
+                </Flex>
+                <Flex>
+                  <Box pr={5} alignSelf="center">
+                    <img
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+                      width="15"
+                    />
+                  </Box>
+                  <Link href={`/topic/dogs`}>
+                    <a className={TypographyStyles.popularTopics}>Dogs</a>
+                  </Link>
+                </Flex>
+              </Box>
+              <Spacer />
+              <Box
+                className={ContentListStyles.contentList__selectTopic}
+                pt={3}
               >
-                <a className={TypographyStyles.popularTopics}>
-                  Inspiring People
-                </a>
-              </Link>
-            </WrapItem>
-
-            <WrapItem>
-              <Link href={`/topic/eye-health`}>
-                <a className={TypographyStyles.popularTopics}>Eye Health</a>
-              </Link>
-            </WrapItem>
-
-            <WrapItem>
-              <Link href={`/topic/news`}>
-                <a className={TypographyStyles.popularTopics}>News</a>
-              </Link>
-            </WrapItem>
-
-            <WrapItem>
-              <Link href={`/topic/technology`}>
-                <a className={TypographyStyles.popularTopics}>Technology</a>
-              </Link>
-            </WrapItem>
-
-            <WrapItem>
-              <Link href={`/topic/campaigning`}>
-                <a className={TypographyStyles.popularTopics}>Campaigning</a>
-              </Link>
-            </WrapItem>
-
-            <WrapItem>
-              <Link href={`/topic/dogs`}>
-                <a className={TypographyStyles.popularTopics}>Dogs</a>
-              </Link>
-            </WrapItem>
-          </Wrap>
-        </Flex>
-        <Flex>
-          <Box className={ContentListStyles.contentList__selectTopic}>
-            <Select
-              placeholder="Select a topic"
-              id="selectBox"
-              onChange={() => changeFunc()}
-              bgColor="white"
-              fontFamily="Trebuchet MS"
-            >
-              {sortedBlogPostTags.map((tag) => (
-                <option value={tag.id} key={tag.id}>
-                  {tag.name}
-                </option>
-              ))}
-            </Select>
+                <Select
+                  placeholder="View all topics.."
+                  id="selectBox"
+                  onChange={() => changeFunc()}
+                  bgColor="white"
+                  fontFamily="Trebuchet MS"
+                >
+                  {sortedBlogPostTags.map((tag) => (
+                    <option value={tag.id} key={tag.id}>
+                      {tag.name}
+                    </option>
+                  ))}
+                </Select>
+              </Box>
+            </Flex>
           </Box>
-
-          <Spacer />
-        </Flex>
-      </Flex>
+        </ContentWrapper>
+      </Box>
     </>
   );
 }

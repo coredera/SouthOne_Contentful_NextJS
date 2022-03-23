@@ -26,7 +26,8 @@
 }
 
 .contentList__selectTopic {
-  padding: 2rem;
+  color: #002B5B;
+  padding: 0rem;
   padding-left: 0rem;
 }
 
@@ -247,10 +248,10 @@ opacity: 1;
 }
 
 .contentList__excerpt p {
-  font-size: 1.2rem;
+  font-size: 1.125rem;
   line-height: 1.8rem;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-light);
+  font-weight: var(--font-weight-bold);
   font-family: var(--font-family-body);
   color: var(--color-foreground);
 }

@@ -51,7 +51,7 @@ export default function FeaturedPost(props) {
               </Box>
               <Box className={ContentListStyles.contentList__author} pb={2}>
                 {featuredPost.author !== null && (
-                  <><b>Author: </b>  {featuredPost.author.name}</>
+                  <><b>Author:   {featuredPost.author.name} </b></>
                 )}
               </Box>
               {featuredPost.contentfulMetadata.tags !== null && (
