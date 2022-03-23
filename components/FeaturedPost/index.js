@@ -1,4 +1,3 @@
-
 import TypographyStyles from "@styles/Typography.module.scss";
 import ContentListStyles from "@styles/ContentList.module.css";
 import Link from "next/link";
@@ -6,7 +5,6 @@ import Tags from "@components/Post/Tags";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
-
 
 import {
   Box,
@@ -37,21 +35,23 @@ export default function FeaturedPost(props) {
       <Flex
         display={{ base: "none", md: "block" }}
         className={ContentListStyles.contentList__featuredPost}
-        p={3}
+        p={0}
       >
         <article style={{ display: featuredPost === null ? "none" : "block" }}>
-          <Flex justifyContent>
+          <Flex justifyContent pt={20} pb={20}>
             <Box pr={30}>
+              <Box pb={3}>
               <Link href={`/${featuredPost.slug}`}>
-                <a className={ContentListStyles.contentList__titleLink}>
+                <a>
                   <h2 className={ContentListStyles.contentList__title}>
                     {featuredPost.title}
                   </h2>
                 </a>
               </Link>
-              <Box className={ContentListStyles.contentList__author}>
+              </Box>
+              <Box className={ContentListStyles.contentList__author} pb={2}>
                 {featuredPost.author !== null && (
-                  <> Author: {featuredPost.author.name}</>
+                  <><b>Author: </b>  {featuredPost.author.name}</>
                 )}
               </Box>
               {featuredPost.contentfulMetadata.tags !== null && (

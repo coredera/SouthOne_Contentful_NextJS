@@ -9,6 +9,17 @@
   
 }
 
+.heading__h1post {
+  /*font-size: clamp(2.2rem, 3vw, 3rem);*/
+  font-size: 34px;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-headingh);
+  color: var(--color-foreground);
+  
+}
+
 .heading__h1 b {
   /*font-size: clamp(2rem, 2.8vw, 1.8rem);*/
   font-size: 3.125rem;
@@ -117,6 +128,30 @@
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-headingb);
   color: var(--color-foreground);
+}
+
+.author {
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family-body);
+  color: var(--color-foreground);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.author__name {
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family-body);
+  color: var(--color-foreground);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.date {
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family-body);
+  color: var(--color-foreground);
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .bodyCopy {
