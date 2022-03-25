@@ -126,6 +126,7 @@ export function getRichTextRenderOptions(links, options) {
               <Box width="10em">
                 <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-open.svg`}
+          
                 />
               </Box>
               <Spacer />
@@ -225,7 +226,7 @@ export function getRichTextRenderOptions(links, options) {
         if (renderNativeImg) {
           return (
             <div className={RichTextPageContentStyles.page__imgContainer}>
-              <img src={url} alt={description} height={height} width={width} />
+              <img src={url} alt={description} height={height} width={width} style={{ borderRadius: "20px" }}/>
             </div>
           );
         } else {
@@ -237,6 +238,7 @@ export function getRichTextRenderOptions(links, options) {
                 height={height}
                 width={width}
                 layout="responsive"
+                style={{ borderRadius: "20px" }}
               />
             </div>
           );

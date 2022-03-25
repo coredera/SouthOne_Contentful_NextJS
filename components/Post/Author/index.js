@@ -65,29 +65,23 @@ function renderGitHub(username) {
 
 function renderWebsite(url) {
   return (
-
-
-      
-    
     <div>
       <Flex verticalAlign="center">
-       <img src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`} width="15"/>
+        <img
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
+          width="15"
+        />
 
-      <a
-        className={`${AuthorStyles.author__linkText}`}
-        href={url}
-        target="_blank"
-        rel="nofollow noreferrer"
-      >
-       
-        
-       
-
-        Website
-      </a>
+        <a
+          className={`${AuthorStyles.author__linkText}`}
+          href={url}
+          target="_blank"
+          rel="nofollow noreferrer"
+        >
+          Website
+        </a>
       </Flex>
     </div>
-  
   );
 }
 
@@ -101,16 +95,41 @@ export default function Author(props) {
   return (
     <>
       <ContentWrapper>
-        <div className={AuthorStyles.author}>
-          <div className={AuthorStyles.author__imgContainer}>
-            <img
-              className={AuthorStyles.author__img}
-              src={`${author.image.url}?w=350`}
-              alt={author.image.description}
-              height={author.image.height}
-              width="200"
-            />
+        <Flex>
+          <div className={AuthorStyles.author}>
+            <Box minW="180">
+              <div className={AuthorStyles.author__imgContainer}>
+                <img
+                  className={AuthorStyles.author__img}
+                  src={`${author.image.url}?w=350`}
+                  alt={author.image.description}
+                  height={author.image.height}
+                  width="200"
+                />
+              </div>
+            </Box>
+            <Box display={{ base: "none", md: "block" }} pl={8} pr={40}>
+              <div className={AuthorStyles.author__detailsContainer}>
+                <h2 className={AuthorStyles.author__name}>{author.name}</h2>
+                <p className={AuthorStyles.author__description}>
+                  {author.description}
+                </p>
+                {hasLinks && (
+                  <div className={AuthorStyles.author__links}>
+                    {author.twitterUsername &&
+                      renderTwitter(author.twitterUsername)}
+                    {author.twitchUsername &&
+                      renderTwitch(author.twitchUsername)}
+                    {author.gitHubUsername &&
+                      renderGitHub(author.gitHubUsername)}
+                    {author.websiteUrl && renderWebsite(author.websiteUrl)}
+                  </div>
+                )}
+              </div>
+            </Box>
           </div>
+        </Flex>
+        <Flex display={{ base: "block", md: "none" }} pb={0} pt={10}>
           <div className={AuthorStyles.author__detailsContainer}>
             <h2 className={AuthorStyles.author__name}>{author.name}</h2>
             <p className={AuthorStyles.author__description}>
@@ -126,7 +145,7 @@ export default function Author(props) {
               </div>
             )}
           </div>
-        </div>
+        </Flex>
       </ContentWrapper>
     </>
   );
