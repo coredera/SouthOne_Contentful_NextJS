@@ -19,6 +19,8 @@ import PublishedDate from "@components/Post/PublishedDate";
 import router, { useRouter } from "next/router";
 import FeaturedPost from "@components/FeaturedPost";
 import PopularTopics from "@components/PopularTopics";
+import PopularPosts from "@components/PopularPosts";
+import BlogBanner from "@components/BlogBanner";
 
 import {
   Box,
@@ -81,7 +83,58 @@ export default function BlogIndex(props) {
   //    <HeroBanner data={pageContent.heroBanner} />
   //  )}
 
-  if (featuredPost) {
+  if (true) {
+    return (
+      <MainLayout preview={preview}>
+        <PageMeta
+          title={pageContent.title}
+          description={pageContent.description}
+          url={Config.pageMeta.blogIndex.url}
+          metatitle={pageContent.metaTitle}
+          metadescription={pageContent.metaDescription}
+        />
+
+        <BlogBanner pageContent={pageContent} />
+
+        <ContentWrapper>
+          {featuredPost !== null && (
+            <FeaturedPost featuredPost={featuredPost} />
+          )}
+        </ContentWrapper>
+
+        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
+
+        <Box bgColor="brand.50" pt={10}>
+          <ContentWrapper>
+            <Flex>
+              <Box pr={0}>
+                <PostList
+                  postListType={postListType}
+                  posts={postSummaries}
+                  totalPages={totalPages}
+                  currentPage={currentPage}
+                />
+              </Box>
+              <Spacer />
+              <Box
+                
+                minW="300"
+                pt={8}
+                pl={10}
+                display={{ base: "none", lg: "block" }}
+              >
+                <PopularPosts topPostsArray={topPostsArray} />
+              </Box>
+            </Flex>
+
+            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
+              <PopularPosts topPostsArray={topPostsArray} />
+            </Flex>
+          </ContentWrapper>
+        </Box>
+      </MainLayout>
+    );
+  } else {
     return (
       <MainLayout preview={preview}>
         <PageMeta
@@ -140,15 +193,11 @@ export default function BlogIndex(props) {
           </Box>
         </Box>
 
-        <ContentWrapper>
-          <FeaturedPost featuredPost={featuredPost} />
-        </ContentWrapper>
-
         <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
         <Box bgColor="brand.50">
           <ContentWrapper>
             <Flex pt={10}>
-              <Box pr={20}>
+              <Box pr={10}>
                 <PostList
                   postListType={postListType}
                   posts={postSummaries}
@@ -157,47 +206,19 @@ export default function BlogIndex(props) {
                 />
               </Box>
               <Spacer />
-              <Box w="100rem" pt={10} display={{ base: "none", md: "block" }}>
-                <Box className={ContentListStyles.contentList__popularPosts}>
-                  <Box pb={3}>
-                    <h2
-                      className={
-                        ContentListStyles.contentList__popularPostHeading
-                      }
-                    >
-                      Popular Posts
-                    </h2>
-                  </Box>
-                  <Box bgColor="white">
-                    {topPostsArray.map((post) => (
-                      <div
-                        key={post.sys.id}
-                        className={ContentListStyles.contentList__popularPost}
-                      >
-                        <Link href={`/${post.slug}`}>
-                          <a
-                            className={ContentListStyles.contentList__titleLink}
-                          >
-                            <h3
-                              className={
-                                ContentListStyles.contentList__topposttitle
-                              }
-                            >
-                              {post.title}
-                            </h3>
-                          </a>
-                        </Link>
-                      </div>
-                    ))}
-                  </Box>
-                </Box>
+              <Box
+                
+                minW="300"
+                pt={8}
+              >
+                <PopularPosts topPostsArray={topPostsArray} />
               </Box>
             </Flex>
             <Flex direction="column" display={{ base: "block,", md: "none" }}>
               <ContentWrapper>
                 <Box pb={10}>
                   <h2 className={ContentListStyles.contentList__title}>
-                    Popular Posts
+                    You might also like
                   </h2>
                 </Box>
                 {topPostsArray.map((post) => (
@@ -268,144 +289,6 @@ export default function BlogIndex(props) {
             </Flex>
           </ContentWrapper>
         </Box>
-      </MainLayout>
-    );
-  } else {
-    return (
-      <MainLayout preview={preview}>
-        <PageMeta
-          title={pageContent.title}
-          description={pageContent.description}
-          url={Config.pageMeta.blogIndex.url}
-          metatitle={pageContent.metaTitle}
-          metadescription={pageContent.metaDescription}
-        />
-
-        {pageContent.heroBanner !== null && (
-          <HeroBanner data={pageContent.heroBanner} />
-        )}
-
-        <Box className={ContentListStyles.contentList__topSection}>
-          <Flex>
-            <Box pb={10} pt={7}>
-              <h1 className={TypographyStyles.heading__h1}>
-                {pageContent.title}
-              </h1>
-              {pageContent.body && (
-                <RichTextPageContent
-                  richTextBodyField={pageContent.body}
-                  className={TypographyStyles.bodyCopy}
-                />
-              )}
-            </Box>
-          </Flex>
-
-          <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
-        </Box>
-
-        <Flex>
-          <Box>
-            <ContentWrapper>
-              <PostList
-                postListType={postListType}
-                posts={postSummaries}
-                totalPages={totalPages}
-                currentPage={currentPage}
-              />
-            </ContentWrapper>
-          </Box>
-
-          <Box
-            w="30rem"
-            p={5}
-            display={{ base: "none", md: "block" }}
-            className={ContentListStyles.contentList__popularPosts}
-          >
-            <h2 className={ContentListStyles.contentList__title}>
-              Popular Posts
-            </h2>
-            {topPostsArray.map((post) => (
-              <div key={post.sys.id}>
-                <Link href={`/${post.slug}`}>
-                  <a className={ContentListStyles.contentList__titleLink}>
-                    <h3 className={ContentListStyles.contentList__topposttitle}>
-                      {post.title}
-                    </h3>
-                  </a>
-                </Link>
-              </div>
-            ))}
-          </Box>
-        </Flex>
-        <Flex direction="column" display={{ base: "block", md: "none" }}>
-          <ContentWrapper>
-            <h2 className={ContentListStyles.contentList__title}>
-              Popular Posts
-            </h2>
-            {topPostsArray.map((post) => (
-              <div key={post.sys.id}>
-                <article className={ContentListStyles.contentList__post}>
-                  <Link href={`/${post.slug}`}>
-                    <a>
-                      <img
-                        src={post.image.url}
-                        width={post.image.width}
-                        height={post.image.height}
-                        layout="responsive"
-                        objectFit="contain"
-                        alt={post.image.description}
-                        style={{ borderRadius: "20px" }}
-                      />
-                    </a>
-                  </Link>
-
-                  <Flex p={2} />
-                  <Link href={`/${post.slug}`}>
-                    <a className={ContentListStyles.contentList__titleLink}>
-                      <h2 className={ContentListStyles.contentList__title}>
-                        {post.title}
-                      </h2>
-                    </a>
-                  </Link>
-                  <Box className={ContentListStyles.contentList__author}>
-                    {post.author !== null && <> Author: {post.author.name}</>}
-                  </Box>
-                  {post.contentfulMetadata.tags !== null && (
-                    <Tags tags={post.contentfulMetadata.tags} />
-                  )}
-                  <div className={ContentListStyles.contentList__excerpt}>
-                    <ReactMarkdown
-                      children={post.excerpt}
-                      renderers={ReactMarkdownRenderers(post.excerpt)}
-                    />
-                  </div>
-                  <Flex alignItems="center">
-                    <Box alignSelf="center">
-                      <Link href={`/${post.slug}`}>
-                        <a>
-                          <h3
-                            className={
-                              ContentListStyles.contentList__readmorelink
-                            }
-                          >
-                            Read more
-                          </h3>
-                        </a>
-                      </Link>
-                    </Box>
-                    <Spacer />
-                    <Box
-                      alignSelf="center"
-                      className={TypographyStyles.bodyCopy}
-                    >
-                      <PublishedDate date={post.date} alignSelf="center" />
-                    </Box>
-                  </Flex>
-                </article>
-              </div>
-            ))}
-          </ContentWrapper>
-        </Flex>
       </MainLayout>
     );
   }

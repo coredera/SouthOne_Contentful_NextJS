@@ -7,6 +7,7 @@ import ContentWrapper from "@components/ContentWrapper";
 import PopularTopics from "@components/PopularTopics";
 import PostTopSection from "@components/PostTopSection";
 import Author from "@components/Post/Author";
+import PopularPosts from "@components/PopularPosts";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -85,24 +86,14 @@ export default function PostWrapper(props) {
               <Post post={post} />
             </Box>
            <Spacer />
-            <Box minWidth={300} maxWidth={300}>
-              {topPostsArray.map((post) => (
-                <div
-                  key={post.sys.id}
-                  className={ContentListStyles.contentList__popularPost}
-                >
-                  <Link href={`/${post.slug}`}>
-                    <a className={ContentListStyles.contentList__titleLink}>
-                      <h3
-                        className={ContentListStyles.contentList__topposttitle}
-                      >
-                        {post.title}
-                      </h3>
-                    </a>
-                  </Link>
-                </div>
-              ))}
-            </Box>
+           <Box
+                
+                minW="300"
+                maxW="300"
+                pt={8}
+              >
+                <PopularPosts topPostsArray={topPostsArray} />
+              </Box>
           </Flex>
         </ContentWrapper>
       </Box>
