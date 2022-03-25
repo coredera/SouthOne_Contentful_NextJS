@@ -26,7 +26,7 @@
 }
 
 .contentList__selectTopic {
-  color: #002B5B;
+  color: #002b5b;
   padding: 0rem;
   padding-left: 0rem;
 }
@@ -36,69 +36,61 @@
 
 .contentList__postList {
   padding: 0rem;
-  
 }
 
 .contentList__postTopSection {
-
   margin-left: auto;
   margin-right: auto;
   max-width: 125rem;
   padding: 0rem;
-
-
-
 }
 
 .contentList__landingTopSection {
   /* Layout Properties */
-  
+
   margin-left: auto;
   margin-right: auto;
   max-width: 105rem;
   padding: 0rem;
-  
-  }
-
-.contentList__postTopSectionBg {
-/* Layout Properties */
-
-top: 1%;
-left:1% ;
-position: absolute;
-width: 1492px;
-height: 1340px;
-transform: matrix(0.98, -0.17, 0.17, 0.98, 0, 0);
-/* UI Properties */
-background: #FFDF7F 0% 0% no-repeat padding-box;
-z-index: 10;
-opacity: 1;
-
 }
 
+.contentList__postTopSectionBg {
+  /* Layout Properties */
+
+  top: 1%;
+  left: 1%;
+  position: absolute;
+  width: 1492px;
+  height: 1340px;
+  transform: matrix(0.98, -0.17, 0.17, 0.98, 0, 0);
+  /* UI Properties */
+  background: #ffdf7f 0% 0% no-repeat padding-box;
+  z-index: 10;
+  opacity: 1;
+}
 
 .contentList__popularPosts {
   padding: 0rem;
- 
-  border-radius: 0.5rem;
-  
+  border-width: 1px;
+  border-color: rgb(223, 223, 223);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .contentList__popularPostHeading {
   padding: 1rem;
-  border: 0.1rem solid #002B5B;
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  color:white;
-  background-color: #002B5B;
+  padding-top: 1.8rem;
+  border: 0.1rem solid #002b5b;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: white;
+  background-color: #002b5b;
 
-  font-weight: var(--font-weight-normal);
+  font-weight: var(--font-weight-bold);
   font-family: var(--font-family-body);
-  box-shadow: 0px 12px 1px 0 #002B5B;
-  
+  box-shadow: 0px 12px 1px 0 #002b5b;
 
- 
-  font-size: 2.125rem;
+  font-size: 1.3rem;
   line-height: 1;
 }
 
@@ -110,12 +102,10 @@ opacity: 1;
   color: var(--color-foreground);
   font-size: 1.5rem;
   line-height: 1.6;
-  border-bottom: 0.15rem solid #EBEBEB;
-  border-left:0.15rem solid #EBEBEB;
-  border-right: 0.15rem solid #EBEBEB;
+  border-bottom: 0.15rem solid #ebebeb;
+  border-left: 0.15rem solid #ebebeb;
+  border-right: 0.15rem solid #ebebeb;
 }
-
-
 
 .contentList__titleLink {
   cursor: pointer;
@@ -217,7 +207,6 @@ opacity: 1;
   display: inherit;
   text-decoration: underline;
 }
-
 
 .contentList__capitalize {
   text-transform: capitalize;

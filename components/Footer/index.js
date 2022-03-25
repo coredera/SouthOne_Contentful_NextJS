@@ -5,7 +5,6 @@ import { Config } from "@utils/Config";
 import TypographyStyles from "@styles/Typography.module.scss";
 //import Image from "next/image";
 
-
 import {
   Box,
   Flex,
@@ -63,14 +62,12 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
-                        
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
-                        
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       )}
@@ -92,8 +89,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                             
+                              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -108,8 +104,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                    
+                              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -125,8 +120,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                           
+                              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -141,8 +135,7 @@ export default function Footer() {
                         <Flex className={FooterStyles.links}>
                           <Box pr={3}>
                             <img
-                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                            
+                              src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                               className={FooterStyles.icons}
                             />
                           </Box>
@@ -170,14 +163,12 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
-                
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
-                   
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       )}
@@ -198,8 +189,7 @@ export default function Footer() {
                       <Flex className={FooterStyles.links} p={1}>
                         <Box pr={3}>
                           <img
-                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                          
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                             className={FooterStyles.icons}
                           />
                         </Box>
@@ -212,8 +202,7 @@ export default function Footer() {
                       <Flex className={FooterStyles.links} p={1}>
                         <Box pr={3}>
                           <img
-                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
-                          
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
                             className={FooterStyles.icons}
                           />
                         </Box>
@@ -239,14 +228,12 @@ export default function Footer() {
                     <AccordionButton>
                       {isExpanded ? (
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
-                      
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-minus--blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       ) : (
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
-                       
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/accordion-plus--blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       )}
@@ -290,8 +277,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                       
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -304,8 +290,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                         
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -319,8 +304,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                    
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -333,8 +317,7 @@ export default function Footer() {
                     <Flex className={FooterStyles.links}>
                       <Box pr={3}>
                         <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                        
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                           className={FooterStyles.icons}
                         />
                       </Box>
@@ -360,8 +343,7 @@ export default function Footer() {
                 <Flex className={FooterStyles.links} pt={5}>
                   <Box pr={3}>
                     <img
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
-                 
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                       className={FooterStyles.icons}
                     />
                   </Box>
@@ -372,8 +354,7 @@ export default function Footer() {
                 <Flex className={FooterStyles.links}>
                   <Box pr={3}>
                     <img
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
-                    
+                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-email-blue-tint.svg`}
                       className={FooterStyles.icons}
                     />
                   </Box>
@@ -396,108 +377,113 @@ export default function Footer() {
           </Flex>
         </Box>
 
-        <Flex
-          pt={8}
-          pb={10}
-          maxWidth="1200"
-          direction={{ base: "column", lg: "row" }}
-        >
-          <Flex>
-            <Box pr={8}>
-              <Box
-                className={TypographyStyles.bodyCopy}
-                color="white"
-                marginBottom={1}
-                pb={5}
-              >
-                © The Guide Dogs for the Blind Association 2021
-              </Box>
-              <Box className={TypographyStyles.bodyCopySS} color="white">
-                Guide Dogs is a working name of The Guide Dogs for the Blind
-                Association. Registered Office: Hillfields, Burghfield Common,
-                Reading, Berkshire RG7 3YG. A company limited by guarantee
-                registered in England and Wales (291646) and a charity
-                registered in England and Wales (209617) and Scotland (SC038979)
-              </Box>
-            </Box>
-          </Flex>
-          <Flex alignItems="center" direction={{ base: "column", md: "row" }}>
-            <Flex>
-              <Box className={FooterStyles.logos}>
-                <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                  <a>
-                    <div>
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-gift-aid.png`}
-                      className={FooterStyles.logosize}
-                    />
-                    </div>
-                  </a>
-                </Link>
-              </Box>
-              <Box className={FooterStyles.logos}>
-                <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                <a>
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
-                      className={FooterStyles.logosize}
-                    />
-                  </a>
-                </Link>
-              </Box>
-            </Flex>
-            <Flex>
-              <Box className={FooterStyles.logos}>
-                <Link href="https://www.guidedogs.org.uk/getting-support/#">
-                  <a>
-                    <img
-                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
-                      className={FooterStyles.logosize}
-                    />
-                  </a>
-                </Link>
-              </Box>
-              <Box className={FooterStyles.logos}>
-                <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/business-disability-forum-logo.png`}
-                  className={FooterStyles.logosize}
-                />
-              </Box>
-            </Flex>
-          </Flex>
-        </Flex>
+        {/*Final implementation*/}
 
-        <Flex direction={{ base: "column", md: "row" }}>
-          <Box className={FooterStyles.bottomlinks}>
-            <Link href="https://www.guidedogs.org.uk/sitemap">Sitemap</Link>
-          </Box>
-          <Box className={FooterStyles.bottomlinks}>
-            <Link href="https://www.guidedogs.org.uk/about-us/finance-governance">
-              Finance and Governance
-            </Link>
-          </Box>
-          <Box className={FooterStyles.bottomlinks}>
-            <Link href="https://www.guidedogs.org.uk/website-terms-of-use">
-              Website terms of use
-            </Link>
-          </Box>
-          <Box className={FooterStyles.bottomlinks}>
-            <Link href="https://www.guidedogs.org.uk/about-us/careers/diversity-and-safeguarding">
-              Safeguarding
-            </Link>
-          </Box>
-          <Box className={FooterStyles.bottomlinks}>
-            <Link href="https://www.guidedogs.org.uk/privacy-policy">
-              Privacy policy
-            </Link>
-          </Box>
-          <Box className={FooterStyles.bottomlinks}>
-            <Link href="https://www.guidedogs.org.uk/modern-slavery">
-              Modern Slavery
-            </Link>
-          </Box>
-          <Spacer />
-        </Flex>
+        <Box p={0}>
+          <Flex
+            pt={8}
+            pb={10}
+            maxWidth="1200"
+            direction={{ base: "column", lg: "row" }}
+          >
+            <Flex>
+              <Box pr={8}>
+                <Box
+                  className={TypographyStyles.bodyCopy}
+                  color="white"
+                  marginBottom={1}
+                  pb={5}
+                >
+                  © The Guide Dogs for the Blind Association 2021
+                </Box>
+                <Box className={TypographyStyles.bodyCopySS} color="white">
+                  Guide Dogs is a working name of The Guide Dogs for the Blind
+                  Association. Registered Office: Hillfields, Burghfield Common,
+                  Reading, Berkshire RG7 3YG. A company limited by guarantee
+                  registered in England and Wales (291646) and a charity
+                  registered in England and Wales (209617) and Scotland
+                  (SC038979)
+                </Box>
+              </Box>
+            </Flex>
+            <Flex alignItems="center" direction={{ base: "column", md: "row" }}>
+              <Flex>
+                <Box className={FooterStyles.logos}>
+                  <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                    <a>
+                      <div>
+                        <img
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-gift-aid.png`}
+                          className={FooterStyles.logosize}
+                        />
+                      </div>
+                    </a>
+                  </Link>
+                </Box>
+                <Box className={FooterStyles.logos}>
+                  <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                    <a>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
+                        className={FooterStyles.logosize}
+                      />
+                    </a>
+                  </Link>
+                </Box>
+              </Flex>
+              <Flex>
+                <Box className={FooterStyles.logos}>
+                  <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                    <a>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
+                        className={FooterStyles.logosize}
+                      />
+                    </a>
+                  </Link>
+                </Box>
+                <Box className={FooterStyles.logos}>
+                  <img
+                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/business-disability-forum-logo.png`}
+                    className={FooterStyles.logosize}
+                  />
+                </Box>
+              </Flex>
+            </Flex>
+          </Flex>
+
+          <Flex direction={{ base: "column", md: "row" }}>
+            <Box className={FooterStyles.bottomlinks}>
+              <Link href="https://www.guidedogs.org.uk/sitemap">Sitemap</Link>
+            </Box>
+            <Box className={FooterStyles.bottomlinks}>
+              <Link href="https://www.guidedogs.org.uk/about-us/finance-governance">
+                Finance and Governance
+              </Link>
+            </Box>
+            <Box className={FooterStyles.bottomlinks}>
+              <Link href="https://www.guidedogs.org.uk/website-terms-of-use">
+                Website terms of use
+              </Link>
+            </Box>
+            <Box className={FooterStyles.bottomlinks}>
+              <Link href="https://www.guidedogs.org.uk/about-us/careers/diversity-and-safeguarding">
+                Safeguarding
+              </Link>
+            </Box>
+            <Box className={FooterStyles.bottomlinks}>
+              <Link href="https://www.guidedogs.org.uk/privacy-policy">
+                Privacy policy
+              </Link>
+            </Box>
+            <Box className={FooterStyles.bottomlinks}>
+              <Link href="https://www.guidedogs.org.uk/modern-slavery">
+                Modern Slavery
+              </Link>
+            </Box>
+            <Spacer />
+          </Flex>
+        </Box>
       </Container>
     </footer>
   );

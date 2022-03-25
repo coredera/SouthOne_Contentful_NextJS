@@ -25,6 +25,7 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
+  background,
 } from "@chakra-ui/react";
 
 export default function FeaturedPost(props) {
@@ -33,7 +34,7 @@ export default function FeaturedPost(props) {
   return (
     <>
       <Flex
-        display={{ base: "none", md: "block" }}
+        display={{ base: "none", lg: "block" }}
         className={ContentListStyles.contentList__featuredPost}
         p={0}
       >
@@ -41,17 +42,19 @@ export default function FeaturedPost(props) {
           <Flex justifyContent pt={20} pb={20}>
             <Box pr={30}>
               <Box pb={3}>
-              <Link href={`/${featuredPost.slug}`}>
-                <a>
-                  <h2 className={ContentListStyles.contentList__title}>
-                    {featuredPost.title}
-                  </h2>
-                </a>
-              </Link>
+                <Link href={`/${featuredPost.slug}`}>
+                  <a>
+                    <h2 className={ContentListStyles.contentList__title}>
+                      {featuredPost.title}
+                    </h2>
+                  </a>
+                </Link>
               </Box>
               <Box className={ContentListStyles.contentList__author} pb={2}>
                 {featuredPost.author !== null && (
-                  <><b>Author:   {featuredPost.author.name} </b></>
+                  <>
+                    <b>Author: {featuredPost.author.name} </b>
+                  </>
                 )}
               </Box>
               {featuredPost.contentfulMetadata.tags !== null && (
@@ -101,37 +104,46 @@ export default function FeaturedPost(props) {
         </article>
       </Flex>
 
-      <Flex display={{ base: "block", md: "none" }}>
+      <Flex display={{ base: "block", lg: "none" }}>
         <article className={ContentListStyles.contentList__post}>
-          <Link href={`/${featuredPost.slug}`}>
-            <a>
-              <img
-                src={featuredPost.image.url}
-                width={featuredPost.image.width}
-                height={featuredPost.image.height}
-                layout="responsive"
-                objectFit="contain"
-                alt={featuredPost.image.description}
-              />
-            </a>
-          </Link>
-
+          <Flex>
+            <Spacer />
+            <Link href={`/${featuredPost.slug}`}>
+              <a>
+                <img
+                  src={featuredPost.image.url}
+                  width={featuredPost.image.width}
+                  height={featuredPost.image.height}
+                  layout="responsive"
+                  objectFit="contain"
+                  alt={featuredPost.image.description}
+                  style={{ borderRadius: "20px" }}
+                />
+              </a>
+            </Link>
+            <Spacer />
+          </Flex>
           <Flex p={2} />
           <Link href={`/${featuredPost.slug}`}>
-            <a className={ContentListStyles.contentList__titleLink}>
+            <a>
               <h2 className={ContentListStyles.contentList__title}>
                 {featuredPost.title}
               </h2>
             </a>
           </Link>
-          <Box className={ContentListStyles.contentList__author}>
+          <Box className={ContentListStyles.contentList__author} pt={5} pb={1}>
             {featuredPost.author !== null && (
-              <> Author: {featuredPost.author.name}</>
+              <>
+                {" "}
+                <b>Author: {featuredPost.author.name}</b>
+              </>
             )}
           </Box>
+          <Box pb={3}>
           {featuredPost.contentfulMetadata.tags !== null && (
             <Tags tags={featuredPost.contentfulMetadata.tags} />
           )}
+          </Box>
           <div className={ContentListStyles.contentList__excerpt}>
             <ReactMarkdown
               children={featuredPost.excerpt}
@@ -142,9 +154,16 @@ export default function FeaturedPost(props) {
             <Box alignSelf="center">
               <Link href={`/${featuredPost.slug}`}>
                 <a>
-                  <h3 className={ContentListStyles.contentList__readmorelink}>
-                    Read more
-                  </h3>
+                  <Flex className={ContentListStyles.contentList__readmorelink}>
+                    <h3>Read more</h3>
+                    <Box pl={2} alignSelf="center">
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
+                        width="12"
+                        style={{ border: "none" }}
+                      />
+                    </Box>
+                  </Flex>
                 </a>
               </Link>
             </Box>
