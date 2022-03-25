@@ -62,18 +62,28 @@ export default function PostWrapper(props) {
           <ContentWrapper>
             <Flex alignItems="center" pb={10} pt={5}>
               <Box alignSelf="center">
-                <Link href={`${Config.pageMeta.home.slug}`}>
-                  <a>
-                    <Flex>
-                      <h3
-                        className={ContentListStyles.contentList__homelink}
-                      >
-                        
-                        <Box> Home</Box>
-                      </h3>
-                    </Flex>
-                  </a>
-                </Link>
+              <Flex
+                  className={ContentListStyles.contentList__homelink}
+                  minWidth="160"
+                >
+                  <Box style={{ textDecoration: "underline" }}>
+                    <Link href="https://www.guidedogs.org.uk">
+                      <a>
+                        <h3>Home</h3>
+                      </a>
+                    </Link>
+                  </Box>
+                  <Spacer />
+                  <Box>></Box>
+                  <Spacer />
+                  <Box style={{ textDecoration: "underline" }}>
+                    <Link href={`${Config.pageMeta.home.slug}`}>
+                      <a>
+                        <h3>Blog</h3>
+                      </a>
+                    </Link>
+                  </Box>
+                </Flex>
               </Box>
               <Spacer />
             </Flex>
@@ -82,18 +92,22 @@ export default function PostWrapper(props) {
         </Box>
         <ContentWrapper>
           <Flex pt={20}>
-            <Box pr={20} width="full">
+            <Box width="full">
               <Post post={post} />
             </Box>
-           <Spacer />
-           <Box
-                
-                minW="300"
-                maxW="300"
-                pt={8}
-              >
-                <PopularPosts topPostsArray={topPostsArray} />
-              </Box>
+            <Spacer />
+            <Box
+              display={{ base: "none", lg: "block" }}
+              minW="320"
+              maxW="320"
+              pt={0}
+              pl={10}
+            >
+              <PopularPosts topPostsArray={topPostsArray} />
+            </Box>
+          </Flex>
+          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
+            <PopularPosts topPostsArray={topPostsArray} />
           </Flex>
         </ContentWrapper>
       </Box>

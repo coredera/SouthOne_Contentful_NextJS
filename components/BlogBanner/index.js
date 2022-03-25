@@ -28,6 +28,7 @@ import {
   AccordionButton,
   AccordionIcon,
   AccordionPanel,
+  textDecoration,
 } from "@chakra-ui/react";
 
 export default function BlogBanner(props) {
@@ -54,15 +55,28 @@ export default function BlogBanner(props) {
           <ContentWrapper>
             <Flex alignItems="center" pb={0} pt={5}>
               <Box alignSelf="center">
-                <Link href={`${Config.pageMeta.home.slug}`}>
-                  <a>
-                    <Flex>
-                      <h3 className={ContentListStyles.contentList__homelink}>
-                        <Box> Home</Box>
-                      </h3>
-                    </Flex>
-                  </a>
-                </Link>
+                <Flex
+                  className={ContentListStyles.contentList__homelink}
+                  minWidth="160"
+                >
+                  <Box style={{ textDecoration: "underline" }}>
+                    <Link href="https://www.guidedogs.org.uk">
+                      <a>
+                        <h3>Home</h3>
+                      </a>
+                    </Link>
+                  </Box>
+                  <Spacer />
+                  <Box>></Box>
+                  <Spacer />
+                  <Box style={{ textDecoration: "underline" }}>
+                    <Link href={`${Config.pageMeta.home.slug}`}>
+                      <a>
+                        <h3>Blog</h3>
+                      </a>
+                    </Link>
+                  </Box>
+                </Flex>
               </Box>
               <Spacer />
             </Flex>
@@ -95,7 +109,7 @@ export default function BlogBanner(props) {
 
         <Box
           bgColor="#FFDF7F"
-         pb={10}
+          pb={10}
           className={TypographyStyles.heading__h1}
           textAlign="center"
           pt={8}

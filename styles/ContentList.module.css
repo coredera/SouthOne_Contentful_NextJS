@@ -205,7 +205,7 @@
   padding-left: 1rem;
   padding-right: 1rem;
   display: inherit;
-  text-decoration: underline;
+  text-decoration: inherit;
 }
 
 .contentList__capitalize {

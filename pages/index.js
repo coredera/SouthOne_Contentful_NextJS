@@ -104,7 +104,7 @@ export default function BlogIndex(props) {
 
         <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
 
-        <Box bgColor="brand.50" pt={10}>
+        <Box bgColor="brand.50" pt={10} pb={20}>
           <ContentWrapper>
             <Flex>
               <Box pr={0}>
@@ -117,7 +117,6 @@ export default function BlogIndex(props) {
               </Box>
               <Spacer />
               <Box
-                
                 minW="300"
                 pt={8}
                 pl={10}
@@ -206,11 +205,7 @@ export default function BlogIndex(props) {
                 />
               </Box>
               <Spacer />
-              <Box
-                
-                minW="300"
-                pt={8}
-              >
+              <Box minW="300" pt={8}>
                 <PopularPosts topPostsArray={topPostsArray} />
               </Box>
             </Flex>

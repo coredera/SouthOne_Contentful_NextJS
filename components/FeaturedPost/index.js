@@ -69,13 +69,18 @@ export default function FeaturedPost(props) {
               <Flex alignItems="center">
                 <Box alignSelf="center">
                   <Link href={`/${featuredPost.slug}`}>
-                    <a>
-                      <h3
-                        className={ContentListStyles.contentList__readmorelink}
-                      >
-                        Read more
-                      </h3>
-                    </a>
+                  <a>
+                  <Flex className={ContentListStyles.contentList__readmorelink}>
+                    <h3>Read more</h3>
+                    <Box pl={2} alignSelf="center">
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
+                        width="12"
+                        style={{ border: "none" }}
+                      />
+                    </Box>
+                  </Flex>
+                </a>
                   </Link>
                 </Box>
                 <Spacer />
