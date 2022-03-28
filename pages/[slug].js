@@ -8,6 +8,7 @@ import PopularTopics from "@components/PopularTopics";
 import PostTopSection from "@components/PostTopSection";
 import Author from "@components/Post/Author";
 import PopularPosts from "@components/PopularPosts";
+import SharePost from "@components/SharePost";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -62,7 +63,7 @@ export default function PostWrapper(props) {
           <ContentWrapper>
             <Flex alignItems="center" pb={10} pt={5}>
               <Box alignSelf="center">
-              <Flex
+                <Flex
                   className={ContentListStyles.contentList__homelink}
                   minWidth="160"
                 >
@@ -91,8 +92,14 @@ export default function PostWrapper(props) {
           <PostTopSection post={post} />
         </Box>
         <ContentWrapper>
-          <Flex pt={20}>
-            <Box width="full">
+          <Flex display={{ base: "block", lg: "none" }} pb={10}>
+            <SharePost post={post} />
+          </Flex>
+          <Flex>
+            <Box width="full" pt={20} display={{ base: "none", lg: "block" }}>
+              <Post post={post} />
+            </Box>
+            <Box width="full" pt={0} display={{ base: "block", lg: "none" }}>
               <Post post={post} />
             </Box>
             <Spacer />
@@ -100,15 +107,19 @@ export default function PostWrapper(props) {
               display={{ base: "none", lg: "block" }}
               minW="320"
               maxW="320"
-              pt={0}
+              pt={20}
               pl={10}
             >
-              <PopularPosts topPostsArray={topPostsArray} />
+              <SharePost post={post} />
+              <Box pt={8}>
+                <PopularPosts topPostsArray={topPostsArray} />
+              </Box>
             </Box>
           </Flex>
-          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
+          <Box display={{ base: "block", lg: "none" }} pb={10} pt={10}>
+            <SharePost post={post} />
             <PopularPosts topPostsArray={topPostsArray} />
-          </Flex>
+          </Box>
         </ContentWrapper>
       </Box>
       <Box bgColor="brand.100" p={7} pb={14}>
