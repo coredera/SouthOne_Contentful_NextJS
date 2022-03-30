@@ -173,7 +173,7 @@ export default function PopularTopics(props) {
                       </a>
                     </Link>
                   </Flex>
-                
+
                   <Flex pt={2}>
                     <Box pr={5} alignSelf="center">
                       <img
@@ -199,9 +199,8 @@ export default function PopularTopics(props) {
                       <a className={TypographyStyles.popularTopics}>News</a>
                     </Link>
                   </Flex>
-                  
                 </Box>
-               
+
                 <Box>
                   <Flex>
                     <Box pr={5} alignSelf="center">
@@ -245,24 +244,25 @@ export default function PopularTopics(props) {
                 </Box>
                 <Spacer />
               </Flex>
-              <Flex
-                className={ContentListStyles.contentList__selectTopic}
-                pt={3}
-                maxWidth="300"
-              >
-                <Select
-                  placeholder="View all topics.."
-                  id="selectBox"
-                  onChange={() => changeFunc()}
-                  bgColor="white"
-                  fontFamily="Trebuchet MS"
+              <Flex>
+              <Box
+                  className={ContentListStyles.contentList__selectTopic}
+                  pt={3}
                 >
-                  {sortedBlogPostTags.map((tag) => (
-                    <option value={tag.id} key={tag.id}>
-                      {tag.name}
-                    </option>
-                  ))}
-                </Select>
+                  <Select
+                    placeholder="View all topics.."
+                    id="selectBox2"
+                    onChange={() => changeFunc()}
+                    bgColor="white"
+                    fontFamily="Trebuchet MS"
+                  >
+                    {sortedBlogPostTags.map((tag) => (
+                      <option value={tag.id} key={tag.id}>
+                        {tag.name}
+                      </option>
+                    ))}
+                  </Select>
+                </Box>
               </Flex>
             </Box>
           </Box>
@@ -276,6 +276,15 @@ export async function changeFunc(tagid) {
   var selectBox = document.getElementById("selectBox");
   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
   // alert(selectedValue);
+
+  console.log(selectedValue);
+
+  if(selectedValue==="")
+  {
+    var selectBox = document.getElementById("selectBox2");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+
+  }
 
   router.push(`/topic/${selectedValue}`);
 }

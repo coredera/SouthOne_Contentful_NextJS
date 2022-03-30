@@ -60,27 +60,31 @@ export default function FeaturedPost(props) {
               {featuredPost.contentfulMetadata.tags !== null && (
                 <Tags tags={featuredPost.contentfulMetadata.tags} />
               )}
-              <div className={ContentListStyles.contentList__excerpt}>
-                <ReactMarkdown
-                  children={featuredPost.excerpt}
-                  renderers={ReactMarkdownRenderers(featuredPost.excerpt)}
-                />
-              </div>
+              <Box pt={6}>
+                <div className={ContentListStyles.contentList__excerpt}>
+                  <ReactMarkdown
+                    children={featuredPost.excerpt}
+                    renderers={ReactMarkdownRenderers(featuredPost.excerpt)}
+                  />
+                </div>
+              </Box>
               <Flex alignItems="center">
                 <Box alignSelf="center">
                   <Link href={`/${featuredPost.slug}`}>
-                  <a>
-                  <Flex className={ContentListStyles.contentList__readmorelink}>
-                    <h3>Read more</h3>
-                    <Box pl={2} alignSelf="center">
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
-                        width="12"
-                        style={{ border: "none" }}
-                      />
-                    </Box>
-                  </Flex>
-                </a>
+                    <a>
+                      <Flex
+                        className={ContentListStyles.contentList__readmorelink}
+                      >
+                        <h3>Read more</h3>
+                        <Box pl={2} alignSelf="center">
+                          <img
+                            src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
+                            width="12"
+                            style={{ border: "none" }}
+                          />
+                        </Box>
+                      </Flex>
+                    </a>
                   </Link>
                 </Box>
                 <Spacer />
@@ -145,9 +149,9 @@ export default function FeaturedPost(props) {
             )}
           </Box>
           <Box pb={3}>
-          {featuredPost.contentfulMetadata.tags !== null && (
-            <Tags tags={featuredPost.contentfulMetadata.tags} />
-          )}
+            {featuredPost.contentfulMetadata.tags !== null && (
+              <Tags tags={featuredPost.contentfulMetadata.tags} />
+            )}
           </Box>
           <div className={ContentListStyles.contentList__excerpt}>
             <ReactMarkdown

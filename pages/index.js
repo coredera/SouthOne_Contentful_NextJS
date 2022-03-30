@@ -97,9 +97,11 @@ export default function BlogIndex(props) {
         <BlogBanner pageContent={pageContent} />
 
         <ContentWrapper>
+          <Box pt={10}>
           {featuredPost !== null && (
             <FeaturedPost featuredPost={featuredPost} />
           )}
+          </Box>
         </ContentWrapper>
 
         <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />

@@ -36,7 +36,7 @@ export default function PopularPosts(props) {
 
       <Box pb={3}>
         <h2 className={ContentListStyles.contentList__popularPostHeading}>
-           You might also like
+           Popular posts
         </h2>
       </Box>
       <Box

@@ -98,7 +98,29 @@ export default function BlogBanner(props) {
         </Box>
       </Box>
 
-      <Box display={{ base: "block", lg: "none" }}>
+      <Box display={{ base: "block", lg: "none" }} pb={0} marginBottom="0px">
+        <Box alignItems="center" pt={2} pl={3}>
+          <Flex className={ContentListStyles.contentList__homelink} maxW="52" alignSelf="center">
+            <Box style={{ textDecoration: "underline" }}>
+              <Link href="https://www.guidedogs.org.uk">
+                <a>
+                  <h3>Home</h3>
+                </a>
+              </Link>
+            </Box>
+            <Spacer />
+            <Box>></Box>
+            <Spacer />
+            <Box style={{ textDecoration: "underline" }}>
+              <Link href={`${Config.pageMeta.home.slug}`}>
+                <a>
+                  <h3>Blog</h3>
+                </a>
+              </Link>
+            </Box>
+            <Spacer />
+          </Flex>
+        </Box>
         <Box
           backgroundImage={pageContent.heroBanner.image.url}
           height="300"
@@ -116,6 +138,7 @@ export default function BlogBanner(props) {
           pr={5}
           pl={5}
           fontSize="2.5em"
+          marginBottom="0"
         >
           {pageContent.title}
         </Box>
