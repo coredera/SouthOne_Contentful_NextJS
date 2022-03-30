@@ -60,39 +60,79 @@ export default function PostWrapper(props) {
         className={ContentListStyles.contentList__postTopSection}
       >
         <Box bgColor={{ base: "#FFDF7F", lg: "transparent" }}>
-          <ContentWrapper>
-            <Flex alignItems="center" pb={10} pt={5}>
-              <Box alignSelf="center">
-                <Flex
-                  className={ContentListStyles.contentList__homelink}
-                  minWidth="160"
-                >
-                  <Box style={{ textDecoration: "underline" }}>
-                    <Link href="https://www.guidedogs.org.uk">
-                      <a>
-                        <h3>Home</h3>
-                      </a>
-                    </Link>
-                  </Box>
-                  <Spacer />
-                  <Box>></Box>
-                  <Spacer />
-                  <Box style={{ textDecoration: "underline" }}>
-                    <Link href={`${Config.pageMeta.home.slug}`}>
-                      <a>
-                        <h3>Blog</h3>
-                      </a>
-                    </Link>
-                  </Box>
-                </Flex>
+          <Box display={{ base: "none", lg: "block" }}>
+            <ContentWrapper>
+              <Flex alignItems="center" pb={0} pt={5}>
+                <Box alignSelf="center">
+                  <Flex
+                    className={ContentListStyles.contentList__homelink}
+                    minWidth="160"
+                  >
+                    <Box style={{ textDecoration: "underline" }}>
+                      <Link href="https://www.guidedogs.org.uk">
+                        <a>
+                          <h3>Home</h3>
+                        </a>
+                      </Link>
+                    </Box>
+                    <Spacer />
+                    <Box>></Box>
+                    <Spacer />
+                    <Box style={{ textDecoration: "underline" }}>
+                      <Link href={`${Config.pageMeta.home.slug}`}>
+                        <a>
+                          <h3>Blog</h3>
+                        </a>
+                      </Link>
+                    </Box>
+                  </Flex>
+                </Box>
+                <Spacer />
+              </Flex>
+            </ContentWrapper>
+          </Box>
+
+          <Box
+            alignItems="center"
+            pt={2}
+            pl={3}
+            display={{ base: "block", lg: "none" }}
+            bgColor="white"
+            pb={0.5}
+          >
+            <Flex
+              className={ContentListStyles.contentList__homelink}
+              maxW="52"
+              alignSelf="center"
+            >
+              <Box style={{ textDecoration: "underline" }}>
+                <Link href="https://www.guidedogs.org.uk">
+                  <a>
+                    <h3>Home</h3>
+                  </a>
+                </Link>
+              </Box>
+              <Spacer />
+              <Box>></Box>
+              <Spacer />
+              <Box style={{ textDecoration: "underline" }}>
+                <Link href={`${Config.pageMeta.home.slug}`}>
+                  <a>
+                    <h3>Blog</h3>
+                  </a>
+                </Link>
               </Box>
               <Spacer />
             </Flex>
-          </ContentWrapper>
+          </Box>
+
+          <Box pt={10} pb={5}>
           <PostTopSection post={post} />
+          </Box>
+
         </Box>
         <ContentWrapper>
-          <Flex display={{ base: "block", lg: "none" }} pb={10}>
+          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
             <SharePost post={post} />
           </Flex>
           <Flex>
@@ -117,7 +157,6 @@ export default function PostWrapper(props) {
             </Box>
           </Flex>
           <Box display={{ base: "block", lg: "none" }} pb={10} pt={10}>
-            <SharePost post={post} />
             <PopularPosts topPostsArray={topPostsArray} />
           </Box>
         </ContentWrapper>

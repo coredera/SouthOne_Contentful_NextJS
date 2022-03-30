@@ -7,6 +7,9 @@ import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
+import PopularTopics from "@components/PopularTopics";
+import PopularPosts from "@components/PopularPosts";
+import BlogBanner from "@components/BlogBanner";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -33,17 +36,8 @@ import {
   Checkbox,
 } from "@chakra-ui/react";
 
-
-
 export default function BlogIndexPage(props) {
-  const {
-    posts,
-    totalPages,
-    currentPage,
-    pageContent,
-    preview,
-    tag
-  } = props;
+  const { posts, totalPages, currentPage, pageContent, preview, tag, sortedBlogPostTags,topPostsArray } = props;
 
   const postListType = `/topic/${tag}/`;
 
@@ -64,52 +58,38 @@ export default function BlogIndexPage(props) {
         url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
       />
 
-      {pageContent.heroBanner !== null && (
-        <HeroBanner data={pageContent.heroBanner} />
-      )}
+      <BlogBanner pageContent={pageContent} />
 
-      <ContentWrapper>
-        {pageContent.body && (
-          <PageContentWrapper>
-            <RichTextPageContent richTextBodyField={pageContent.body} />
-          </PageContentWrapper>
-        )}
-         <Flex
-        alignItems="center"
-        style={{ display: currentPage === "1" ? "none" : "block" }}
-        pb={20}
-        pt={5}
-      >
-        <Box alignSelf="center">
-          <Link href={`${Config.pageMeta.home.slug}`}>
-            <a>
-            <Flex>
-                  <h3 className={ContentListStyles.contentList__readmorelink}>
-                    <Box alignSelf="center" pr={1.5}>
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/arrow-left--left-small.svg`}
-                        width={15}
-                        height={15}
-                      />
-                    </Box>
-                    <Box>
-                    {" "} 
-                    Go to home
-                    </Box>
-                  </h3>
-                </Flex>              
-            </a>
-          </Link>
-        </Box>
-        <Spacer />
-      </Flex>
-        <PostList
-          postListType = {postListType}
-          posts={posts}
-          totalPages={totalPages}
-          currentPage={currentPage}
-        />
-      </ContentWrapper>
+      <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
+
+      <Box bgColor="brand.50" pt={10} pb={20}>
+        <ContentWrapper>
+          <Flex>
+            <Box pr={0}>
+              <PostList
+                postListType={postListType}
+                posts={posts}
+                totalPages={totalPages}
+                currentPage={currentPage}
+              />
+            </Box>
+            <Spacer />
+            <Box
+              minW="300"
+              maxW="300"
+              pt={8}
+              pl={10}
+              display={{ base: "none", lg: "block" }}
+            >
+              <PopularPosts topPostsArray={topPostsArray} />
+            </Box>
+          </Flex>
+
+          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
+            <PopularPosts topPostsArray={topPostsArray} />
+          </Flex>
+        </ContentWrapper>
+      </Box>
     </MainLayout>
   );
 }
@@ -128,54 +108,43 @@ export async function getStaticPaths() {
   const blogPostTags = await ContentfulApi.getAllUniquePostTags();
 
   const temp = blogPostTags.map(({ id }) => {
+    //const id = "puppy";
 
-  //const id = "puppy";
+    //for(const fid of blogPostTags){
 
-  //for(const fid of blogPostTags){
+    const acc = [];
 
-  
-    const acc =[];
+    var totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
 
-    var totalPages = Math.ceil(
-      acc.length / Config.pagination.pageSize,
-    );
-  
     const relatedPosts = posts.reduce((acc, post) => {
-      if ( 
+      if (
         post.contentfulMetadata &&
         post.contentfulMetadata.tags &&
         post.contentfulMetadata.tags.find(({ id }) => id === id)
       ) {
-        
         acc.push(post);
 
-       // console.log("ACC.........");
-       // console.log(acc);
-  
-        totalPages = Math.ceil(
-          acc.length / Config.pagination.pageSize,
-        );
+        // console.log("ACC.........");
+        // console.log(acc);
+
+        totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
         return acc;
       }
-      totalPages = Math.ceil(
-        acc.length / Config.pagination.pageSize,
-      );
-  
+      totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
+
       return acc;
     }, []);
-  
+
     for (let page = 2; page <= totalPages; page++) {
       paths.push(
-        { params: { page: page.toString(), tag: id}},
-       // { params: { tag } }
-      
+        { params: { page: page.toString(), tag: id } },
+        // { params: { tag } }
       );
     }
   });
 
-   // return { params: { tag: id } };
+  // return { params: { tag: id } };
   //});
-
 
   /**
    * Start from page 2, so we don't replicate /blog
@@ -185,8 +154,8 @@ export async function getStaticPaths() {
   //for (let page = 2; page <= totalPages; page++) {
   //  paths.push(
   //    { params: { page: page.toString(), tag: tag}},
-     // { params: { tag } }
-    
+  // { params: { tag } }
+
   //  );
   //}
 
@@ -206,38 +175,34 @@ export async function getStaticProps({ params, preview = false }) {
     },
   );
 
-  const acc =[];
+  const acc = [];
 
-  var totalPages = Math.ceil(
-    acc.length / Config.pagination.pageSize,
-  );
+  var totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
 
   const relatedPosts = posts.reduce((acc, post) => {
-    if ( 
+    if (
       post.contentfulMetadata &&
       post.contentfulMetadata.tags &&
       post.contentfulMetadata.tags.find(({ id }) => id === params.tag)
     ) {
       acc.push(post);
 
-     // console.log("ACC.........");
-     // console.log(acc.length);
-     // console.log(acc);
+      // console.log("ACC.........");
+      // console.log(acc.length);
+      // console.log(acc);
 
-      totalPages = Math.ceil(
-        acc.length / Config.pagination.pageSize,
-      );
+      totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
       return acc;
     }
-    totalPages = Math.ceil(
-      acc.length / Config.pagination.pageSize,
-    );
+    totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
 
     return acc;
   }, []);
 
-
-  const paginatedRelatedPosts = relatedPosts.slice(params.page*Config.pagination.pageSize-Config.pagination.pageSize, params.page*Config.pagination.pageSize);
+  const paginatedRelatedPosts = relatedPosts.slice(
+    params.page * Config.pagination.pageSize - Config.pagination.pageSize,
+    params.page * Config.pagination.pageSize,
+  );
 
   // Add this with fallback: "blocking"
   // So that if we do not have a post on production,
@@ -248,11 +213,46 @@ export async function getStaticProps({ params, preview = false }) {
     };
   }
 
+  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+
+  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+
+  const topPostsIds = await ContentfulApi.getTopPostsIds();
+
+  const topPostId1 = topPostsIds.tpostid1;
+  const topPostId2 = topPostsIds.tpostid2;
+  const topPostId3 = topPostsIds.tpostid3;
+  const topPostId4 = topPostsIds.tpostid4;
+  const topPostId5 = topPostsIds.tpostid5;
+
+  const topPost1 = posts.find((p) => p.sys.id === topPostId1);
+  const topPost2 = posts.find((p) => p.sys.id === topPostId2);
+  const topPost3 = posts.find((p) => p.sys.id === topPostId3);
+  const topPost4 = posts.find((p) => p.sys.id === topPostId4);
+  const topPost5 = posts.find((p) => p.sys.id === topPostId5);
+
+  const topPostsIdsArray = [
+    topPostId1,
+    topPostId2,
+    topPostId3,
+    topPostId4,
+    topPostId5,
+  ];
+
+  const topPostsArray = [topPost1, topPost2, topPost3, topPost4, topPost5];
+
+  const tagrecord = blogPostTags.find(({ id }) => id === params.tag);
+  const tagname = tagrecord.name;
+
+  pageContent.title = tagname;
+  pageContent.body = "";
 
 
   //console.log("totalPages:")
   //console.log(totalPages);
-  
+
   return {
     props: {
       preview,
@@ -261,6 +261,8 @@ export async function getStaticProps({ params, preview = false }) {
       posts: paginatedRelatedPosts,
       tag: params.tag,
       pageContent: pageContent || null,
+      sortedBlogPostTags,
+      topPostsArray,
     },
   };
 }

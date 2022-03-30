@@ -37,134 +37,135 @@ export default function PostList(props) {
 
   return (
     <>
-      <ol className={ContentListStyles.contentList}>
-        {posts.map((post) => (
-          <li key={post.sys.id}>
-            <Box bgColor="white" style={{ borderRadius: "20px" }}>
-              <article className={ContentListStyles.contentList__post}>
-                <Box>
-                  
+      <Box>
+        <ol className={ContentListStyles.contentList}>
+          {posts.map((post) => (
+            <li key={post.sys.id}>
+              <Box bgColor="white" style={{ borderRadius: "20px" }}>
+                <article className={ContentListStyles.contentList__post}>
+                  <Box>
                     <Box display={{ base: "none", lg: "block" }}>
-                    <Link href={`/${post.slug}`}>
-                      <a>
-                        <img
-                          src={post.image.url}
-                          width="1200"
-                          height="200"
-                          layout="responsive"
-                          objectFit="cover"
-                          alt={post.image.description}
-                          style={{
-                            borderTopLeftRadius: "20px",
-                            borderTopRightRadius: "20px",
-                            objectFit: "cover",
-                            height: "500px",
-                          }}
-                        />
-                      </a>
+                      <Link href={`/${post.slug}`}>
+                        <a>
+                          <img
+                            src={post.image.url}
+                            alt={post.image.description}
+                            layout="responsive"
+                            style={{
+                              borderTopLeftRadius: "20px",
+                              borderTopRightRadius: "20px",
+                              objectFit: "cover",
+                              width: "950px",
+                              height: "500px",
+                            }}
+                          />
+                        </a>
                       </Link>
                     </Box>
                     <Box display={{ base: "block", lg: "none" }}>
-                    <Link href={`/${post.slug}`}>
-                      <a>
-                        <img
-                          src={post.image.url}
-                          width="1200"
-                          height="100"
-                          layout="responsive"
-                          objectFit="cover"
-                          alt={post.image.description}
-                          style={{
-                            borderTopLeftRadius: "20px",
-                            borderTopRightRadius: "20px",
-                            objectFit: "cover",
-                            height: "300px",
-                          }}
-                        />
-                      </a>
+                      <Link href={`/${post.slug}`}>
+                        <a>
+                          <img
+                            src={post.image.url}
+                            width="1200"
+                            height="100"
+                            layout="responsive"
+                            objectFit="cover"
+                            alt={post.image.description}
+                            style={{
+                              borderTopLeftRadius: "20px",
+                              borderTopRightRadius: "20px",
+                              objectFit: "cover",
+                              height: "300px",
+                            }}
+                          />
+                        </a>
                       </Link>
                     </Box>
-                
-                </Box>
+                  </Box>
 
-                <Box p={10} pb={12}>
-                  <Flex pb={4}>
+                  <Box p={10} pb={12}>
+                    <Flex pb={4}>
+                      <Box>
+                        <Link href={`/${post.slug}`}>
+                          <a>
+                            <h2
+                              className={ContentListStyles.contentList__title}
+                            >
+                              {post.title}
+                            </h2>
+                          </a>
+                        </Link>
+                      </Box>
+                      <Spacer />
+                      <Box
+                        minWidth="180"
+                        textAlign="right"
+                        className={TypographyStyles.bodyCopy}
+                      >
+                        <PublishedDate date={post.date} alignSelf="center" />
+                      </Box>
+                    </Flex>
+
+                    <Box className={ContentListStyles.contentList__author}>
+                      {post.author !== null && (
+                        <>
+                          {" "}
+                          <b> Author: {post.author.name} </b>
+                        </>
+                      )}
+                    </Box>
+                    <Flex p={1} />
                     <Box>
-                      <Link href={`/${post.slug}`}>
-                        <a>
-                          <h2 className={ContentListStyles.contentList__title}>
-                            {post.title}
-                          </h2>
-                        </a>
-                      </Link>
+                      {post.contentfulMetadata.tags !== null && (
+                        <Tags tags={post.contentfulMetadata.tags} />
+                      )}
                     </Box>
-                    <Spacer />
-                    <Box
-                      minWidth="180"
-                      alignSelf="-moz-initial"
-                      textAlign="right"
-                      className={TypographyStyles.bodyCopy}
-                    >
-                      <PublishedDate date={post.date} alignSelf="center" />
+                    <Box pb={5} pt={6}>
+                      <div className={ContentListStyles.contentList__excerpt}>
+                        <ReactMarkdown
+                          children={post.excerpt}
+                          renderers={ReactMarkdownRenderers(post.excerpt)}
+                        />
+                      </div>
                     </Box>
-                  </Flex>
-
-                  <Box className={ContentListStyles.contentList__author}>
-                    {post.author !== null && (
-                      <>
-                        {" "}
-                        <b> Author: {post.author.name} </b>
-                      </>
-                    )}
+                    <Flex alignItems="center">
+                      <Box alignSelf="center">
+                        <Link href={`/${post.slug}`}>
+                          <a>
+                            <Flex
+                              className={
+                                ContentListStyles.contentList__readmorelink
+                              }
+                            >
+                              <h3>Read more</h3>
+                              <Box pl={2} alignSelf="center">
+                                <img
+                                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
+                                  width="12"
+                                  style={{ border: "none" }}
+                                />
+                              </Box>
+                            </Flex>
+                          </a>
+                        </Link>
+                      </Box>
+                    </Flex>
                   </Box>
-                  <Flex p={1} />
-                  {post.contentfulMetadata.tags !== null && (
-                    <Tags tags={post.contentfulMetadata.tags} />
-                  )}
-                  <Box pb={5} pt={3}>
-                    <div className={ContentListStyles.contentList__excerpt}>
-                      <ReactMarkdown
-                        children={post.excerpt}
-                        renderers={ReactMarkdownRenderers(post.excerpt)}
-                      />
-                    </div>
-                  </Box>
-                  <Flex alignItems="center">
-                    <Box alignSelf="center">
-                      <Link href={`/${post.slug}`}>
-                        <a>
-                          <Flex
-                            className={
-                              ContentListStyles.contentList__readmorelink
-                            }
-                          >
-                            <h3>Read more</h3>
-                            <Box pl={2} alignSelf="center">
-                              <img
-                                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
-                                width="12"
-                                style={{ border: "none" }}
-                              />
-                            </Box>
-                          </Flex>
-                        </a>
-                      </Link>
-                    </Box>
-                  </Flex>
-                </Box>
-              </article>
-            </Box>
-          </li>
-        ))}
-      </ol>
+                </article>
+              </Box>
+            </li>
+          ))}
+        </ol>
 
-      <Pagination
-        postListType={postListType}
-        totalPages={totalPages}
-        currentPage={currentPage}
-        nextDisabled={nextDisabled}
-        prevDisabled={prevDisabled}
-      />
+        <Pagination
+          postListType={postListType}
+          totalPages={totalPages}
+          currentPage={currentPage}
+          nextDisabled={nextDisabled}
+          prevDisabled={prevDisabled}
+        />
+      </Box>
     </>
   );
 }
