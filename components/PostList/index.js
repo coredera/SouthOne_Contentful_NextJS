@@ -102,10 +102,15 @@ export default function PostList(props) {
                         minWidth="180"
                         textAlign="right"
                         className={TypographyStyles.bodyCopy}
+                        display={{ base: "none", md: "block" }}
                       >
                         <PublishedDate date={post.date} alignSelf="center" />
                       </Box>
                     </Flex>
+                    <Box display={{ base: "block", md: "none" }} pb={3}>
+                      <b>Date: </b>
+                      <PublishedDate date={post.date} alignSelf="center" />
+                    </Box>
 
                     <Box className={ContentListStyles.contentList__author}>
                       {post.author !== null && (
