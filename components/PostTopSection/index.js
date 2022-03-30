@@ -83,9 +83,19 @@ export default function PostTopSection(props) {
               width={featuredPost.image.width}
               height={featuredPost.image.height}
               layout="responsive"
-              objectFit="contain"
+             
               alt={featuredPost.image.description}
-              style={{ borderRadius: "20px" }}
+              style={{ borderRadius: "20px",
+              objectFit: "cover",
+              width: "950px",
+              height: "400px",
+            }}
+
+
+             
+
+
+
             />
             <Flex pt={5} />
             <h1 className={TypographyStyles.heading__h1post}>
