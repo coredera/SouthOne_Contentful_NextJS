@@ -58,6 +58,7 @@ export default function PostWrapper(props) {
         bgRepeat="no-repeat"
         bgPos="top-left"
         className={ContentListStyles.contentList__postTopSection}
+        pb={10}
       >
         <Box bgColor={{ base: "#FFDF7F", lg: "transparent" }}>
           <Box display={{ base: "none", lg: "block" }}>
