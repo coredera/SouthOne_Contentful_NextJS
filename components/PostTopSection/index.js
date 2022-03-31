@@ -40,19 +40,17 @@ export default function PostTopSection(props) {
               <h1 className={TypographyStyles.heading__h1post}>
                 {featuredPost.title}
               </h1>
-
+              <Box alignSelf="center" className={TypographyStyles.date}>
+                <b>Date: </b>
+                <PublishedDate date={featuredPost.date} alignSelf="center" />
+              </Box>
               <Box className={TypographyStyles.author}>
                 {featuredPost.author !== null && (
                   <>
                     {" "}
-                    <b>Author:</b> {featuredPost.author.name}
+                    <b>Author: {featuredPost.author.name}</b> 
                   </>
                 )}
-              </Box>
-
-              <Box alignSelf="center" className={TypographyStyles.date}>
-                <b>Date: </b>
-                <PublishedDate date={featuredPost.date} alignSelf="center" />
               </Box>
 
               {featuredPost.contentfulMetadata.tags !== null && (
@@ -76,26 +74,22 @@ export default function PostTopSection(props) {
 
       <Flex display={{ base: "block", lg: "none" }}>
         <ContentWrapper>
-          <article className={ContentListStyles.contentList__post} style={{marginBottom:"0px"}}>
-           
+          <article
+            className={ContentListStyles.contentList__post}
+            style={{ marginBottom: "0px" }}
+          >
             <img
               src={featuredPost.image.url}
               width={featuredPost.image.width}
               height={featuredPost.image.height}
               layout="responsive"
-             
               alt={featuredPost.image.description}
-              style={{ borderRadius: "20px",
-              objectFit: "cover",
-              width: "950px",
-              height: "400px",
-            }}
-
-
-             
-
-
-
+              style={{
+                borderRadius: "20px",
+                objectFit: "cover",
+                width: "950px",
+                height: "400px",
+              }}
             />
             <Flex pt={5} />
             <h1 className={TypographyStyles.heading__h1post}>
@@ -116,9 +110,7 @@ export default function PostTopSection(props) {
             {featuredPost.contentfulMetadata.tags !== null && (
               <Tags tags={featuredPost.contentfulMetadata.tags} />
             )}
-            
           </article>
-          
         </ContentWrapper>
       </Flex>
     </>
