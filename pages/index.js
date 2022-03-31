@@ -120,6 +120,7 @@ export default function BlogIndex(props) {
               <Spacer />
               <Box
                 minW="300"
+                maxW="300"
                 pt={8}
                 pl={10}
                 display={{ base: "none", lg: "block" }}
