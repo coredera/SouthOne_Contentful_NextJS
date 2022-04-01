@@ -9,7 +9,7 @@ const breakpoints = createBreakpoints({
   sm: "40em",
   md: "52em",
   lg: "56em",
-  //lg: "64em",
+  xl: "64em",
  
 });
 

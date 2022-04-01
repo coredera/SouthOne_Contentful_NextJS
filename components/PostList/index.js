@@ -55,7 +55,7 @@ export default function PostList(props) {
                               borderTopLeftRadius: "20px",
                               borderTopRightRadius: "20px",
                               objectFit: "cover",
-                           
+                              width: "1200"
                             }}
                           />
                         </a>
@@ -77,17 +77,9 @@ export default function PostList(props) {
                           </a>
                         </Link>
                       </Box>
-                      <Spacer />
-                      <Box
-                        minWidth="180"
-                        textAlign="right"
-                        className={TypographyStyles.bodyCopy}
-                        display={{ base: "none", md: "block" }}
-                      >
-                        <PublishedDate date={post.date} alignSelf="center" />
-                      </Box>
+                     
                     </Flex>
-                    <Box display={{ base: "block", md: "none" }} pb={3}>
+                    <Box pb={3}>
                       <b>Date: </b>
                       <PublishedDate date={post.date} alignSelf="center" />
                     </Box>
