@@ -63,6 +63,8 @@ export default function BlogIndexPage(props) {
         title={`${pageTitle} Page ${currentPage}`}
         description={pageDescription}
         url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
+        metatitle={`${pageContent.metaTitle} - page ${currentPage}`}
+        metadescription={pageContent.metaDescription}
       />
 
       <BlogBanner pageContent={pageContent} />

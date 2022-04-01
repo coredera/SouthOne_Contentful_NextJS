@@ -155,7 +155,7 @@ export default function PopularTopics(props) {
 
             <Box display={{ base: "block", md: "none" }}>
               <Flex color="white" alignSelf="center" pb={10}>
-                <Box pr={20}>
+                <Box pr={10}>
                   <Flex>
                     <Box pr={5} alignSelf="center">
                       <img
