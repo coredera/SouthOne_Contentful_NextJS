@@ -146,8 +146,8 @@ export default function PostWrapper(props) {
             <Spacer />
             <Box
               display={{ base: "none", lg: "block" }}
-              minW="320"
-              maxW="320"
+              minW="368"
+              maxW="368"
               pt={20}
               pl={10}
             >
