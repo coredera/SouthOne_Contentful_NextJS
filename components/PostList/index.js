@@ -44,7 +44,7 @@ export default function PostList(props) {
               <Box bgColor="white" style={{ borderRadius: "20px" }}>
                 <article className={ContentListStyles.contentList__post}>
                   <Box>
-                    <Box display={{ base: "none", lg: "block" }}>
+                    <Box>
                       <Link href={`/${post.slug}`}>
                         <a>
                           <img
@@ -55,33 +55,13 @@ export default function PostList(props) {
                               borderTopLeftRadius: "20px",
                               borderTopRightRadius: "20px",
                               objectFit: "cover",
-                              width: "950px",
-                              height: "500px",
+                           
                             }}
                           />
                         </a>
                       </Link>
                     </Box>
-                    <Box display={{ base: "block", lg: "none" }}>
-                      <Link href={`/${post.slug}`}>
-                        <a>
-                          <img
-                            src={post.image.url}
-                            width="1200"
-                            height="100"
-                            layout="responsive"
-                            objectFit="cover"
-                            alt={post.image.description}
-                            style={{
-                              borderTopLeftRadius: "20px",
-                              borderTopRightRadius: "20px",
-                              objectFit: "cover",
-                              height: "300px",
-                            }}
-                          />
-                        </a>
-                      </Link>
-                    </Box>
+                
                   </Box>
 
                   <Box p={10} pb={12}>
