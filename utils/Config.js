@@ -37,6 +37,10 @@ export const Config = {
     post: {
       slug: "/blog/[slug]",
     },
+    privacyPolicy: { 
+      url: `${SITE_URL}/blog/privacy-policy`,
+      slug: "/blog/privacy-policy",
+    },
     buildRss: {
       url: `${SITE_URL}/buildrss`,
       slug: "/buildrss",
