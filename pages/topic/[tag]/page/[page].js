@@ -249,7 +249,7 @@ export async function getStaticProps({ params, preview = false }) {
   const tagname = tagrecord.name;
 
   pageContent.title = tagname;
-  pageContent.body = "";
+  pageContent.description = "";
 
 
   //console.log("totalPages:")

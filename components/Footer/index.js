@@ -472,7 +472,7 @@ export default function Footer() {
               </Link>
             </Box>
             <Box className={FooterStyles.bottomlinks}>
-              <Link href="https://www.guidedogs.org.uk/privacy-policy">
+              <Link href="/privacy-policy">
                 Privacy policy
               </Link>
             </Box>

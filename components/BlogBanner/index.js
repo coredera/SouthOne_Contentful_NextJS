@@ -34,6 +34,15 @@ import {
 export default function BlogBanner(props) {
   const pageContent = props.pageContent;
 
+
+  //{pageContent.body && (
+  //  <RichTextPageContent
+  //    richTextBodyField={pageContent.body}
+  //    className={TypographyStyles.bodyCopy}
+  //  />
+  //)}
+
+
   return (
     <>
       <Box
@@ -85,12 +94,10 @@ export default function BlogBanner(props) {
                 <h1 className={TypographyStyles.heading__h1}>
                   {pageContent.title}
                 </h1>
-                {pageContent.body && (
-                  <RichTextPageContent
-                    richTextBodyField={pageContent.body}
-                    className={TypographyStyles.bodyCopy}
-                  />
-                )}
+                <div className={TypographyStyles.bodyCopy}>
+                {pageContent.description}
+                </div>
+               
               </Box>
               <Box></Box>
             </Flex>
