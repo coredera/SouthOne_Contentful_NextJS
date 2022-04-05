@@ -55,7 +55,7 @@ export default function PostList(props) {
                               borderTopLeftRadius: "20px",
                               borderTopRightRadius: "20px",
                               objectFit: "cover",
-                              width: "1200"
+                             
                             }}
                           />
                         </a>

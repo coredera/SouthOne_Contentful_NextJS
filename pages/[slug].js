@@ -54,7 +54,6 @@ export default function PostWrapper(props) {
       />
 
       <Box
-        backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
         bgRepeat="no-repeat"
         bgPos="top-left"
         className={ContentListStyles.contentList__postTopSection}
@@ -63,33 +62,53 @@ export default function PostWrapper(props) {
         <Box bgColor={{ base: "#FFDF7F", lg: "transparent" }}>
           <Box display={{ base: "none", lg: "block" }}>
             <ContentWrapper>
-              <Flex alignItems="center" pb={0} pt={5}>
-                <Box alignSelf="center">
-                  <Flex
-                    className={ContentListStyles.contentList__homelink}
-                    minWidth="160"
-                  >
-                    <Box style={{ textDecoration: "underline" }}>
-                      <Link href="https://www.guidedogs.org.uk">
-                        <a>
-                          <h3>Home</h3>
-                        </a>
-                      </Link>
-                    </Box>
-                    <Spacer />
-                    <Box>></Box>
-                    <Spacer />
-                    <Box style={{ textDecoration: "underline" }}>
-                      <Link href={`${Config.pageMeta.home.slug}`}>
-                        <a>
-                          <h3>Blog</h3>
-                        </a>
-                      </Link>
-                    </Box>
-                  </Flex>
-                </Box>
-                <Spacer />
-              </Flex>
+              <div>
+                <img
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
+                  bgColor="transparent"
+                  margin="0"
+                  padding="0"
+                  style={{
+                    float: "top",
+                    position: "relative",
+                    left: "-380px",
+
+                    width: "1200px",
+                    margin: "0px",
+                    padding: "0px",
+                    maxWidth: "2000px",
+                  }}
+                />
+              </div>
+              <Box style={{ position: "absolute", top: "142px" }}>
+                <Flex alignItems="center" pb={0} pt={5}>
+                  <Box alignSelf="center">
+                    <Flex
+                      className={ContentListStyles.contentList__homelink}
+                      minWidth="160"
+                    >
+                      <Box style={{ textDecoration: "underline" }}>
+                        <Link href="https://www.guidedogs.org.uk">
+                          <a>
+                            <h3>Home</h3>
+                          </a>
+                        </Link>
+                      </Box>
+                      <Spacer />
+                      <Box>></Box>
+                      <Spacer />
+                      <Box style={{ textDecoration: "underline" }}>
+                        <Link href={`${Config.pageMeta.home.slug}`}>
+                          <a>
+                            <h3>Blog</h3>
+                          </a>
+                        </Link>
+                      </Box>
+                    </Flex>
+                  </Box>
+                  <Spacer />
+                </Flex>
+              </Box>
             </ContentWrapper>
           </Box>
 
@@ -128,16 +147,20 @@ export default function PostWrapper(props) {
           </Box>
 
           <Box pt={10} pb={5}>
-          <PostTopSection post={post} />
+            <PostTopSection post={post} />
           </Box>
-
         </Box>
         <ContentWrapper>
           <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
             <SharePost post={post} />
           </Flex>
           <Flex>
-            <Box width="full" pt={20} pr={10} display={{ base: "none", lg: "block" }}>
+            <Box
+              width="full"
+              pt={10}
+              pr={10}
+              display={{ base: "none", lg: "block" }}
+            >
               <Post post={post} />
             </Box>
             <Box width="full" pt={0} display={{ base: "block", lg: "none" }}>
@@ -148,7 +171,7 @@ export default function PostWrapper(props) {
               display={{ base: "none", lg: "block" }}
               minW="368"
               maxW="368"
-              pt={20}
+              pt={10}
               pl={10}
             >
               <SharePost post={post} />
