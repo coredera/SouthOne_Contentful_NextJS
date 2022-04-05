@@ -50,6 +50,10 @@ export default function FeaturedPost(props) {
                   </a>
                 </Link>
               </Box>
+              <Box pb={3}>
+                <b>Date: </b>
+                <PublishedDate date={featuredPost.date} alignSelf="center" />
+              </Box>
               <Box className={ContentListStyles.contentList__author} pb={2}>
                 {featuredPost.author !== null && (
                   <>
@@ -68,6 +72,7 @@ export default function FeaturedPost(props) {
                   />
                 </div>
               </Box>
+
               <Flex alignItems="center">
                 <Box alignSelf="center">
                   <Link href={`/${featuredPost.slug}`}>
@@ -86,10 +91,6 @@ export default function FeaturedPost(props) {
                       </Flex>
                     </a>
                   </Link>
-                </Box>
-                <Spacer />
-                <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-                  <PublishedDate date={featuredPost.date} alignSelf="center" />
                 </Box>
               </Flex>
             </Box>
@@ -140,7 +141,12 @@ export default function FeaturedPost(props) {
               </h2>
             </a>
           </Link>
-          <Box className={ContentListStyles.contentList__author} pt={5} pb={1}>
+          <Flex pb={5} />
+          <Box pb={2}>
+            <b>Date: </b>
+            <PublishedDate date={featuredPost.date} alignSelf="center" />
+          </Box>
+          <Box className={ContentListStyles.contentList__author} pt={0} pb={1}>
             {featuredPost.author !== null && (
               <>
                 {" "}
@@ -148,7 +154,7 @@ export default function FeaturedPost(props) {
               </>
             )}
           </Box>
-          <Box pb={3}>
+          <Box pb={5}>
             {featuredPost.contentfulMetadata.tags !== null && (
               <Tags tags={featuredPost.contentfulMetadata.tags} />
             )}
@@ -175,10 +181,6 @@ export default function FeaturedPost(props) {
                   </Flex>
                 </a>
               </Link>
-            </Box>
-            <Spacer />
-            <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-              <PublishedDate date={featuredPost.date} alignSelf="center" />
             </Box>
           </Flex>
         </article>

@@ -65,22 +65,12 @@ export default function Post(props) {
 
   return (
     <>
-  
       <article className={RichTextPageContentStyles.page}>
-       
         <RichTextPageContent
           richTextBodyField={post.body}
           renderH2Links={true}
         />
-       
-     
-       
-       
 
-        <div className={TypographyStyles.bodyCopy}>
-          <Embed websiteId={hyvor} authorEmail={email2} title={id} />
-        </div>
-     
         {/*<DiscussionEmbed
         shortname="guidedogsdev"
         config={{
@@ -92,7 +82,9 @@ export default function Post(props) {
 
         {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
       </article>
-      
+      <div className={TypographyStyles.bodyCopy}>
+        <Embed websiteId={hyvor} authorEmail={email2} title={id} />
+      </div>
     </>
   );
 }

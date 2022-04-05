@@ -9,6 +9,7 @@ import PostTopSection from "@components/PostTopSection";
 import Author from "@components/Post/Author";
 import PopularPosts from "@components/PopularPosts";
 import SharePost from "@components/SharePost";
+import { Embed } from "hyvor-talk-react";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -36,6 +37,8 @@ import {
 
 export default function PostWrapper(props) {
   const { sortedBlogPostTags, topPostsArray, post, preview } = props;
+
+  const hyvor = `${process.env.NEXT_PUBLIC_HYVOR_ID}`;
 
   return (
     <MainLayout preview={preview}>
@@ -159,13 +162,10 @@ export default function PostWrapper(props) {
               width="full"
               pt={10}
               pr={10}
-              display={{ base: "none", lg: "block" }}
             >
               <Post post={post} />
             </Box>
-            <Box width="full" pt={0} display={{ base: "block", lg: "none" }}>
-              <Post post={post} />
-            </Box>
+         
             <Spacer />
             <Box
               display={{ base: "none", lg: "block" }}
