@@ -6,6 +6,7 @@ import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
 import ContentWrapper from "@components/ContentWrapper";
+import ContentWrapperStyle from "@styles/ContentWrapper.module.css";
 
 import {
   Box,
@@ -35,40 +36,50 @@ export default function PostTopSection(props) {
     <>
       <Box display={{ base: "none", lg: "block" }}>
         <ContentWrapper>
-          <Flex>
-            <Box maxWidth={600}>
-              <h1 className={TypographyStyles.heading__h1post}>
-                {featuredPost.title}
-              </h1>
-              <Box alignSelf="center" className={TypographyStyles.date}>
-                <b>Date: </b>
-                <PublishedDate date={featuredPost.date} alignSelf="center" />
-              </Box>
-              <Box className={TypographyStyles.author}>
-                {featuredPost.author !== null && (
-                  <>
-                    {" "}
-                    <b>Author: {featuredPost.author.name}</b> 
-                  </>
+          <Box
+            style={{
+              position: "absolute",
+              top: "240px",
+              paddingRight: "128px",
+              maxWidth: "1280px",
+              width: "100%",
+            }}
+          >
+            <Flex>
+              <Box maxWidth={600} pr={5}>
+                <h1 className={TypographyStyles.heading__h1post}>
+                  {featuredPost.title}
+                </h1>
+                <Box alignSelf="center" className={TypographyStyles.date}>
+                  <b>Date: </b>
+                  <PublishedDate date={featuredPost.date} alignSelf="center" />
+                </Box>
+                <Box className={TypographyStyles.author}>
+                  {featuredPost.author !== null && (
+                    <>
+                      {" "}
+                      <b>Author: {featuredPost.author.name}</b>
+                    </>
+                  )}
+                </Box>
+
+                {featuredPost.contentfulMetadata.tags !== null && (
+                  <Tags tags={featuredPost.contentfulMetadata.tags} />
                 )}
               </Box>
-
-              {featuredPost.contentfulMetadata.tags !== null && (
-                <Tags tags={featuredPost.contentfulMetadata.tags} />
-              )}
-            </Box>
-            <Spacer />
-            <Box maxWidth={600}>
-              <img
-                src={featuredPost.image.url}
-                width="1200"
-                layout="responsive"
-                objectFit="contain"
-                alt={featuredPost.image.description}
-                style={{ borderRadius: "20px" }}
-              />
-            </Box>
-          </Flex>
+              <Spacer />
+              <Box maxWidth={600}>
+                <img
+                  src={featuredPost.image.url}
+                  width="1200"
+                  layout="responsive"
+                  objectFit="contain"
+                  alt={featuredPost.image.description}
+                  style={{ borderRadius: "20px" }}
+                />
+              </Box>
+            </Flex>
+          </Box>
         </ContentWrapper>
       </Box>
 
@@ -80,36 +91,34 @@ export default function PostTopSection(props) {
           >
             <img
               src={featuredPost.image.url}
-              width={featuredPost.image.width}
-              height={featuredPost.image.height}
               layout="responsive"
               alt={featuredPost.image.description}
               style={{
                 borderRadius: "20px",
                 objectFit: "cover",
-                width: "950px",
-                height: "400px",
               }}
             />
             <Flex pt={5} />
             <h1 className={TypographyStyles.heading__h1post}>
               {featuredPost.title}
             </h1>
-            <Flex>
-              <Box className={ContentListStyles.contentList__author}>
-                {featuredPost.author !== null && (
-                  <> Author: {featuredPost.author.name}</>
-                )}
-              </Box>
-              <Spacer />
-              <Box alignSelf="center" className={TypographyStyles.bodyCopy}>
-                <PublishedDate date={featuredPost.date} alignSelf="center" />
-              </Box>
-            </Flex>
-
-            {featuredPost.contentfulMetadata.tags !== null && (
-              <Tags tags={featuredPost.contentfulMetadata.tags} />
-            )}
+            <Box alignSelf="center" className={TypographyStyles.date}>
+              <b>Date: </b>
+              <PublishedDate date={featuredPost.date} alignSelf="center" />
+            </Box>
+            <Box className={ContentListStyles.contentList__author}>
+              {featuredPost.author !== null && (
+                <>
+                  {" "}
+                  <b> Author: {featuredPost.author.name} </b>
+                </>
+              )}
+            </Box>
+            <Box pb={5}>
+              {featuredPost.contentfulMetadata.tags !== null && (
+                <Tags tags={featuredPost.contentfulMetadata.tags} />
+              )}
+            </Box>
           </article>
         </ContentWrapper>
       </Flex>

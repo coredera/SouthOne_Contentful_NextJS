@@ -34,14 +34,12 @@ import {
 export default function BlogBanner(props) {
   const pageContent = props.pageContent;
 
-
   //{pageContent.body && (
   //  <RichTextPageContent
   //    richTextBodyField={pageContent.body}
   //    className={TypographyStyles.bodyCopy}
   //  />
   //)}
-
 
   return (
     <>
@@ -54,7 +52,6 @@ export default function BlogBanner(props) {
         display={{ base: "none", lg: "block" }}
       >
         <Box
-          backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
           bgSize="contain"
           bgRepeat="no-repeat"
           bgPos="top-left"
@@ -62,52 +59,76 @@ export default function BlogBanner(props) {
           height="430"
         >
           <ContentWrapper>
-            <Flex alignItems="center" pb={0} pt={5}>
-              <Box alignSelf="center">
-                <Flex
-                  className={ContentListStyles.contentList__homelink}
-                  minWidth="160"
-                >
-                  <Box style={{ textDecoration: "underline" }}>
-                    <Link href="https://www.guidedogs.org.uk">
-                      <a>
-                        <h3>Home</h3>
-                      </a>
-                    </Link>
-                  </Box>
-                  <Spacer />
-                  <Box>></Box>
-                  <Spacer />
-                  <Box style={{ textDecoration: "underline" }}>
-                    <Link href={`${Config.pageMeta.home.slug}`}>
-                      <a>
-                        <h3>Blog</h3>
-                      </a>
-                    </Link>
-                  </Box>
-                </Flex>
-              </Box>
-              <Spacer />
-            </Flex>
-            <Flex>
-              <Box pb={10} pt={7} maxWidth="600">
-                <h1 className={TypographyStyles.heading__h1}>
-                  {pageContent.title}
-                </h1>
-                <div className={TypographyStyles.bodyCopy}>
-                {pageContent.description}
-                </div>
-               
-              </Box>
-              <Box></Box>
-            </Flex>
+            <div>
+              <img
+                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
+                bgColor="transparent"
+                margin="0"
+                padding="0"
+                style={{
+                  float: "top",
+                  position: "relative",
+                  left: "-200px",
+
+                  width: "1050px",
+                  margin: "0px",
+                  padding: "0px",
+                  maxWidth: "2000px",
+                }}
+              />
+            </div>
+
+            <Box style={{ position: "absolute", top: "142px" }}>
+              <Flex alignItems="center" pb={0} pt={5}>
+                <Box alignSelf="center">
+                  <Flex
+                    className={ContentListStyles.contentList__homelink}
+                    minWidth="160"
+                  >
+                    <Box style={{ textDecoration: "underline" }}>
+                      <Link href="https://www.guidedogs.org.uk">
+                        <a>
+                          <h3>Home</h3>
+                        </a>
+                      </Link>
+                    </Box>
+                    <Spacer />
+                    <Box>></Box>
+                    <Spacer />
+                    <Box style={{ textDecoration: "underline" }}>
+                      <Link href={`${Config.pageMeta.home.slug}`}>
+                        <a>
+                          <h3>Blog</h3>
+                        </a>
+                      </Link>
+                    </Box>
+                  </Flex>
+                </Box>
+                <Spacer />
+              </Flex>
+              <Flex>
+                <Box pb={10} pt={7} maxWidth="600">
+                  <h1 className={TypographyStyles.heading__h1}>
+                    {pageContent.title}
+                  </h1>
+                  <div className={TypographyStyles.bodyCopy}>
+                    {pageContent.description}
+                  </div>
+                </Box>
+                <Box></Box>
+              </Flex>
+            </Box>
           </ContentWrapper>
         </Box>
       </Box>
 
       <Box display={{ base: "block", lg: "none" }} pb={0} marginBottom="0px">
         <Box alignItems="center" pt={2} pl={3}>
-          <Flex className={ContentListStyles.contentList__homelink} maxW="52" alignSelf="center">
+          <Flex
+            className={ContentListStyles.contentList__homelink}
+            maxW="52"
+            alignSelf="center"
+          >
             <Box style={{ textDecoration: "underline" }}>
               <Link href="https://www.guidedogs.org.uk">
                 <a>
