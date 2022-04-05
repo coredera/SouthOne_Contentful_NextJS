@@ -121,6 +121,7 @@ export default function PostList(props) {
                                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
                                   width="12"
                                   style={{ border: "none" }}
+                                  alt={`about ${post.title}`}
                                 />
                               </Box>
                             </Flex>
