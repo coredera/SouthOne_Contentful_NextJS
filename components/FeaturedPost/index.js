@@ -75,7 +75,7 @@ export default function FeaturedPost(props) {
 
               <Flex alignItems="center">
                 <Box alignSelf="center">
-                  <Link href={`/${featuredPost.slug}`}>
+                  <Link href={`/${featuredPost.slug}`} >
                     <a>
                       <Flex
                         className={ContentListStyles.contentList__readmorelink}
@@ -86,6 +86,7 @@ export default function FeaturedPost(props) {
                             src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
                             width="12"
                             style={{ border: "none" }}
+                            alt={`about ${featuredPost.title}`}
                           />
                         </Box>
                       </Flex>
@@ -176,6 +177,7 @@ export default function FeaturedPost(props) {
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
                         width="12"
                         style={{ border: "none" }}
+                        alt={`about ${featuredPost.title}`}
                       />
                     </Box>
                   </Flex>

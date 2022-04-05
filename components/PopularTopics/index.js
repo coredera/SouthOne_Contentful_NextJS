@@ -50,6 +50,7 @@ export default function PopularTopics(props) {
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                         width="15"
+                     
                       />
                     </Box>
 
@@ -68,6 +69,7 @@ export default function PopularTopics(props) {
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                         width="15"
+                       
                       />
                     </Box>
                     <Link href={`/topic/eye-health`}>
@@ -84,6 +86,7 @@ export default function PopularTopics(props) {
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                         width="15"
+                       
                       />
                     </Box>
                     <Link href={`/topic/news`}>
@@ -95,6 +98,7 @@ export default function PopularTopics(props) {
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                         width="15"
+                      
                       />
                     </Box>
                     <Link href={`/topic/technology`}>
@@ -111,6 +115,7 @@ export default function PopularTopics(props) {
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                         width="15"
+                       
                       />
                     </Box>
                     <Link href={`/topic/campaigning`}>
@@ -124,6 +129,7 @@ export default function PopularTopics(props) {
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                         width="15"
+                       
                       />
                     </Box>
                     <Link href={`/topic/dogs`}>
@@ -161,6 +167,7 @@ export default function PopularTopics(props) {
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
                         width="15"
+                        
                       />
                     </Box>
 

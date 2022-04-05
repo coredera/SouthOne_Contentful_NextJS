@@ -61,14 +61,7 @@ export default function SharePost(props) {
             <FacebookIcon size={30} round />
           </FacebookShareButton>
         </Box>
-        <Box pr={3}>
-          <FacebookMessengerShareButton
-            url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
-            appId={""}
-          >
-            <FacebookMessengerIcon size={30} round />
-          </FacebookMessengerShareButton>
-        </Box>
+    
         <Box pr={3}>
           <TwitterShareButton
             url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
@@ -90,7 +83,7 @@ export default function SharePost(props) {
           <EmailShareButton
             url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
             subject={`${post.title}`}
-            body="body"
+            body=""
           >
             <EmailIcon size={30} round />
           </EmailShareButton>
