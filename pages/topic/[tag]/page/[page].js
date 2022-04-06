@@ -67,7 +67,7 @@ export default function BlogIndexPage(props) {
       <Box bgColor="brand.50" pt={10} pb={20}>
         <ContentWrapper>
           <Flex>
-            <Box pr={0}>
+            <Box pr={0} width="100%">
               <PostList
                 postListType={postListType}
                 posts={posts}

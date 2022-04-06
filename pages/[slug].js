@@ -56,116 +56,18 @@ export default function PostWrapper(props) {
         metadescription={post.metaDescription}
       />
 
-      <Box
-        bgRepeat="no-repeat"
-        bgPos="top-left"
-        className={ContentListStyles.contentList__postTopSection}
-        pb={10}
-      >
-        <Box bgColor={{ base: "#FFDF7F", lg: "transparent" }}>
-          <Box display={{ base: "none", lg: "block" }}>
-            <ContentWrapper>
-              <div>
-                <img
-                  src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
-                  bgColor="transparent"
-                  margin="0"
-                  padding="0"
-                  style={{
-                    float: "top",
-                    position: "relative",
-                    left: "-380px",
+      <PostTopSection post={post} />
 
-                    width: "1200px",
-                    margin: "0px",
-                    padding: "0px",
-                    maxWidth: "2000px",
-                  }}
-                />
-              </div>
-              <Box style={{ position: "absolute", top: "142px" }}>
-                <Flex alignItems="center" pb={0} pt={5}>
-                  <Box alignSelf="center">
-                    <Flex
-                      className={ContentListStyles.contentList__homelink}
-                      minWidth="160"
-                    >
-                      <Box style={{ textDecoration: "underline" }}>
-                        <Link href="https://www.guidedogs.org.uk">
-                          <a>
-                            <h3>Home</h3>
-                          </a>
-                        </Link>
-                      </Box>
-                      <Spacer />
-                      <Box>></Box>
-                      <Spacer />
-                      <Box style={{ textDecoration: "underline" }}>
-                        <Link href={`${Config.pageMeta.home.slug}`}>
-                          <a>
-                            <h3>Blog</h3>
-                          </a>
-                        </Link>
-                      </Box>
-                    </Flex>
-                  </Box>
-                  <Spacer />
-                </Flex>
-              </Box>
-            </ContentWrapper>
-          </Box>
-
-          <Box
-            alignItems="center"
-            pt={2}
-            pl={3}
-            display={{ base: "block", lg: "none" }}
-            bgColor="white"
-            pb={0.5}
-          >
-            <Flex
-              className={ContentListStyles.contentList__homelink}
-              maxW="52"
-              alignSelf="center"
-            >
-              <Box style={{ textDecoration: "underline" }}>
-                <Link href="https://www.guidedogs.org.uk">
-                  <a>
-                    <h3>Home</h3>
-                  </a>
-                </Link>
-              </Box>
-              <Spacer />
-              <Box>></Box>
-              <Spacer />
-              <Box style={{ textDecoration: "underline" }}>
-                <Link href={`${Config.pageMeta.home.slug}`}>
-                  <a>
-                    <h3>Blog</h3>
-                  </a>
-                </Link>
-              </Box>
-              <Spacer />
-            </Flex>
-          </Box>
-
-          <Box pt={10} pb={5}>
-            <PostTopSection post={post} />
-          </Box>
-        </Box>
-        <ContentWrapper>
+      <ContentWrapper>
+        <Box>
           <Flex display={{ base: "block", lg: "none" }} pb={0} pt={10}>
             <SharePost post={post} />
           </Flex>
           <Flex>
-            <Box
-              width="full"
-              pt={10}
-              pr={0}
-            >
+            <Box width="full" pt={10} pr={0}>
               <Post post={post} />
             </Box>
-         
+
             <Spacer />
             <Box
               display={{ base: "none", lg: "block" }}
@@ -183,8 +85,9 @@ export default function PostWrapper(props) {
           <Box display={{ base: "block", lg: "none" }} pb={10} pt={10}>
             <PopularPosts topPostsArray={topPostsArray} />
           </Box>
-        </ContentWrapper>
-      </Box>
+        </Box>
+      </ContentWrapper>
+
       <Box bgColor="brand.100" p={7} pb={14}>
         {post.author !== null && <Author author={post.author} />}
       </Box>

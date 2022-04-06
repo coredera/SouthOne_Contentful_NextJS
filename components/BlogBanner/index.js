@@ -48,8 +48,9 @@ export default function BlogBanner(props) {
         height="450"
         bgRepeat="no-repeat"
         bgSize="cover"
-        bgPosition="center"
+       
         display={{ base: "none", lg: "block" }}
+        style= {{backgroundPosition: "50% 5%"}}
       >
         <Box
           bgSize="contain"
@@ -59,24 +60,9 @@ export default function BlogBanner(props) {
           height="430"
         >
           <ContentWrapper>
-            <div>
-              <img
-                src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/top-left-swirl.svg`}
-                bgColor="transparent"
-                margin="0"
-                padding="0"
-                style={{
-                  float: "top",
-                  position: "relative",
-                  left: "-200px",
+            <div className={ContentListStyles.ellipse}/>
 
-                  width: "1050px",
-                  margin: "0px",
-                  padding: "0px",
-                  maxWidth: "2000px",
-                }}
-              />
-            </div>
+          
 
             <Box style={{ position: "absolute", top: "142px" }}>
               <Flex alignItems="center" pb={0} pt={5}>
