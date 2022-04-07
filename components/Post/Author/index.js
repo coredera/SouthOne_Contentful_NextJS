@@ -110,7 +110,8 @@ export default function Author(props) {
             </Box>
             <Box display={{ base: "none", md: "block" }} pl={8} pr={40}>
               <div className={AuthorStyles.author__detailsContainer}>
-                <h2 className={AuthorStyles.author__name}>{author.name}</h2>
+                
+                <h2 className={AuthorStyles.author__name}>Author: {author.name}</h2>
                 <p className={AuthorStyles.author__description}>
                   {author.description}
                 </p>
@@ -131,7 +132,7 @@ export default function Author(props) {
         </Flex>
         <Flex display={{ base: "block", md: "none" }} pb={0} pt={10}>
           <div className={AuthorStyles.author__detailsContainer}>
-            <h2 className={AuthorStyles.author__name}>{author.name}</h2>
+            <h2 className={AuthorStyles.author__name}>Author: {author.name}</h2>
             <p className={AuthorStyles.author__description}>
               {author.description}
             </p>

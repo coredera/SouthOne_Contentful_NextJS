@@ -267,7 +267,7 @@
   font-size: 1.125rem;
   line-height: 1.8rem;
   margin-bottom: 2rem;
-  font-weight: var(--font-weight-bold);
+  font-weight: var(--font-weight-normal);
   font-family: var(--font-family-body);
   color: var(--color-foreground);
 }

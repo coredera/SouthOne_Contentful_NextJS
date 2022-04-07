@@ -55,13 +55,12 @@ export default function PostList(props) {
                               borderTopLeftRadius: "20px",
                               borderTopRightRadius: "20px",
                               objectFit: "cover",
-                             
+                              width: "60rem",
                             }}
                           />
                         </a>
                       </Link>
                     </Box>
-                
                   </Box>
 
                   <Box p={10} pb={12}>
@@ -77,7 +76,6 @@ export default function PostList(props) {
                           </a>
                         </Link>
                       </Box>
-                     
                     </Flex>
                     <Box pb={3}>
                       <b>Date: </b>
@@ -115,7 +113,7 @@ export default function PostList(props) {
                                 ContentListStyles.contentList__readmorelink
                               }
                             >
-                              <h3>Read more</h3>
+                              Read more
                               <Box pl={2} alignSelf="center">
                                 <img
                                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
