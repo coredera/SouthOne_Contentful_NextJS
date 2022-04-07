@@ -39,12 +39,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             dangerouslySetInnerHTML={{
               __html: `
               <!-- CookiePro Cookies Consent Notice start for gd-blog.netlify.app -->
-
-              <script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="0469bca0-91ae-4383-9192-4f485cf993a9" ></script>
-              <script type="text/javascript">
-              function OptanonWrapper() { }
-              </script>
-              <!-- CookiePro Cookies Consent Notice end for gd-blog.netlify.app -->
+<script type="text/javascript" src="https://cookie-cdn.cookiepro.com/consent/0469bca0-91ae-4383-9192-4f485cf993a9-test/OtAutoBlock.js" ></script>
+<script src="https://cookie-cdn.cookiepro.com/scripttemplates/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="0469bca0-91ae-4383-9192-4f485cf993a9-test" ></script>
+<script type="text/javascript">
+function OptanonWrapper() { }
+</script>
+<!-- CookiePro Cookies Consent Notice end for gd-blog.netlify.app -->
 `,
             }}
           />
