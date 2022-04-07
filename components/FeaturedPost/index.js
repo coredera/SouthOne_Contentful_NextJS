@@ -80,7 +80,7 @@ export default function FeaturedPost(props) {
                       <Flex
                         className={ContentListStyles.contentList__readmorelink}
                       >
-                        <h3>Read more</h3>
+                        Read more
                         <Box pl={2} alignSelf="center">
                           <img
                             src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
@@ -171,7 +171,7 @@ export default function FeaturedPost(props) {
               <Link href={`/${featuredPost.slug}`}>
                 <a>
                   <Flex className={ContentListStyles.contentList__readmorelink}>
-                    <h3>Read more</h3>
+                    Read more
                     <Box pl={2} alignSelf="center">
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}

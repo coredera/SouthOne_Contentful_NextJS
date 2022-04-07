@@ -32,7 +32,7 @@ export default function Tags(props) {
     <>
       <Flex>
         <Wrap>
-          <b> Categories:</b>
+          <b> Topics:</b>
 
           {tags.map((tag) => (
             <WrapItem>

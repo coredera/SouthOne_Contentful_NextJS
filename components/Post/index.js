@@ -70,6 +70,11 @@ export default function Post(props) {
           richTextBodyField={post.body}
           renderH2Links={true}
         />
+        <Box>
+          <div>
+            <Embed websiteId={hyvor} authorEmail={email2} title={id} />
+          </div>
+        </Box>
 
         {/*<DiscussionEmbed
         shortname="guidedogsdev"
@@ -82,9 +87,6 @@ export default function Post(props) {
 
         {/*<FastCommentsCommentWidget tenantId="asrI7io1mv" />*/}
       </article>
-      <div className={TypographyStyles.bodyCopy}>
-        <Embed websiteId={hyvor} authorEmail={email2} title={id} />
-      </div>
     </>
   );
 }

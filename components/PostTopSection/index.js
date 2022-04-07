@@ -176,6 +176,7 @@ export default function PostTopSection(props) {
                   style={{
                     borderRadius: "20px",
                     objectFit: "cover",
+                    width: "60rem",
                   }}
                 />
                 <Flex pt={5} />
