@@ -1,4 +1,4 @@
-import Image from "next/image";
+//import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import Link from "next/link";
 import PublishedDate from "@components/Post/PublishedDate";
@@ -47,13 +47,10 @@ export default function PostList(props) {
                     <Box>
                       <Link href={`/${post.slug}`}>
                         <a>
-                          <Image
+                          <img
                             src={post.image.url}
                             alt={post.image.description}
                             layout="responsive"
-                            width="60rem"
-                            height="30rem"
-                            objectFit="cover"
                             style={{
                               borderTopLeftRadius: "20px",
                               borderTopRightRadius: "20px",
