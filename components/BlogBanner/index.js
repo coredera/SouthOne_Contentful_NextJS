@@ -41,28 +41,32 @@ export default function BlogBanner(props) {
   //  />
   //)}
 
+
+  //<img src={pageContent.heroBanner.image.url} 
+  //style={{ position: "absolute", top: "142px", width:"100%", height:"480px", objectFit:"cover",  }}
+  ///>
+
+
   return (
     <>
       <Box
         backgroundImage={pageContent.heroBanner.image.url}
         height="450"
         bgRepeat="no-repeat"
-        bgSize="cover"
-       
+        
         display={{ base: "none", lg: "block" }}
-        style= {{backgroundPosition: "50% 5%"}}
+        style={{ backgroundPosition: "center center", backgroundSize:"cover" }}
       >
+      
         <Box
           bgSize="contain"
           bgRepeat="no-repeat"
-          bgPos="top-left"
+          bgPos="center"
           className={ContentListStyles.contentList__landingTopSection}
           height="430"
         >
           <ContentWrapper>
-            <div className={ContentListStyles.ellipse}/>
-
-          
+            <div className={ContentListStyles.ellipse} />
 
             <Box style={{ position: "absolute", top: "142px" }}>
               <Flex alignItems="center" pb={0} pt={5}>

@@ -47,17 +47,32 @@ export default function PostList(props) {
                     <Box>
                       <Link href={`/${post.slug}`}>
                         <a>
-                          <img
-                            src={post.image.url}
-                            alt={post.image.description}
-                            layout="responsive"
-                            style={{
-                              borderTopLeftRadius: "20px",
-                              borderTopRightRadius: "20px",
-                              objectFit: "cover",
-                              width: "60rem",
-                            }}
-                          />
+                          <Box display={{ base: "block", lg: "none" }}>
+                            <img
+                              src={`${post.image.url}?fm=jpg&q=50`}
+                              alt={post.image.description}
+                              layout="responsive"
+                              style={{
+                                borderTopLeftRadius: "20px",
+                                borderTopRightRadius: "20px",
+                                objectFit: "cover",
+                                width: "60rem",
+                              }}
+                            />
+                          </Box>
+                          <Box display={{ base: "none", lg: "block" }}>
+                            <img
+                              src={post.image.url}
+                              alt={post.image.description}
+                              layout="responsive"
+                              style={{
+                                borderTopLeftRadius: "20px",
+                                borderTopRightRadius: "20px",
+                                objectFit: "cover",
+                                width: "60rem",
+                              }}
+                            />
+                          </Box>
                         </a>
                       </Link>
                     </Box>
