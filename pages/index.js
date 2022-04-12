@@ -90,6 +90,7 @@ export default function BlogIndex(props) {
           title={pageContent.title}
           description={pageContent.description}
           url={Config.pageMeta.blogIndex.url}
+          canonical={Config.pageMeta.blogIndex.url}
           metatitle={pageContent.metaTitle}
           metadescription={pageContent.metaDescription}
         />
