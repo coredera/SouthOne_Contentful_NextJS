@@ -126,7 +126,6 @@ export function getRichTextRenderOptions(links, options) {
               <Box width="10em">
                 <img
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/quote-open.svg`}
-          
                 />
               </Box>
               <Spacer />
@@ -175,10 +174,14 @@ export function getRichTextRenderOptions(links, options) {
           case "VideoEmbed":
             title = entry.title;
             embedUrl = entry.embedUrl;
-            return <DynamicVideoEmbed embedUrl={embedUrl} title={title} />;
+            var oldUrl = embedUrl;
+            var url = new URL(oldUrl);
+            url.hostname = "www.youtube-nocookie.com";
+           
+            return <DynamicVideoEmbed embedUrl={url} title={title} />;
           case "Button":
             const { embedUrl, title } = entry;
-         //   console.log(entry.embedURL);
+            //   console.log(entry.embedURL);
 
             return <DynamicButtonEmbed embedUrl={embedUrl} title={title} />;
           case "CodeBlock":
@@ -204,7 +207,11 @@ export function getRichTextRenderOptions(links, options) {
           case "VideoEmbed":
             title = entry.title;
             embedUrl = entry.embedUrl;
-            return <DynamicVideoEmbed embedUrl={embedUrl} title={title} />;
+            var oldUrl = embedUrl;
+            var url = new URL(oldUrl);
+            url.hostname = "www.youtube-nocookie.com";
+            
+            return <DynamicVideoEmbed embedUrl={url} title={title} />;
           case "Button":
             title = entry.title;
             embedUrl = entry.embedUrl;
@@ -226,7 +233,13 @@ export function getRichTextRenderOptions(links, options) {
         if (renderNativeImg) {
           return (
             <div className={RichTextPageContentStyles.page__imgContainer}>
-              <img src={url} alt={description} height={height} width={width} style={{ borderRadius: "20px" }}/>
+              <img
+                src={url}
+                alt={description}
+                height={height}
+                width={width}
+                style={{ borderRadius: "20px" }}
+              />
             </div>
           );
         } else {
