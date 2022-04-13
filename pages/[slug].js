@@ -10,6 +10,7 @@ import Author from "@components/Post/Author";
 import PopularPosts from "@components/PopularPosts";
 import SharePost from "@components/SharePost";
 import { Embed } from "hyvor-talk-react";
+import SocialMedia from "@components/SocialMedia";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -77,14 +78,18 @@ export default function PostWrapper(props) {
               pl={10}
             >
               <SharePost post={post} />
-              <Box pt={8}>
+              <Box pb={10} pt={8}>
                 <PopularPosts topPostsArray={topPostsArray} />
-              </Box>
+                </Box>
+                <SocialMedia topPostsArray={topPostsArray} />
             </Box>
           </Flex>
-          <Box display={{ base: "block", lg: "none" }} pb={10} pt={10}>
-            <PopularPosts topPostsArray={topPostsArray} />
-          </Box>
+          <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
+              <PopularPosts topPostsArray={topPostsArray} />
+            </Flex>
+            <Flex display={{ base: "block", lg: "none" }} pb={20} pt={5}>
+              <SocialMedia topPostsArray={topPostsArray} />
+            </Flex>
         </Box>
       </ContentWrapper>
 

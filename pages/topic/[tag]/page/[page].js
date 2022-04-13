@@ -10,6 +10,7 @@ import HeroBanner from "@components/HeroBanner";
 import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
+import SocialMedia from "@components/SocialMedia";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -37,7 +38,16 @@ import {
 } from "@chakra-ui/react";
 
 export default function BlogIndexPage(props) {
-  const { posts, totalPages, currentPage, pageContent, preview, tag, sortedBlogPostTags,topPostsArray } = props;
+  const {
+    posts,
+    totalPages,
+    currentPage,
+    pageContent,
+    preview,
+    tag,
+    sortedBlogPostTags,
+    topPostsArray,
+  } = props;
 
   const postListType = `/topic/${tag}/`;
 
@@ -84,13 +94,19 @@ export default function BlogIndexPage(props) {
               pl={10}
               display={{ base: "none", lg: "block" }}
             >
-              <PopularPosts topPostsArray={topPostsArray} />
+               <Box pb={10}>
+                <PopularPosts topPostsArray={topPostsArray} />
+                </Box>
+                <SocialMedia topPostsArray={topPostsArray} />
             </Box>
           </Flex>
 
-          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
-            <PopularPosts topPostsArray={topPostsArray} />
-          </Flex>
+          <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
+              <PopularPosts topPostsArray={topPostsArray} />
+            </Flex>
+            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
+              <SocialMedia topPostsArray={topPostsArray} />
+            </Flex>
         </ContentWrapper>
       </Box>
     </MainLayout>
@@ -251,7 +267,6 @@ export async function getStaticProps({ params, preview = false }) {
 
   pageContent.title = tagname;
   pageContent.description = "";
-
 
   //console.log("totalPages:")
   //console.log(totalPages);
