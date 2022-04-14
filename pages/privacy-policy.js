@@ -76,7 +76,7 @@ export default function BlogIndex(props) {
 
   //console.log(featuredPost);
 
-  console.log(pageContent.heroBanner.image.url);
+  //console.log(pageContent.heroBanner.image.url);
 
   // Original hero banner code
   //  {pageContent.heroBanner !== null && (
