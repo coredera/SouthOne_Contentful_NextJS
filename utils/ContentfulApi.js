@@ -588,6 +588,15 @@ export default class ContentfulApi {
                     title
                     slug
                   }
+                  ... on VideoEmbed {
+                    title
+                    embedUrl
+                  }
+                  ... on CodeBlock {
+                    description
+                    language
+                    code
+                  }
                   ... on Button {
                     title
                     embedUrl
@@ -598,6 +607,10 @@ export default class ContentfulApi {
                     id
                   }
                   __typename
+                  ... on BlogPost {
+                    title
+                    slug
+                  }
                   ... on VideoEmbed {
                     title
                     embedUrl

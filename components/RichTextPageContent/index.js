@@ -163,6 +163,7 @@ export function getRichTextRenderOptions(links, options) {
       [INLINES.EMBEDDED_ENTRY]: (node, children) => {
         const entry = entryMap.get(node.data.target.sys.id);
         const { __typename } = entry;
+        var { embedUrl, title } = [];
 
         switch (__typename) {
           case "BlogPost":
@@ -177,11 +178,11 @@ export function getRichTextRenderOptions(links, options) {
             var oldUrl = embedUrl;
             var url = new URL(oldUrl);
             url.hostname = "www.youtube-nocookie.com";
-           
+
             return <DynamicVideoEmbed embedUrl={url} title={title} />;
           case "Button":
-            const { embedUrl, title } = entry;
-            //   console.log(entry.embedURL);
+            title = entry.title;
+            embedUrl = entry.embedUrl;
 
             return <DynamicButtonEmbed embedUrl={embedUrl} title={title} />;
           case "CodeBlock":
@@ -210,7 +211,7 @@ export function getRichTextRenderOptions(links, options) {
             var oldUrl = embedUrl;
             var url = new URL(oldUrl);
             url.hostname = "www.youtube-nocookie.com";
-            
+
             return <DynamicVideoEmbed embedUrl={url} title={title} />;
           case "Button":
             title = entry.title;
