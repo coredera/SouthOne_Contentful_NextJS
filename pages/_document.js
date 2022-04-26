@@ -39,6 +39,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             dangerouslySetInnerHTML={{
               __html: `
               <!-- OneTrust Cookies Consent Notice start for gd-blog.netlify.app/blog -->
+<script type="text/javascript" src="https://cdn-ukwest.onetrust.com/consent/eba07de4-b14e-4196-abee-65680168966e/OtAutoBlock.js" ></script>
 <script src="https://cdn-ukwest.onetrust.com/consent/eba07de4-b14e-4196-abee-65680168966e/otSDKStub.js"  type="text/javascript" charset="UTF-8" data-domain-script="eba07de4-b14e-4196-abee-65680168966e" ></script>
 <script type="text/javascript">
 function OptanonWrapper() { }
