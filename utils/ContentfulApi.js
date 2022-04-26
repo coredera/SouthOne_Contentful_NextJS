@@ -13,8 +13,10 @@ import { Config } from "./Config";
  *
  */
 
+
+
 const defaultOptions = {
-  preview: false,
+  preview: process.env.CONTENTFUL_PREVIEW,
 };
 
 export default class ContentfulApi {
@@ -150,13 +152,13 @@ export default class ContentfulApi {
    * param: page (number)
    *
    */
-  static async getPaginatedSlugs(page) {
+  static async getPaginatedSlugs(page,  options = defaultOptions) {
     const queryLimit = 100;
     const skipMultiplier = page === 1 ? 0 : page - 1;
     const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
 
     const query = `{
-        blogPostCollection(limit: ${queryLimit}, skip: ${skip}, order: date_DESC) {
+        blogPostCollection(limit: ${queryLimit}, skip: ${skip}, order: date_DESC, preview: ${options.preview} ) {
           total
           items {
             slug
@@ -588,6 +590,15 @@ export default class ContentfulApi {
                     title
                     slug
                   }
+                  ... on VideoEmbed {
+                    title
+                    embedUrl
+                  }
+                  ... on CodeBlock {
+                    description
+                    language
+                    code
+                  }
                   ... on Button {
                     title
                     embedUrl
@@ -598,6 +609,10 @@ export default class ContentfulApi {
                     id
                   }
                   __typename
+                  ... on BlogPost {
+                    title
+                    slug
+                  }
                   ... on VideoEmbed {
                     title
                     embedUrl

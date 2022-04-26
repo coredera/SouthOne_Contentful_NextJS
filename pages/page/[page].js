@@ -10,6 +10,7 @@ import HeroBanner from "@components/HeroBanner";
 import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
+import SocialMedia from "@components/SocialMedia";
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -63,6 +64,7 @@ export default function BlogIndexPage(props) {
         title={`${pageTitle} Page ${currentPage}`}
         description={pageDescription}
         url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
+        canonical={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
         metatitle={`${pageContent.metaTitle} - page ${currentPage}`}
         metadescription={pageContent.metaDescription}
       />
@@ -74,14 +76,13 @@ export default function BlogIndexPage(props) {
       <Box bgColor="brand.50" pt={10} pb={20}>
         <ContentWrapper>
           <Flex>
-            
-              <PostList
-                postListType={postListType}
-                posts={postSummaries}
-                totalPages={totalPages}
-                currentPage={currentPage}
-              />
-            
+            <PostList
+              postListType={postListType}
+              posts={postSummaries}
+              totalPages={totalPages}
+              currentPage={currentPage}
+            />
+
             <Spacer />
             <Box
               minW="368"
@@ -90,13 +91,19 @@ export default function BlogIndexPage(props) {
               pl={10}
               display={{ base: "none", lg: "block" }}
             >
-              <PopularPosts topPostsArray={topPostsArray} />
+              <Box pb={10}>
+                <PopularPosts topPostsArray={topPostsArray} />
+              </Box>
+              <SocialMedia topPostsArray={topPostsArray} />
             </Box>
           </Flex>
 
-          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
-            <PopularPosts topPostsArray={topPostsArray} />
-          </Flex>
+          <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
+              <PopularPosts topPostsArray={topPostsArray} />
+            </Flex>
+            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
+              <SocialMedia topPostsArray={topPostsArray} />
+            </Flex>
         </ContentWrapper>
       </Box>
     </MainLayout>

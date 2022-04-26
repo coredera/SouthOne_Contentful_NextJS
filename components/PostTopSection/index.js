@@ -58,7 +58,7 @@ export default function PostTopSection(props) {
                       </Link>
                     </Box>
                     <Spacer />
-                    <Box>></Box>
+                    <Box>&gt;</Box>
                     <Spacer />
                     <Box style={{ textDecoration: "underline" }}>
                       <Link href={`${Config.pageMeta.home.slug}`}>
@@ -97,7 +97,7 @@ export default function PostTopSection(props) {
               </Link>
             </Box>
             <Spacer />
-            <Box>></Box>
+            <Box>&gt;</Box>
             <Spacer />
             <Box style={{ textDecoration: "underline" }}>
               <Link href={`${Config.pageMeta.home.slug}`}>

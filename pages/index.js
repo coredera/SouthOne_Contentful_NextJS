@@ -21,6 +21,8 @@ import FeaturedPost from "@components/FeaturedPost";
 import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
+import SocialMedia from "@components/SocialMedia";
+
 
 import {
   Box,
@@ -76,7 +78,7 @@ export default function BlogIndex(props) {
 
   //console.log(featuredPost);
 
-  console.log(pageContent.heroBanner.image.url);
+  //console.log(pageContent.heroBanner.image.url);
 
   // Original hero banner code
   //  {pageContent.heroBanner !== null && (
@@ -90,6 +92,7 @@ export default function BlogIndex(props) {
           title={pageContent.title}
           description={pageContent.description}
           url={Config.pageMeta.blogIndex.url}
+          canonical={Config.pageMeta.blogIndex.url}
           metatitle={pageContent.metaTitle}
           metadescription={pageContent.metaDescription}
         />
@@ -125,12 +128,18 @@ export default function BlogIndex(props) {
                 pl={10}
                 display={{ base: "none", lg: "block" }}
               >
+                <Box pb={10}>
                 <PopularPosts topPostsArray={topPostsArray} />
+                </Box>
+                <SocialMedia topPostsArray={topPostsArray} />
               </Box>
             </Flex>
 
-            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
+            <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
               <PopularPosts topPostsArray={topPostsArray} />
+            </Flex>
+            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
+              <SocialMedia topPostsArray={topPostsArray} />
             </Flex>
           </ContentWrapper>
         </Box>

@@ -284,7 +284,7 @@ export async function changeFunc(tagid) {
   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
   // alert(selectedValue);
 
-  console.log(selectedValue);
+  //console.log(selectedValue);
 
   if(selectedValue==="")
   {

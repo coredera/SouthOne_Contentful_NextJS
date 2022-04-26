@@ -18,6 +18,7 @@ import TypographyStyles from "@styles/Typography.module.scss";
 import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
+import SocialMedia from "@components/SocialMedia";
 
 import {
   Box,
@@ -62,7 +63,7 @@ export default function PostWrapper(props) {
         metatitle={`Read The Latest ${tag} Articles On Our Blog`}
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
         url={""}
-        canonical={false}
+        canonical={`${Config.pageMeta.blogIndex.url}/topic/${tag}/`}
         title={`Read The Latest ${tag} Articles On Our Blog`}
         description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
       />
@@ -90,13 +91,19 @@ export default function PostWrapper(props) {
               pl={10}
               display={{ base: "none", lg: "block" }}
             >
-              <PopularPosts topPostsArray={topPostsArray} />
+              <Box pb={10}>
+                <PopularPosts topPostsArray={topPostsArray} />
+                </Box>
+                <SocialMedia topPostsArray={topPostsArray} />
             </Box>
           </Flex>
 
-          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={10}>
-            <PopularPosts topPostsArray={topPostsArray} />
-          </Flex>
+          <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
+              <PopularPosts topPostsArray={topPostsArray} />
+            </Flex>
+            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
+              <SocialMedia topPostsArray={topPostsArray} />
+            </Flex>
         </ContentWrapper>
       </Box>
     </MainLayout>

@@ -107,6 +107,22 @@
   border-right: 0.15rem solid #ebebeb;
 }
 
+.contentList__SocialMedia {
+  padding: 1rem;
+  padding-top: 1.8rem;
+  border: 0.1rem solid #002b5b;
+  border-radius: 1rem;
+  color: white;
+  background-color: #002b5b;
+
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-family-body);
+  box-shadow: 0px 12px 1px 0 #002b5b;
+
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
 .contentList__titleLink {
   cursor: pointer;
   text-decoration: none;

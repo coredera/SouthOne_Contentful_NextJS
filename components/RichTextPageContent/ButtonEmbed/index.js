@@ -42,8 +42,9 @@ export default function ButtonEmbed(props) {
                 <Box pl={2} alignSelf="center">
                   <img
                     src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
-                    width="12"
-                    style={{ border: "none" }}
+                   
+                    
+                    style={{ border: "none", minWidth:"12px", width:"15px" }}
                   />
                 </Box>
               </Flex>
