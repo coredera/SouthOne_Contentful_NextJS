@@ -1310,4 +1310,120 @@ export default class ContentfulApi {
       throw new Error("Could not fetch data from Contentful!");
     }
   }
+
+
+
+
+
+
+
+
+  /**
+   * Fetch all blog posts.
+   *
+   * This method queries the GraphQL API for blog posts
+   * in batches that accounts for the query complexity cost,
+   * and returns them in one array.
+   *
+   * This method is used to build the RSS feed on pages/buildrss.
+   *
+   * For more information about GraphQL query complexity, visit:
+   * https://www.contentful.com/developers/videos/learn-graphql/#graphql-fragments-and-query-complexity
+   *
+   */
+   static async getAllTopicPostSummaries() {
+    let page = 1;
+    let shouldQueryMorePosts = true;
+    const returnPosts = [];
+
+    while (shouldQueryMorePosts) {
+      const response = await this.getPaginatedTopicPostSummaries(page);
+
+      if (response.posts.length > 0) {
+        returnPosts.push(...response.posts);
+      }
+
+      shouldQueryMorePosts = returnPosts.length < response.total;
+      page++;
+    }
+
+    return returnPosts;
+  }
+
+
+
+  /**
+   * Fetch n post summaries that are displayed on pages/blog.js.
+   *
+   * This method accepts a parameter of a page number that calculates
+   * how many blog posts to skip in the GraphQL query.
+   *
+   * Set your desired page size in @utils/Config:
+   * Config.pagination.pageSize
+   *
+   * The page size is currently set to 2 so you can view how the pagination
+   * works on a fresh clone of the repository.
+   *
+   * param: page (number)
+   *
+   */
+   static async getPaginatedTopicPostSummaries(page) {
+    /**
+     * Calculate the skip parameter for the query based on the incoming page number.
+     * For example, if page === 2, and your page length === 3,
+     * the skip parameter would be calculated as 3 (the length of a page)
+     * therefore skipping the results of page 1.
+     */
+
+    //const skipMultiplier = page === 1 ? 0 : page - 1;
+    //const skip =
+    //  skipMultiplier > 0 ? Config.pagination.pageSize * skipMultiplier : 0;
+
+    const queryLimit = 10;
+    const skipMultiplier = page === 1 ? 0 : page - 1;
+    const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
+
+
+    const query = `{
+        topicCollection(limit: 5, order: date_DESC) {
+          total
+          items {
+            sys {
+              id
+            }
+            contentfulMetadata{
+              tags {
+                id
+                name
+              }
+            }
+            image {
+              title
+              description
+              contentType
+              fileName
+              size
+              url
+              width
+              height
+            }
+            date
+            title
+            slug
+            excerpt
+            author{
+              name
+            }
+          }
+        }
+      }`;
+
+    const response = await this.callContentful(query);
+
+    const paginatedPostSummaries = response.data.blogPostCollection
+      ? response.data.blogPostCollection
+      : { total: 0, items: [] };
+
+    return paginatedPostSummaries;
+  }
 }
