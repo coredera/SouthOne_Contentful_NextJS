@@ -230,9 +230,9 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/campaigning`}>
+                    <Link href={`/topic/campaigns`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Campaigning
+                        Campaigns
                       </a>
                     </Link>
                   </Flex>
