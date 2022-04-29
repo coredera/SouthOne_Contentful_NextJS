@@ -206,9 +206,7 @@ export default function PopularTopics(props) {
                       <a className={TypographyStyles.popularTopics}>News</a>
                     </Link>
                   </Flex>
-                </Box>
-
-                <Box>
+                
                   <Flex>
                     <Box pr={5} alignSelf="center">
                       <img
