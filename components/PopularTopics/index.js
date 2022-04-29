@@ -118,9 +118,9 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/campaigning`}>
+                    <Link href={`/topic/campaigns`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Campaigning
+                        Campaigns
                       </a>
                     </Link>
                   </Flex>
@@ -161,7 +161,7 @@ export default function PopularTopics(props) {
 
             <Box display={{ base: "block", md: "none" }}>
               <Flex color="white" alignSelf="center" pb={10}>
-                <Box pr={10}>
+                <Box pr={4}>
                   <Flex>
                     <Box pr={5} alignSelf="center">
                       <img
@@ -195,7 +195,7 @@ export default function PopularTopics(props) {
                     </Link>
                   </Flex>
 
-                  <Flex pt={2}>
+                  <Flex pt={2} pb={2}>
                     <Box pr={5} alignSelf="center">
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
@@ -206,9 +206,7 @@ export default function PopularTopics(props) {
                       <a className={TypographyStyles.popularTopics}>News</a>
                     </Link>
                   </Flex>
-                </Box>
-
-                <Box>
+                
                   <Flex>
                     <Box pr={5} alignSelf="center">
                       <img
@@ -230,9 +228,9 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/campaigning`}>
+                    <Link href={`/topic/campaigns`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Campaigning
+                        Campaigns
                       </a>
                     </Link>
                   </Flex>
