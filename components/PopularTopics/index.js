@@ -195,7 +195,7 @@ export default function PopularTopics(props) {
                     </Link>
                   </Flex>
 
-                  <Flex pt={2}>
+                  <Flex pt={2} pb={2}>
                     <Box pr={5} alignSelf="center">
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue-tint.svg`}
