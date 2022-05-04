@@ -72,7 +72,7 @@ export default function Post(props) {
         />
         <Box>
           <div>
-            <Embed websiteId={hyvor} authorEmail={email2} title={id} />
+            <Embed id={post.slug} websiteId={hyvor} authorEmail={email2} title={id} />
           </div>
         </Box>
 
