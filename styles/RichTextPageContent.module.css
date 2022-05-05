@@ -66,3 +66,20 @@
   height: auto;
   margin: 1rem 0 2rem 0;
 }
+
+
+.podcastimg{
+border-radius: 20px;
+
+}
+
+.reactplayer{
+
+padding-bottom: 5px;
+padding-left: 5px;
+padding-right: 5px;
+position: absolute;
+top: 0;
+left: 0;
+
+}

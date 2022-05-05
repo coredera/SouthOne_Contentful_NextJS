@@ -6,6 +6,8 @@ import TypographyStyles from "@styles/Typography.module.scss";
 import LinkIcon from "./svg/LinkIcon";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import ReactPlayer from "react-player";
+import { css, cx } from '@emotion/css'
 
 import {
   Box,
@@ -202,7 +204,7 @@ export function getRichTextRenderOptions(links, options) {
           case "BlogPost":
             return (
               <Link href={`/${entry.slug}`}>
-                <a className={TypographyStyles.inlineLink}>{entry.title}</a>
+                <a className={`${TypographyStyles.bodyCopyS} ${TypographyStyles.inlineLink}`}>{entry.title}</a>
               </Link>
             );
           case "VideoEmbed":
@@ -231,7 +233,39 @@ export function getRichTextRenderOptions(links, options) {
           node.data.target.sys.id,
         );
 
-        if (renderNativeImg) {
+        var fileExtension = url.split(".").pop();
+     
+
+        if (fileExtension === "mp3") {
+          var mp3 =document.querySelector("")
+
+          return (
+            <>
+            <Box pb={5}>
+            <div style={{position: "relative"}}>
+              <img
+                src="https://gd-prod.azureedge.net/-/media/project/guidedogs/guidedogsdotorg/images/resources/puppy-socialisation/07.jpg"
+                alt="Black Labrador puppy look to camera"
+                width="100%"
+                height="100%"
+                className={RichTextPageContentStyles.podcastimg}
+                
+                
+              />
+              <ReactPlayer
+                url={url}
+                
+                className={RichTextPageContentStyles.reactplayer}
+                controls
+                width="100%"
+                height="100%"
+              
+              />
+              </div>
+              </Box>
+            </>
+          );
+        } else if (renderNativeImg) {
           return (
             <div className={RichTextPageContentStyles.page__imgContainer}>
               <img
