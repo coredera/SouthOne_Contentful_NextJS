@@ -237,7 +237,7 @@ export function getRichTextRenderOptions(links, options) {
      
 
         if (fileExtension === "mp3") {
-          var mp3 =document.querySelector("")
+        
 
           return (
             <>
