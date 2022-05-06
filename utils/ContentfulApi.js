@@ -626,6 +626,7 @@ export default class ContentfulApi {
                     title
                     embedUrl
                   }
+                  
                 }
               }
               assets {
