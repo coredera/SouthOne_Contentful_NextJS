@@ -113,7 +113,7 @@ export default function BlogIndex(props) {
           <ContentWrapper>
             <Flex>
               <Box pr={0} width="100%">
-              <iframe src='https://share.transistor.fm/e/1493e91f/dark' width='100%' height='180' frameborder='0' scrolling='no' seamless='true' style={{width:"100%", height:"180px"}}></iframe>
+             
                 <PostList
                   postListType={postListType}
                   posts={postSummaries}
