@@ -11,7 +11,7 @@ import PopularPosts from "@components/PopularPosts";
 import SharePost from "@components/SharePost";
 import { Embed } from "hyvor-talk-react";
 import SocialMedia from "@components/SocialMedia";
-import YouMightAlsoLike from "@components/post/LinkedPosts";
+import YouMightAlsoLike from "@components/Post/LinkedPosts";
 
 
 //import Image from "next/image";
