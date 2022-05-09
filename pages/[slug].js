@@ -11,6 +11,8 @@ import PopularPosts from "@components/PopularPosts";
 import SharePost from "@components/SharePost";
 import { Embed } from "hyvor-talk-react";
 import SocialMedia from "@components/SocialMedia";
+import YouMightAlsoLike from "@components/post/LinkedPosts";
+
 
 //import Image from "next/image";
 import ContentListStyles from "@styles/ContentList.module.css";
@@ -40,6 +42,8 @@ export default function PostWrapper(props) {
   const { sortedBlogPostTags, topPostsArray, post, preview } = props;
 
   const hyvor = `${process.env.NEXT_PUBLIC_HYVOR_ID}`;
+
+  console.log(post.youMightAlsoLikeCollection);
 
   return (
     <MainLayout preview={preview}>
@@ -97,6 +101,10 @@ export default function PostWrapper(props) {
         {post.author !== null && <Author author={post.author} />}
       </Box>
       <Flex p={10}></Flex>
+      <Box pb={20}>
+      <YouMightAlsoLike posts={post.youMightAlsoLikeCollection.items} />
+      </Box>
+      
     </MainLayout>
   );
 }
