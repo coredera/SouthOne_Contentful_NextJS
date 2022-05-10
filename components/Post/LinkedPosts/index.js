@@ -36,6 +36,7 @@ export default function LinkedPosts(props) {
   console.log(posts);
 
   return (
+
     <>
       <ContentWrapper>
         <Box>
@@ -44,8 +45,9 @@ export default function LinkedPosts(props) {
           </Flex>
           <Flex direction={{ base: "column", lg: "row" }}>
             {posts.map((post, i) => (
+                post ?
               <>
-                <Box key={post.sys.id} width="100%" pb={10}>
+                <Box key={post.sys.id} width="full" height="full" pb={10} flexDirection="column" flexFlow="column" flexGrow="1" display="flex" flex="1 1 auto">
                   <Box className={ContentListStyles.pods}>
                     <article>
                       <Box>
@@ -61,7 +63,8 @@ export default function LinkedPosts(props) {
                                     borderTopLeftRadius: "10px",
                                     borderTopRightRadius: "10px",
                                     objectFit: "cover",
-                                    width: "60rem",
+                                    width: "80rem",
+                                   
                                   }}
                                 />
                               </Box>
@@ -89,7 +92,7 @@ export default function LinkedPosts(props) {
                         <Box pb={8} pt={6}>
                           <div
                             className={ContentListStyles.contentList__excerpt}
-                            style={{ marginBottom: "-2rem" }}
+                            style={{ marginBottom: "-3rem" }}
                           >
                             <ReactMarkdown
                               children={post.excerpt}
@@ -97,36 +100,16 @@ export default function LinkedPosts(props) {
                             />
                           </div>
                         </Box>
-                        <Flex alignItems="center">
-                          <Box alignSelf="center">
-                            <Link href={`/${post.slug}`}>
-                              <a>
-                                <Flex
-                                  className={
-                                    ContentListStyles.contentList__readmorelink
-                                  }
-                                >
-                                  Read more
-                                  <Box pl={2} alignSelf="center">
-                                    <img
-                                      src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
-                                      width="12"
-                                      style={{ border: "none" }}
-                                      alt={`about ${post.title}`}
-                                    />
-                                  </Box>
-                                </Flex>
-                              </a>
-                            </Link>
-                          </Box>
-                        </Flex>
+                      
                       </Box>
                     </article>
                   </Box>
                 </Box>
 
                 {i < 2 ? <Spacer p={5} /> : ""}
-              </>
+                                
+              </> :""
+                                
             ))}
           </Flex>
         </Box>
