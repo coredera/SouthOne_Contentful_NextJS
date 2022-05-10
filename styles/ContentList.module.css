@@ -288,6 +288,14 @@
   color: var(--color-foreground);
 }
 
+.contentList__excerpt2 {
+  font-size: 1.125rem;
+  line-height: 1.8rem;
+  margin-bottom: 0rem;
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-family-body);
+  color: var(--color-foreground);
+}
 
 .ellipse{
   background-color: #ffdf7f;

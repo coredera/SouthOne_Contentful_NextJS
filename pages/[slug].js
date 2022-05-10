@@ -100,7 +100,7 @@ export default function PostWrapper(props) {
       <Box bgColor="brand.100" p={7} pb={14}>
         {post.author !== null && <Author author={post.author} />}
       </Box>
-      <Flex p={10}></Flex>
+      <Flex p={8}></Flex>
       <Box pb={20}>
       <YouMightAlsoLike posts={post.youMightAlsoLikeCollection.items} />
       </Box>

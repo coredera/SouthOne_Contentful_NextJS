@@ -39,11 +39,14 @@ export default function LinkedPosts(props) {
     <>
       <ContentWrapper>
         <Box>
-          <Flex  direction={{ base: "column", lg: "row" }}>
-            {posts.map((post) => (
+          <Flex className={TypographyStyles.heading__h3} pb={2}>
+            Related posts...
+          </Flex>
+          <Flex direction={{ base: "column", lg: "row" }}>
+            {posts.map((post, i) => (
               <>
-                <Box key={post.sys.id} maxW="30em"  pr={10}>
-                  <Box className={ContentListStyles.pods} >
+                <Box key={post.sys.id} width="100%" pb={10}>
+                  <Box className={ContentListStyles.pods}>
                     <article>
                       <Box>
                         <Box>
@@ -67,29 +70,26 @@ export default function LinkedPosts(props) {
                         </Box>
                       </Box>
 
-                      <Box p={10} pt={5}>
+                      <Box p={8}>
                         <Flex pb={0}>
-                          <Box >
+                          <Box>
                             <Link href={`/${post.slug}`}>
                               <a>
                                 <h2
                                   className={`${TypographyStyles.heading__h6} ${TypographyStyles.inlineLink}`}
-                                  style={{marginBottom:"0"}}
+                                  style={{ marginBottom: "0" }}
                                 >
-                                  
                                   {post.title}
-                                 
                                 </h2>
                               </a>
                             </Link>
                           </Box>
                         </Flex>
 
-                       
-
-                        <Box pb={0} pt={6}>
+                        <Box pb={8} pt={6}>
                           <div
                             className={ContentListStyles.contentList__excerpt}
+                            style={{ marginBottom: "-2rem" }}
                           >
                             <ReactMarkdown
                               children={post.excerpt}
@@ -124,7 +124,8 @@ export default function LinkedPosts(props) {
                     </article>
                   </Box>
                 </Box>
-                <Spacer />
+
+                {i < 2 ? <Spacer p={5} /> : ""}
               </>
             ))}
           </Flex>
