@@ -43,7 +43,7 @@ export default function PostWrapper(props) {
 
   const hyvor = `${process.env.NEXT_PUBLIC_HYVOR_ID}`;
 
-  console.log(post.youMightAlsoLikeCollection);
+  //console.log(post.youMightAlsoLikeCollection);
 
   return (
     <MainLayout preview={preview}>
