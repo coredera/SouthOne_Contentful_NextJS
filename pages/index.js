@@ -113,6 +113,7 @@ export default function BlogIndex(props) {
           <ContentWrapper>
             <Flex>
               <Box pr={0} width="100%">
+             
                 <PostList
                   postListType={postListType}
                   posts={postSummaries}

@@ -6,6 +6,9 @@ import TypographyStyles from "@styles/Typography.module.scss";
 import LinkIcon from "./svg/LinkIcon";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import ReactPlayer from "react-player";
+import { css, cx } from "@emotion/css";
+
 
 import {
   Box,
@@ -168,7 +171,7 @@ export function getRichTextRenderOptions(links, options) {
         switch (__typename) {
           case "BlogPost":
             return (
-              <Link href={`/blog/${entry.slug}`}>
+              <Link href={`/${entry.slug}`}>
                 <a className={TypographyStyles.inlineLink}>{entry.title}</a>
               </Link>
             );
@@ -197,12 +200,17 @@ export function getRichTextRenderOptions(links, options) {
         const entry = entryMap.get(node.data.target.sys.id);
         const { __typename } = entry;
         var { embedUrl, title } = [];
+        
 
         switch (__typename) {
           case "BlogPost":
             return (
-              <Link href={`/blog/${entry.slug}`}>
-                <a className={TypographyStyles.inlineLink}>{entry.title}</a>
+              <Link href={`/${entry.slug}`}>
+                <a
+                  className={`${TypographyStyles.bodyCopyS} ${TypographyStyles.inlineLink}`}
+                >
+                  {entry.title}
+                </a>
               </Link>
             );
           case "VideoEmbed":
@@ -222,6 +230,33 @@ export function getRichTextRenderOptions(links, options) {
             const { language, code } = entry;
 
             return <DynamicCodeBlock language={language} code={code} />;
+          case "Podcast":
+            var { title, description, coverImage, podcast } = entry;
+
+            return (
+              <>
+              {title} <p />
+              {description}
+                <Box pb={5}>
+                  <div style={{ position: "relative" }}>
+                    <img
+                      src={coverImage.url}
+                      alt="Black Labrador puppy look to camera"
+                      width="100%"
+                      height="100%"
+                      className={RichTextPageContentStyles.podcastimg}
+                    />
+                    <ReactPlayer
+                      url={podcast.url}
+                      className={RichTextPageContentStyles.reactplayer}
+                      controls
+                      width="100%"
+                      height="100%"
+                    />
+                  </div>
+                </Box>
+              </>
+            );
           default:
             return null;
         }
@@ -231,7 +266,28 @@ export function getRichTextRenderOptions(links, options) {
           node.data.target.sys.id,
         );
 
-        if (renderNativeImg) {
+        var fileExtension = url.split(".").pop();
+
+        if (fileExtension === "mp3") {
+          //var mp3 = document.querySelector("");
+
+          return (
+            <>
+              <Box pb={8}>
+                <div style={{ position: "relative" }}>
+                  <h3 className={TypographyStyles.heading__h3}>{title}</h3>
+                  <ReactPlayer
+                    url={url}
+                    className={RichTextPageContentStyles.reactplayer}
+                    controls
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              </Box>
+            </>
+          );
+        } else if (renderNativeImg) {
           return (
             <div className={RichTextPageContentStyles.page__imgContainer}>
               <img

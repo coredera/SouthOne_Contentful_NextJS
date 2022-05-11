@@ -577,6 +577,26 @@ export default class ContentfulApi {
               description
             }
           }
+          youMightAlsoLikeCollection {
+            items {
+              sys {
+                id
+              }
+              slug
+              title
+              excerpt
+              image {
+                title
+                description
+                contentType
+                fileName
+                size
+                url
+                width
+                height
+              }
+            }
+          }
           body {
             json
             links {
@@ -626,6 +646,7 @@ export default class ContentfulApi {
                     title
                     embedUrl
                   }
+                  
                 }
               }
               assets {
