@@ -41,7 +41,7 @@ export default function LinkedPosts(props) {
       <ContentWrapper>
         <Box>
           <Flex className={TypographyStyles.heading__h3} pb={2}>
-            Related posts...
+            You might also like...
           </Flex>
           <Flex direction={{ base: "column", lg: "row" }}>
             {posts.map((post, i) =>
