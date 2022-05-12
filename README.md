@@ -15,6 +15,8 @@ https://bitbucket.org/GuideDogs/blog/src/dev/
 
 ## Configuring your development environment
 
+### Environment Variables
+
 Ensure you have a env.local file populated with the following:
 ```
 CONTENTFUL_SPACE_ID=e1jkpkpbs14h
@@ -73,6 +75,7 @@ yarn dev
 You can read more about it here:
 
 https://www.contentful.com/developers/docs/references/graphql/
+
 
 
 This is a direct link to the Guide Dogs UK space and using the standard access token:
