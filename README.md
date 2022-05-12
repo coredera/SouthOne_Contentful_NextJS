@@ -14,7 +14,7 @@ Use your code editing tool to access the source code at https://bitbucket.org/Gu
 ## Configuring your development environment
 
 Ensure you have a env.local file populated with the following:
-
+```
 CONTENTFUL_SPACE_ID=e1jkpkpbs14h
 CONTENTFUL_ACCESS_TOKEN=MT7yf3Dd6J6VUEAyH0vPwaK-AQBGW0ciEqsMAeXdXM8
 NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN=_Sv0p5Tto7ZurP3xQnEKqs8pxuJdCs3wtMj0pX_5SJc
@@ -24,12 +24,12 @@ CONTENTFUL_PREVIEW=true
 NEXT_PUBLIC_HYVOR_ID=4965
 NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID=GTM-WKM32MM
 NEXT_PUBLIC_BASE_PATH=/blog
-
+```
 
 ### Install dependencies
 
 Use 'Yarn install' to install the following dependencies:
-
+```
 "@chakra-ui/react": "^1.6.7",
     "@contentful/rich-text-react-renderer": "^14.1.2",
     "@emotion/css": "^11.9.0",
@@ -47,7 +47,7 @@ Use 'Yarn install' to install the following dependencies:
     "react-player": "^2.10.0",
     "react-share": "^4.4.0",
     "sass": "^1.43.4"
-
+```
 
 
 
