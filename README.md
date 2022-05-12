@@ -8,7 +8,9 @@ This repo uses Next.js and Contentful to deliver a blog microsite, using Content
 
 ## Getting set up
 
-Use your code editing tool to access the source code at https://bitbucket.org/GuideDogs/blog/src/dev/
+Use your code editing tool to access the source code at 
+
+https://bitbucket.org/GuideDogs/blog/src/dev/
 
 
 ## Configuring your development environment
@@ -71,6 +73,7 @@ yarn dev
 You can read more about it here:
 
 https://www.contentful.com/developers/docs/references/graphql/
+
 
 This is a direct link to the Guide Dogs UK space and using the standard access token:
 
