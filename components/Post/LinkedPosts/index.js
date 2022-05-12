@@ -40,9 +40,14 @@ export default function LinkedPosts(props) {
     <>
       <ContentWrapper>
         <Box>
-          <Flex className={TypographyStyles.heading__h3} pb={2}>
-            You might also like...
-          </Flex>
+          {posts.length > 0 ? (
+            <Flex className={TypographyStyles.heading__h3} pb={2}>
+              You might also like...
+            </Flex>
+          ) : (
+            ""
+          )}
+
           <Flex direction={{ base: "column", lg: "row" }}>
             {posts.map((post, i) =>
               post ? (
