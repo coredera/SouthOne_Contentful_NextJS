@@ -60,11 +60,11 @@ export default function PostWrapper(props) {
   return (
     <MainLayout preview={preview}>
       <PageMeta
-        title={`Read The Latest ${tag} Articles On Our Blog`}
+        title={`Read the latest ${tag} articles on our blog`}
         description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
         url={`${Config.pageMeta.blogIndex.url}/topic/${tag}`}
         canonical={`${Config.pageMeta.blogIndex.url}/topic/${tag}/`}
-        metatitle={`Read The Latest ${tag} Articles On Our Blog`}
+        metatitle={`Read the latest ${tag} articles on our blog`}
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
       />
 
