@@ -63,9 +63,9 @@ export default function BlogIndexPage(props) {
   return (
     <MainLayout preview={preview}>
       <PageMeta
-        title={`${pageTitle} Page ${currentPage}`}
-        description={pageDescription}
-        url={`${Config.pageMeta.blogIndex.url}/topic/${tag}//page/${currentPage}`}
+        title={`Read The Latest ${tag} Articles On Our Blog - page ${currentPage}`}
+        description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
+        url={`${Config.pageMeta.blogIndex.url}/topic/${tag}/page/${currentPage}`}
         canonical={`${Config.pageMeta.blogIndex.url}/topic/${tag}//page/${currentPage}`}
         metatitle={`Read The Latest ${tag} Articles On Our Blog - page ${currentPage}`}
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
