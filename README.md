@@ -1,127 +1,83 @@
-# Next.js + Contentful Blog Starter
+# Next.js + Contentful Blog 
 
-![A screenshot of the Next.js Contentful starter home page](screenshot.png)
 
-This is an example repository for you to use to create a new blog site using Next.js and Contentful, using Contentful's GraphQL API.
+This repo uses Next.js and Contentful to deliver a blog microsite, using Contentful's GraphQL API.
 
 [Read more about the GraphQL API](https://graphql.contentful.com).
 
-## View the demo site
-
-[Click here to explore the demo site that uses this repository as its source code.](https://nextjs-contentful-blog-starter.vercel.app/)
 
 ## Getting set up
 
-Fork the repository to your GitHub account and clone it to your local machine.
+Use your code editing tool to access the source code at 
 
-```bash
-#using git
-git clone git@github.com:whitep4nth3r/nextjs-contentful-blog-starter.git
+https://bitbucket.org/GuideDogs/blog/src/dev/
 
-#using the GitHub CLI
-gh repo clone whitep4nth3r/nextjs-contentful-blog-starter
-```
 
 ## Configuring your development environment
 
+### Environment Variables
+
+Ensure you have a env.local file populated with the following:
+```
+CONTENTFUL_SPACE_ID=e1jkpkpbs14h
+CONTENTFUL_ACCESS_TOKEN=MT7yf3Dd6J6VUEAyH0vPwaK-AQBGW0ciEqsMAeXdXM8
+NEXT_PUBLIC_CONTENTFUL_PREVIEW_ACCESS_TOKEN=_Sv0p5Tto7ZurP3xQnEKqs8pxuJdCs3wtMj0pX_5SJc
+CONTENTFUL_PREVIEW_SECRET=YD57VT4aE79PTgAfeXbPKs9EpnPmZkd7
+CONTENTFUL_ENVIRONMENT=master
+CONTENTFUL_PREVIEW=true
+NEXT_PUBLIC_HYVOR_ID=4965
+NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID=GTM-WKM32MM
+NEXT_PUBLIC_BASE_PATH=/blog
+```
+
 ### Install dependencies
 
-In a terminal window, navigate to the project directory and install dependencies with npm.
-
-```bash
-cd nextjs-contentful-blog-starter
-npm install
+Use 'Yarn install' to install the following dependencies:
+```
+"@chakra-ui/react": "^1.6.7",
+    "@contentful/rich-text-react-renderer": "^14.1.2",
+    "@emotion/css": "^11.9.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^4.1.17",
+    "hyvor-talk-react": "^2.0.0",
+    "next": "^12.0.7",
+    "next-sitemap": "^1.6.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-icons": "^4.3.1",
+    "react-lottie": "^1.2.3",
+    "react-markdown": "^5.0.3",
+    "react-player": "^2.10.0",
+    "react-share": "^4.4.0",
+    "sass": "^1.43.4"
 ```
 
-### Set your environment variables
 
-At the root of the project, create a new `.env.local` file. Add the following environment variable names to the file:
-
-```text
-CONTENTFUL_SPACE_ID=
-CONTENTFUL_ACCESS_TOKEN=
-```
-
-### Using example content from Contentful
-
-**You can choose to use your own Contentful account, or connect to the example space that we've provided.**
-
-If you'd like to view some example content in your development environment to get a feel for how it works, you can use the provided credentials in `env.local.example` which will connect your code to the example space provided by Contentful.
 
 ### Using your own Contentful account
 
-To get started with your own Contentful space, [sign up for free](https://www.contentful.com/sign-up/).
+To get started with your own Contentful space, [sign up for free](https://www.contentful.com/sign-up/). You will also need to have an invite to the organisation required.
 
-Create a new space inside your Contentful account. Go to Settings > General Settings, and make a note of your space ID.
 
-![A screenshot of space ID settings in the Contentful UI](screenshot_space_id.png)
-
-Generate a Content Delivery API access token for your Contentful space.
-
-![A screenshot of access token settings in the Contentful UI](screenshot_access_token.png)
-
-Add your space ID and access token to your `.env.local` file.
-
-## Importing the starter content model and example content into your own Contentful space
-
-To get started quickly on your own version of the application, you can use the Contentful CLI to import the content model and the example content from the starter into your own Contentful space — without touching the Contentful UI!
-
-### Install the Contentful CLI
-
-```bash
-#using homebrew
-brew install contentful-cli
-
-#using npm
-npm install -g contentful-cli
-
-#using yarn
-yarn global add contentful-cli
-```
-
-### Authenticate with the CLI
-
-Open a terminal and run:
-
-```bash
-contentful login
-```
-
-A browser window will open. Follow the instructions to log in to Contentful via the CLI.
-
-### Import the content model and example content
-
-The following command in your terminal, ensuring you switch out SPACE_ID for your new space ID.
-
-```bash
-cd nextjs-contentful-blog-starter/setup
-
-contentful space import --space-id SPACE_ID --content-file content-export.json
-```
-
-You should see this output in the terminal. The import will take around 1 minute to complete.
-
-![A screenshot of the import command running in a terminal](screenshot_import_terminal.png)
-
-Refresh Contentful in your browser, navigate to the content model tab, and you'll find the content types have been imported into your space. You'll find the example content by clicking on the content tab.
-
-![A screenshot of the imported content model in the Contentful UI](screenshot_content_model.png)
 
 ## Running the application in development
 
 Navigate to the project directory in a terminal window and run:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
-## Deploy this site to Vercel
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https%3A%2F%2Fgithub.com%2Fwhitep4nth3r%2Fnextjs-contentful-blog-starter)
+### GraphQL playground
 
-During the deploy process, add the following environment variables to Vercel. Use the same credentials as you set up in your local development environment.
+You can read more about it here:
 
-```text
-CONTENTFUL_SPACE_ID
-CONTENTFUL_ACCESS_TOKEN
-```
+https://www.contentful.com/developers/docs/references/graphql/
+
+
+
+This is a direct link to the Guide Dogs UK space and using the standard access token:
+
+https://graphql.contentful.com/content/v1/spaces/e1jkpkpbs14h/explore?access_token=MT7yf3Dd6J6VUEAyH0vPwaK-AQBGW0ciEqsMAeXdXM8
