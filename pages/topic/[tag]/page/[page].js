@@ -64,7 +64,7 @@ export default function BlogIndexPage(props) {
     <MainLayout preview={preview}>
       <PageMeta
         title={`Read the latest ${tag} articles on our blog - page ${currentPage}`}
-        description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`} 
+        description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
         url={`${Config.pageMeta.blogIndex.url}/topic/${tag}/page/${currentPage}`}
         canonical={`${Config.pageMeta.blogIndex.url}/topic/${tag}//page/${currentPage}`}
         metatitle={`Read the latest ${tag} articles on our blog - page ${currentPage}`}
@@ -94,19 +94,19 @@ export default function BlogIndexPage(props) {
               pl={10}
               display={{ base: "none", lg: "block" }}
             >
-               <Box pb={10}>
+              <Box pb={10}>
                 <PopularPosts topPostsArray={topPostsArray} />
-                </Box>
-                <SocialMedia topPostsArray={topPostsArray} />
+              </Box>
+              <SocialMedia topPostsArray={topPostsArray} />
             </Box>
           </Flex>
 
           <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
-              <PopularPosts topPostsArray={topPostsArray} />
-            </Flex>
-            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
-              <SocialMedia topPostsArray={topPostsArray} />
-            </Flex>
+            <PopularPosts topPostsArray={topPostsArray} />
+          </Flex>
+          <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
+            <SocialMedia topPostsArray={topPostsArray} />
+          </Flex>
         </ContentWrapper>
       </Box>
     </MainLayout>
@@ -126,33 +126,41 @@ export async function getStaticPaths() {
 
   const blogPostTags = await ContentfulApi.getAllUniquePostTags();
 
+  var acc = [];
+
   const temp = blogPostTags.map(({ id }) => {
     //const id = "puppy";
 
     //for(const fid of blogPostTags){
 
-    const acc = [];
+    acc = [];
 
     var totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
+
+    var id2 = id;
 
     const relatedPosts = posts.reduce((acc, post) => {
       if (
         post.contentfulMetadata &&
         post.contentfulMetadata.tags &&
-        post.contentfulMetadata.tags.find(({ id }) => id === id)
+        post.contentfulMetadata.tags.find(({ id }) => id === id2)
       ) {
         acc.push(post);
 
+        //console.log(post.contentfulMetadata.tags);
         // console.log("ACC.........");
         // console.log(acc);
-
+        //console.log("acc.lenth: " + acc.length);
+  
         totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
         return acc;
       }
       totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
-
+  
       return acc;
     }, []);
+
+    //console.log("totalPages: " + totalPages);
 
     for (let page = 2; page <= totalPages; page++) {
       paths.push(
@@ -160,6 +168,7 @@ export async function getStaticPaths() {
         // { params: { tag } }
       );
     }
+    //console.log(paths);
   });
 
   // return { params: { tag: id } };

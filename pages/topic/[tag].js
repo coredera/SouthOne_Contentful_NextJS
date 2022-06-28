@@ -134,6 +134,8 @@ export async function getStaticProps({ params, preview = false }) {
 
   var totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
 
+  //console.log(params.tag);
+
   const relatedPosts = posts.reduce((acc, post) => {
     if (
       post.contentfulMetadata &&
@@ -142,8 +144,10 @@ export async function getStaticProps({ params, preview = false }) {
     ) {
       acc.push(post);
 
+      //console.log(post.contentfulMetadata.tags);
       // console.log("ACC.........");
       // console.log(acc);
+      //console.log("acc.lenth: " + acc.length);
 
       totalPages = Math.ceil(acc.length / Config.pagination.pageSize);
       return acc;
