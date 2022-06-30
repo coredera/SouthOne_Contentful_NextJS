@@ -6,6 +6,15 @@
   to = '/blog/404'
   status = 404
 
+[[plugins]]
+package = "@algolia/netlify-plugin-crawler"
+  [plugins.inputs]
+  branches = ['main', 'dev', 'feat/add-algolia']
+  pathPrefix = "/blog"
+  renderJavaScript = true
+
+
+
 #[[headers]]
 #  for = "*" # js files should be set this way
 #  [headers.values]
