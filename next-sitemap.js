@@ -5,7 +5,7 @@ module.exports = {
 
   robotsTxtOptions: {
    // policies: [{ userAgent: "*", disallow: "/api" }],
-   policies: [{ userAgent: "*", disallow: '/' }],
+   policies: [{ userAgent: "*", disallow: '/api' }],
   },
   //exclude: ["/api/*", "/server-sitemap.xml"],
   //robotsTxtOptions: {
