@@ -86,8 +86,8 @@ export default function Header() {
               src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
             ></script>
             <script type="text/javascript">
-              algoliasearchNetlify( appId= 'DI60L5IHY8', apiKey=
-              '5ecffddd5bec9e275560d57e03ab3414',
+              algoliasearchNetlify( appId= 'DLNLIVQLDK', apiKey=
+              'e956cede6449a4cd9a49906e4d5074d2',
               siteId= '347035fd-29fc-4d3b-baf1-366e2316cc20', branch= 'dev',
               selector= 'div#search', );
             </script>
