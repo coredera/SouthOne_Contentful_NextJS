@@ -5,17 +5,17 @@ module.exports = {
   //trailingSlash: true,
   //exportTrailingSlash: true, //deprecated var
   
-  async redirects() {
-    return [
+ // async redirects() {
+ //   return [
       
-        {
-            source: '/',
-            destination: '/blog',
-            basePath: false,
-            permanent: true
-        }
-    ]
-  },
+ //       {
+ //           source: '/',
+ //           destination: '/blog',
+ //           basePath: false,
+ //           permanent: true
+ //       }
+ //   ]
+ // },
 
 
 

@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://blog-dev.guidedogs.org.uk/blog",
+  siteUrl: "https://www.guidedogs.org.uk/blog",
  // outDir: "public/blog",
   generateRobotsTxt: true, // (optional)
 
