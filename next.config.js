@@ -5,6 +5,18 @@ module.exports = {
   //trailingSlash: true,
   //exportTrailingSlash: true, //deprecated var
   
+  async redirects() {
+    return [
+        {
+            source: '/',
+            destination: '/blog',
+            basePath: false
+        }
+    ]
+  },
+
+
+
   images: {
     domains: ["images.ctfassets.net", "gd-blog.netlify.app", "www.guidedogs.org.uk", "gd-blog-dev.netlify.app", "gd-blog-staging.netlify.app"],
   },
