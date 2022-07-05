@@ -7,10 +7,12 @@ module.exports = {
   
   async redirects() {
     return [
+      
         {
             source: '/',
             destination: '/blog',
-            basePath: false
+            basePath: false,
+            permanent: true
         }
     ]
   },
