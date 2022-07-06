@@ -11,7 +11,7 @@
 [[plugins]]
 package = "@algolia/netlify-plugin-crawler"
   [plugins.inputs]
-#  branches = ['*']
+  branches = ['*']
   pathPrefix = "/blog"
   renderJavaScript = true
 # customDomain = "guidedogs.org.uk"
