@@ -18,8 +18,8 @@ export default function PageMeta(props) {
     author: {
       "@type": authortype,
       name: authorname,
-      url: authorurl,
-    },
+      url: authorurl
+    }
   };
 
  /** 
