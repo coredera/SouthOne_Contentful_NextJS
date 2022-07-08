@@ -86,12 +86,21 @@ url: authorurl
 
       <link rel="icon" href="/favicon.ico" />
 
-      <script type="application/ld+json">
-        {JSON.stringify(articleStructuredData)}
-      </script>
+      <script type="application/ld+json"
+      
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
+      />
+
+
+       
     
       
       {/*
+
+ {JSON.stringify(articleStructuredData)}
+      </script>
+
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"
