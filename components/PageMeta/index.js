@@ -8,19 +8,19 @@ export default function PageMeta(props) {
   
  
  
-  const articleStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: siteTitle,
-    description: description,
-    image: image,
-    datePublished: date,
-    author: {
-      "@type": authortype,
-      name: authorname,
-      url: authorurl
-    }
-  };
+const articleStructuredData = {
+"@context": "https://schema.org",
+"@type": "Article",
+headline: siteTitle,
+description: description,
+image: image,
+datePublished: date,
+author:{
+"@type": authortype,
+name: authorname,
+url: authorurl
+}
+};
 
  /** 
   const articleStructuredData = {
