@@ -40,6 +40,8 @@ import {
   EmailIcon,
   WhatsappShareButton,
   WhatsappIcon,
+  LinkedinShareButton,
+  LinkedinIcon,
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
 } from "react-share";
@@ -50,44 +52,57 @@ export default function SharePost(props) {
   return (
     <>
       <Box className={ContentListStyles.contentList__sharePost}>
-        <Flex pb={3} pt={0}>Share post</Flex>
+        <Flex pb={3} pt={0}>
+          Share post
+        </Flex>
         <Flex>
-        <Box pr={3}>
-          <FacebookShareButton
-            url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
-            quote={`${post.title}`}
-            hashtag={`#${post.title}`}
-          >
-            <FacebookIcon size={30} round />
-          </FacebookShareButton>
-        </Box>
-    
-        <Box pr={3}>
-          <TwitterShareButton
-            url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
-            title={`${post.title}`}
-          >
-            <TwitterIcon size={30} round />
-          </TwitterShareButton>
-        </Box>
-        <Box pr={3}>
-          <WhatsappShareButton
-            url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
-            title={`${post.title}`}
-            separator=":: "
-          >
-            <WhatsappIcon size={30} round />
-          </WhatsappShareButton>
-        </Box>
-        <Box>
-          <EmailShareButton
-            url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
-            subject={`${post.title}`}
-            body=""
-          >
-            <EmailIcon size={30} round />
-          </EmailShareButton>
-        </Box>
+          <Box pr={3}>
+            <FacebookShareButton
+              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              quote={`${post.title}`}
+              hashtag={`#${post.title}`}
+            >
+              <FacebookIcon size={30} round />
+            </FacebookShareButton>
+          </Box>
+
+          <Box pr={3}>
+            <TwitterShareButton
+              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              title={`${post.title}`}
+            >
+              <TwitterIcon size={30} round />
+            </TwitterShareButton>
+          </Box>
+
+          <Box pr={3}>
+            <LinkedinShareButton
+              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              title={`${post.title}`}
+            
+            >
+              <LinkedinIcon size={30} round />
+            </LinkedinShareButton>
+          </Box>
+
+          <Box pr={3}>
+            <WhatsappShareButton
+              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              title={`${post.title}`}
+              separator=":: "
+            >
+              <WhatsappIcon size={30} round />
+            </WhatsappShareButton>
+          </Box>
+          <Box>
+            <EmailShareButton
+              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              subject={`${post.title}`}
+              body=""
+            >
+              <EmailIcon size={30} round />
+            </EmailShareButton>
+          </Box>
         </Flex>
       </Box>
     </>

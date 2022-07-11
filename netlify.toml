@@ -3,8 +3,20 @@
 
 [[redirects]]
   from = '/*'
-  to = '/blog/404'
-  status = 404
+#  to = '/blog/404'
+  to = '/blog/:splat'
+#  status = 404
+  status = 200
+  
+[[plugins]]
+package = "@algolia/netlify-plugin-crawler"
+  [plugins.inputs]
+  branches = ['*']
+  pathPrefix = "/blog"
+  renderJavaScript = true
+# customDomain = "guidedogs.org.uk"
+
+
 
 #[[headers]]
 #  for = "*" # js files should be set this way

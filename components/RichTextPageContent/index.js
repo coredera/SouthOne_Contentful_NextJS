@@ -281,7 +281,7 @@ export function getRichTextRenderOptions(links, options) {
                     className={RichTextPageContentStyles.reactplayer}
                     controls
                     width="100%"
-                    height="100%"
+                    height="60px"
                   />
                 </div>
               </Box>

@@ -41,7 +41,6 @@ export default function Header() {
           alignItems="center"
           alignContent="start"
           zIndex="999"
-         
         >
           <Box maxWidth="1px" maxHeight="1px" margin="0">
             <div className={HeaderStyles.skipLinks}>
@@ -75,6 +74,24 @@ export default function Header() {
               </a>
             </Link>
           </Box>
+          <Box>TEST</Box>
+          <Box>
+            <link
+              rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css"
+            />
+            <script
+              type="text/javascript"
+              src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+            ></script>
+            <script type="text/javascript">
+              algoliasearchNetlify( appId: '9JP2M7VJDW', apiKey:
+              'e16fe5b9512b4405cea4bcfd94c41bfe', siteId:
+              'e0a8ea41-0317-4ff0-8f21-e5258252626f', branch: 'master',
+              selector: 'div#search', );
+            </script>
+          </Box>
+
           <Spacer />
 
           <Flex display="none">

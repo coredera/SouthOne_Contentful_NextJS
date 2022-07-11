@@ -8,19 +8,19 @@ export default function PageMeta(props) {
   
  
  
-  const articleStructuredData = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: siteTitle,
-    description: description,
-    image: image,
-    datePublished: date,
-    author: {
-      "@type": authortype,
-      name: authorname,
-      url: authorurl,
-    },
-  };
+const articleStructuredData = {
+"@context": "https://schema.org",
+"@type": "Article",
+headline: siteTitle,
+description: description,
+image: image,
+datePublished: date,
+author:{
+"@type": authortype,
+name: authorname,
+url: authorurl
+}
+};
 
  /** 
   const articleStructuredData = {
@@ -86,12 +86,21 @@ export default function PageMeta(props) {
 
       <link rel="icon" href="/favicon.ico" />
 
-      <script type="application/ld+json">
-        {JSON.stringify(articleStructuredData)}
-      </script>
+      <script type="application/ld+json"
+      
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }}
+      />
+
+
+       
     
       
       {/*
+
+ {JSON.stringify(articleStructuredData)}
+      </script>
+
+
       <link
         rel="apple-touch-icon"
         sizes="180x180"
