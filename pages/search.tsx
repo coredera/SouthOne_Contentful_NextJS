@@ -492,7 +492,10 @@ export async function getStaticProps({ preview = false }) {
 
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
   const pageContent = await ContentfulApi.getPageContentBySlug(
-    
+    Config.pageMeta.blogIndex.slug,
+    {
+      preview: "false",
+    },
   );
 
   const totalPages = Math.ceil(
