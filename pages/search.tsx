@@ -644,7 +644,7 @@ function Hit({ hit }: HitProps) {
                     <img
                       src={hit.image}
                       alt={hit.title}
-                      layout="responsive"
+                     
                       style={{
                         borderTopLeftRadius: "20px",
                         borderTopRightRadius: "20px",
