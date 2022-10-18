@@ -104,7 +104,15 @@ import {
   AccordionPanel,
 } from "@chakra-ui/react";
 
-
+/*
+type HitProps = {
+  hit: AlgoliaHit<{
+    title: string;
+    description: string;
+    image: string;
+  }>;
+};
+*/
 
 const DEBOUNCE_TIME = 700;
 
@@ -601,9 +609,7 @@ export async function changeFunc(tagid) {
 
 function Hit({ hit }) {
 
-  
-
-  
+ 
   const url = `https://www.guidedogs.org.uk${hit.url}`;
   
 
