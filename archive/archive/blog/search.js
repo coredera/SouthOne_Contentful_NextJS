@@ -26,6 +26,8 @@ export default function BlogSearch(props) {
     ? pageContent.description
     : "Search | Next.js Contentful blog starter";
 
+  
+
   return (
     <MainLayout preview={preview}>
       <PageMeta
@@ -45,15 +47,14 @@ export default function BlogSearch(props) {
           type="text"
           value={searchValue}
         />
-        
-        
-        <NextLink href="/clone" passHref>
-           <a>link to sitecore page</a>
-         </NextLink>
 
-         <NextLink href="/aboutus" passHref>
-           <a>link to guidedogs about us page</a>
-         </NextLink>
+        <NextLink href="/clone" passHref>
+          <a>link to sitecore page</a>
+        </NextLink>
+
+        <NextLink href="/aboutus" passHref>
+          <a>link to guidedogs about us page</a>
+        </NextLink>
 
         {pageContent.body && (
           <PageContentWrapper>
