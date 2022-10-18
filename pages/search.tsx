@@ -32,7 +32,7 @@ import AlgoliaStyle from "@styles/Algolia.module.scss";
 
 import { useState, useEffect, useRef } from "react";
 
-import { useLocation, useHistory } from "react-router-dom";
+//import { useLocation, useHistory } from "react-router-dom";
 
 import "instantsearch.css/themes/reset.css";
 
