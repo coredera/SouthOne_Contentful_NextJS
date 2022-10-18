@@ -28,7 +28,7 @@ import algoliasearch from "algoliasearch/lite";
 
 import AlgoliaStyle from "@styles/Algolia.module.scss";
 
-import CustomHits from "@components/search/CustomHits";
+//import CustomHits from "@components/search/CustomHits";
 
 import { useState, useEffect, useRef } from "react";
 
