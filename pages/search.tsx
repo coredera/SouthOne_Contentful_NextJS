@@ -419,8 +419,8 @@ export default function BlogSearch(props) {
                             src={post.image.url}
                             width={post.image.width}
                             height={post.image.height}
-                            layout="responsive"
-                            objectFit="contain"
+                          
+                           
                             alt={post.image.description}
                             style={{ borderRadius: "20px" }}
                           />
