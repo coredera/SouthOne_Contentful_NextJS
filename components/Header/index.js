@@ -91,14 +91,16 @@ export default function Header(props) {
 
   return (
     <>
+     
       <Box zIndex="999" className={HeaderStyles.header}>
         <Flex
           backgroundColor={"brand.100"}
-          maxHeight="180"
-          height="142"
+          
+          height={{base: "", lg: "142"}}
           alignItems="center"
           alignContent="start"
           zIndex="999"
+          direction={{ base: "column", lg: "row" }}
         >
           <Box maxWidth="1px" maxHeight="1px" margin="0">
             <div className={HeaderStyles.skipLinks}>
@@ -121,8 +123,9 @@ export default function Header(props) {
               </div>
             </div>
           </Box>
+       
 
-          <Box alignSelf="center" p={10}>
+          <Box alignSelf="center" p={10} >
             <Link href="https://www.guidedogs.org.uk">
               <a
                 className={HeaderStyles.header__logoContainerLink}
@@ -132,12 +135,12 @@ export default function Header(props) {
               </a>
             </Link>
           </Box>
-
-          <Box>
+          <Spacer />
+          <Box pb={{base:"8", lg:"0"}}>
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                location.assign("/blog/search?searchall%5Bquery%5D=" + value);
+                location.assign("/blog/search?searchall%5Bquery%5D=" + encodeURI(value));
               }}
             >
               <Stack>
@@ -157,17 +160,19 @@ export default function Header(props) {
                     onClick={(e) => {
                       e.preventDefault();
                       location.assign(
-                        "/blog/search?searchall%5Bquery%5D=" + value,
+                        "/blog/search?searchall%5Bquery%5D=" + encodeURI(value)
                       );
                     }}
                     borderLeftRadius="0px"
                     borderRightRadius="7px"
                     _hover={{
-                      background: "#4EA8DD"}}
+                      background: "#4EA8DD",
+                    }}
                   >
                     <Box p={1}>
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-search--black.svg`}
+                        alt="Search now"
                       ></img>
                     </Box>
                   </Button>
@@ -175,8 +180,9 @@ export default function Header(props) {
               </Stack>
             </form>
           </Box>
+          
 
-          <Spacer />
+          
 
           <Flex display="none">
             <Box>
@@ -231,8 +237,10 @@ export default function Header(props) {
               </Link>
             </Box>
           </Flex>
-          <Spacer />
+
+          <Box w="3rem"/>
         </Flex>
+       
       </Box>
 
       <Flex
@@ -290,6 +298,7 @@ export default function Header(props) {
 
         <Spacer />
       </Flex>
+      
     </>
   );
 }

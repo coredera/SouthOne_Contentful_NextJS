@@ -16,7 +16,7 @@ import Tags from "@components/Post/Tags";
 import ReactMarkdownRenderers from "@utils/ReactMarkdownRenderers";
 import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
-import router, { useRouter } from "next/router";
+import { useRouter } from "next/router";
 import FeaturedPost from "@components/FeaturedPost";
 import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
@@ -62,7 +62,6 @@ import {
 
 import { Hit as AlgoliaHit } from "instantsearch.js";
 
-
 /*
 import {
  // InstantSearch,
@@ -103,6 +102,11 @@ import {
   AccordionIcon,
   AccordionPanel,
 } from "@chakra-ui/react";
+import { stringify } from "querystring";
+import { stringifyQuery } from "next/dist/server/server-route-utils";
+import { Stream } from "stream";
+import { StringDecoder } from "string_decoder";
+import { unescape, unescapeFacetValue } from "instantsearch.js/es/lib/utils";
 
 /*
 type HitProps = {
@@ -114,6 +118,7 @@ type HitProps = {
 };
 */
 
+/* Depracated due to new Algolia instantsearch hooks package
 const DEBOUNCE_TIME = 700;
 
 const createURL = (state) => `?${qs.stringify(state)}`;
@@ -124,6 +129,7 @@ const searchStateToUrl = (location, searchState) =>
 const urlToSearchState = (location) => qs.parse(location.search.slice(1));
 
 const searchState = "";
+*/
 
 /*
 const routing = {
@@ -295,6 +301,55 @@ export default function BlogSearch(props) {
 
   //q.current = createURL(q.current);
 
+  const router = useRouter();
+
+  //const searchTerm = (window) => window.location.search.slice(22);
+
+  const searchTerm = router.query.toString();
+
+  //const query = useState();
+
+  //const finalquery = query.searchall%5Bquery%5D
+
+  // console.log(router.query);
+
+  //console.log(searchTerm);
+
+  /* Use effect not required. Code runs OK on mount
+  React.useEffect(() => {
+    if (router.isReady) {
+       const query = router.asPath;
+      console.log("inside useEffect");
+      console.log(query);
+      console.log(query);
+      //setQuery(query[4]);
+      
+      //setQuery(query);
+    }
+  }, [router.isReady]);
+
+  console.log("oustide");
+*/
+
+  //console.log(query);
+  //const query;
+
+  /* Depracated due to non handling on 
+  const query = router.asPath.split('=').pop();
+*/
+
+  var n = router.asPath.lastIndexOf('=');
+  if (n!== -1){
+    var result = router.asPath.substring(n + 1);
+  }
+  else( result = " ")
+  
+
+  //console.log("query:");
+  //console.log(result);
+
+  const query2 = decodeURI(result);
+
   pageContent.title = "Search Results";
 
   if (true) {
@@ -311,9 +366,15 @@ export default function BlogSearch(props) {
 
         <BlogBanner pageContent={pageContent} />
 
-        <Box bgColor="brand.50" pt={10} pb={20}>
+        <Box bgColor="white" pt={10} pb={20}>
           <ContentWrapper>
             <Box>
+              <Box pb={8} pt={5} className={ContentListStyles.contentList__excerpt2}>
+              <b>
+      
+                Search results for "{query2}" 
+                </b>
+              </Box>
               <InstantSearch
                 searchClient={searchClient}
                 indexName="searchall"
@@ -421,8 +482,6 @@ export default function BlogSearch(props) {
                             src={post.image.url}
                             width={post.image.width}
                             height={post.image.height}
-                          
-                           
                             alt={post.image.description}
                             style={{ borderRadius: "20px" }}
                           />
@@ -608,25 +667,25 @@ export async function changeFunc(tagid) {
 */
 
 function Hit({ hit }) {
-
- 
   const url = `https://www.guidedogs.org.uk${hit.url}`;
-  
 
   return (
     <>
-      <Box pb={5} pt={5} pl={5} pr={5}>
+      <Box pb={5} pt={5} pl={0} pr={0}>
         <Box
           borderLeft="4px"
           borderLeftColor="brand.100"
-         
           borderBottom="1px"
           borderBottomColor="lightgrey"
           borderTop="1px"
           borderTopColor="lightgrey"
           pl={5}
         >
-          <Flex pb={20} pt={10}>
+          <Flex
+            pb={20}
+            pt={10}
+            direction={{ base: "column-reverse", lg: "row" }}
+          >
             <Box pr={10}>
               <Flex direction="column">
                 <Box pb={3}>
@@ -644,12 +703,14 @@ function Hit({ hit }) {
             <Spacer />
             <Box>
               {hit.image && (
-                <Box width="20rem">
+                <Box
+                  width={{ base: "", lg: "20rem" }}
+                  pb={{ base: "8", lg: "0" }}
+                >
                   <a href={url}>
                     <img
                       src={hit.image}
                       alt={hit.title}
-                     
                       style={{
                         borderTopLeftRadius: "20px",
                         borderTopRightRadius: "20px",
