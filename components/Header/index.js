@@ -92,13 +92,13 @@ export default function Header(props) {
   return (
     <>
      
-      <Box zIndex="999" className={HeaderStyles.header}>
+      <Box zIndex="999" className={HeaderStyles.header} >
         <Flex
           backgroundColor={"brand.100"}
           
           height={{base: "", lg: "142"}}
-          alignItems="center"
-          alignContent="start"
+          alignSelf="left"
+          
           zIndex="999"
           direction={{ base: "column", lg: "row" }}
         >
@@ -125,7 +125,7 @@ export default function Header(props) {
           </Box>
        
 
-          <Box alignSelf="center" p={10} >
+          <Box alignSelf="start" p={8} >
             <Link href="https://www.guidedogs.org.uk">
               <a
                 className={HeaderStyles.header__logoContainerLink}
@@ -136,7 +136,7 @@ export default function Header(props) {
             </Link>
           </Box>
           <Spacer />
-          <Box pb={{base:"8", lg:"0"}}>
+          <Box pb={{base:"8", lg:"0"}} pl={5} pr={5} pt={{base:"0", lg:"14"}}  >
             <form
               onSubmit={(e) => {
                 e.preventDefault();
