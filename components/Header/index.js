@@ -7,24 +7,79 @@ import { Config } from "@utils/Config";
 //import Logo from "./logo/Logo";
 import Logo from "../Logo/index.tsx";
 //import search from "@algolia/algoliasearchNetlify.js";
+import Search from "@components/Search";
+import PostList from "@components/PostList";
+import ContentListStyles from "@styles/ContentList.module.css";
 
 import { MdOpenInNew } from "react-icons/md";
+
+import { useState, useEffect } from "react";
+
+//import { ContentfulApi } from "@utils/ContentfulApi";
+import ContentfulApi from "@utils/ContentfulApi";
 
 import {
   Box,
   Flex,
+  form,
   Heading,
+  Input,
+  InputLeftAddon,
+  InputRightAddon,
+  InputRightElement,
+  LinkOverlay,
+  LinkBox,
   useBreakpointValue,
   useColorMode,
   SimpleGrid,
   GridItem,
   Spacer,
+  Stack,
   Icon,
   Button,
+  InputGroup,
 } from "@chakra-ui/react";
 
-export default function Header() {
+import * as React from "react";
+
+//import { connectScrollTo } from "react-instantsearch-dom";
+
+export default function Header(props) {
   const router = useRouter();
+
+  const {
+    sortedBlogPostTags,
+    blogPostTags,
+    featuredPost,
+    topPostsArray,
+    postSummaries,
+    currentPage,
+    totalPages,
+    pageContent,
+    preview,
+  } = props;
+
+  //const [count, setCount] = useState(0);
+
+  /** 
+  useEffect(() => {
+    console.log("running useEffect");
+    document.title = `You clicked ${count} times`;
+   
+   async function fetchData() {
+    console.log("Running async");
+      //const posts = await getPosts();
+     // console.log("Running async");
+     // setData(posts);
+    }
+    fetchData();
+  }, []);
+
+*/
+
+  //});
+  //console.log("Posts:");
+  //console.log(posts);
 
   //const { colorMode } = useColorMode();
   //const colorSecondary = {
@@ -32,16 +87,20 @@ export default function Header() {
   //  dark: "#002B5B",
   //};
 
+  const [value, setValue] = React.useState("");
+
   return (
     <>
-      <Box zIndex="999" className={HeaderStyles.header}>
+     
+      <Box zIndex="999" className={HeaderStyles.header} >
         <Flex
           backgroundColor={"brand.100"}
-          maxHeight="180"
-          height="142"
-          alignItems="center"
-          alignContent="start"
+          
+          height={{base: "", lg: "142"}}
+          alignSelf="left"
+          
           zIndex="999"
+          direction={{ base: "column", lg: "row" }}
         >
           <Box maxWidth="1px" maxHeight="1px" margin="0">
             <div className={HeaderStyles.skipLinks}>
@@ -64,8 +123,9 @@ export default function Header() {
               </div>
             </div>
           </Box>
+       
 
-          <Box alignSelf="center" p={10}>
+          <Box alignSelf="start" p={8} >
             <Link href="https://www.guidedogs.org.uk">
               <a
                 className={HeaderStyles.header__logoContainerLink}
@@ -75,9 +135,54 @@ export default function Header() {
               </a>
             </Link>
           </Box>
-      
-
           <Spacer />
+          <Box pb={{base:"8", lg:"0"}} pl={5} pr={5} pt={{base:"0", lg:"14"}}  >
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                location.assign("/blog/search?searchall%5Bquery%5D=" + encodeURI(value));
+              }}
+            >
+              <Stack>
+                <InputGroup>
+                  <Input
+                    variant="outline"
+                    backgroundColor="white"
+                    value={value}
+                    placeholder="Search here..."
+                    onChange={(e) => setValue(e.currentTarget.value)}
+                    borderRightRadius="0px"
+                  />
+
+                  <Button
+                    width="4.5rem"
+                    backgroundColor="brand.300"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      location.assign(
+                        "/blog/search?searchall%5Bquery%5D=" + encodeURI(value)
+                      );
+                    }}
+                    borderLeftRadius="0px"
+                    borderRightRadius="7px"
+                    _hover={{
+                      background: "#4EA8DD",
+                    }}
+                  >
+                    <Box p={1}>
+                      <img
+                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-search--black.svg`}
+                        alt="Search now"
+                      ></img>
+                    </Box>
+                  </Button>
+                </InputGroup>
+              </Stack>
+            </form>
+          </Box>
+          
+
+          
 
           <Flex display="none">
             <Box>
@@ -132,8 +237,10 @@ export default function Header() {
               </Link>
             </Box>
           </Flex>
-          <Spacer />
+
+          <Box w="3rem"/>
         </Flex>
+       
       </Box>
 
       <Flex
@@ -191,6 +298,37 @@ export default function Header() {
 
         <Spacer />
       </Flex>
+      
     </>
   );
+}
+
+export async function getPosts() {
+  //const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+
+  console.log("running getPosts");
+
+  //const posts = [];
+
+  //const post = await ContentfulApi.getPostBySlug("guide-dogs-annual-report-for-2021-is-published");
+
+  const posts = await ContentfulApi.getAllBlogPosts();
+
+  console.log(posts);
+
+  return {
+    posts,
+  };
+  /** 
+    props: {
+      sortedBlogPostTags,
+      featuredPost,
+      topPostsArray,
+      preview,
+      postSummaries: postSummaries.items,
+      totalPages,
+      currentPage: "1",
+      pageContent: pageContent || null,
+    },
+  */
 }

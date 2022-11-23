@@ -1,4 +1,4 @@
-import { createNoSubstitutionTemplateLiteral } from "typescript";
+//import { createNoSubstitutionTemplateLiteral } from "typescript";
 import { Config } from "./Config";
 
 /**
@@ -530,6 +530,7 @@ export default class ContentfulApi {
    *
    */
   static async getPostBySlug(slug, options = defaultOptions) {
+    console.log("running graphQL");
     const query = `{
       blogPostCollection(limit: 1, where: {slug: "${slug}"}, preview: ${options.preview}) {
         total
