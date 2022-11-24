@@ -51,29 +51,6 @@ function OptanonWrapper() { }
 
 
 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
-        
-<script
-            dangerouslySetInnerHTML={{
-              __html: `
-             
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
-<script type="text/javascript">
-  algoliasearchNetlify({
-    appId: '9JP2M7VJDW',
-    apiKey: 'e16fe5b9512b4405cea4bcfd94c41bfe',
-    siteId: 'e0a8ea41-0317-4ff0-8f21-e5258252626f',
-    branch: 'master',
-    selector: 'div#search',
-  });
-</script>
-<script>
-  const { search } = window['@algolia/algoliasearchNetlify.js'];
-</script>
-`,
-            }}
-          />
   
         
         </Head>
