@@ -131,7 +131,10 @@ export default function Header(props) {
                 className={HeaderStyles.header__logoContainerLink}
                 aria-label="Navigate to home page"
               >
-                <Logo />
+                    <img
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo/s1logo.png`}
+                          
+                        />
               </a>
             </Link>
           </Box>
