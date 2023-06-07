@@ -125,12 +125,13 @@ export default function Header(props) {
           </Box>
        
 
-          <Box alignSelf="start" p={8} >
+          <Box boxSize='100%' alignSelf="start" p={3} >
             <Link href="https://www.guidedogs.org.uk">
               <a
                 className={HeaderStyles.header__logoContainerLink}
                 aria-label="Navigate to home page"
               >
+
                     <img
                           src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo/s1logo.png`}
                           
