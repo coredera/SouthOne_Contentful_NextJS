@@ -20,7 +20,7 @@ import router, { useRouter } from "next/router";
 import FeaturedPost from "@components/FeaturedPost";
 import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
-import BlogBanner from "@components/BlogBanner";
+//import BlogBanner from "@components/BlogBanner";//
 import SocialMedia from "@components/SocialMedia";
 
 
@@ -88,6 +88,7 @@ export default function BlogIndex(props) {
   //  )}
 
   //console.log(postSummaries);
+//code to return blogbanner component: <BlogBanner pageContent={pageContent} />  //
 
   if (true) {
     return (
@@ -99,9 +100,7 @@ export default function BlogIndex(props) {
           canonical={Config.pageMeta.blogIndex.url}
           metatitle={pageContent.metaTitle}
           metadescription={pageContent.metaDescription}
-        />
-
-        <BlogBanner pageContent={pageContent} />
+        /> 
 
         <ContentWrapper>
           <Box pt={10}>
@@ -183,7 +182,7 @@ export default function BlogIndex(props) {
                     <a>
                       <Flex>
                         <h3 className={ContentListStyles.contentList__homelink}>
-                          <Box> Home</Box>
+                          <Box> Home </Box>
                         </h3>
                       </Flex>
                     </a>
