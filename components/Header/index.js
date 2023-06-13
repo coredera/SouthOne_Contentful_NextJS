@@ -125,7 +125,7 @@ export default function Header(props) {
           </Box>
        
 
-          <Box boxSize='100%' alignSelf="start" p={3} >
+          <Box boxSize='100%' alignSelf="start" p={4} >
             <Link href="https://www.guidedogs.org.uk">
               <a
                 className={HeaderStyles.header__logoContainerLink}
