@@ -39,11 +39,11 @@ export default function PopularTopics(props) {
       <Box bgColor="brand.100">
         <ContentWrapper>
           <Box pb={20} pt={5}>
-            <Flex color="white" pt={10}>
+            <Flex color="black" pt={10}>
               <h2 className={TypographyStyles.heading__h2}>Popular Topics</h2>
             </Flex>
             <Box display={{ base: "none", md: "block" }}>
-              <Flex color="white" alignSelf="center">
+              <Flex color="black" alignSelf="center">
                 <Box>
                   <Flex>
                     <Box pr={5} alignSelf="center">
@@ -160,7 +160,7 @@ export default function PopularTopics(props) {
             </Box>
 
             <Box display={{ base: "block", md: "none" }}>
-              <Flex color="white" alignSelf="center" pb={10}>
+              <Flex color="black" alignSelf="center" pb={10}>
                 <Box pr={4}>
                   <Flex>
                     <Box pr={5} alignSelf="center">
