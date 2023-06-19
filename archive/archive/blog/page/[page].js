@@ -39,20 +39,20 @@ export default function BlogIndexPage(props) {
     postSummaries,
     totalPages,
     currentPage,
-    pageContent,
+    page,
     preview,
   } = props;
 
   /**
-   * This provides some fallback values to PageMeta so that a pageContent
+   * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
 
 
 
-  const pageTitle = pageContent ? pageContent.title : "Blog";
-  const pageDescription = pageContent
-    ? pageContent.description
+  const pageTitle = page ? page.title : "Blog";
+  const pageDescription = page
+    ? page.description
     : "Articles | Next.js Contentful blog starter";
 
   return (
@@ -63,14 +63,14 @@ export default function BlogIndexPage(props) {
         url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
       />
 
-      {pageContent.heroBanner !== null && (
-        <HeroBanner data={pageContent.heroBanner} />
+      {page.heroBanner !== null && (
+        <HeroBanner data={page.heroBanner} />
       )}
 
       <ContentWrapper>
-        {pageContent.body && (
+        {page.body && (
           <PageContentWrapper>
-            <RichTextPageContent richTextBodyField={pageContent.body} />
+            <RichTextPageContent richTextBodyField={page.body} />
           </PageContentWrapper>
         )}
          <Flex
@@ -138,7 +138,7 @@ export async function getStaticProps({ params, preview = false }) {
   const totalPages = Math.ceil(
     postSummaries.total / Config.pagination.pageSize,
   );
-  const pageContent = await ContentfulApi.getPageContentBySlug(
+  const page = await ContentfulApi.getPageBySlug(
     Config.pageMeta.blogIndex.slug,
     {
       preview: preview,
@@ -151,7 +151,7 @@ export async function getStaticProps({ params, preview = false }) {
       postSummaries: postSummaries.items,
       totalPages,
       currentPage: params.page,
-      pageContent: pageContent || null,
+      page: page || null,
     },
   };
 }

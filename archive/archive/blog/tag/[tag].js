@@ -130,9 +130,9 @@ export default function PostWrapper(props) {
 }
 
 export async function getStaticPaths() {
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
-  const paths = blogPostTags.map(({ id }) => {
+  const paths = articleTags.map(({ id }) => {
     return { params: { tag: id } };
   });
 
@@ -145,7 +145,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
   const relatedPosts = posts.reduce((acc, post) => {
     if ( 

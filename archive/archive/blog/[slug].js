@@ -88,9 +88,9 @@ export default function PostWrapper(props) {
 } 
 
 export async function getStaticPaths() {
-  const blogPostSlugs = await ContentfulApi.getAllPostSlugs();
+  const articleSlugs = await ContentfulApi.getAllPostSlugs();
 
-  const paths = blogPostSlugs.map((slug) => {
+  const paths = articleSlugs.map((slug) => {
     return { params: { slug } };
   });
 

@@ -9,7 +9,7 @@
             "id": "84zl5qdw0ore"
           }
         },
-        "id": "pageContent",
+        "id": "page",
         "type": "ContentType",
         "createdAt": "2021-02-25T10:11:09.955Z",
         "updatedAt": "2021-02-25T10:11:12.810Z",
@@ -470,7 +470,7 @@
             "id": "84zl5qdw0ore"
           }
         },
-        "id": "blogPost",
+        "id": "article",
         "type": "ContentType",
         "createdAt": "2021-02-25T10:11:09.986Z",
         "updatedAt": "2021-03-02T14:02:44.163Z",
@@ -824,7 +824,7 @@
         },
         "contentType": {
           "sys": {
-            "id": "pageContent",
+            "id": "page",
             "type": "Link",
             "linkType": "ContentType"
           }
@@ -1105,7 +1105,7 @@
         },
         "contentType": {
           "sys": {
-            "id": "blogPost",
+            "id": "article",
             "type": "Link",
             "linkType": "ContentType"
           }
@@ -1381,7 +1381,7 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "pageContent"
+            "id": "page"
           }
         }
       },
@@ -1459,7 +1459,7 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "pageContent"
+            "id": "page"
           }
         }
       },
@@ -1577,7 +1577,7 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "blogPost"
+            "id": "article"
           }
         }
       },
@@ -1993,7 +1993,7 @@
           "en-US": "javascript"
         },
         "code": {
-          "en-US": "import ContentfulApi from \"@utils/ContentfulApi\";\n\nexport default function buildRss(props) {\n\n  return (\n    //...\n  )\n}\n\nexport async function getStaticProps() {\n  const posts = await ContentfulApi.getAllBlogPosts();\n\n  //...\n}"
+          "en-US": "import ContentfulApi from \"@utils/ContentfulApi\";\n\nexport default function buildRss(props) {\n\n  return (\n    //...\n  )\n}\n\nexport async function getStaticProps() {\n  const posts = await ContentfulApi.getAllArticles();\n\n  //...\n}"
         }
       }
     },
@@ -2062,7 +2062,7 @@
           "en-US": "javascript"
         },
         "code": {
-          "en-US": "import ContentfulApi from \"@utils/ContentfulApi\";\n\nexport default function buildRss(props) {\n\n  return (\n    //...\n  )\n}\n\nfunction buildRssItems(posts) {\n\n  // This is the minimum data required for an RSS feed item\n\n  return posts\n    .map((post) => {\n      return `\n        <item>\n          <title>${post.title}</title>\n          <description>${post.excerpt}</description>\n          <author>${Config.site.email} (${Config.site.owner})</author>\n          <link>https://${Config.site.domain}/blog/${post.slug}</link>\n          <guid>https://${Config.site.domain}/blog/${post.slug}</guid>\n          <pubDate>${post.date}</pubDate>\n        </item>\n        `;\n    })\n    .join(\"\");\n}\n\nexport async function getStaticProps() {\n  const posts = await ContentfulApi.getAllBlogPosts();\n\n  const feedString = `<?xml version=\"1.0\"?>\n    <rss version=\"2.0\" \n      xmlns:atom=\"http://www.w3.org/2005/Atom\">\n      <channel>\n        <title>${Config.site.title}</title>\n        <link>https://${Config.site.domain}</link>\n        <atom:link \n          href=\"https://${Config.site.domain}/feed.xml\" \n          rel=\"self\" \n          type=\"application/rss+xml\" />\n        <description>${Config.site.feedDescription}</description>\n\n        ${buildRssItems(posts)}\n\n    </channel>\n    </rss>`;\n\n  //...\n}"
+          "en-US": "import ContentfulApi from \"@utils/ContentfulApi\";\n\nexport default function buildRss(props) {\n\n  return (\n    //...\n  )\n}\n\nfunction buildRssItems(posts) {\n\n  // This is the minimum data required for an RSS feed item\n\n  return posts\n    .map((post) => {\n      return `\n        <item>\n          <title>${post.title}</title>\n          <description>${post.excerpt}</description>\n          <author>${Config.site.email} (${Config.site.owner})</author>\n          <link>https://${Config.site.domain}/blog/${post.slug}</link>\n          <guid>https://${Config.site.domain}/blog/${post.slug}</guid>\n          <pubDate>${post.date}</pubDate>\n        </item>\n        `;\n    })\n    .join(\"\");\n}\n\nexport async function getStaticProps() {\n  const posts = await ContentfulApi.getAllArticles();\n\n  const feedString = `<?xml version=\"1.0\"?>\n    <rss version=\"2.0\" \n      xmlns:atom=\"http://www.w3.org/2005/Atom\">\n      <channel>\n        <title>${Config.site.title}</title>\n        <link>https://${Config.site.domain}</link>\n        <atom:link \n          href=\"https://${Config.site.domain}/feed.xml\" \n          rel=\"self\" \n          type=\"application/rss+xml\" />\n        <description>${Config.site.feedDescription}</description>\n\n        ${buildRssItems(posts)}\n\n    </channel>\n    </rss>`;\n\n  //...\n}"
         }
       }
     },
@@ -2257,7 +2257,7 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "blogPost"
+            "id": "article"
           }
         }
       },
@@ -3408,7 +3408,7 @@
           "sys": {
             "type": "Link",
             "linkType": "ContentType",
-            "id": "blogPost"
+            "id": "article"
           }
         }
       },
@@ -3608,7 +3608,7 @@
                         "type": "code"
                       }
                     ],
-                    "value": "blogPost.body",
+                    "value": "article.body",
                     "nodeType": "text"
                   },
                   {

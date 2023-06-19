@@ -110,9 +110,9 @@ export default function PostWrapper(props) {
 }
 
 export async function getStaticPaths() {
-  const blogPostSlugs = await ContentfulApi.getAllPostSlugs();
+  const articleSlugs = await ContentfulApi.getAllPostSlugs();
 
-  const paths = blogPostSlugs.map((slug) => {
+  const paths = articleSlugs.map((slug) => {
     return { params: { slug } };
   });
 
@@ -127,13 +127,13 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const post = await ContentfulApi.getPostBySlug(params.slug);
 
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
-  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+  const sortedBlogPostTags = articleTags.sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
   const topPostsIds = await ContentfulApi.getTopPostsIds();
 

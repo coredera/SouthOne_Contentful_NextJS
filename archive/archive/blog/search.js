@@ -13,17 +13,17 @@ import HeroBanner from "@components/HeroBanner";
 import { useFuzzySearch } from "@hooks/useFuzzySearch";
 
 export default function BlogSearch(props) {
-  const { posts, pageContent, preview } = props;
+  const { posts, page, preview } = props;
 
   const { onReset, onSearch, results, searchValue } = useFuzzySearch(posts);
 
   /**
-   * This provides some fallback values to PageMeta so that a pageContent
+   * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = pageContent ? pageContent.title : "Blog Search";
-  const pageDescription = pageContent
-    ? pageContent.description
+  const pageTitle = page ? page.title : "Blog Search";
+  const pageDescription = page
+    ? page.description
     : "Search | Next.js Contentful blog starter";
 
   
@@ -36,8 +36,8 @@ export default function BlogSearch(props) {
         url={Config.pageMeta.blogIndex.url}
       />
 
-      {pageContent.heroBanner !== null && (
-        <HeroBanner data={pageContent.heroBanner} />
+      {page.heroBanner !== null && (
+        <HeroBanner data={page.heroBanner} />
       )}
 
       <ContentWrapper>
@@ -56,9 +56,9 @@ export default function BlogSearch(props) {
           <a>link to guidedogs about us page</a>
         </NextLink>
 
-        {pageContent.body && (
+        {page.body && (
           <PageContentWrapper>
-            <RichTextPageContent richTextBodyField={pageContent.body} />
+            <RichTextPageContent richTextBodyField={page.body} />
           </PageContentWrapper>
         )}
         {results.length > 0 ? (
@@ -75,8 +75,8 @@ export default function BlogSearch(props) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const posts = await ContentfulApi.getAllBlogPosts();
-  const pageContent = await ContentfulApi.getPageContentBySlug(
+  const posts = await ContentfulApi.getAllArticles();
+  const page = await ContentfulApi.getPageBySlug(
     Config.pageMeta.blogIndex.slug,
     {
       preview: preview,
@@ -87,7 +87,7 @@ export async function getStaticProps({ preview = false }) {
     props: {
       preview,
       posts,
-      pageContent: pageContent || null,
+      page: page || null,
     },
   };
 }
