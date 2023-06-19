@@ -83,8 +83,8 @@ export default function BlogBanner(props) {
                       </Link>
                     </Box>
                     <Spacer />
-                    
-                    
+                    <Box>&gt;</Box>
+                    <Spacer />
                     <Box style={{ textDecoration: "underline" }}>
                       <Link href={`${Config.pageMeta.home.slug}`}>
                         <a>

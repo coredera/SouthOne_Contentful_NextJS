@@ -80,15 +80,14 @@
 .contentList__popularPostHeading {
   padding: 1rem;
   padding-top: 1.8rem;
-  border: 0.1rem solid #002b5b;
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   color: white;
-  background-color: #002b5b;
+  background-color: #1b9ca4;
 
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-body);
-  box-shadow: 0px 12px 1px 0 #002b5b;
+  box-shadow: 0px 12px 1px 0 #1b9ca4;
 
   font-size: 1.3rem;
   line-height: 1;
@@ -110,14 +109,13 @@
 .contentList__SocialMedia {
   padding: 1rem;
   padding-top: 1.8rem;
-  border: 0.1rem solid #002b5b;
   border-radius: 1rem;
   color: white;
-  background-color: #002b5b;
+  background-color: #1b9ca4;
 
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-body);
-  box-shadow: 0px 12px 1px 0 #002b5b;
+  box-shadow: 0px 12px 1px 0 #1b9ca4;
 
   font-size: 1.3rem;
   line-height: 1;
