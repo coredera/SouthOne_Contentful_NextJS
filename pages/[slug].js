@@ -53,7 +53,7 @@ export default function PostWrapper(props) {
         url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
         canonical={post.externalUrl ? post.externalUrl : `${Config.pageMeta.blogIndex.url}/${post.slug}`}
         image={post.image.url}
-        date={post.date}
+        date={post.datePublished}
         authortype={post.author.type}
         authorname={post.author.name}
         authorurl={post.author.websiteUrl}

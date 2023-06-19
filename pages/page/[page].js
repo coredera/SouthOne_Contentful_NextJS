@@ -170,7 +170,7 @@ export async function getStaticProps({ params, preview = false }) {
     postSummaries.total / Config.pagination.pageSize,
   );
   const page = await ContentfulApi.getPageBySlug(
-    Config.pageMeta.blogIndex.slug,
+    Config.pageMeta.home.slug,
     {
       preview: preview,
     },

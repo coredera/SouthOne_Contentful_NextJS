@@ -52,7 +52,7 @@ export default function FeaturedPost(props) {
               </Box>
               <Box pb={3}>
                 <b>Date: </b>
-                <PublishedDate date={featuredArticle.date} alignSelf="center" />
+                <PublishedDate date={featuredArticle.datePublished} alignSelf="center" />
               </Box>
               <Box className={ContentListStyles.contentList__author} pb={2}>
                 {featuredArticle.author !== null && (
@@ -145,7 +145,7 @@ export default function FeaturedPost(props) {
           <Flex pb={5} />
           <Box pb={2}>
             <b>Date: </b>
-            <PublishedDate date={featuredArticle.date} alignSelf="center" />
+            <PublishedDate date={featuredArticle.datePublished} alignSelf="center" />
           </Box>
           <Box className={ContentListStyles.contentList__author} pt={0} pb={1}>
             {featuredArticle.author !== null && (

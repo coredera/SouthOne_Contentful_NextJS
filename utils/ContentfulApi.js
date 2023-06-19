@@ -168,10 +168,16 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
+    //console.log(response);
+
     const { total } = response.data.articleCollection;
     const slugs = response.data.articleCollection.items
       ? response.data.articleCollection.items.map((item) => item.slug)
       : [];
+
+
+
+      
 
     return { slugs, total };
   }
@@ -624,7 +630,7 @@ export default class ContentfulApi {
                   }
                   ... on Button {
                     title
-                    embedUrl
+                    url
                   }
                 }
                 block {
@@ -647,7 +653,7 @@ export default class ContentfulApi {
                   }
                   ... on Button {
                     title
-                    embedUrl
+                    url
                   }
                   
                 }

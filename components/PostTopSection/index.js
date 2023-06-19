@@ -130,7 +130,7 @@ export default function PostTopSection(props) {
                     <Box alignSelf="center" className={TypographyStyles.date}>
                       <b>Date: </b>
                       <PublishedDate
-                        date={featuredArticle.date}
+                        date={featuredArticle.datePublished}
                         alignSelf="center"
                       />
                     </Box>
@@ -185,7 +185,7 @@ export default function PostTopSection(props) {
                 </h1>
                 <Box alignSelf="center" className={TypographyStyles.date}>
                   <b>Date: </b>
-                  <PublishedDate date={featuredArticle.date} alignSelf="center" />
+                  <PublishedDate date={featuredArticle.datePublished} alignSelf="center" />
                 </Box>
                 <Box className={ContentListStyles.contentList__author}>
                   {featuredArticle.author !== null && (

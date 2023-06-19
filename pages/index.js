@@ -101,7 +101,7 @@ export default function BlogIndex(props) {
           metatitle={page.metaTitle}
           metadescription={page.metaDescription}
         /> 
-        <BlogBanner pageContent={pageContent} />
+        <BlogBanner page={page} />
         <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />     
         <ContentWrapper>
           <Box pt={10}>
@@ -302,7 +302,7 @@ export default function BlogIndex(props) {
     );
   }
 }
-
+ 
 export async function getStaticProps({ preview = false }) {
   const articleTags = await ContentfulApi.getAllUniquePostTags();
   const posts = await ContentfulApi.getAllArticles();
