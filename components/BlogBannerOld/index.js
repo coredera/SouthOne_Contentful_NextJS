@@ -32,17 +32,17 @@ import {
 } from "@chakra-ui/react";
 
 export default function BlogBanner(props) {
-  const page = props.page;
+  const pageContent = props.pageContent;
 
-  //{page.body && (
+  //{pageContent.body && (
   //  <RichTextPageContent
-  //    richTextBodyField={page.body}
+  //    richTextBodyField={pageContent.body}
   //    className={TypographyStyles.bodyCopy}
   //  />
   //)}
 
 
-  //<img src={page.heroBanner.image.url} 
+  //<img src={pageContent.heroBanner.image.url} 
   //style={{ position: "absolute", top: "142px", width:"100%", height:"480px", objectFit:"cover",  }}
   ///>
 
@@ -50,7 +50,7 @@ export default function BlogBanner(props) {
   return (
     <>
       <Box
-        backgroundImage={page.heroBanner.image.url}
+        backgroundImage={pageContent.heroBanner.image.url}
         height="450"
         bgRepeat="no-repeat"
         
@@ -83,8 +83,8 @@ export default function BlogBanner(props) {
                       </Link>
                     </Box>
                     <Spacer />
-                    
-                    
+                    <Box>&gt;</Box>
+                    <Spacer />
                     <Box style={{ textDecoration: "underline" }}>
                       <Link href={`${Config.pageMeta.home.slug}`}>
                         <a>
@@ -99,10 +99,10 @@ export default function BlogBanner(props) {
               <Flex>
                 <Box pb={10} pt={7} maxWidth="600">
                   <h1 className={TypographyStyles.heading__h1}>
-                    {page.title}
+                    {pageContent.title}
                   </h1>
                   <div className={TypographyStyles.bodyCopy}>
-                    {page.description}
+                    {pageContent.description}
                   </div>
                 </Box>
                 <Box></Box>
@@ -140,7 +140,7 @@ export default function BlogBanner(props) {
           </Flex>
         </Box> 
         <Box
-          backgroundImage={page.heroBanner.image.url}
+          backgroundImage={pageContent.heroBanner.image.url}
           height="300"
           bgRepeat="no-repeat"
           bgSize="cover"
@@ -158,7 +158,7 @@ export default function BlogBanner(props) {
           fontSize="2.5em"
           marginBottom="0"
         >
-          {page.title}
+          {pageContent.title}
         </Box>
       </Box>
     </>

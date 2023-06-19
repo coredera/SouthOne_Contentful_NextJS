@@ -20,7 +20,7 @@ import router, { useRouter } from "next/router";
 import FeaturedPost from "@components/FeaturedPost";
 import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
-//import BlogBanner from "@components/BlogBanner";//
+import BlogBanner from "@components/BlogBanner";
 import SocialMedia from "@components/SocialMedia";
 
 
@@ -101,7 +101,8 @@ export default function BlogIndex(props) {
           metatitle={page.metaTitle}
           metadescription={page.metaDescription}
         /> 
-
+        <BlogBanner pageContent={pageContent} />
+        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />     
         <ContentWrapper>
           <Box pt={10}>
           {featuredArticle !== null && (
@@ -109,9 +110,6 @@ export default function BlogIndex(props) {
           )}
           </Box>
         </ContentWrapper>
-
-        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
-
         <Box bgColor="brand.50" pt={10} pb={20}>
           <ContentWrapper>
             <Flex>
