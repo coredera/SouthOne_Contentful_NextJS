@@ -225,13 +225,13 @@ const routing = {
 export default function BlogSearch(props) {
   const {
     sortedBlogPostTags,
-    blogPostTags,
-    featuredPost,
+    articleTags,
+    featuredArticle,
     topPostsArray,
     postSummaries,
     currentPage,
     totalPages,
-    pageContent,
+    page,
     preview,
   } = props;
 
@@ -244,25 +244,25 @@ export default function BlogSearch(props) {
 
   //console.log(postSummaries);
 
-  //console.log("featuredPost:");
-  //console.log(featuredPost);
+  //console.log("featuredArticle:");
+  //console.log(featuredArticle);
 
   /**
-   * This provides some fallback values to PageMeta so that a pageContent
+   * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = pageContent ? pageContent.title : "Blog";
-  const pageDescription = pageContent
-    ? pageContent.description
+  const pageTitle = page ? page.title : "Blog";
+  const pageDescription = page
+    ? page.description
     : "Guidedogs UK Blog";
 
-  //console.log(featuredPost);
+  //console.log(featuredArticle);
 
-  //console.log(pageContent.heroBanner.image.url);
+  //console.log(page.heroBanner.image.url);
 
   // Original hero banner code
-  //  {pageContent.heroBanner !== null && (
-  //    <HeroBanner data={pageContent.heroBanner} />
+  //  {page.heroBanner !== null && (
+  //    <HeroBanner data={page.heroBanner} />
   //  )}
 
   //console.log(postSummaries);
@@ -350,21 +350,21 @@ export default function BlogSearch(props) {
 
   const query2 = decodeURI(result);
 
-  pageContent.title = "Search Results";
+  page.title = "Search Results";
 
   if (true) {
     return (
       <MainLayout preview={preview} posts={postSummaries}>
         <PageMeta
-          title={pageContent.title}
-          description={pageContent.description}
+          title={page.title}
+          description={page.description}
           url={Config.pageMeta.blogIndex.url}
           canonical={Config.pageMeta.blogIndex.url}
-          metatitle={pageContent.metaTitle}
-          metadescription={pageContent.metaDescription}
+          metatitle={page.metaTitle}
+          metadescription={page.metaDescription}
         />
 
-        <BlogBanner pageContent={pageContent} />
+        <BlogBanner page={page} />
 
         <Box bgColor="white" pt={10} pb={20}>
           <ContentWrapper>
@@ -394,15 +394,15 @@ export default function BlogSearch(props) {
     return (
       <MainLayout preview={preview}>
         <PageMeta
-          title={pageContent.title}
-          description={pageContent.description}
+          title={page.title}
+          description={page.description}
           url={Config.pageMeta.blogIndex.url}
-          metatitle={pageContent.metaTitle}
-          metadescription={pageContent.metaDescription}
+          metatitle={page.metaTitle}
+          metadescription={page.metaDescription}
         />
 
         <Box
-          backgroundImage={pageContent.heroBanner.image.url}
+          backgroundImage={page.heroBanner.image.url}
           height="450"
           bgRepeat="no-repeat"
           bgSize="cover"
@@ -434,11 +434,11 @@ export default function BlogSearch(props) {
               <Flex>
                 <Box pb={10} pt={7} maxWidth="600" pl={0}>
                   <h1 className={TypographyStyles.heading__h1}>
-                    {pageContent.title}
+                    {page.title}
                   </h1>
-                  {pageContent.body && (
+                  {page.body && (
                     <RichTextPageContent
-                      richTextBodyField={pageContent.body}
+                      richTextBodyField={page.body}
                       className={TypographyStyles.bodyCopy}
                     />
                   )}
@@ -545,14 +545,14 @@ export default function BlogSearch(props) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
+  const posts = await ContentfulApi.getAllArticles();
 
-  // console.log("blogPostTags");
-  // console.log(blogPostTags);
+  // console.log("articleTags");
+  // console.log(articleTags);
 
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
-  const pageContent = await ContentfulApi.getPageContentBySlug(
+  const page = await ContentfulApi.getPageBySlug(
     Config.pageMeta.blogIndex.slug,
     {
       preview: "false",
@@ -563,7 +563,7 @@ export async function getStaticProps({ preview = false }) {
     postSummaries.total / Config.pagination.pageSize,
   );
 
-  const featuredPost = await ContentfulApi.getFeaturedPost();
+  const featuredArticle = await ContentfulApi.getFeaturedArticle();
 
   //const topPosts = await ContentfulApi.getTopPosts();
 
@@ -638,20 +638,20 @@ export async function getStaticProps({ preview = false }) {
     return acc;
   }, []);
 
-  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+  const sortedBlogPostTags = articleTags.sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
   return {
     props: {
       sortedBlogPostTags,
-      featuredPost,
+      featuredArticle,
       topPostsArray,
       preview,
       postSummaries: postSummaries.items,
       totalPages,
       currentPage: "1",
-      pageContent: pageContent || null,
+      page: page || null,
     },
   };
 }

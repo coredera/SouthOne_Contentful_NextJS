@@ -49,13 +49,13 @@ export default function Header(props) {
 
   const {
     sortedBlogPostTags,
-    blogPostTags,
-    featuredPost,
+    articleTags,
+    featuredArticle,
     topPostsArray,
     postSummaries,
     currentPage,
     totalPages,
-    pageContent,
+    page,
     preview,
   } = props;
 
@@ -308,7 +308,7 @@ export default function Header(props) {
 }
 
 export async function getPosts() {
-  //const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  //const articleTags = await ContentfulApi.getAllUniquePostTags();
 
   console.log("running getPosts");
 
@@ -316,7 +316,7 @@ export async function getPosts() {
 
   //const post = await ContentfulApi.getPostBySlug("guide-dogs-annual-report-for-2021-is-published");
 
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
   console.log(posts);
 
@@ -326,13 +326,13 @@ export async function getPosts() {
   /** 
     props: {
       sortedBlogPostTags,
-      featuredPost,
+      featuredArticle,
       topPostsArray,
       preview,
       postSummaries: postSummaries.items,
       totalPages,
       currentPage: "1",
-      pageContent: pageContent || null,
+      page: page || null,
     },
   */
 }

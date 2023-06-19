@@ -32,17 +32,17 @@ import {
 } from "@chakra-ui/react";
 
 export default function BlogBanner(props) {
-  const pageContent = props.pageContent;
+  const page = props.page;
 
-  //{pageContent.body && (
+  //{page.body && (
   //  <RichTextPageContent
-  //    richTextBodyField={pageContent.body}
+  //    richTextBodyField={page.body}
   //    className={TypographyStyles.bodyCopy}
   //  />
   //)}
 
 
-  //<img src={pageContent.heroBanner.image.url} 
+  //<img src={page.heroBanner.image.url} 
   //style={{ position: "absolute", top: "142px", width:"100%", height:"480px", objectFit:"cover",  }}
   ///>
 
@@ -50,7 +50,7 @@ export default function BlogBanner(props) {
   return (
     <>
       <Box
-        backgroundImage={pageContent.heroBanner.image.url}
+        backgroundImage={page.heroBanner.image.url}
         height="450"
         bgRepeat="no-repeat"
         
@@ -99,10 +99,10 @@ export default function BlogBanner(props) {
               <Flex>
                 <Box pb={10} pt={7} maxWidth="600">
                   <h1 className={TypographyStyles.heading__h1}>
-                    {pageContent.title}
+                    {page.title}
                   </h1>
                   <div className={TypographyStyles.bodyCopy}>
-                    {pageContent.description}
+                    {page.description}
                   </div>
                 </Box>
                 <Box></Box>
@@ -140,7 +140,7 @@ export default function BlogBanner(props) {
           </Flex>
         </Box> 
         <Box
-          backgroundImage={pageContent.heroBanner.image.url}
+          backgroundImage={page.heroBanner.image.url}
           height="300"
           bgRepeat="no-repeat"
           bgSize="cover"
@@ -158,7 +158,7 @@ export default function BlogBanner(props) {
           fontSize="2.5em"
           marginBottom="0"
         >
-          {pageContent.title}
+          {page.title}
         </Box>
       </Box>
     </>

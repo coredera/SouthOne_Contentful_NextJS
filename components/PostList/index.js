@@ -94,7 +94,7 @@ export default function PostList(props) {
                     </Flex>
                     <Box pb={3}>
                       <b>Date: </b>
-                      <PublishedDate date={post.date} alignSelf="center" />
+                      <PublishedDate date={post.datePublished} alignSelf="center" />
                     </Box>
 
                     <Box className={ContentListStyles.contentList__author}>

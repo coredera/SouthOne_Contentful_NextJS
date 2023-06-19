@@ -11,12 +11,12 @@ import PageContentWrapper from "@components/PageContentWrapper";
 
 
 export default function Home(props) {
-  const { pageContent, recentPosts, preview } = props;
+  const { page, recentPosts, preview } = props;
 
-  const pageTitle = pageContent ? pageContent.title : "Homey";
+  const pageTitle = page ? page.title : "Homey";
 
-  const pageDescription = pageContent
-    ? pageContent.description
+  const pageDescription = page
+    ? page.description
     : "Welcome to the Guide Dogs UK Blog";
 
   return (
@@ -29,9 +29,9 @@ export default function Home(props) {
         />
 
         <ContentWrapper>
-          {pageContent && pageContent.body && (
+          {page && page.body && (
             <PageContentWrapper>
-              <RichTextPageContent richTextBodyField={pageContent.body} />
+              <RichTextPageContent richTextBodyField={page.body} />
             </PageContentWrapper>
           )}
           <RecentPostList posts={recentPosts} />
@@ -42,7 +42,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const pageContent = await ContentfulApi.getPageContentBySlug(
+  const page = await ContentfulApi.getPageBySlug(
     Config.pageMeta.home.slug,
     {
       preview: preview,
@@ -54,7 +54,7 @@ export async function getStaticProps({ preview = false }) {
   return {
     props: {
       preview,
-      pageContent: pageContent || null,
+      page: page || null,
       recentPosts,
     },
   };
@@ -62,8 +62,8 @@ export async function getStaticProps({ preview = false }) {
 
 /*
 
-  {pageContent && pageContent.heroBanner !== null && (
-          <HeroBanner data={pageContent.heroBanner} />
+  {page && page.heroBanner !== null && (
+          <HeroBanner data={page.heroBanner} />
         )}
 
         */

@@ -47,7 +47,7 @@ export default function PostWrapper(props) {
     currentPage,
     totalPages,
     posts,
-    pageContent,
+    page,
     postSummaries,
     tag,
     tagname,
@@ -68,7 +68,7 @@ export default function PostWrapper(props) {
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
       />
 
-      <BlogBanner pageContent={pageContent} />
+      <BlogBanner page={page} />
 
       <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
 
@@ -111,9 +111,9 @@ export default function PostWrapper(props) {
 }
 
 export async function getStaticPaths() {
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
-  const paths = blogPostTags.map(({ id }) => {
+  const paths = articleTags.map(({ id }) => {
     return { params: { tag: id } };
   });
 
@@ -126,9 +126,9 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
   const acc = [];
 
@@ -173,7 +173,7 @@ export async function getStaticProps({ params, preview = false }) {
 
   //from  [page].js
 
-  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+  const sortedBlogPostTags = articleTags.sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
@@ -204,8 +204,8 @@ export async function getStaticProps({ params, preview = false }) {
   //  console.log("relatedPosts:")
   //  console.log(relatedPosts);
 
-  const pageContent = await ContentfulApi.getPageContentBySlug(
-    Config.pageMeta.blogIndex.slug,
+  const page = await ContentfulApi.getPageBySlug(
+    Config.pageMeta.home.slug,
     {
       preview: preview,
     },
@@ -215,11 +215,11 @@ export async function getStaticProps({ params, preview = false }) {
     params.page,
   );
 
-  const tagrecord = blogPostTags.find(({ id }) => id === params.tag);
+  const tagrecord = articleTags.find(({ id }) => id === params.tag);
   const tagname = tagrecord.name;
 
-  pageContent.title = tagname;
-  pageContent.description = "";
+  page.title = tagname;
+  page.description = "";
 
   return {
     props: {
@@ -227,7 +227,7 @@ export async function getStaticProps({ params, preview = false }) {
       totalPages,
       currentPage: "1",
       posts: paginatedRelatedPosts,
-      pageContent,
+      page,
       postSummaries,
       tag: params.tag,
       tagname: tagname,

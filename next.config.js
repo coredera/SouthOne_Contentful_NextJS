@@ -1,5 +1,5 @@
 module.exports = {
-  basePath: '/blog',
+  basePath: '',
   //assetPrefix: '/blog',
   //assetPrefix: './',
   //trailingSlash: true,

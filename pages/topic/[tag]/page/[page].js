@@ -42,7 +42,7 @@ export default function BlogIndexPage(props) {
     posts,
     totalPages,
     currentPage,
-    pageContent,
+    page,
     preview,
     tag,
     sortedBlogPostTags,
@@ -52,12 +52,12 @@ export default function BlogIndexPage(props) {
   const postListType = `/topic/${tag}/`;
 
   /**
-   * This provides some fallback values to PageMeta so that a pageContent
+   * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = pageContent ? pageContent.title : "Blog";
-  const pageDescription = pageContent
-    ? pageContent.description
+  const pageTitle = page ? page.title : "Blog";
+  const pageDescription = page
+    ? page.description
     : "Articles | Next.js Contentful blog starter";
 
   return (
@@ -71,7 +71,7 @@ export default function BlogIndexPage(props) {
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
       />
 
-      <BlogBanner pageContent={pageContent} />
+      <BlogBanner page={page} />
 
       <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
 
@@ -122,16 +122,16 @@ export async function getStaticPaths() {
 
   const paths = [];
 
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
   var acc = [];
 
-  const temp = blogPostTags.map(({ id }) => {
+  const temp = articleTags.map(({ id }) => {
     //const id = "puppy";
 
-    //for(const fid of blogPostTags){
+    //for(const fid of articleTags){
 
     acc = [];
 
@@ -194,10 +194,10 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
-  const pageContent = await ContentfulApi.getPageContentBySlug(
-    Config.pageMeta.blogIndex.slug,
+  const page = await ContentfulApi.getPageBySlug(
+    Config.pageMeta.home.slug,
     {
       preview: preview,
     },
@@ -241,9 +241,9 @@ export async function getStaticProps({ params, preview = false }) {
     };
   }
 
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
-  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+  const sortedBlogPostTags = articleTags.sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
@@ -271,11 +271,11 @@ export async function getStaticProps({ params, preview = false }) {
 
   const topPostsArray = [topPost1, topPost2, topPost3, topPost4, topPost5];
 
-  const tagrecord = blogPostTags.find(({ id }) => id === params.tag);
+  const tagrecord = articleTags.find(({ id }) => id === params.tag);
   const tagname = tagrecord.name;
 
-  pageContent.title = tagname;
-  pageContent.description = "";
+  page.title = tagname;
+  page.description = "";
 
   //console.log("totalPages:")
   //console.log(totalPages);
@@ -287,7 +287,7 @@ export async function getStaticProps({ params, preview = false }) {
       currentPage: params.page,
       posts: paginatedRelatedPosts,
       tag: params.tag,
-      pageContent: pageContent || null,
+      page: page || null,
       sortedBlogPostTags,
       topPostsArray,
     },

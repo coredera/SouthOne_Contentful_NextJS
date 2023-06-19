@@ -42,10 +42,10 @@ export default class ContentfulApi {
    * param: slug (string)
    *
    */
-  static async getPageContentBySlug(slug, options = defaultOptions) {
+  static async getPageBySlug(slug, options = defaultOptions) {
     const query = `
     {
-      pageContentCollection(limit: 1, where: {slug: "${slug}"}, preview: ${options.preview}) {
+      pageCollection(limit: 1, where: {slug: "${slug}"}, preview: ${options.preview}) {
         items {
           sys {
             id
@@ -82,13 +82,13 @@ export default class ContentfulApi {
                     title
                     embedUrl
                   }
-                  ... on BlogPost {
+                  ... on Article {
                     title
                     slug
                   }
                   ... on Button {
                     title
-                    embedUrl
+                    url
                   }
                 }
                 block {
@@ -107,7 +107,7 @@ export default class ContentfulApi {
                   }
                   ... on Button {
                     title
-                    embedUrl
+                    url
                   }
                 }
               }
@@ -131,11 +131,11 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query, options);
 
-    const pageContent = response.data.pageContentCollection.items
-      ? response.data.pageContentCollection.items
+    const page = response.data.pageCollection.items
+      ? response.data.pageCollection.items
       : [];
 
-    return pageContent.pop();
+    return page.pop();
   }
 
   /**
@@ -158,7 +158,7 @@ export default class ContentfulApi {
     const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
 
     const query = `{
-        blogPostCollection(limit: ${queryLimit}, skip: ${skip}, order: date_DESC, preview: ${options.preview} ) {
+        articleCollection(limit: ${queryLimit}, skip: ${skip}, order: datePublished_DESC, preview: ${options.preview} ) {
           total
           items {
             slug
@@ -168,10 +168,16 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    const { total } = response.data.blogPostCollection;
-    const slugs = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items.map((item) => item.slug)
+    //console.log(response);
+
+    const { total } = response.data.articleCollection;
+    const slugs = response.data.articleCollection.items
+      ? response.data.articleCollection.items.map((item) => item.slug)
       : [];
+
+
+
+      
 
     return { slugs, total };
   }
@@ -229,7 +235,7 @@ export default class ContentfulApi {
     const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
 
     const query = `{
-        blogPostCollection(limit: ${queryLimit}, skip: ${skip}, order: date_DESC) {
+        articleCollection(limit: ${queryLimit}, skip: ${skip}, order: datePublished_DESC) {
           total
           items {
             
@@ -246,15 +252,17 @@ export default class ContentfulApi {
     const response = await this.callContentful(query);
 
    // console.log("reponse:");
-   // console.log(response);
-    //console.log(response.data.blogPostCollection.items[0].contentfulMetadata.tags[0].id,);
-    //console.log(response.data.blogPostCollection.items[1].contentfulMetadata.tags[0].id,);
-    //console.log(response.data.blogPostCollection.items[2].contentfulMetadata.tags[0].id,);
+    //console.log(response);
+    //console.log(response.data.articleCollection.items[0].contentfulMetadata.tags[0].id,);
+    //console.log(response.data.articleCollection.items[1].contentfulMetadata.tags[0].id,);
+    //console.log(response.data.articleCollection.items[2].contentfulMetadata.tags[0].id,);
+    
 
-    const { total } = response.data.blogPostCollection;
 
-    const tags = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items.map(
+    const { total } = response.data.articleCollection;
+
+    const tags = response.data.articleCollection.items
+      ? response.data.articleCollection.items.map(
           (item) =>
             // function(item.contentfulMetadata.tags) {
             //return
@@ -365,13 +373,13 @@ export default class ContentfulApi {
    * param: page (number)
    *
    */
-  static async getPaginatedBlogPosts(page) {
+  static async getPaginatedArticles(page) {
     const queryLimit = 10;
     const skipMultiplier = page === 1 ? 0 : page - 1;
     const skip = skipMultiplier > 0 ? queryLimit * skipMultiplier : 0;
 
     const query = `{
-        blogPostCollection(limit: ${queryLimit}, skip: ${skip}, order: date_DESC) {
+        articleCollection(limit: ${queryLimit}, skip: ${skip}, order: datePublished_DESC) {
           total
           items {
             sys {
@@ -393,7 +401,7 @@ export default class ContentfulApi {
               width
               height
             }
-            date
+            datePublished
             title
             slug
             excerpt
@@ -422,7 +430,7 @@ export default class ContentfulApi {
                       id
                     }
                     __typename
-                    ... on BlogPost {
+                    ... on Article {
                       title
                       slug
                     }
@@ -463,9 +471,9 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    const { total } = response.data.blogPostCollection;
-    const posts = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
+    const { total } = response.data.articleCollection;
+    const posts = response.data.articleCollection.items
+      ? response.data.articleCollection.items
       : [];
 
     return { posts, total };
@@ -484,13 +492,13 @@ export default class ContentfulApi {
    * https://www.contentful.com/developers/videos/learn-graphql/#graphql-fragments-and-query-complexity
    *
    */
-  static async getAllBlogPosts() {
+  static async getAllArticles() {
     let page = 1;
     let shouldQueryMorePosts = true;
     const returnPosts = [];
 
     while (shouldQueryMorePosts) {
-      const response = await this.getPaginatedBlogPosts(page);
+      const response = await this.getPaginatedArticles(page);
 
       if (response.posts.length > 0) {
         returnPosts.push(...response.posts);
@@ -532,7 +540,7 @@ export default class ContentfulApi {
   static async getPostBySlug(slug, options = defaultOptions) {
     console.log("running graphQL");
     const query = `{
-      blogPostCollection(limit: 1, where: {slug: "${slug}"}, preview: ${options.preview}) {
+      articleCollection(limit: 1, where: {slug: "${slug}"}, preview: ${options.preview}) {
         total
         items {
           sys {
@@ -554,7 +562,7 @@ export default class ContentfulApi {
             width
             height
           }
-          date
+          datePublished
           title
           metaTitle
           metaDescription
@@ -607,7 +615,7 @@ export default class ContentfulApi {
                     id
                   }
                   __typename
-                  ... on BlogPost {
+                  ... on Article {
                     title
                     slug
                   }
@@ -622,7 +630,7 @@ export default class ContentfulApi {
                   }
                   ... on Button {
                     title
-                    embedUrl
+                    url
                   }
                 }
                 block {
@@ -630,7 +638,7 @@ export default class ContentfulApi {
                     id
                   }
                   __typename
-                  ... on BlogPost {
+                  ... on Article {
                     title
                     slug
                   }
@@ -645,7 +653,7 @@ export default class ContentfulApi {
                   }
                   ... on Button {
                     title
-                    embedUrl
+                    url
                   }
                   
                 }
@@ -669,8 +677,8 @@ export default class ContentfulApi {
     }`;
 
     const response = await this.callContentful(query, options);
-    const post = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
+    const post = response.data.articleCollection.items
+      ? response.data.articleCollection.items
       : [];
 
      
@@ -704,12 +712,12 @@ export default class ContentfulApi {
    * param: not required
    *
    */
-  static async getFeaturedPost() {
+  static async getFeaturedArticle() {
     const fquery = `{
-      featuredPostCollection {
+      featuredArticleCollection {
         total
         items {
-          featuredPost {
+          featuredArticle {
             slug
             sys {
               id
@@ -722,19 +730,19 @@ export default class ContentfulApi {
     const fresponse = await this.callContentful(fquery);
 
    // console.log("fresponse:");
-   // console.log(fresponse.data.featuredPostCollection.items[0].featuredPost);
+   // console.log(fresponse.data.featuredArticleCollection.items[0].featuredArticle);
 
     //const fpostid = `a`;
 
-    if (fresponse.data.featuredPostCollection.items[0].featuredPost !== null) {
+    if (fresponse.data.featuredArticleCollection.items[0].featuredArticle !== null) {
       const fpostid =
-        fresponse.data.featuredPostCollection.items[0].featuredPost.slug;
+        fresponse.data.featuredArticleCollection.items[0].featuredArticle.slug;
 
    //   console.log("fpostid:");
    //   console.log(fpostid);
 
       const query = `{
-      blogPostCollection(limit: 1, where: {slug: "${fpostid}"}) {
+      articleCollection(limit: 1, where: {slug: "${fpostid}"}) {
         total
         items {
           sys {
@@ -756,7 +764,7 @@ export default class ContentfulApi {
             width
             height
           }
-          date
+          datePublished
           title
           metaTitle
           metaDescription
@@ -788,7 +796,7 @@ export default class ContentfulApi {
                     id
                   }
                   __typename
-                  ... on BlogPost {
+                  ... on Article {
                     title
                     slug
                   }
@@ -831,8 +839,8 @@ export default class ContentfulApi {
 
     //  console.log(response);
 
-      const post = response.data.blogPostCollection.items
-        ? response.data.blogPostCollection.items
+      const post = response.data.articleCollection.items
+        ? response.data.articleCollection.items
         : [];
 
       return post.pop();
@@ -869,35 +877,35 @@ export default class ContentfulApi {
    */
  static async getTopPostsIds() {
   const tquery = `{
-    topPostsCollection {
+    topArticlesCollection {
       total
       items {
-        post1 {
+        article1 {
           sys {
             id
             
           }
           slug
         }
-        post2 {
+        article2 {
           sys {
             id
           }
            slug
         }
-        post3 {
+        article3 {
           sys {
             id
           }
            slug
         }
-        post4 {
+        article4 {
           sys {
             id
           }
            slug
         }
-        post5 {
+        article5 {
           sys {
             id
           }
@@ -910,25 +918,25 @@ export default class ContentfulApi {
   const tresponse = await this.callContentful(tquery);
 
  // console.log("tresponse:");
- // console.log(tresponse.data.topPostsCollection.items[0].post1);
+ // console.log(tresponse.data.topArticlesCollection.items[0].post1);
 
   //const fpostid = `a`;
 
-  if (tresponse.data.topPostsCollection.items[0].post1 !== null) {
+  if (tresponse.data.topArticlesCollection.items[0].article1 !== null) {
     const tpostid1 =
-      tresponse.data.topPostsCollection.items[0].post1.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article1.sys.id;
 
     const tpostid2 =
-      tresponse.data.topPostsCollection.items[0].post2.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article2.sys.id;
 
       const tpostid3 =
-      tresponse.data.topPostsCollection.items[0].post3.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article3.sys.id;
 
       const tpostid4 =
-      tresponse.data.topPostsCollection.items[0].post4.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article4.sys.id;
 
       const tpostid5 =
-      tresponse.data.topPostsCollection.items[0].post5.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article5.sys.id;
 
   //  console.log("tpostid1:");
   //  console.log(tpostid1);
@@ -974,35 +982,35 @@ export default class ContentfulApi {
    */
  static async getTopPosts() {
   const tquery = `{
-    topPostsCollection {
+    topArticlesCollection {
       total
       items {
-        post1 {
+        article1 {
           sys {
             id
             
           }
           slug
         }
-        post2 {
+        article2 {
           sys {
             id
           }
            slug
         }
-        post3 {
+        article3 {
           sys {
             id
           }
            slug
         }
-        post4 {
+        article4 {
           sys {
             id
           }
            slug
         }
-        post5 {
+        article5 {
           sys {
             id
           }
@@ -1015,25 +1023,25 @@ export default class ContentfulApi {
   const tresponse = await this.callContentful(tquery);
 
  // console.log("tresponse:");
- // console.log(tresponse.data.topPostsCollection.items[0].post1);
+ // console.log(tresponse.data.topArticlesCollection.items[0].article1);
 
   //const fpostid = `a`;
 
-  if (tresponse.data.topPostsCollection.items[0].post1 !== null) {
+  if (tresponse.data.topArticlesCollection.items[0].article1 !== null) {
     const tpostid1 =
-      tresponse.data.topPostsCollection.items[0].post1.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article1.sys.id;
 
     const tpostid2 =
-      tresponse.data.topPostsCollection.items[0].post2.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article2.sys.id;
 
       const tpostid3 =
-      tresponse.data.topPostsCollection.items[0].post3.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article3.sys.id;
 
       const tpostid4 =
-      tresponse.data.topPostsCollection.items[0].post4.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article4.sys.id;
 
       const tpostid5 =
-      tresponse.data.topPostsCollection.items[0].post5.sys.id;
+      tresponse.data.topArticlesCollection.items[0].article5.sys.id;
 
     //console.log("tpostid1:");
     //console.log(tpostid1);
@@ -1043,7 +1051,7 @@ export default class ContentfulApi {
 
 
     const query = `{
-    blogPostCollection(limit: 5,  where: {
+    articleCollection(limit: 5,  where: {
       sys: {
         id_in: ["${tpostid1}", "${tpostid2}", "${tpostid3}", "${tpostid4}", "${tpostid5}"]
       }
@@ -1070,7 +1078,7 @@ export default class ContentfulApi {
           width
           height
         }
-        date
+        datePublished
         title
         metaTitle
         metaDescription
@@ -1102,7 +1110,7 @@ export default class ContentfulApi {
                   id
                 }
                 __typename
-                ... on BlogPost {
+                ... on Article {
                   title
                   slug
                 }
@@ -1145,8 +1153,8 @@ export default class ContentfulApi {
 
     //console.log(response);
 
-    const posts = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
+    const posts = response.data.articleCollection.items
+      ? response.data.articleCollection.items
       : [];
 
 
@@ -1189,7 +1197,7 @@ export default class ContentfulApi {
       skipMultiplier > 0 ? Config.pagination.pageSize * skipMultiplier : 0;
 
     const query = `{
-        blogPostCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: date_DESC) {
+        articleCollection(limit: ${Config.pagination.pageSize}, skip: ${skip}, order: datePublished_DESC) {
           total
           items {
             sys {
@@ -1211,7 +1219,7 @@ export default class ContentfulApi {
               width
               height
             }
-            date
+            datePublished
             title
             slug
             excerpt
@@ -1224,8 +1232,8 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    const paginatedPostSummaries = response.data.blogPostCollection
-      ? response.data.blogPostCollection
+    const paginatedPostSummaries = response.data.articleCollection
+      ? response.data.articleCollection
       : { total: 0, items: [] };
 
     return paginatedPostSummaries;
@@ -1243,7 +1251,7 @@ export default class ContentfulApi {
    */
   static async getRecentPostList() {
     const query = `{
-      blogPostCollection(limit: ${Config.pagination.recentPostsSize}, order: date_DESC) {
+      articleCollection(limit: ${Config.pagination.recentPostsSize}, order: datePublished_DESC) {
         items {
           contentfulMetadata{
             tags {
@@ -1264,7 +1272,7 @@ export default class ContentfulApi {
           sys {
             id
           }
-          date
+          datePublished
           title
           slug
           excerpt
@@ -1276,8 +1284,8 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    const recentPosts = response.data.blogPostCollection.items
-      ? response.data.blogPostCollection.items
+    const recentPosts = response.data.articleCollection.items
+      ? response.data.articleCollection.items
       : [];
     return recentPosts;
   }
@@ -1288,15 +1296,15 @@ export default class ContentfulApi {
   static async getTotalPostsNumber() {
     const query = `
       {
-        blogPostCollection {
+        articleCollection {
           total
         }
       }
     `;
 
     const response = await this.callContentful(query);
-    const totalPosts = response.data.blogPostCollection.total
-      ? response.data.blogPostCollection.total
+    const totalPosts = response.data.articleCollection.total
+      ? response.data.articleCollection.total
       : 0;
 
     return totalPosts;
@@ -1407,7 +1415,7 @@ export default class ContentfulApi {
 
 
     const query = `{
-        topicCollection(limit: 5, order: date_DESC) {
+        topicCollection(limit: 5, order: datePublished_DESC) {
           total
           items {
             sys {
@@ -1429,7 +1437,7 @@ export default class ContentfulApi {
               width
               height
             }
-            date
+            datePublished
             title
             slug
             excerpt
@@ -1442,8 +1450,8 @@ export default class ContentfulApi {
 
     const response = await this.callContentful(query);
 
-    const paginatedPostSummaries = response.data.blogPostCollection
-      ? response.data.blogPostCollection
+    const paginatedPostSummaries = response.data.articleCollection
+      ? response.data.articleCollection
       : { total: 0, items: [] };
 
     return paginatedPostSummaries;
