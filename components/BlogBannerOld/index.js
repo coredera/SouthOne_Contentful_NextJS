@@ -76,7 +76,7 @@ export default function BlogBanner(props) {
                     minWidth="160"
                   >
                     <Box style={{ textDecoration: "underline" }}>
-                      <Link href="https://www.guidedogs.org.uk">
+                      <Link href="https://www.examplesite.org.uk">
                         <a>
                           <h3>Home</h3>
                         </a>
@@ -120,7 +120,7 @@ export default function BlogBanner(props) {
             alignSelf="center"
           >
             <Box style={{ textDecoration: "underline" }}>
-              <Link href="https://www.guidedogs.org.uk">
+              <Link href="https://www.examplesite.org.uk">
                 <a>
                   <h3>Home</h3>
                 </a>

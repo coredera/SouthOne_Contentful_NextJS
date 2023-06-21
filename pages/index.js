@@ -76,7 +76,7 @@ export default function BlogIndex(props) {
   const pageTitle = page ? page.title : "Blog";
   const pageDescription = page
     ? page.description
-    : "Guidedogs UK Blog";
+    : "examplesite UK Blog";
 
   //console.log(featuredArticle);
 

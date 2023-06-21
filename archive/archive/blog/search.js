@@ -53,7 +53,7 @@ export default function BlogSearch(props) {
         </NextLink>
 
         <NextLink href="/aboutus" passHref>
-          <a>link to guidedogs about us page</a>
+          <a>link to examplesite about us page</a>
         </NextLink>
 
         {page.body && (

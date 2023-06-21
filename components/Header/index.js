@@ -126,7 +126,7 @@ export default function Header(props) {
        
 
           <Box boxSize='100%' alignSelf="start" p={4} >
-            <Link href="https://www.guidedogs.org.uk">
+            <Link href="https://www.examplesite.org.uk">
               <a
                 className={HeaderStyles.header__logoContainerLink}
                 aria-label="Navigate to home page"
@@ -190,7 +190,7 @@ export default function Header(props) {
 
           <Flex display="none">
             <Box>
-              <Link href="https://www.guidedogs.org.uk/ensuring-our-website-is-accessible/">
+              <Link href="https://www.examplesite.org.uk/ensuring-our-website-is-accessible/">
                 <a className={HeaderStyles.header_headerItem}>
                   <Box className={HeaderStyles.header_headerItem}>
                     <u>Ensuring our website is accessible</u>
@@ -200,7 +200,7 @@ export default function Header(props) {
             </Box>
             <Box>
               <Link
-                href="https://guidedogsshop.com/?_ga=2.12167092.1043349381.1635768433-1104808427.1634557046"
+                href="https://examplesiteshop.com/?_ga=2.12167092.1043349381.1635768433-1104808427.1634557046"
                 passHref
               >
                 <a
@@ -223,7 +223,7 @@ export default function Header(props) {
               </a>
             </Box>
             <Box>
-              <Link href="https://www.guidedogs.org.uk/how-you-can-help/donating/sponsor-a-puppy/">
+              <Link href="https://www.examplesite.org.uk/how-you-can-help/donating/sponsor-a-puppy/">
                 <a className={HeaderStyles.header_headerItem}>
                   <Box color="brand.100">
                     <Button
@@ -258,7 +258,7 @@ export default function Header(props) {
 
         <Box></Box>
 
-        <Link href="https://www.guidedogs.org.uk/getting-support/">
+        <Link href="https://www.examplesite.org.uk/getting-support/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               Getting support
@@ -266,7 +266,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/how-you-can-help/">
+        <Link href="https://www.examplesite.org.uk/how-you-can-help/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               How you can help
@@ -274,7 +274,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/donate-now/">
+        <Link href="https://www.examplesite.org.uk/donate-now/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               Donate
@@ -282,7 +282,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/play-and-win/">
+        <Link href="https://www.examplesite.org.uk/play-and-win/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               Play and win
@@ -290,7 +290,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/about-us/">
+        <Link href="https://www.examplesite.org.uk/about-us/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               About us

@@ -9,19 +9,19 @@
  *
  */ 
  
-const SITE_URL = "https://www.guidedogs.org.uk";
+const SITE_URL = "https://www.examplesite.org.uk";
 
 export const Config = {
   site: {
     owner: "Guide Dogs UK",
     title: "Guide Dogs UK Blog in config file",
-    domain: "guidedogs.org.uk",
-    email: "jason.fang@guidedogs.org.uk",
-    feedDescription: "RSS Feed for guidedogs.org.uk",
+    domain: "examplesite.org.uk",
+    email: "jason.fang@examplesite.org.uk",
+    feedDescription: "RSS Feed for examplesite.org.uk",
   },
   pageMeta: {
     openGraph: {
-      twitterUser: "guidedogs",
+      twitterUser: "examplesite",
     },
     home: {
       url: SITE_URL,

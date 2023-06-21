@@ -20,7 +20,7 @@ module.exports = {
 
 
   images: {
-    domains: ["images.ctfassets.net", "gd-blog.netlify.app", "www.guidedogs.org.uk", "gd-blog-dev.netlify.app", "gd-blog-staging.netlify.app"],
+    domains: ["images.ctfassets.net", "examplesite-blog.netlify.app", "www.examplesite.org.uk", "examplesite-blog-dev.netlify.app", "examplesite-blog-staging.netlify.app"],
   },
   //crossOrigin: 'anonymous'
 

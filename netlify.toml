@@ -14,7 +14,7 @@ package = "@algolia/netlify-plugin-crawler"
   branches = ['*']
   pathPrefix = "/blog"
   renderJavaScript = true
-# customDomain = "guidedogs.org.uk"
+# customDomain = "examplesite.org.uk"
 
 
 
@@ -26,24 +26,24 @@ package = "@algolia/netlify-plugin-crawler"
 
 #[[redirects]]
 #  from = '/404'
-#  to = 'https://www.guidedogs.org.uk/404/'
+#  to = 'https://www.examplesite.org.uk/404/'
 #  status = 404
 
 #[[redirects]]
 #    from = "/*"
-#    to = "https://www.guidedogs.org.uk/404/"
+#    to = "https://www.examplesite.org.uk/404/"
 #    status = 404
 
 
 # Proxy for media items
 #[[redirects]]
 #	from = '/redirect/*'
-#	to = 'https://www.guidedogs.org.uk'
+#	to = 'https://www.examplesite.org.uk'
 #	status = 200
 
 [[redirects]]
   from = '/clone'
-  to = 'https://gd-dev-origin.guidedogs.org.uk/how-you-can-help/how-your-school-or-youth-group-can-help/stem-projects/stem-thank-you'
+  to = 'https://examplesite-dev-origin.examplesite.org.uk/how-you-can-help/how-your-school-or-youth-group-can-help/stem-projects/stem-thank-you'
   status = 200
   force = true
   [redirects.headers]
@@ -52,7 +52,7 @@ package = "@algolia/netlify-plugin-crawler"
 
 #[[redirects]]
 #  from = '/aboutus'
-#  to = 'https://www.guidedogs.org.uk/about-us/'
+#  to = 'https://www.examplesite.org.uk/about-us/'
 #  status = 200
 #  force = true
  
