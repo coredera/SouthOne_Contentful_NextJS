@@ -88,7 +88,7 @@ export default function BlogIndex(props) {
       <PageMeta
         title={page.title}
         description={page.description}
-        url={Config.pageMeta.blogIndex.url}
+        url={Config.pageMeta.home.url}
         metatitle={page.metaTitle}
         metadescription={page.metaDescription}
       />
