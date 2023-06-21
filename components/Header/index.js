@@ -144,7 +144,7 @@ export default function Header(props) {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                location.assign("/blog/search?searchall%5Bquery%5D=" + encodeURI(value));
+                location.assign("/search?searchall%5Bquery%5D=" + encodeURI(value));
               }}
             >
               <Stack>
@@ -164,7 +164,7 @@ export default function Header(props) {
                     onClick={(e) => {
                       e.preventDefault();
                       location.assign(
-                        "/blog/search?searchall%5Bquery%5D=" + encodeURI(value)
+                        "/search?searchall%5Bquery%5D=" + encodeURI(value)
                       );
                     }}
                     borderLeftRadius="0px"

@@ -553,7 +553,7 @@ export async function getStaticProps({ preview = false }) {
 
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
   const page = await ContentfulApi.getPageBySlug(
-    Config.pageMeta.blogIndex.slug,
+    Config.pageMeta.home.slug,
     {
       preview: "false",
     },
