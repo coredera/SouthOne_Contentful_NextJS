@@ -8,7 +8,7 @@ export const getServerSideProps = async (ctx) => {
 
   const articleFields = articleSlugs.map((slug) => {
     return {
-      loc: `https://www.guidedogs.org.uk/blog/${slug}`,
+      loc: `https://www.examplesite.org.uk/blog/${slug}`,
       lastmod: new Date().toISOString(),
     };
   });
@@ -24,7 +24,7 @@ export const getServerSideProps = async (ctx) => {
    */
   for (let page = 2; page <= totalPages; page++) {
     blogIndexPageFields.push({
-      loc: `https://www.guidedogs.org.uk/blog/page/${page}`,
+      loc: `https://www.examplesite.org.uk/blog/page/${page}`,
       lastmod: new Date().toISOString(),
     });
   }

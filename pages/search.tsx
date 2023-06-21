@@ -254,7 +254,7 @@ export default function BlogSearch(props) {
   const pageTitle = page ? page.title : "Blog";
   const pageDescription = page
     ? page.description
-    : "Guidedogs UK Blog";
+    : "examplesite UK Blog";
 
   //console.log(featuredArticle);
 
@@ -667,7 +667,7 @@ export async function changeFunc(tagid) {
 */
 
 function Hit({ hit }) {
-  const url = `https://www.guidedogs.org.uk${hit.url}`;
+  const url = `https://www.examplesite.org.uk${hit.url}`;
 
   return (
     <>

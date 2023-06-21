@@ -77,7 +77,7 @@ export default function Post(props) {
         </Box>
 
         {/*<DiscussionEmbed
-        shortname="guidedogsdev"
+        shortname="examplesitedev"
         config={{
           url: post.url,
           identifier: post.id,
