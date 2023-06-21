@@ -10,7 +10,7 @@ This repo uses Next.js and Contentful to deliver a blog microsite, using Content
 
 Use your code editing tool to access the source code at 
 
-https://bitbucket.org/GuideDogs/blog/src/dev/
+
 
 
 ## Configuring your development environment
