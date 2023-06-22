@@ -94,7 +94,7 @@ export default function Footer() {
                             />
                           </Box>
                           <Box className={FooterStyles.linktext}>
-                            <Link href="https://www.guidedogs.org.uk/faqs/">
+                            <Link legacyBehavior href="https://www.examplesite.org.uk/faqs/">
                               FAQs
                             </Link>
                           </Box>
@@ -109,7 +109,7 @@ export default function Footer() {
                             />
                           </Box>
                           <Box className={FooterStyles.linktext}>
-                            <Link href="https://www.guidedogs.org.uk/news/">
+                            <Link legacyBehavior href="https://www.examplesite.org.uk/news/">
                               News
                             </Link>
                           </Box>
@@ -125,7 +125,7 @@ export default function Footer() {
                             />
                           </Box>
                           <Box className={FooterStyles.linktext}>
-                            <Link href="https://www.guidedogs.org.uk/about-us/careers/">
+                            <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/careers/">
                               Jobs
                             </Link>
                           </Box>
@@ -140,7 +140,7 @@ export default function Footer() {
                             />
                           </Box>
                           <Box className={FooterStyles.linktext}>
-                            <Link href="https://www.guidedogs.org.uk/inspiring-stories/">
+                            <Link legacyBehavior href="https://www.examplesite.org.uk/inspiring-stories/">
                               Inspiring stories
                             </Link>
                           </Box>
@@ -194,7 +194,7 @@ export default function Footer() {
                           />
                         </Box>
                         <Box className={FooterStyles.linktext}>
-                          <Link href="https://www.guidedogs.org.uk/contact-us/">
+                          <Link legacyBehavior href="https://www.examplesite.org.uk/contact-us/">
                             Contact us
                           </Link>
                         </Box>
@@ -207,7 +207,7 @@ export default function Footer() {
                           />
                         </Box>
                         <Box className={FooterStyles.linktext}>
-                          <Link href="https://www.guidedogs.org.uk/contact-us/email-updates/">
+                          <Link legacyBehavior href="https://www.examplesite.org.uk/contact-us/email-updates/">
                             Sign up to our email updates
                           </Link>
                         </Box>
@@ -281,7 +281,7 @@ export default function Footer() {
                           className={FooterStyles.icons}
                         />
                       </Box>
-                      <Link href="https://www.guidedogs.org.uk/faqs/">
+                      <Link legacyBehavior href="https://www.examplesite.org.uk/faqs/">
                         FAQs
                       </Link>
                     </Flex>
@@ -294,7 +294,7 @@ export default function Footer() {
                           className={FooterStyles.icons}
                         />
                       </Box>
-                      <Link href="https://www.guidedogs.org.uk/news/">
+                      <Link legacyBehavior href="https://www.examplesite.org.uk/news/">
                         News
                       </Link>
                     </Flex>
@@ -308,7 +308,7 @@ export default function Footer() {
                           className={FooterStyles.icons}
                         />
                       </Box>
-                      <Link href="https://www.guidedogs.org.uk/about-us/careers/">
+                      <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/careers/">
                         Jobs
                       </Link>
                     </Flex>
@@ -321,7 +321,7 @@ export default function Footer() {
                           className={FooterStyles.icons}
                         />
                       </Box>
-                      <Link href="https://www.guidedogs.org.uk/inspiring-stories/">
+                      <Link legacyBehavior href="https://www.examplesite.org.uk/inspiring-stories/">
                         Inpsiring stories
                       </Link>
                     </Flex>
@@ -347,7 +347,7 @@ export default function Footer() {
                       className={FooterStyles.icons}
                     />
                   </Box>
-                  <Link href="https://www.guidedogs.org.uk/contact-us/">
+                  <Link legacyBehavior href="https://www.examplesite.org.uk/contact-us/">
                     Contact us
                   </Link>
                 </Flex>
@@ -358,7 +358,7 @@ export default function Footer() {
                       className={FooterStyles.icons}
                     />
                   </Box>
-                  <Link href="https://www.guidedogs.org.uk/contact-us/email-updates/">
+                  <Link legacyBehavior href="https://www.examplesite.org.uk/contact-us/email-updates/">
                     Sign up to our email updates
                   </Link>
                 </Flex>
@@ -409,7 +409,7 @@ export default function Footer() {
             <Flex alignItems="center" direction={{ base: "column", md: "row" }}>
               <Flex>
                 <Box className={FooterStyles.logos}>
-                  <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
                     <a>
                       <div>
                         <img
@@ -421,7 +421,7 @@ export default function Footer() {
                   </Link>
                 </Box>
                 <Box className={FooterStyles.logos}>
-                  <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
                     <a>
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
@@ -433,7 +433,7 @@ export default function Footer() {
               </Flex>
               <Flex>
                 <Box className={FooterStyles.logos}>
-                  <Link href="https://www.guidedogs.org.uk/getting-support/#">
+                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
                     <a>
                       <img
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
@@ -454,30 +454,30 @@ export default function Footer() {
 
           <Flex direction={{ base: "column", md: "row" }}>
             <Box className={FooterStyles.bottomlinks}>
-              <Link href="https://www.guidedogs.org.uk/sitemap">Sitemap</Link>
+              <Link legacyBehavior href="https://www.examplesite.org.uk/sitemap">Sitemap</Link>
             </Box>
             <Box className={FooterStyles.bottomlinks}>
-              <Link href="https://www.guidedogs.org.uk/about-us/finance-governance">
+              <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/finance-governance">
                 Finance and Governance
               </Link>
             </Box>
             <Box className={FooterStyles.bottomlinks}>
-              <Link href="https://www.guidedogs.org.uk/website-terms-of-use">
+              <Link legacyBehavior href="https://www.examplesite.org.uk/website-terms-of-use">
                 Website terms of use
               </Link>
             </Box>
             <Box className={FooterStyles.bottomlinks}>
-              <Link href="https://www.guidedogs.org.uk/about-us/careers/diversity-and-safeguarding">
+              <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/careers/diversity-and-safeguarding">
                 Safeguarding
               </Link>
             </Box>
             <Box className={FooterStyles.bottomlinks}>
-              <Link href="/privacy-policy">
+              <Link legacyBehavior href="/privacy-policy">
                 Privacy policy
               </Link>
             </Box>
             <Box className={FooterStyles.bottomlinks}>
-              <Link href="https://www.guidedogs.org.uk/modern-slavery">
+              <Link legacyBehavior href="https://www.examplesite.org.uk/modern-slavery">
                 Modern Slavery
               </Link>
             </Box>

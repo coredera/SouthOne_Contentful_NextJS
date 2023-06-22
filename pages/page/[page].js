@@ -41,19 +41,19 @@ export default function BlogIndexPage(props) {
     postSummaries,
     totalPages,
     currentPage,
-    pageContent,
+    page,
     preview,
     sortedBlogPostTags,
     topPostsArray,
   } = props;
 
   /**
-   * This provides some fallback values to PageMeta so that a pageContent
+   * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = pageContent ? pageContent.title : "Blog";
-  const pageDescription = pageContent
-    ? pageContent.description
+  const pageTitle = page ? page.title : "Blog";
+  const pageDescription = page
+    ? page.description
     : "Articles | Next.js Contentful blog starter";
 
   const postListType = "/";
@@ -63,13 +63,13 @@ export default function BlogIndexPage(props) {
       <PageMeta
         title={`${pageTitle} | Page ${currentPage}`}
         description={pageDescription}
-        url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
-        canonical={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
-        metatitle={`${pageContent.metaTitle} - page ${currentPage}`}
-        metadescription={pageContent.metaDescription}
+        url={`${Config.pageMeta.home.url}/page/${currentPage}`}
+        canonical={`${Config.pageMeta.home.url}/page/${currentPage}`}
+        metatitle={`${page.metaTitle} - page ${currentPage}`}
+        metadescription={page.metaDescription}
       />
 
-      <BlogBanner pageContent={pageContent} />
+      <BlogBanner page={page} />
 
       <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
 
@@ -131,13 +131,13 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
-  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+  const sortedBlogPostTags = articleTags.sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
   const topPostsIds = await ContentfulApi.getTopPostsIds();
 
@@ -169,8 +169,8 @@ export async function getStaticProps({ params, preview = false }) {
   const totalPages = Math.ceil(
     postSummaries.total / Config.pagination.pageSize,
   );
-  const pageContent = await ContentfulApi.getPageContentBySlug(
-    Config.pageMeta.blogIndex.slug,
+  const page = await ContentfulApi.getPageBySlug(
+    Config.pageMeta.home.slug,
     {
       preview: preview,
     },
@@ -182,7 +182,7 @@ export async function getStaticProps({ params, preview = false }) {
       postSummaries: postSummaries.items,
       totalPages,
       currentPage: params.page,
-      pageContent: pageContent || null,
+      page: page || null,
       sortedBlogPostTags,
       topPostsArray,
     },

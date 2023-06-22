@@ -4,11 +4,11 @@ import { Config } from "@utils/Config";
 
 export const getServerSideProps = async (ctx) => {
   // Source urls from Contentful
-  const blogPostSlugs = await ContentfulApi.getAllPostSlugs();
+  const articleSlugs = await ContentfulApi.getAllPostSlugs();
 
-  const blogPostFields = blogPostSlugs.map((slug) => {
+  const articleFields = articleSlugs.map((slug) => {
     return {
-      loc: `https://www.guidedogs.org.uk/blog/${slug}`,
+      loc: `https://www.examplesite.org.uk/blog/${slug}`,
       lastmod: new Date().toISOString(),
     };
   });
@@ -24,12 +24,12 @@ export const getServerSideProps = async (ctx) => {
    */
   for (let page = 2; page <= totalPages; page++) {
     blogIndexPageFields.push({
-      loc: `https://www.guidedogs.org.uk/blog/page/${page}`,
+      loc: `https://www.examplesite.org.uk/blog/page/${page}`,
       lastmod: new Date().toISOString(),
     });
   }
 
-  const fields = blogPostFields.concat(blogIndexPageFields);
+  const fields = articleFields.concat(blogIndexPageFields);
   return getServerSideSitemap(ctx, fields);
 };
 

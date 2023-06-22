@@ -41,7 +41,7 @@ export default function PostWrapper(props) {
       <PageMeta
         title={post.title}
         description={post.excerpt}
-        url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+        url={`${Config.pageMeta.home.url}/${post.slug}`}
         canonical={post.externalUrl ? post.externalUrl : false}
         image={post.image.url}
         date={post.date}
@@ -59,7 +59,7 @@ export default function PostWrapper(props) {
         pt={5}
       >
         <Box alignSelf="center">
-          <Link href={`${Config.pageMeta.home.slug}`}>
+          <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
             <a>
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
@@ -88,9 +88,9 @@ export default function PostWrapper(props) {
 } 
 
 export async function getStaticPaths() {
-  const blogPostSlugs = await ContentfulApi.getAllPostSlugs();
+  const articleSlugs = await ContentfulApi.getAllPostSlugs();
 
-  const paths = blogPostSlugs.map((slug) => {
+  const paths = articleSlugs.map((slug) => {
     return { params: { slug } };
   });
 

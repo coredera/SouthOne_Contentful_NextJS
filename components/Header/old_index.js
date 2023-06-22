@@ -26,7 +26,7 @@ export default function Header() {
     <header className={HeaderStyles.header}>
       <div className={HeaderStyles.header__logoContainer}>
   
-        <Link href="/">
+        <Link legacyBehavior href="/">
           <a
             className={HeaderStyles.header__logoContainerLink}
             aria-label="Navigate to home page"
@@ -58,7 +58,7 @@ export default function Header() {
                 key={link.displayName}
                 className={HeaderStyles.header__navListItem + isActiveClass}
               >
-                <Link href={link.path}>
+                <Link legacyBehavior href={link.path}>
                   <a className={HeaderStyles.header__navListItemLink}>
                     {link.displayName}
                   </a>

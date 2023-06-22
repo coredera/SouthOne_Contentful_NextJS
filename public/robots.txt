@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /
 
 # Host
-Host: https://www.guidedogs.org.uk/blog
+Host: https://www.examplesite.org.uk/blog
 
 # Sitemaps
-Sitemap: https://www.guidedogs.org.uk/blog/sitemap.xml
+Sitemap: https://www.examplesite.org.uk/blog/sitemap.xml

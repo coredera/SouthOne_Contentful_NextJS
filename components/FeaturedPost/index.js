@@ -29,53 +29,53 @@ import {
 } from "@chakra-ui/react";
 
 export default function FeaturedPost(props) {
-  const featuredPost = props.featuredPost;
+  const featuredArticle = props.featuredArticle;
 
   return (
     <>
       <Flex
         display={{ base: "none", lg: "block" }}
-        className={ContentListStyles.contentList__featuredPost}
+        className={ContentListStyles.contentList__featuredArticle}
         p={0}
       >
-        <article style={{ display: featuredPost === null ? "none" : "block" }}>
+        <article style={{ display: featuredArticle === null ? "none" : "block" }}>
           <Flex justifyContent pt={20} pb={20}>
             <Box pr={30}>
               <Box pb={3}>
-                <Link href={`/${featuredPost.slug}`}>
+                <Link legacyBehavior href={`/${featuredArticle.slug}`}>
                   <a>
                     <h2 className={ContentListStyles.contentList__title}>
-                      {featuredPost.title}
+                      {featuredArticle.title}
                     </h2>
                   </a>
                 </Link>
               </Box>
               <Box pb={3}>
                 <b>Date: </b>
-                <PublishedDate date={featuredPost.date} alignSelf="center" />
+                <PublishedDate date={featuredArticle.datePublished} alignSelf="center" />
               </Box>
               <Box className={ContentListStyles.contentList__author} pb={2}>
-                {featuredPost.author !== null && (
+                {featuredArticle.author !== null && (
                   <>
-                    <b>Author: {featuredPost.author.name} </b>
+                    <b>Author: {featuredArticle.author.name} </b>
                   </>
                 )}
               </Box>
-              {featuredPost.contentfulMetadata.tags !== null && (
-                <Tags tags={featuredPost.contentfulMetadata.tags} />
+              {featuredArticle.contentfulMetadata.tags !== null && (
+                <Tags tags={featuredArticle.contentfulMetadata.tags} />
               )}
               <Box pt={6}>
                 <div className={ContentListStyles.contentList__excerpt}>
                   <ReactMarkdown
-                    children={featuredPost.excerpt}
-                    renderers={ReactMarkdownRenderers(featuredPost.excerpt)}
+                    children={featuredArticle.excerpt}
+                    renderers={ReactMarkdownRenderers(featuredArticle.excerpt)}
                   />
                 </div>
               </Box>
 
               <Flex alignItems="center">
                 <Box alignSelf="center">
-                  <Link href={`/${featuredPost.slug}`} >
+                  <Link legacyBehavior href={`/${featuredArticle.slug}`} >
                     <a>
                       <Flex
                         className={ContentListStyles.contentList__readmorelink}
@@ -86,7 +86,7 @@ export default function FeaturedPost(props) {
                             src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
                             width="12"
                             style={{ border: "none" }}
-                            alt={`about ${featuredPost.title}`}
+                            alt={`about ${featuredArticle.title}`}
                           />
                         </Box>
                       </Flex>
@@ -97,15 +97,15 @@ export default function FeaturedPost(props) {
             </Box>
             <Spacer />
             <Box pl={30} width="70rem">
-              <Link href={`/${featuredPost.slug}`}>
+              <Link legacyBehavior href={`/${featuredArticle.slug}`}>
                 <a>
                   <img
-                    src={featuredPost.image.url}
-                    width={featuredPost.image.width}
-                    height={featuredPost.image.height}
+                    src={featuredArticle.image.url}
+                    width={featuredArticle.image.width}
+                    height={featuredArticle.image.height}
                     layout="responsive"
                     objectFit="contain"
-                    alt={featuredPost.image.description}
+                    alt={featuredArticle.image.description}
                     style={{ borderRadius: "20px" }}
                   />
                 </a>
@@ -119,15 +119,15 @@ export default function FeaturedPost(props) {
         <article className={ContentListStyles.contentList__post}>
           <Flex>
             <Spacer />
-            <Link href={`/${featuredPost.slug}`}>
+            <Link legacyBehavior href={`/${featuredArticle.slug}`}>
               <a>
                 <img
-                  src={featuredPost.image.url}
-                  width={featuredPost.image.width}
-                  height={featuredPost.image.height}
+                  src={featuredArticle.image.url}
+                  width={featuredArticle.image.width}
+                  height={featuredArticle.image.height}
                   layout="responsive"
                   objectFit="contain"
-                  alt={featuredPost.image.description}
+                  alt={featuredArticle.image.description}
                   style={{ borderRadius: "20px" }}
                 />
               </a>
@@ -135,40 +135,40 @@ export default function FeaturedPost(props) {
             <Spacer />
           </Flex>
           <Flex p={2} />
-          <Link href={`/${featuredPost.slug}`}>
+          <Link legacyBehavior href={`/${featuredArticle.slug}`}>
             <a>
               <h2 className={ContentListStyles.contentList__title}>
-                {featuredPost.title}
+                {featuredArticle.title}
               </h2>
             </a>
           </Link>
           <Flex pb={5} />
           <Box pb={2}>
             <b>Date: </b>
-            <PublishedDate date={featuredPost.date} alignSelf="center" />
+            <PublishedDate date={featuredArticle.datePublished} alignSelf="center" />
           </Box>
           <Box className={ContentListStyles.contentList__author} pt={0} pb={1}>
-            {featuredPost.author !== null && (
+            {featuredArticle.author !== null && (
               <>
                 {" "}
-                <b>Author: {featuredPost.author.name}</b>
+                <b>Author: {featuredArticle.author.name}</b>
               </>
             )}
           </Box>
           <Box pb={5}>
-            {featuredPost.contentfulMetadata.tags !== null && (
-              <Tags tags={featuredPost.contentfulMetadata.tags} />
+            {featuredArticle.contentfulMetadata.tags !== null && (
+              <Tags tags={featuredArticle.contentfulMetadata.tags} />
             )}
           </Box>
           <div className={ContentListStyles.contentList__excerpt}>
             <ReactMarkdown
-              children={featuredPost.excerpt}
-              renderers={ReactMarkdownRenderers(featuredPost.excerpt)}
+              children={featuredArticle.excerpt}
+              renderers={ReactMarkdownRenderers(featuredArticle.excerpt)}
             />
           </div>
           <Flex alignItems="center">
             <Box alignSelf="center">
-              <Link href={`/${featuredPost.slug}`}>
+              <Link legacyBehavior href={`/${featuredArticle.slug}`}>
                 <a>
                   <Flex className={ContentListStyles.contentList__readmorelink}>
                     Read more
@@ -177,7 +177,7 @@ export default function FeaturedPost(props) {
                         src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/icon-arrow-blue.svg`}
                         width="12"
                         style={{ border: "none" }}
-                        alt={`about ${featuredPost.title}`}
+                        alt={`about ${featuredArticle.title}`}
                       />
                     </Box>
                   </Flex>

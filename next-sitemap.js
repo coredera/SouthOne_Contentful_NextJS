@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://www.guidedogs.org.uk/blog",
+  siteUrl: "https://www.examplesite.org.uk/blog",
  // outDir: "public/blog",
   generateRobotsTxt: true, // (optional)
 
@@ -10,7 +10,7 @@ module.exports = {
   //exclude: ["/api/*", "/server-sitemap.xml"],
   //robotsTxtOptions: {
   //  additionalSitemaps: [
-  //    "https://www.guidedogs.org.uk",
+  //    "https://www.examplesite.org.uk",
   //  ],
   //},
 };

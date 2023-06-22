@@ -7,7 +7,7 @@ export default function Tags(props) {
   return (
     <ul className={TagsStyles.tags}>
       {tags.map((tag) => (
-        <a href={`/blog/tag/${tag.id}`}>
+        <a href={`/tag/${tag.id}`}>
         <li className={TagsStyles.tags__tag} key={tag.id}>
           {tag.id}
         </li>

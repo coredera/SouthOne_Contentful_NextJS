@@ -49,7 +49,7 @@ export default function PostWrapper(props) {
         pt={5}
       >
         <Box alignSelf="center">
-          <Link href={`${Config.pageMeta.home.slug}`}>
+          <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
             <a>
               <h3 className={ContentListStyles.contentList__readmorelink}>
               
@@ -74,7 +74,7 @@ export default function PostWrapper(props) {
         {posts.map((post) => (
           <li key={post.sys.id}>
             <article className={ContentListStyles.contentList__post}>
-            <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+            <Link legacyBehavior href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
                 <a>
                   <img
                     src={post.image.url}
@@ -88,7 +88,7 @@ export default function PostWrapper(props) {
               </Link>
 
               <Flex p={2} />
-              <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+              <Link legacyBehavior href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
                 <a className={ContentListStyles.contentList__titleLink}>
                   <h2 className={ContentListStyles.contentList__title}>
                     {post.title}
@@ -107,7 +107,7 @@ export default function PostWrapper(props) {
               </div>
               <Flex alignItems="center">
                 <Box alignSelf="center">
-                  <Link href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
+                  <Link legacyBehavior href={`${Config.pageMeta.blogIndex.slug}/${post.slug}`}>
                     <a>
                       <h3 className={ContentListStyles.contentList__readmorelink}>
                         Read more
@@ -130,9 +130,9 @@ export default function PostWrapper(props) {
 }
 
 export async function getStaticPaths() {
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
 
-  const paths = blogPostTags.map(({ id }) => {
+  const paths = articleTags.map(({ id }) => {
     return { params: { tag: id } };
   });
 
@@ -145,7 +145,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
   const relatedPosts = posts.reduce((acc, post) => {
     if ( 

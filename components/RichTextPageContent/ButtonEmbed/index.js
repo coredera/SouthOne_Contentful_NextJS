@@ -31,7 +31,7 @@ export default function ButtonEmbed(props) {
     <div>
       <Flex alignItems="center" p={0}>
         <Box>
-          <Link href={`${embedUrl}`}>
+          <Link legacyBehavior href={`${embedUrl}`}>
             <a>
               <Flex
                 alignSelf="center"

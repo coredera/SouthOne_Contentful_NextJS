@@ -1,7 +1,7 @@
 
 
 {
-  blogPostCollection {
+  articleCollection {
     items {
       sys {
         id

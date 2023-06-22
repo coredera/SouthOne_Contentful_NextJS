@@ -45,7 +45,7 @@ export default function PostList(props) {
                 <article className={ContentListStyles.contentList__post}>
                   <Box>
                     <Box>
-                      <Link href={`/${post.slug}`}>
+                      <Link legacyBehavior href={`/${post.slug}`}>
                         <a>
                           <Box display={{ base: "block", lg: "none" }}>
                             <img
@@ -81,7 +81,7 @@ export default function PostList(props) {
                   <Box p={10} pb={12}>
                     <Flex pb={4}>
                       <Box>
-                        <Link href={`/${post.slug}`}>
+                        <Link legacyBehavior href={`/${post.slug}`}>
                           <a>
                             <h2
                               className={ContentListStyles.contentList__title}
@@ -94,7 +94,7 @@ export default function PostList(props) {
                     </Flex>
                     <Box pb={3}>
                       <b>Date: </b>
-                      <PublishedDate date={post.date} alignSelf="center" />
+                      <PublishedDate date={post.datePublished} alignSelf="center" />
                     </Box>
 
                     <Box className={ContentListStyles.contentList__author}>
@@ -121,7 +121,7 @@ export default function PostList(props) {
                     </Box>
                     <Flex alignItems="center">
                       <Box alignSelf="center">
-                        <Link href={`/${post.slug}`}>
+                        <Link legacyBehavior href={`/${post.slug}`}>
                           <a>
                             <Flex
                               className={

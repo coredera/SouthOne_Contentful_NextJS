@@ -49,13 +49,13 @@ export default function Header(props) {
 
   const {
     sortedBlogPostTags,
-    blogPostTags,
-    featuredPost,
+    articleTags,
+    featuredArticle,
     topPostsArray,
     postSummaries,
     currentPage,
     totalPages,
-    pageContent,
+    page,
     preview,
   } = props;
 
@@ -125,13 +125,17 @@ export default function Header(props) {
           </Box>
        
 
-          <Box alignSelf="start" p={8} >
-            <Link href="https://www.guidedogs.org.uk">
+          <Box boxSize='100%' alignSelf="start" p={4} >
+            <Link legacyBehavior href="/">
               <a
                 className={HeaderStyles.header__logoContainerLink}
                 aria-label="Navigate to home page"
               >
-                <Logo />
+
+                    <img
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo/s1logo.png`}
+                          
+                        />
               </a>
             </Link>
           </Box>
@@ -140,7 +144,7 @@ export default function Header(props) {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                location.assign("/blog/search?searchall%5Bquery%5D=" + encodeURI(value));
+                location.assign("/search?searchall%5Bquery%5D=" + encodeURI(value));
               }}
             >
               <Stack>
@@ -160,7 +164,7 @@ export default function Header(props) {
                     onClick={(e) => {
                       e.preventDefault();
                       location.assign(
-                        "/blog/search?searchall%5Bquery%5D=" + encodeURI(value)
+                        "/search?searchall%5Bquery%5D=" + encodeURI(value)
                       );
                     }}
                     borderLeftRadius="0px"
@@ -186,7 +190,7 @@ export default function Header(props) {
 
           <Flex display="none">
             <Box>
-              <Link href="https://www.guidedogs.org.uk/ensuring-our-website-is-accessible/">
+              <Link legacyBehavior href="https://www.examplesite.org.uk/ensuring-our-website-is-accessible/">
                 <a className={HeaderStyles.header_headerItem}>
                   <Box className={HeaderStyles.header_headerItem}>
                     <u>Ensuring our website is accessible</u>
@@ -195,8 +199,8 @@ export default function Header(props) {
               </Link>
             </Box>
             <Box>
-              <Link
-                href="https://guidedogsshop.com/?_ga=2.12167092.1043349381.1635768433-1104808427.1634557046"
+              <Link legacyBehavior
+                href="https://examplesiteshop.com/?_ga=2.12167092.1043349381.1635768433-1104808427.1634557046"
                 passHref
               >
                 <a
@@ -219,7 +223,7 @@ export default function Header(props) {
               </a>
             </Box>
             <Box>
-              <Link href="https://www.guidedogs.org.uk/how-you-can-help/donating/sponsor-a-puppy/">
+              <Link legacyBehavior href="https://www.examplesite.org.uk/how-you-can-help/donating/sponsor-a-puppy/">
                 <a className={HeaderStyles.header_headerItem}>
                   <Box color="brand.100">
                     <Button
@@ -254,7 +258,7 @@ export default function Header(props) {
 
         <Box></Box>
 
-        <Link href="https://www.guidedogs.org.uk/getting-support/">
+        <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               Getting support
@@ -262,7 +266,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/how-you-can-help/">
+        <Link legacyBehavior href="https://www.examplesite.org.uk/how-you-can-help/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               How you can help
@@ -270,7 +274,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/donate-now/">
+        <Link legacyBehavior href="https://www.examplesite.org.uk/donate-now/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               Donate
@@ -278,7 +282,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/play-and-win/">
+        <Link legacyBehavior href="https://www.examplesite.org.uk/play-and-win/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               Play and win
@@ -286,7 +290,7 @@ export default function Header(props) {
           </a>
         </Link>
 
-        <Link href="https://www.guidedogs.org.uk/about-us/">
+        <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/">
           <a className={HeaderStyles.header__navListItemLink}>
             <Box boxShadow="base" className={HeaderStyles.header__navListItem}>
               About us
@@ -304,7 +308,7 @@ export default function Header(props) {
 }
 
 export async function getPosts() {
-  //const blogPostTags = await ContentfulApi.getAllUniquePostTags();
+  //const articleTags = await ContentfulApi.getAllUniquePostTags();
 
   console.log("running getPosts");
 
@@ -312,7 +316,7 @@ export async function getPosts() {
 
   //const post = await ContentfulApi.getPostBySlug("guide-dogs-annual-report-for-2021-is-published");
 
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const posts = await ContentfulApi.getAllArticles();
 
   console.log(posts);
 
@@ -322,13 +326,13 @@ export async function getPosts() {
   /** 
     props: {
       sortedBlogPostTags,
-      featuredPost,
+      featuredArticle,
       topPostsArray,
       preview,
       postSummaries: postSummaries.items,
       totalPages,
       currentPage: "1",
-      pageContent: pageContent || null,
+      page: page || null,
     },
   */
 }

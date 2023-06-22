@@ -9,23 +9,27 @@
  *
  */ 
  
-const SITE_URL = "https://www.guidedogs.org.uk";
+const SITE_URL = "https://www.examplesite.org.uk";
 
 export const Config = {
   site: {
     owner: "Guide Dogs UK",
     title: "Guide Dogs UK Blog in config file",
-    domain: "guidedogs.org.uk",
-    email: "jason.fang@guidedogs.org.uk",
-    feedDescription: "RSS Feed for guidedogs.org.uk",
+    domain: "examplesite.org.uk",
+    email: "jason.fang@examplesite.org.uk",
+    feedDescription: "RSS Feed for examplesite.org.uk",
   },
   pageMeta: {
     openGraph: {
-      twitterUser: "guidedogs",
+      twitterUser: "examplesite",
     },
     home: {
       url: SITE_URL,
       slug: "/",
+    },
+    homePage: {
+      url: SITE_URL,
+      slug: "/page/[page]",
     },
     blogIndex: { 
       url: `${SITE_URL}/blog`,
@@ -35,11 +39,11 @@ export const Config = {
       slug: "/blog/page/[page]",
     },
     post: {
-      slug: "/blog/[slug]",
+      slug: "/[slug]",
     },
     privacyPolicy: { 
-      url: `${SITE_URL}/blog/privacy-policy`,
-      slug: "/blog/privacy-policy",
+      url: `${SITE_URL}/privacy-policy`,
+      slug: "/privacy-policy",
     },
     buildRss: {
       url: `${SITE_URL}/buildrss`,
@@ -51,8 +55,8 @@ export const Config = {
     },
   },
   pagination: {
-    pageSize: 8,
-    recentPostsSize: 8,
+    pageSize: 3,
+    recentPostsSize: 3,
   },
   menuLinks: [
     {

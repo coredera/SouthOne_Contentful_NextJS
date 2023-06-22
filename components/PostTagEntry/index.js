@@ -20,7 +20,7 @@ export default function Post(props) {
       
     
       <DiscussionEmbed
-    shortname='guidedogsdev'
+    shortname='examplesitedev'
     config={
         {
             url: post.url,

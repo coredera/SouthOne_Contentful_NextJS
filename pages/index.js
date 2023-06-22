@@ -52,13 +52,13 @@ import {
 export default function BlogIndex(props) {
   const {
     sortedBlogPostTags,
-    blogPostTags,
-    featuredPost,
+    articleTags,
+    featuredArticle,
     topPostsArray,
     postSummaries,
     currentPage,
     totalPages,
-    pageContent,
+    page,
     preview,
   } = props;
 
@@ -66,53 +66,50 @@ export default function BlogIndex(props) {
 
   //console.log(postSummaries);
 
-  //console.log("featuredPost:");
-  //console.log(featuredPost);
+  //console.log("featuredArticle:");
+  //console.log(featuredArticle);
 
   /**
-   * This provides some fallback values to PageMeta so that a pageContent
+   * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = pageContent ? pageContent.title : "Blog";
-  const pageDescription = pageContent
-    ? pageContent.description
-    : "Guidedogs UK Blog";
+  const pageTitle = page ? page.title : "Blog";
+  const pageDescription = page
+    ? page.description
+    : "examplesite UK Blog";
 
-  //console.log(featuredPost);
+  //console.log(featuredArticle);
 
-  //console.log(pageContent.heroBanner.image.url);
+  //console.log(page.heroBanner.image.url);
 
   // Original hero banner code
-  //  {pageContent.heroBanner !== null && (
-  //    <HeroBanner data={pageContent.heroBanner} />
+  //  {page.heroBanner !== null && (
+  //    <HeroBanner data={page.heroBanner} />
   //  )}
 
   //console.log(postSummaries);
+//code to return blogbanner component: <BlogBanner page={page} />  //
 
   if (true) {
     return (
       <MainLayout preview={preview} posts={postSummaries}>
         <PageMeta
-          title={pageContent.title}
-          description={pageContent.description}
-          url={Config.pageMeta.blogIndex.url}
+          title={page.title}
+          description={page.description}
+          url={Config.pageMeta.home.url}
           canonical={Config.pageMeta.blogIndex.url}
-          metatitle={pageContent.metaTitle}
-          metadescription={pageContent.metaDescription}
-        />
-
-        <BlogBanner pageContent={pageContent} />
-
+          metatitle={page.metaTitle}
+          metadescription={page.metaDescription}
+        /> 
+        <BlogBanner page={page} />
+        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />     
         <ContentWrapper>
           <Box pt={10}>
-          {featuredPost !== null && (
-            <FeaturedPost featuredPost={featuredPost} />
+          {featuredArticle !== null && (
+            <FeaturedPost featuredArticle={featuredArticle} />
           )}
           </Box>
         </ContentWrapper>
-
-        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
-
         <Box bgColor="brand.50" pt={10} pb={20}>
           <ContentWrapper>
             <Flex>
@@ -154,15 +151,15 @@ export default function BlogIndex(props) {
     return (
       <MainLayout preview={preview}>
         <PageMeta
-          title={pageContent.title}
-          description={pageContent.description}
-          url={Config.pageMeta.blogIndex.url}
-          metatitle={pageContent.metaTitle}
-          metadescription={pageContent.metaDescription}
+          title={page.title}
+          description={page.description}
+          url={Config.pageMeta.home.url}
+          metatitle={page.metaTitle}
+          metadescription={page.metaDescription}
         />
 
         <Box
-          backgroundImage={pageContent.heroBanner.image.url}
+          backgroundImage={page.heroBanner.image.url}
           height="450"
           bgRepeat="no-repeat"
           bgSize="cover"
@@ -179,11 +176,11 @@ export default function BlogIndex(props) {
             <ContentWrapper>
               <Flex alignItems="center" pb={0} pt={5}>
                 <Box alignSelf="center">
-                  <Link href={`${Config.pageMeta.home.slug}`}>
+                  <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
                     <a>
                       <Flex>
                         <h3 className={ContentListStyles.contentList__homelink}>
-                          <Box> Home</Box>
+                          <Box> Home </Box>
                         </h3>
                       </Flex>
                     </a>
@@ -194,11 +191,11 @@ export default function BlogIndex(props) {
               <Flex>
                 <Box pb={10} pt={7} maxWidth="600" pl={0}>
                   <h1 className={TypographyStyles.heading__h1}>
-                    {pageContent.title}
+                    {page.title}
                   </h1>
-                  {pageContent.body && (
+                  {page.body && (
                     <RichTextPageContent
-                      richTextBodyField={pageContent.body}
+                      richTextBodyField={page.body}
                       className={TypographyStyles.bodyCopy}
                     />
                   )}
@@ -236,7 +233,7 @@ export default function BlogIndex(props) {
                 {topPostsArray.map((post) => (
                   <div key={post.sys.id}>
                     <article className={ContentListStyles.contentList__post}>
-                      <Link href={`/${post.slug}`}>
+                      <Link legacyBehavior href={`/${post.slug}`}>
                         <a>
                           <img
                             src={post.image.url}
@@ -251,7 +248,7 @@ export default function BlogIndex(props) {
                       </Link>
 
                       <Flex p={2} />
-                      <Link href={`/${post.slug}`}>
+                      <Link legacyBehavior href={`/${post.slug}`}>
                         <a className={ContentListStyles.contentList__titleLink}>
                           <h2 className={ContentListStyles.contentList__title}>
                             {post.title}
@@ -274,7 +271,7 @@ export default function BlogIndex(props) {
                       </div>
                       <Flex alignItems="center">
                         <Box alignSelf="center">
-                          <Link href={`/${post.slug}`}>
+                          <Link legacyBehavior href={`/${post.slug}`}>
                             <a>
                               <h3
                                 className={
@@ -305,27 +302,29 @@ export default function BlogIndex(props) {
     );
   }
 }
-
+ 
 export async function getStaticProps({ preview = false }) {
-  const blogPostTags = await ContentfulApi.getAllUniquePostTags();
-  const posts = await ContentfulApi.getAllBlogPosts();
+  const articleTags = await ContentfulApi.getAllUniquePostTags();
+  const posts = await ContentfulApi.getAllArticles();
 
-  // console.log("blogPostTags");
-  // console.log(blogPostTags);
+  // console.log("articleTags");
+  // console.log(articleTags);
 
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
-  const pageContent = await ContentfulApi.getPageContentBySlug(
-    Config.pageMeta.blogIndex.slug,
+  const page = await ContentfulApi.getPageBySlug(
+    Config.pageMeta.home.slug,
     {
       preview: preview,
     },
   );
 
+  //console.log(page);
+
   const totalPages = Math.ceil(
     postSummaries.total / Config.pagination.pageSize,
   );
 
-  const featuredPost = await ContentfulApi.getFeaturedPost();
+  const featuredArticle = await ContentfulApi.getFeaturedArticle();
 
   //const topPosts = await ContentfulApi.getTopPosts();
 
@@ -400,20 +399,20 @@ export async function getStaticProps({ preview = false }) {
     return acc;
   }, []);
 
-  const sortedBlogPostTags = blogPostTags.sort((a, b) =>
+  const sortedBlogPostTags = articleTags.sort((a, b) =>
     a.name.localeCompare(b.name),
   );
 
   return {
     props: {
       sortedBlogPostTags,
-      featuredPost,
+      featuredArticle,
       topPostsArray,
       preview,
       postSummaries: postSummaries.items,
       totalPages,
       currentPage: "1",
-      pageContent: pageContent || null,
+      page: page || null,
     },
   };
 }

@@ -11,17 +11,17 @@ import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
 
 export default function BlogIndex(props) {
-  const { postSummaries, currentPage, totalPages, pageContent, preview } =
+  const { postSummaries, currentPage, totalPages, page, preview } =
     props;
 
   /**
-   * This provides some fallback values to PageMeta so that a pageContent
+   * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = pageContent ? pageContent.title : "Blog";
-  const pageDescription = pageContent
-    ? pageContent.description
-    : "Guidedogs UK Blog";
+  const pageTitle = page ? page.title : "Blog";
+  const pageDescription = page
+    ? page.description
+    : "examplesite UK Blog";
 
   return (
     <MainLayout preview={preview}>
@@ -31,14 +31,14 @@ export default function BlogIndex(props) {
         url={Config.pageMeta.blogIndex.url}
       />
 
-      {pageContent.heroBanner !== null && (
-        <HeroBanner data={pageContent.heroBanner} />
+      {page.heroBanner !== null && (
+        <HeroBanner data={page.heroBanner} />
       )}
 
       <ContentWrapper>
-        {pageContent.body && (
+        {page.body && (
           <PageContentWrapper>
-            <RichTextPageContent richTextBodyField={pageContent.body} />
+            <RichTextPageContent richTextBodyField={page.body} />
           </PageContentWrapper>
         )}
         <PostList
@@ -53,7 +53,7 @@ export default function BlogIndex(props) {
 
 export async function getStaticProps({ preview = false }) {
   const postSummaries = await ContentfulApi.getPaginatedPostSummaries(1);
-  const pageContent = await ContentfulApi.getPageContentBySlug(
+  const page = await ContentfulApi.getPageBySlug(
     Config.pageMeta.blogIndex.slug,
     {
       preview: preview,
@@ -70,7 +70,7 @@ export async function getStaticProps({ preview = false }) {
       postSummaries: postSummaries.items,
       totalPages,
       currentPage: "1",
-      pageContent: pageContent || null,
+      page: page || null,
     },
   };
 }

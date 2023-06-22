@@ -11,11 +11,11 @@ export default async function preview(req, res) {
    *
    * Set your content preview URLS in Contentful > Settings > Content Preview
    *
-   * The preview URL for the blogPost content type is
-   * http://localhost:3000/api/preview?secret={SECRET}&slug={entry.fields.slug}&contentType=blogPost
+   * The preview URL for the article content type is
+   * http://localhost:3000/api/preview?secret={SECRET}&slug={entry.fields.slug}&contentType=article
    *
-   * The preview URL for the pageContent content type is
-   * http://localhost:3000/api/preview?secret={SECRET}&slug={entry.fields.slug}&contentType=pageContent
+   * The preview URL for the page content type is
+   * http://localhost:3000/api/preview?secret={SECRET}&slug={entry.fields.slug}&contentType=page
    *
    */
   if (
@@ -31,14 +31,14 @@ export default async function preview(req, res) {
   let redirectPrefix = "";
 
   switch (req.query.contentType) {
-    case "blogPost":
-      redirectPrefix = "/blog/";
+    case "article":
+      redirectPrefix = "/";
       preview = await ContentfulApi.getPostBySlug(req.query.slug, {
         preview: true,
       });
       break;
-    case "pageContent":
-      preview = await ContentfulApi.getPageContentBySlug(req.query.slug, {
+    case "page":
+      preview = await ContentfulApi.getPageBySlug(req.query.slug, {
         preview: true,
       });
       break;

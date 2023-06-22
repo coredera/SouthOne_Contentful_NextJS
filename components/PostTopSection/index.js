@@ -31,7 +31,7 @@ import {
 } from "@chakra-ui/react";
 
 export default function PostTopSection(props) {
-  const featuredPost = props.post;
+  const featuredArticle = props.post;
 
   return (
     <>
@@ -51,7 +51,7 @@ export default function PostTopSection(props) {
                     minWidth="160"
                   >
                     <Box style={{ textDecoration: "underline" }}>
-                      <Link href="https://www.guidedogs.org.uk">
+                      <Link legacyBehavior href="https://www.examplesite.org.uk">
                         <a>
                           <h3>Home</h3>
                         </a>
@@ -61,7 +61,7 @@ export default function PostTopSection(props) {
                     <Box>&gt;</Box>
                     <Spacer />
                     <Box style={{ textDecoration: "underline" }}>
-                      <Link href={`${Config.pageMeta.home.slug}`}>
+                      <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
                         <a>
                           <h3>Blog</h3>
                         </a>
@@ -90,7 +90,7 @@ export default function PostTopSection(props) {
             alignSelf="center"
           >
             <Box style={{ textDecoration: "underline" }}>
-              <Link href="https://www.guidedogs.org.uk">
+              <Link legacyBehavior href="https://www.examplesite.org.uk">
                 <a>
                   <h3>Home</h3>
                 </a>
@@ -100,7 +100,7 @@ export default function PostTopSection(props) {
             <Box>&gt;</Box>
             <Spacer />
             <Box style={{ textDecoration: "underline" }}>
-              <Link href={`${Config.pageMeta.home.slug}`}>
+              <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
                 <a>
                   <h3>Blog</h3>
                 </a>
@@ -125,36 +125,36 @@ export default function PostTopSection(props) {
                 <Flex>
                   <Box maxWidth={600} pr={5}>
                     <h1 className={TypographyStyles.heading__h1post}>
-                      {featuredPost.title}
+                      {featuredArticle.title}
                     </h1>
                     <Box alignSelf="center" className={TypographyStyles.date}>
                       <b>Date: </b>
                       <PublishedDate
-                        date={featuredPost.date}
+                        date={featuredArticle.datePublished}
                         alignSelf="center"
                       />
                     </Box>
                     <Box className={TypographyStyles.author}>
-                      {featuredPost.author !== null && (
+                      {featuredArticle.author !== null && (
                         <>
                           {" "}
-                          <b>Author: {featuredPost.author.name}</b>
+                          <b>Author: {featuredArticle.author.name}</b>
                         </>
                       )}
                     </Box>
 
-                    {featuredPost.contentfulMetadata.tags !== null && (
-                      <Tags tags={featuredPost.contentfulMetadata.tags} />
+                    {featuredArticle.contentfulMetadata.tags !== null && (
+                      <Tags tags={featuredArticle.contentfulMetadata.tags} />
                     )}
                   </Box>
                   <Spacer />
                   <Box maxWidth={600}>
                     <img
-                      src={featuredPost.image.url}
+                      src={featuredArticle.image.url}
                       width="1200"
                       layout="responsive"
                       objectFit="contain"
-                      alt={featuredPost.image.description}
+                      alt={featuredArticle.image.description}
                       style={{ borderRadius: "20px" }}
                     />
                   </Box>
@@ -170,9 +170,9 @@ export default function PostTopSection(props) {
                 style={{ marginBottom: "0px" }}
               >
                 <img
-                  src={featuredPost.image.url}
+                  src={featuredArticle.image.url}
                   layout="responsive"
-                  alt={featuredPost.image.description}
+                  alt={featuredArticle.image.description}
                   style={{
                     borderRadius: "20px",
                     objectFit: "cover",
@@ -181,23 +181,23 @@ export default function PostTopSection(props) {
                 />
                 <Flex pt={5} />
                 <h1 className={TypographyStyles.heading__h1post}>
-                  {featuredPost.title}
+                  {featuredArticle.title}
                 </h1>
                 <Box alignSelf="center" className={TypographyStyles.date}>
                   <b>Date: </b>
-                  <PublishedDate date={featuredPost.date} alignSelf="center" />
+                  <PublishedDate date={featuredArticle.datePublished} alignSelf="center" />
                 </Box>
                 <Box className={ContentListStyles.contentList__author}>
-                  {featuredPost.author !== null && (
+                  {featuredArticle.author !== null && (
                     <>
                       {" "}
-                      <b> Author: {featuredPost.author.name} </b>
+                      <b> Author: {featuredArticle.author.name} </b>
                     </>
                   )}
                 </Box>
                 <Box pb={5}>
-                  {featuredPost.contentfulMetadata.tags !== null && (
-                    <Tags tags={featuredPost.contentfulMetadata.tags} />
+                  {featuredArticle.contentfulMetadata.tags !== null && (
+                    <Tags tags={featuredArticle.contentfulMetadata.tags} />
                   )}
                 </Box>
               </article>

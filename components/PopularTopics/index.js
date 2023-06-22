@@ -36,12 +36,9 @@ export default function PopularTopics(props) {
 
   return (
     <>
-      <Box bgColor="brand.100">
+      <Box bgColor="brand.900">
         <ContentWrapper>
-          <Box pb={20} pt={5}>
-            <Flex color="white" pt={10}>
-              <h2 className={TypographyStyles.heading__h2}>Popular Topics</h2>
-            </Flex>
+          <Box pb={20} pt={5} height={[360, 360, 125]}> 
             <Box display={{ base: "none", md: "block" }}>
               <Flex color="white" alignSelf="center">
                 <Box>
@@ -54,12 +51,12 @@ export default function PopularTopics(props) {
                       />
                     </Box>
 
-                    <Link
+                    <Link legacyBehavior
                       href={`/topic/inspiring-people`}
                       className={TypographyStyles.popularTopics}
                     >
                       <a className={TypographyStyles.popularTopics}>
-                        Inspiring People
+                        FAQ
                       </a>
                     </Link>
                   </Flex>
@@ -72,9 +69,9 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/eye-health`}>
+                    <Link legacyBehavior href={`/topic/eye-health`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Eye Health
+                        Medication
                       </a>
                     </Link>
                   </Flex>
@@ -89,7 +86,7 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/news`}>
+                    <Link legacyBehavior href={`/topic/news`}>
                       <a className={TypographyStyles.popularTopics}>News</a>
                     </Link>
                   </Flex>
@@ -101,9 +98,9 @@ export default function PopularTopics(props) {
                       
                       />
                     </Box>
-                    <Link href={`/topic/technology`}>
+                    <Link legacyBehavior href={`/topic/technology`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Technology
+                        Social
                       </a>
                     </Link>
                   </Flex>
@@ -118,9 +115,9 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/campaigns`}>
+                    <Link legacyBehavior href={`/topic/campaigns`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Campaigns
+                        Asthma
                       </a>
                     </Link>
                   </Flex>
@@ -132,8 +129,8 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/dogs`}>
-                      <a className={TypographyStyles.popularTopics}>Dogs</a>
+                    <Link legacyBehavior href={`/topic/dogs`}>
+                      <a className={TypographyStyles.popularTopics}>Diabetes</a>
                     </Link>
                   </Flex>
                 </Box>
@@ -143,7 +140,7 @@ export default function PopularTopics(props) {
                   pt={3}
                 >
                   <Select
-                    placeholder="View all topics.."
+                    placeholder="Full Menu.."
                     id="selectBox"
                     onChange={() => changeFunc()}
                     bgColor="white"
@@ -171,12 +168,12 @@ export default function PopularTopics(props) {
                       />
                     </Box>
 
-                    <Link
+                    <Link legacyBehavior
                       href={`/topic/inspiring-people`}
                       className={TypographyStyles.popularTopics}
                     >
                       <a className={TypographyStyles.popularTopics}>
-                        Inspiring People
+                        FAQ
                       </a>
                     </Link>
                   </Flex>
@@ -188,9 +185,9 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/eye-health`}>
+                    <Link legacyBehavior href={`/topic/eye-health`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Eye Health
+                        Medication
                       </a>
                     </Link>
                   </Flex>
@@ -202,7 +199,7 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/news`}>
+                    <Link legacyBehavior href={`/topic/news`}>
                       <a className={TypographyStyles.popularTopics}>News</a>
                     </Link>
                   </Flex>
@@ -214,9 +211,9 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/technology`}>
+                    <Link legacyBehavior href={`/topic/technology`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Technology
+                        Social
                       </a>
                     </Link>
                   </Flex>
@@ -228,9 +225,9 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/campaigns`}>
+                    <Link legacyBehavior href={`/topic/campaigns`}>
                       <a className={TypographyStyles.popularTopics}>
-                        Campaigns
+                        Asthma
                       </a>
                     </Link>
                   </Flex>
@@ -242,8 +239,8 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/dogs`}>
-                      <a className={TypographyStyles.popularTopics}>Dogs</a>
+                    <Link legacyBehavior href={`/topic/dogs`}>
+                      <a className={TypographyStyles.popularTopics}>Diabetes</a>
                     </Link>
                   </Flex>
                 </Box>
@@ -255,7 +252,7 @@ export default function PopularTopics(props) {
                   pt={3}
                 >
                   <Select
-                    placeholder="View all topics.."
+                    placeholder="Full Menu.."
                     id="selectBox2"
                     onChange={() => changeFunc()}
                     bgColor="white"

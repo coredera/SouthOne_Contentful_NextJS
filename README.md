@@ -70,6 +70,4 @@ https://www.contentful.com/developers/docs/references/graphql/
 
 
 
-This is a direct link to the Guide Dogs UK space and using the standard access token:
 
-https://graphql.contentful.com/content/v1/spaces/nuae5e9fko0f/explore?access_token=opR-nkGPKivjOBbAqxO3CO9S0-wIbwiJkXX8tSXYdeM

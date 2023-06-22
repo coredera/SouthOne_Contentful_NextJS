@@ -7,7 +7,7 @@ if (process.browser) {
 
       // get chatbot element from the page
       var chatbot = document.querySelector('.c-chatbot');
-      var iframeOrigin = 'https://chatbot.guidedogs.org.uk';
+      var iframeOrigin = 'https://chatbot.examplesite.org.uk';
       // media query for adding no-scroll or not
       var mql = window.matchMedia('(min-width: 60em)');
       
@@ -47,7 +47,7 @@ if (process.browser) {
       var chatbotUiOptions = {
         parentOrigin: window.location.origin
       };
-      GuideDogs.Chatbot(chatbotLoaderOptions, chatbotUiOptions);
+      examplesite.Chatbot(chatbotLoaderOptions, chatbotUiOptions);
     }
     
     /***********************************************************
