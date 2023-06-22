@@ -56,7 +56,7 @@ export default function BlogBanner(props) {
   height='480px'
   padding={3}
 > 
-  <Box align='center' flex='1' bg='#f4f9f1'>
+  <Box align='center' flex='1' bg='#e8faf1'>
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Star Lane Medical Centre</Text>
     <Button style={{margin: 10}} colorScheme='teal' size='lg'>
     Button
@@ -65,7 +65,7 @@ export default function BlogBanner(props) {
     Button
   </Button>
   </Box>
-  <Box align='center' flex='1' bg='#f4f9f1' >
+  <Box align='center' flex='1' bg='#e8faf1' >
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Custom House Surgery</Text>
     <Button style={{margin: 10}} colorScheme='teal' size='lg'>
     Button
@@ -74,7 +74,7 @@ export default function BlogBanner(props) {
     Button
   </Button>
   </Box>
-  <Box align='center' flex='1' bg='#f4f9f1'>
+  <Box align='center' flex='1' bg='#e8faf1'>
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>St Luke's Medical Centre</Text>
     <Button style={{margin: 10}} colorScheme='teal' size='lg'>
     Button
