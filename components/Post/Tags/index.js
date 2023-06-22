@@ -36,7 +36,7 @@ export default function Tags(props) {
 
           {tags.map((tag) => (
             <WrapItem>
-              <Link href={`/topic/${tag.id}`}>
+              <Link legacyBehavior href={`/topic/${tag.id}`}>
                 <a>
                   <div className={TagsStyles.tags__tag} key={tag.id}>
                     <b> {tag.name} </b>

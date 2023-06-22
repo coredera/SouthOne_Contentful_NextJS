@@ -49,7 +49,7 @@ export default function PopularPosts(props) {
         {topPostsArray.map((post) => (
           <div key={post.sys.id}>
             <Box pt={2}  fontSize={18} fontFamily="castledown-bold" >
-              <Link href={`/${post.slug}`}>
+              <Link legacyBehavior href={`/${post.slug}`}>
                 <a className={ContentListStyles.contentList__titleLink}>
                   <h3>{post.title}</h3>
                 </a>

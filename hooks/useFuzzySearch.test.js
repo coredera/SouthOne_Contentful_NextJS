@@ -15,7 +15,7 @@ const posts = [
 
 describe("[Hooks]: useFuzzySearch", () => {
   beforeEach(() => {
-    router.push("/blog/search");
+    router.push("/search");
   });
   test("should render list of all posts if no querystring found.", () => {
     router.isReady = true;

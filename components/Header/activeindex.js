@@ -32,7 +32,7 @@ export default function Header() {
       <Box backgroundColor={"brand.100"} maxHeight="127">
         <SimpleGrid columns={2} padding={6}>
           <GridItem width="162" heigh="74">
-            <Link href="/" width="162" heigh="74">
+            <Link legacyBehavior href="/" width="162" heigh="74">
               <a
                 className={HeaderStyles.header__logoContainerLink}
                 aria-label="Navigate to home page"
@@ -51,11 +51,11 @@ export default function Header() {
           {Config.menuLinks.map((link) => {
             const onBlogPost =
               router.pathname === Config.pageMeta.post.slug &&
-              link.path === Config.pageMeta.blogIndex.slug;
+              link.path === Config.pageMeta.home.slug;
 
             const onBlogIndexPage =
-              router.pathname === Config.pageMeta.blogIndexPage.slug &&
-              link.path === Config.pageMeta.blogIndex.slug;
+              router.pathname === Config.pageMeta.homePage.slug &&
+              link.path === Config.pageMeta.home.slug;
 
             const isActive =
               onBlogPost || onBlogIndexPage || router.pathname === link.path;
@@ -66,7 +66,7 @@ export default function Header() {
             return (
               <>
        
-                <Link href={link.path}>
+                <Link legacyBehavior href={link.path}>
                   <a className={HeaderStyles.header__navListItemLink}>
                     <Box
                       border = "3px"

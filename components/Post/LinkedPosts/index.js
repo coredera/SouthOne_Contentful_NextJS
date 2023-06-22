@@ -67,7 +67,7 @@ export default function LinkedPosts(props) {
                       <article>
                         <Box>
                           <Box>
-                            <Link href={`/${post.slug}`}>
+                            <Link legacyBehavior href={`/${post.slug}`}>
                               <a>
                                 <Box>
                                   <img
@@ -90,7 +90,7 @@ export default function LinkedPosts(props) {
                         <Box p={8}>
                           <Flex pb={0}>
                             <Box>
-                              <Link href={`/${post.slug}`}>
+                              <Link legacyBehavior href={`/${post.slug}`}>
                                 <a>
                                   <h2
                                     className={`${TypographyStyles.heading__h6} ${TypographyStyles.inlineLink}`}

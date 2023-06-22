@@ -1,7 +1,7 @@
 module.exports = {
   basePath: '',
   //assetPrefix: '/blog',
-  //assetPrefix: './',
+  assetPrefix: '/',
   //trailingSlash: true,
   //exportTrailingSlash: true, //deprecated var
   

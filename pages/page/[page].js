@@ -63,8 +63,8 @@ export default function BlogIndexPage(props) {
       <PageMeta
         title={`${pageTitle} | Page ${currentPage}`}
         description={pageDescription}
-        url={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
-        canonical={`${Config.pageMeta.blogIndex.url}/page/${currentPage}`}
+        url={`${Config.pageMeta.home.url}/page/${currentPage}`}
+        canonical={`${Config.pageMeta.home.url}/page/${currentPage}`}
         metatitle={`${page.metaTitle} - page ${currentPage}`}
         metadescription={page.metaDescription}
       />

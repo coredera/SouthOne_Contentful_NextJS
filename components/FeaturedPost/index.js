@@ -42,7 +42,7 @@ export default function FeaturedPost(props) {
           <Flex justifyContent pt={20} pb={20}>
             <Box pr={30}>
               <Box pb={3}>
-                <Link href={`/${featuredArticle.slug}`}>
+                <Link legacyBehavior href={`/${featuredArticle.slug}`}>
                   <a>
                     <h2 className={ContentListStyles.contentList__title}>
                       {featuredArticle.title}
@@ -75,7 +75,7 @@ export default function FeaturedPost(props) {
 
               <Flex alignItems="center">
                 <Box alignSelf="center">
-                  <Link href={`/${featuredArticle.slug}`} >
+                  <Link legacyBehavior href={`/${featuredArticle.slug}`} >
                     <a>
                       <Flex
                         className={ContentListStyles.contentList__readmorelink}
@@ -97,7 +97,7 @@ export default function FeaturedPost(props) {
             </Box>
             <Spacer />
             <Box pl={30} width="70rem">
-              <Link href={`/${featuredArticle.slug}`}>
+              <Link legacyBehavior href={`/${featuredArticle.slug}`}>
                 <a>
                   <img
                     src={featuredArticle.image.url}
@@ -119,7 +119,7 @@ export default function FeaturedPost(props) {
         <article className={ContentListStyles.contentList__post}>
           <Flex>
             <Spacer />
-            <Link href={`/${featuredArticle.slug}`}>
+            <Link legacyBehavior href={`/${featuredArticle.slug}`}>
               <a>
                 <img
                   src={featuredArticle.image.url}
@@ -135,7 +135,7 @@ export default function FeaturedPost(props) {
             <Spacer />
           </Flex>
           <Flex p={2} />
-          <Link href={`/${featuredArticle.slug}`}>
+          <Link legacyBehavior href={`/${featuredArticle.slug}`}>
             <a>
               <h2 className={ContentListStyles.contentList__title}>
                 {featuredArticle.title}
@@ -168,7 +168,7 @@ export default function FeaturedPost(props) {
           </div>
           <Flex alignItems="center">
             <Box alignSelf="center">
-              <Link href={`/${featuredArticle.slug}`}>
+              <Link legacyBehavior href={`/${featuredArticle.slug}`}>
                 <a>
                   <Flex className={ContentListStyles.contentList__readmorelink}>
                     Read more
