@@ -51,22 +51,37 @@ export default function BlogBanner(props) {
     <>
  
  <VStack
-  spacing={1}
+  spacing={3}
   align='stretch'
   height='480px'
-  padding={1}
+  padding={3}
 > 
-  <Box align='center' flex='1' bg='green.500'>
-    <Text >Star Lane Medical Centre</Text>
-    <Button colorScheme='teal' size='lg'>
+  <Box align='center' flex='1' bg='#f4f9f1'>
+    <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Star Lane Medical Centre</Text>
+    <Button style={{margin: 10}} colorScheme='teal' size='lg'>
+    Button
+  </Button> 
+  <Button style={{margin: 10}} colorScheme='teal' size='lg'>
     Button
   </Button>
   </Box>
-  <Box align='center' flex='1' bg='blue.500' >
-    <Text>Custom House Surgery</Text>
+  <Box align='center' flex='1' bg='#f4f9f1' >
+    <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Custom House Surgery</Text>
+    <Button style={{margin: 10}} colorScheme='teal' size='lg'>
+    Button
+  </Button> 
+  <Button style={{margin: 10}} colorScheme='teal' size='lg'>
+    Button
+  </Button>
   </Box>
-  <Box align='center' flex='1' bg='tomato'>
-    <Text>St Luke's Medical Centre</Text>
+  <Box align='center' flex='1' bg='#f4f9f1'>
+    <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>St Luke's Medical Centre</Text>
+    <Button style={{margin: 10}} colorScheme='teal' size='lg'>
+    Button
+  </Button> 
+  <Button style={{margin: 10}} colorScheme='teal' size='lg'>
+    Button
+  </Button>
   </Box>
 
 </VStack>
