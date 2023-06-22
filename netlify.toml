@@ -1,20 +1,20 @@
 
 
 
-[[redirects]]
-  from = '/*'
-  to = '/blog/404'
-#  to = '/blog/:splat'
-  status = 404
-#  status = 200
+# [[redirects]]
+#   from = '/*'
+#   to = '/blog/404'
+##   to = '/blog/:splat'
+#   status = 404
+##   status = 200
   
-[[plugins]]
-package = "@algolia/netlify-plugin-crawler"
-  [plugins.inputs]
-  branches = ['*']
-  pathPrefix = "/blog"
-  renderJavaScript = true
-# customDomain = "examplesite.org.uk"
+# [[plugins]]
+# package = "@algolia/netlify-plugin-crawler"
+#   [plugins.inputs]
+#   branches = ['*']
+#   pathPrefix = "/blog"
+#   renderJavaScript = true
+##  customDomain = "examplesite.org.uk"
 
 
 
@@ -41,13 +41,13 @@ package = "@algolia/netlify-plugin-crawler"
 #	to = 'https://www.examplesite.org.uk'
 #	status = 200
 
-[[redirects]]
-  from = '/clone'
-  to = 'https://examplesite-dev-origin.examplesite.org.uk/how-you-can-help/how-your-school-or-youth-group-can-help/stem-projects/stem-thank-you'
-  status = 200
-  force = true
-  [redirects.headers]
-      Authorization = "Basic Z3VpZGVkb2dzOmM4N2J0R0hRWUhVWENqc1FNQTV5dHRKWg=="	
+# [[redirects]]
+#   from = '/clone'
+#   to = 'https://examplesite-dev-origin.examplesite.org.uk/how-you-can-help/how-your-school-or-youth-group-can-help/stem-projects/stem-thank-you'
+#   status = 200
+#   force = true
+#   [redirects.headers]
+#       Authorization = "Basic Z3VpZGVkb2dzOmM4N2J0R0hRWUhVWENqc1FNQTV5dHRKWg=="	
 	
 
 #[[redirects]]
