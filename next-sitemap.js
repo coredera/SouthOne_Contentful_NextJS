@@ -1,5 +1,5 @@
 module.exports = {
-  siteUrl: "https://www.examplesite.org.uk/blog",
+  siteUrl: "https://www.examplesite.org.uk",
  // outDir: "public/blog",
   generateRobotsTxt: true, // (optional)
 
