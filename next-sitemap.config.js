@@ -2,9 +2,10 @@
 
 module.exports = {
   siteUrl: "https://www.examplesite.org.uk",
-  outDir: "out",
+  //outDir: "out",
   generateRobotsTxt: true, // (optional)
   generateIndexSitemap: false,
+  //sitemapBaseFileName: "sitemap",
 
   robotsTxtOptions: {
     policies: [{ userAgent: "*", disallow: "/api" }],
