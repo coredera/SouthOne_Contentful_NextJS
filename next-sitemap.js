@@ -1,6 +1,6 @@
 module.exports = {
   siteUrl: "https://www.examplesite.org.uk",
-  outDir: ".",
+  outDir: "out",
   generateRobotsTxt: true, // (optional)
 
   robotsTxtOptions: {
