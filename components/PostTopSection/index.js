@@ -51,7 +51,7 @@ export default function PostTopSection(props) {
                     minWidth="160"
                   >
                     <Box style={{ textDecoration: "underline" }}>
-                      <Link href="https://www.examplesite.org.uk">
+                      <Link legacyBehavior href="https://www.examplesite.org.uk">
                         <a>
                           <h3>Home</h3>
                         </a>
@@ -61,7 +61,7 @@ export default function PostTopSection(props) {
                     <Box>&gt;</Box>
                     <Spacer />
                     <Box style={{ textDecoration: "underline" }}>
-                      <Link href={`${Config.pageMeta.home.slug}`}>
+                      <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
                         <a>
                           <h3>Blog</h3>
                         </a>
@@ -90,7 +90,7 @@ export default function PostTopSection(props) {
             alignSelf="center"
           >
             <Box style={{ textDecoration: "underline" }}>
-              <Link href="https://www.examplesite.org.uk">
+              <Link legacyBehavior href="https://www.examplesite.org.uk">
                 <a>
                   <h3>Home</h3>
                 </a>
@@ -100,7 +100,7 @@ export default function PostTopSection(props) {
             <Box>&gt;</Box>
             <Spacer />
             <Box style={{ textDecoration: "underline" }}>
-              <Link href={`${Config.pageMeta.home.slug}`}>
+              <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
                 <a>
                   <h3>Blog</h3>
                 </a>

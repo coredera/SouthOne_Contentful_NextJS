@@ -27,6 +27,10 @@ export const Config = {
       url: SITE_URL,
       slug: "/",
     },
+    homePage: {
+      url: SITE_URL,
+      slug: "/page/[page]",
+    },
     blogIndex: { 
       url: `${SITE_URL}/blog`,
       slug: "/blog",
@@ -35,7 +39,7 @@ export const Config = {
       slug: "/blog/page/[page]",
     },
     post: {
-      slug: "/blog/[slug]",
+      slug: "/[slug]",
     },
     privacyPolicy: { 
       url: `${SITE_URL}/privacy-policy`,

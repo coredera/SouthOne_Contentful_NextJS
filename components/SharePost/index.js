@@ -58,7 +58,7 @@ export default function SharePost(props) {
         <Flex>
           <Box pr={3}>
             <FacebookShareButton
-              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              url={`${Config.pageMeta.home.url}/${post.slug}`}
               quote={`${post.title}`}
               hashtag={`#${post.title}`}
             >
@@ -68,7 +68,7 @@ export default function SharePost(props) {
 
           <Box pr={3}>
             <TwitterShareButton
-              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              url={`${Config.pageMeta.home.url}/${post.slug}`}
               title={`${post.title}`}
             >
               <TwitterIcon size={30} round />
@@ -77,7 +77,7 @@ export default function SharePost(props) {
 
           <Box pr={3}>
             <LinkedinShareButton
-              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              url={`${Config.pageMeta.home.url}/${post.slug}`}
               title={`${post.title}`}
             
             >
@@ -87,7 +87,7 @@ export default function SharePost(props) {
 
           <Box pr={3}>
             <WhatsappShareButton
-              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              url={`${Config.pageMeta.home.url}/${post.slug}`}
               title={`${post.title}`}
               separator=":: "
             >
@@ -96,7 +96,7 @@ export default function SharePost(props) {
           </Box>
           <Box>
             <EmailShareButton
-              url={`${Config.pageMeta.blogIndex.url}/${post.slug}`}
+              url={`${Config.pageMeta.home.url}/${post.slug}`}
               subject={`${post.title}`}
               body=""
             >

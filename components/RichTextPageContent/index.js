@@ -171,7 +171,7 @@ export function getRichTextRenderOptions(links, options) {
         switch (__typename) {
           case "BlogPost":
             return (
-              <Link href={`/${entry.slug}`}>
+              <Link legacyBehavior href={`/${entry.slug}`}>
                 <a className={TypographyStyles.inlineLink}>{entry.title}</a>
               </Link>
             );
@@ -205,7 +205,7 @@ export function getRichTextRenderOptions(links, options) {
         switch (__typename) {
           case "BlogPost":
             return (
-              <Link href={`/${entry.slug}`}>
+              <Link legacyBehavior href={`/${entry.slug}`}>
                 <a
                   className={`${TypographyStyles.bodyCopyS} ${TypographyStyles.inlineLink}`}
                 >

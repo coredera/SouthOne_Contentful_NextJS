@@ -41,7 +41,7 @@ export default function PopularPosts(props) {
           pt={5}
         >
           
-            <Link href="https://www.examplesite.org.uk/contact-us/email-updates/">
+            <Link legacyBehavior href="https://www.examplesite.org.uk/contact-us/email-updates/">
               <a style={{ textDecoration: "underline" }}>
                 Sign up to our newsletter
               </a>
@@ -52,7 +52,7 @@ export default function PopularPosts(props) {
         <Box>
           <Flex>
             <Box pr={3}>
-              <Link href="https://www.facebook.com/examplesiteUK/">
+              <Link legacyBehavior href="https://www.facebook.com/examplesiteUK/">
                 <a>
                   <Box
                     style={{
@@ -85,7 +85,7 @@ export default function PopularPosts(props) {
               </Link>
             </Box>
             <Box pr={3}>
-              <Link href="https://twitter.com/intent/follow?source=followbutton&variant=1.0&screen_name=examplesite">
+              <Link legacyBehavior href="https://twitter.com/intent/follow?source=followbutton&variant=1.0&screen_name=examplesite">
                 <a>
                   <Box
                     style={{
@@ -118,7 +118,7 @@ export default function PopularPosts(props) {
               </Link>
             </Box>
             <Box pr={3}>
-              <Link href="https://www.youtube.com/user/examplesiteUK">
+              <Link legacyBehavior href="https://www.youtube.com/user/examplesiteUK">
                 <a>
                   <Box
                     style={{
@@ -151,7 +151,7 @@ export default function PopularPosts(props) {
               </Link>
             </Box>
             <Box>
-              <Link href="http://instagram.com/examplesiteUK">
+              <Link legacyBehavior href="http://instagram.com/examplesiteUK">
                 <a>
                   <Box
                     style={{

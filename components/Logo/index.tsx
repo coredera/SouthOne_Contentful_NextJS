@@ -6,7 +6,7 @@ import LottieControl from '../Lottie/index';
 
 
 const Logo = () => {
-    return <LottieControl data={AnimatedLogo} />;
+    return <LottieControl data="" />;
   };
 
 export default Logo;

@@ -51,7 +51,7 @@ export default function PopularTopics(props) {
                       />
                     </Box>
 
-                    <Link
+                    <Link legacyBehavior
                       href={`/topic/inspiring-people`}
                       className={TypographyStyles.popularTopics}
                     >
@@ -69,7 +69,7 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/eye-health`}>
+                    <Link legacyBehavior href={`/topic/eye-health`}>
                       <a className={TypographyStyles.popularTopics}>
                         Medication
                       </a>
@@ -86,7 +86,7 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/news`}>
+                    <Link legacyBehavior href={`/topic/news`}>
                       <a className={TypographyStyles.popularTopics}>News</a>
                     </Link>
                   </Flex>
@@ -98,7 +98,7 @@ export default function PopularTopics(props) {
                       
                       />
                     </Box>
-                    <Link href={`/topic/technology`}>
+                    <Link legacyBehavior href={`/topic/technology`}>
                       <a className={TypographyStyles.popularTopics}>
                         Social
                       </a>
@@ -115,7 +115,7 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/campaigns`}>
+                    <Link legacyBehavior href={`/topic/campaigns`}>
                       <a className={TypographyStyles.popularTopics}>
                         Asthma
                       </a>
@@ -129,7 +129,7 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link href={`/topic/dogs`}>
+                    <Link legacyBehavior href={`/topic/dogs`}>
                       <a className={TypographyStyles.popularTopics}>Diabetes</a>
                     </Link>
                   </Flex>
@@ -168,7 +168,7 @@ export default function PopularTopics(props) {
                       />
                     </Box>
 
-                    <Link
+                    <Link legacyBehavior
                       href={`/topic/inspiring-people`}
                       className={TypographyStyles.popularTopics}
                     >
@@ -185,7 +185,7 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/eye-health`}>
+                    <Link legacyBehavior href={`/topic/eye-health`}>
                       <a className={TypographyStyles.popularTopics}>
                         Medication
                       </a>
@@ -199,7 +199,7 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/news`}>
+                    <Link legacyBehavior href={`/topic/news`}>
                       <a className={TypographyStyles.popularTopics}>News</a>
                     </Link>
                   </Flex>
@@ -211,7 +211,7 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/technology`}>
+                    <Link legacyBehavior href={`/topic/technology`}>
                       <a className={TypographyStyles.popularTopics}>
                         Social
                       </a>
@@ -225,7 +225,7 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/campaigns`}>
+                    <Link legacyBehavior href={`/topic/campaigns`}>
                       <a className={TypographyStyles.popularTopics}>
                         Asthma
                       </a>
@@ -239,7 +239,7 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link href={`/topic/dogs`}>
+                    <Link legacyBehavior href={`/topic/dogs`}>
                       <a className={TypographyStyles.popularTopics}>Diabetes</a>
                     </Link>
                   </Flex>

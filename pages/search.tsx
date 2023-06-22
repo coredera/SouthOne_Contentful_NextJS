@@ -358,8 +358,8 @@ export default function BlogSearch(props) {
         <PageMeta
           title={page.title}
           description={page.description}
-          url={Config.pageMeta.blogIndex.url}
-          canonical={Config.pageMeta.blogIndex.url}
+          url={Config.pageMeta.home.url}
+          canonical={Config.pageMeta.home.url}
           metatitle={page.metaTitle}
           metadescription={page.metaDescription}
         />
@@ -419,7 +419,7 @@ export default function BlogSearch(props) {
             <ContentWrapper>
               <Flex alignItems="center" pb={0} pt={5}>
                 <Box alignSelf="center">
-                  <Link href={`${Config.pageMeta.home.slug}`}>
+                  <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
                     <a>
                       <Flex>
                         <h3 className={ContentListStyles.contentList__homelink}>
@@ -476,7 +476,7 @@ export default function BlogSearch(props) {
                 {topPostsArray.map((post) => (
                   <div key={post.sys.id}>
                     <article className={ContentListStyles.contentList__post}>
-                      <Link href={`/${post.slug}`}>
+                      <Link legacyBehavior href={`/${post.slug}`}>
                         <a>
                           <img
                             src={post.image.url}
@@ -489,7 +489,7 @@ export default function BlogSearch(props) {
                       </Link>
 
                       <Flex p={2} />
-                      <Link href={`/${post.slug}`}>
+                      <Link legacyBehavior href={`/${post.slug}`}>
                         <a className={ContentListStyles.contentList__titleLink}>
                           <h2 className={ContentListStyles.contentList__title}>
                             {post.title}
@@ -512,7 +512,7 @@ export default function BlogSearch(props) {
                       </div>
                       <Flex alignItems="center">
                         <Box alignSelf="center">
-                          <Link href={`/${post.slug}`}>
+                          <Link legacyBehavior href={`/${post.slug}`}>
                             <a>
                               <h3
                                 className={
