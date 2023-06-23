@@ -36,7 +36,8 @@ export default function PopularTopics(props) {
 
   return (
     <>
-      <Box bgColor="brand.900">
+      <Box
+       bgColor="brand.900">
         <ContentWrapper>
           <Box pb={20} pt={5} height={[360, 360, 125]}> 
             <Box display={{ base: "none", md: "block" }}>
