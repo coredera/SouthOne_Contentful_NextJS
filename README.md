@@ -19,7 +19,7 @@ Use your code editing tool to access the source code at
 
 Ensure you have a env.local file populated with the following:
 ```
- 
+
 ```
 
 ### Install dependencies
