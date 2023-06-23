@@ -39,6 +39,7 @@ import {
   LinkOverlay,
   Icon,
   Button,
+  Stack,
   VStack,
   Text,
   Container,
@@ -101,8 +102,14 @@ export default function BlogIndex(props) {
           metatitle={page.metaTitle}
           metadescription={page.metaDescription}
         /> 
-        <BlogBanner page={page} />
-        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />     
+        <VStack>
+        <Box>
+      <BlogBanner page={page} />
+      </Box>
+      <Box>
+      <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
+      </Box>
+      </VStack>
         <ContentWrapper>
           <Box pt={10}>
           {featuredArticle !== null && (

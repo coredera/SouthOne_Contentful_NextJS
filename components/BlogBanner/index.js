@@ -51,36 +51,44 @@ export default function BlogBanner(props) {
     <>
  
  <VStack
-  spacing={3}
+  spacing={2}
   align='stretch'
-  height='480px'
-  padding={3}
+  padding={2}
 > 
-  <Box align='center' flex='1' bg='#e8faf1'>
+  <Box pb={[2, 2, 4]} pt={[0, 0, 3]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#e8faf1'>
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Star Lane Medical Centre</Text>
-    <Button style={{margin: 10}} colorScheme='teal' size='lg'>
-    Button
+    <Button borderRadius={5} style={{margin: 5}} colorScheme='linkedin' size='lg'>
+    Submit Health Query
   </Button> 
-  <Button style={{margin: 10}} colorScheme='teal' size='lg'>
-    Button
+  <Button borderRadius={5} style={{margin: 5}} colorScheme='linkedin' size='lg'>
+    Register
+  </Button>
+  <Button borderRadius={5} style={{margin: 5}} colorScheme='blue' size='lg'>
+    Website
   </Button>
   </Box>
-  <Box align='center' flex='1' bg='#e8faf1' >
+  <Box pb={[2, 2, 4]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#e8faf1' >
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Custom House Surgery</Text>
-    <Button style={{margin: 10}} colorScheme='teal' size='lg'>
-    Button
+    <Button borderRadius={5} style={{margin: 5}} colorScheme='linkedin' size='lg'>
+    Submit Health Query
   </Button> 
-  <Button style={{margin: 10}} colorScheme='teal' size='lg'>
-    Button
+  <Button borderRadius={5} style={{margin: 5}} colorScheme='linkedin' size='lg'>
+    Register
+  </Button>
+  <Button borderRadius={5} style={{margin: 5}} colorScheme='blue' size='lg'>
+    Website
   </Button>
   </Box>
-  <Box align='center' flex='1' bg='#e8faf1'>
+  <Box pb={[2, 2, 4]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#e8faf1'>
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>St Luke's Medical Centre</Text>
-    <Button style={{margin: 10}} colorScheme='teal' size='lg'>
-    Button
+    <Button borderRadius={5} style={{margin: 5}} colorScheme='linkedin' size='lg'>
+    Submit Health Query
   </Button> 
-  <Button style={{margin: 10}} colorScheme='teal' size='lg'>
-    Button
+  <Button borderRadius={5} style={{margin: 5}} colorScheme='linkedin' size='lg'>
+    Register
+  </Button>
+  <Button borderRadius={5} style={{margin: 5}} colorScheme='blue' size='lg'>
+    Website
   </Button>
   </Box>
 
