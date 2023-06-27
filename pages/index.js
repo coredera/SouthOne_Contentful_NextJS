@@ -103,11 +103,9 @@ export default function BlogIndex(props) {
           metatitle={page.metaTitle}
           metadescription={page.metaDescription}
         /> 
-
         <Box>
       <BlogBanner page={page} />
       </Box>
-
       <Box>
       <PopularTags sortedBlogPostTags={sortedBlogPostTags} />
       </Box>

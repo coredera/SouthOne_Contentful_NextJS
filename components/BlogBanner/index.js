@@ -53,9 +53,11 @@ export default function BlogBanner(props) {
  <VStack
   spacing={2}
   align='stretch'
-  padding={5}
+  padding={[2, 3, 5]}
+  mr={[0, 0, 40]}
+  ml={[0, 0, 40]}
 > 
-  <Box pb={[2, 2, 4]} pt={[0, 0, 3]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#a1d2bb'>
+  <Box pb={[2, 2, 4]} pt={[0, 0, 3]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#e8faf1'>
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Star Lane Medical Centre</Text>
     <Button as={Link} href="https://access.klinik.co.uk/contact/star-lane-medical-centre/" target="_blank" borderRadius={3} style={{margin: 5}} color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#10949c" size='lg'>
     Submit Health Query
@@ -67,7 +69,7 @@ export default function BlogBanner(props) {
     Website
   </Button>
   </Box>
-  <Box pb={[2, 2, 4]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#a1d2bb' >
+  <Box pb={[2, 2, 4]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#e8faf1' >
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>Custom House Surgery</Text>
     <Button as={Link} href="https://www.online-consult.co.uk/org/custom-house-surgery" target="_blank" borderRadius={3} style={{margin: 5}} color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#10949c" size='lg'>
     Submit Health Query
@@ -79,7 +81,7 @@ export default function BlogBanner(props) {
     Website
   </Button>
   </Box>
-  <Box pb={[2, 2, 4]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#a1d2bb'>
+  <Box pb={[2, 2, 4]} border="1px" borderRadius="md" borderColor="#b1ce20" align='center' flex='1' bg='#e8faf1'>
     <Text style={{margin: 10}} fontWeight="700" fontSize='xl'>St Luke's Medical Centre</Text>
     <Button as={Link} href="https://www.online-consult.co.uk/org/dr-ruiz-st-luke-s-medical-centre" target="_blank" borderRadius={3} style={{margin: 5}} color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#10949c" size='lg'>
     Submit Health Query
