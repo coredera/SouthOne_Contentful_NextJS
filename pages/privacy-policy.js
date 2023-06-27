@@ -18,7 +18,7 @@ import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
 import router, { useRouter } from "next/router";
 import FeaturedPost from "@components/FeaturedPost";
-import PopularTopics from "@components/PopularTopics";
+import PopularTags from "@components/PopularTags";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
 
@@ -226,5 +226,5 @@ export async function changeFunc(tagid) {
   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
   // alert(selectedValue);
 
-  router.push(`/topic/${selectedValue}`);
+  router.push(`/tag/${selectedValue}`);
 }

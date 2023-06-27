@@ -32,11 +32,11 @@ export default function Tags(props) {
     <>
       <Flex>
         <Wrap>
-          <b> Topics:</b>
+          <b> Tags:</b>
 
           {tags.map((tag) => (
             <WrapItem>
-              <Link legacyBehavior href={`/topic/${tag.id}`}>
+              <Link legacyBehavior href={`/tag/${tag.id}`}>
                 <a>
                   <div className={TagsStyles.tags__tag} key={tag.id}>
                     <b> {tag.name} </b>
