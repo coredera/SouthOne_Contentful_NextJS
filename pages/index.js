@@ -22,6 +22,7 @@ import PopularTopics from "@components/PopularTopics";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
 import SocialMedia from "@components/SocialMedia";
+import CQC from "@components/CQC";
 
 
 import {
@@ -102,9 +103,11 @@ export default function BlogIndex(props) {
           metatitle={page.metaTitle}
           metadescription={page.metaDescription}
         /> 
+
         <Box>
       <BlogBanner page={page} />
       </Box>
+
       <Box>
       <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
       </Box>
@@ -135,17 +138,25 @@ export default function BlogIndex(props) {
                 pl={10}
                 display={{ base: "none", lg: "block" }}
               >
-                <Box pb={10}>
+                <Box pb={5}>
                 <PopularPosts topPostsArray={topPostsArray} />
                 </Box>
+                <Box>
+                <CQC topPostsArray={topPostsArray} />
+              </Box>
+              <Box pt={5}>
                 <SocialMedia topPostsArray={topPostsArray} />
+              </Box>
               </Box>
             </Flex>
 
-            <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
+            <Flex display={{ base: "block", lg: "none" }} pb={2} pt={10}>
               <PopularPosts topPostsArray={topPostsArray} />
             </Flex>
-            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
+            <Flex display={{ base: "block", lg: "none" }} pb={5} pt={5}>
+              <CQC topPostsArray={topPostsArray} />
+            </Flex>
+            <Flex display={{ base: "block", lg: "none" }} pb={2} pt={2}>
               <SocialMedia topPostsArray={topPostsArray} />
             </Flex>
           </ContentWrapper>

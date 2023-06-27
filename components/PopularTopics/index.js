@@ -39,7 +39,7 @@ export default function PopularTopics(props) {
       <Box
        bgColor="brand.900">
         <ContentWrapper>
-          <Box pb={20} pt={5} height={[360, 360, 125]}> 
+          <Box pb={20} pt={5} pl={20} height={[360, 360, 125]}> 
             <Box display={{ base: "none", md: "block" }}>
               <Flex color="white" alignSelf="center">
                 <Box>

@@ -34,7 +34,7 @@ export default function PopularPosts(props) {
   return (
     <>
       <Box pb={3} className={ContentListStyles.contentList__SocialMedia}>
-        <h2>Be the first to know</h2>
+        <h2>Keep in touch</h2>
         <Box
           className={TypographyStyles.bodyCopyS}
           style={{ color: "inherit" }}
@@ -45,8 +45,8 @@ export default function PopularPosts(props) {
               <a style={{ textDecoration: "underline" }}>
                 Sign up to our newsletter
               </a>
-            </Link>{" "}
-            or connect with us on Facebook, Twitter, Instagram and YouTube
+            </Link>{" "} 
+            or connect with us on LinkedIn or YouTube
           
         </Box>
         <Box>
