@@ -4,7 +4,7 @@ import { Config } from "@utils/Config";
 import PageMeta from "@components/PageMeta";
 import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
-import PopularTopics from "@components/PopularTopics";
+import PopularTags from "@components/PopularTags";
 import PostTopSection from "@components/PostTopSection";
 import Author from "@components/Post/Author";
 import PopularPosts from "@components/PopularPosts";

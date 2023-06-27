@@ -29,7 +29,7 @@ import {
   WrapItem,
 } from "@chakra-ui/react";
 
-export default function PopularTopics(props) {
+export default function Populartags(props) {
   const sortedBlogPostTags = props.sortedBlogPostTags;
 
   //console.log(sortedBlogPostTags);
@@ -53,10 +53,10 @@ export default function PopularTopics(props) {
                     </Box>
 
                     <Link legacyBehavior
-                      href={`/topic/inspiring-people`}
-                      className={TypographyStyles.popularTopics}
+                      href={`/tag/inspiring-people`}
+                      className={TypographyStyles.popularTags}
                     >
-                      <a className={TypographyStyles.popularTopics}>
+                      <a className={TypographyStyles.popularTags}>
                         FAQ
                       </a>
                     </Link>
@@ -70,8 +70,8 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/eye-health`}>
-                      <a className={TypographyStyles.popularTopics}>
+                    <Link legacyBehavior href={`/tag/eye-health`}>
+                      <a className={TypographyStyles.popularTags}>
                         Medication
                       </a>
                     </Link>
@@ -87,8 +87,8 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/news`}>
-                      <a className={TypographyStyles.popularTopics}>News</a>
+                    <Link legacyBehavior href={`/tag/news`}>
+                      <a className={TypographyStyles.popularTags}>News</a>
                     </Link>
                   </Flex>
                   <Flex pt={4}>
@@ -99,8 +99,8 @@ export default function PopularTopics(props) {
                       
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/technology`}>
-                      <a className={TypographyStyles.popularTopics}>
+                    <Link legacyBehavior href={`/tag/technology`}>
+                      <a className={TypographyStyles.popularTags}>
                         Social
                       </a>
                     </Link>
@@ -116,8 +116,8 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/campaigns`}>
-                      <a className={TypographyStyles.popularTopics}>
+                    <Link legacyBehavior href={`/tag/campaigns`}>
+                      <a className={TypographyStyles.popularTags}>
                         Asthma
                       </a>
                     </Link>
@@ -130,14 +130,14 @@ export default function PopularTopics(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/dogs`}>
-                      <a className={TypographyStyles.popularTopics}>Diabetes</a>
+                    <Link legacyBehavior href={`/tag/dogs`}>
+                      <a className={TypographyStyles.popularTags}>Diabetes</a>
                     </Link>
                   </Flex>
                 </Box>
                 <Spacer />
                 <Box
-                  className={ContentListStyles.contentList__selectTopic}
+                  className={ContentListStyles.contentList__selectTag}
                   pt={3}
                 >
                   <Select
@@ -170,10 +170,10 @@ export default function PopularTopics(props) {
                     </Box>
 
                     <Link legacyBehavior
-                      href={`/topic/inspiring-people`}
-                      className={TypographyStyles.popularTopics}
+                      href={`/tag/inspiring-people`}
+                      className={TypographyStyles.popularTags}
                     >
-                      <a className={TypographyStyles.popularTopics}>
+                      <a className={TypographyStyles.popularTags}>
                         FAQ
                       </a>
                     </Link>
@@ -186,8 +186,8 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/eye-health`}>
-                      <a className={TypographyStyles.popularTopics}>
+                    <Link legacyBehavior href={`/tag/eye-health`}>
+                      <a className={TypographyStyles.popularTags}>
                         Medication
                       </a>
                     </Link>
@@ -200,8 +200,8 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/news`}>
-                      <a className={TypographyStyles.popularTopics}>News</a>
+                    <Link legacyBehavior href={`/tag/news`}>
+                      <a className={TypographyStyles.popularTags}>News</a>
                     </Link>
                   </Flex>
                 
@@ -212,8 +212,8 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/technology`}>
-                      <a className={TypographyStyles.popularTopics}>
+                    <Link legacyBehavior href={`/tag/technology`}>
+                      <a className={TypographyStyles.popularTags}>
                         Social
                       </a>
                     </Link>
@@ -226,8 +226,8 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/campaigns`}>
-                      <a className={TypographyStyles.popularTopics}>
+                    <Link legacyBehavior href={`/tag/campaigns`}>
+                      <a className={TypographyStyles.popularTags}>
                         Asthma
                       </a>
                     </Link>
@@ -240,8 +240,8 @@ export default function PopularTopics(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/topic/dogs`}>
-                      <a className={TypographyStyles.popularTopics}>Diabetes</a>
+                    <Link legacyBehavior href={`/tag/dogs`}>
+                      <a className={TypographyStyles.popularTags}>Diabetes</a>
                     </Link>
                   </Flex>
                 </Box>
@@ -249,7 +249,7 @@ export default function PopularTopics(props) {
               </Flex>
               <Flex>
               <Box
-                  className={ContentListStyles.contentList__selectTopic}
+                  className={ContentListStyles.contentList__selectTag}
                   pt={3}
                 >
                   <Select
@@ -289,5 +289,5 @@ export async function changeFunc(tagid) {
 
   }
 
-  router.push(`/topic/${selectedValue}`);
+  router.push(`/tag/${selectedValue}`);
 }

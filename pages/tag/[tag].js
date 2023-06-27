@@ -15,7 +15,7 @@ import ReactMarkdown from "react-markdown";
 //import Image from "next/image";
 import Tags from "@components/Post/Tags";
 import TypographyStyles from "@styles/Typography.module.scss";
-import PopularTopics from "@components/PopularTopics";
+import PopularTags from "@components/PopularTags";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
 import SocialMedia from "@components/SocialMedia";
@@ -55,22 +55,22 @@ export default function PostWrapper(props) {
     topPostsArray,
   } = props;
 
-  const postListType = `/topic/${tag}/`;
+  const postListType = `/tag/${tag}/`;
 
   return (
     <MainLayout preview={preview}>
       <PageMeta
         title={`Read the latest ${tag} articles on our blog`}
         description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
-        url={`${Config.pageMeta.home.url}/topic/${tag}`}
-        canonical={`${Config.pageMeta.home.url}/topic/${tag}/`}
+        url={`${Config.pageMeta.home.url}/tag/${tag}`}
+        canonical={`${Config.pageMeta.home.url}/tag/${tag}/`}
         metatitle={`Read the latest ${tag} articles on our blog`}
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
       />
 
       <BlogBanner page={page} />
 
-      <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
+      <PopularTags sortedBlogPostTags={sortedBlogPostTags} />
 
       <Box bgColor="brand.50" pt={10} pb={20}>
         <ContentWrapper>
