@@ -51,7 +51,7 @@ export default function SharePost(props) {
 
   return (
     <>
-      <Box className={ContentListStyles.contentList__sharePost}>
+      <Box mt={[0, 5]} className={ContentListStyles.contentList__sharePost}>
         <Flex pb={3} pt={0}>
           Share post
         </Flex>

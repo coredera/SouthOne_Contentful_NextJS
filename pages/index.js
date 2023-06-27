@@ -18,10 +18,11 @@ import ReactMarkdown from "react-markdown";
 import PublishedDate from "@components/Post/PublishedDate";
 import router, { useRouter } from "next/router";
 import FeaturedPost from "@components/FeaturedPost";
-import PopularTopics from "@components/PopularTopics";
+import PopularTags from "@components/PopularTags";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
 import SocialMedia from "@components/SocialMedia";
+import CQC from "@components/CQC";
 
 
 import {
@@ -39,6 +40,7 @@ import {
   LinkOverlay,
   Icon,
   Button,
+  Stack,
   VStack,
   Text,
   Container,
@@ -101,8 +103,12 @@ export default function BlogIndex(props) {
           metatitle={page.metaTitle}
           metadescription={page.metaDescription}
         /> 
-        <BlogBanner page={page} />
-        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />     
+        <Box>
+      <BlogBanner page={page} />
+      </Box>
+      <Box>
+      <PopularTags sortedBlogPostTags={sortedBlogPostTags} />
+      </Box>
         <ContentWrapper>
           <Box pt={10}>
           {featuredArticle !== null && (
@@ -130,17 +136,25 @@ export default function BlogIndex(props) {
                 pl={10}
                 display={{ base: "none", lg: "block" }}
               >
-                <Box pb={10}>
+                <Box pb={5}>
                 <PopularPosts topPostsArray={topPostsArray} />
                 </Box>
+                <Box>
+                <CQC topPostsArray={topPostsArray} />
+              </Box>
+              <Box pt={5}>
                 <SocialMedia topPostsArray={topPostsArray} />
+              </Box>
               </Box>
             </Flex>
 
-            <Flex display={{ base: "block", lg: "none" }} pb={5} pt={10}>
+            <Flex display={{ base: "block", lg: "none" }} pb={2} pt={10}>
               <PopularPosts topPostsArray={topPostsArray} />
             </Flex>
-            <Flex display={{ base: "block", lg: "none" }} pb={10} pt={5}>
+            <Flex display={{ base: "block", lg: "none" }} pb={5} pt={5}>
+              <CQC topPostsArray={topPostsArray} />
+            </Flex>
+            <Flex display={{ base: "block", lg: "none" }} pb={2} pt={2}>
               <SocialMedia topPostsArray={topPostsArray} />
             </Flex>
           </ContentWrapper>
@@ -206,7 +220,7 @@ export default function BlogIndex(props) {
           </Box>
         </Box>
 
-        <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
+        <PopularTags sortedBlogPostTags={sortedBlogPostTags} />
         <Box bgColor="brand.50">
           <ContentWrapper>
             <Flex pt={10}>
@@ -422,5 +436,5 @@ export async function changeFunc(tagid) {
   var selectedValue = selectBox.options[selectBox.selectedIndex].value;
   // alert(selectedValue);
 
-  router.push(`/topic/${selectedValue}`);
+  router.push(`/tag/${selectedValue}`);
 }

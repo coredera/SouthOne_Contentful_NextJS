@@ -140,7 +140,7 @@ export default function Header(props) {
             </Link>
           </Box>
           <Spacer />
-          <Box pb={{base:"8", lg:"0"}} pl={5} pr={5} pt={{base:"0", lg:"14"}}  >
+          <Box pb={[2, 1, 0]} pl={5} pr={5} pt={{base:"0", lg:"14"}}  >
             <form
               onSubmit={(e) => {
                 e.preventDefault();
