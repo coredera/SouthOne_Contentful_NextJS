@@ -7,7 +7,7 @@ import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
-import PopularTopics from "@components/PopularTopics";
+import PopularTags from "@components/PopularTags";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
 import SocialMedia from "@components/SocialMedia";
@@ -49,7 +49,7 @@ export default function BlogIndexPage(props) {
     topPostsArray,
   } = props;
 
-  const postListType = `/topic/${tag}/`;
+  const postListType = `/tag/${tag}/`;
 
   /**
    * This provides some fallback values to PageMeta so that a page
@@ -65,15 +65,15 @@ export default function BlogIndexPage(props) {
       <PageMeta
         title={`Read the latest ${tag} articles on our blog - page ${currentPage}`}
         description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
-        url={`${Config.pageMeta.home.url}/topic/${tag}/page/${currentPage}`}
-        canonical={`${Config.pageMeta.home.url}/topic/${tag}/page/${currentPage}`}
+        url={`${Config.pageMeta.home.url}/tag/${tag}/page/${currentPage}`}
+        canonical={`${Config.pageMeta.home.url}/tag/${tag}/page/${currentPage}`}
         metatitle={`Read the latest ${tag} articles on our blog - page ${currentPage}`}
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
       />
 
       <BlogBanner page={page} />
 
-      <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
+      <PopularTags sortedBlogPostTags={sortedBlogPostTags} />
 
       <Box bgColor="brand.50" pt={10} pb={20}>
         <ContentWrapper>

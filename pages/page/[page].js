@@ -7,7 +7,7 @@ import MainLayout from "@layouts/main";
 import ContentWrapper from "@components/ContentWrapper";
 import PageContentWrapper from "@components/PageContentWrapper";
 import HeroBanner from "@components/HeroBanner";
-import PopularTopics from "@components/PopularTopics";
+import PopularTags from "@components/PopularTags";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
 import SocialMedia from "@components/SocialMedia";
@@ -71,7 +71,7 @@ export default function BlogIndexPage(props) {
 
       <BlogBanner page={page} />
 
-      <PopularTopics sortedBlogPostTags={sortedBlogPostTags} />
+      <PopularTags sortedBlogPostTags={sortedBlogPostTags} />
 
       <Box bgColor="brand.50" pt={10} pb={20}>
         <ContentWrapper>
