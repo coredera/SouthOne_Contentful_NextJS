@@ -35,40 +35,16 @@ export default function PostTopSection(props) {
 
   return (
     <>
-      <Box bgColor={{ base: "#FFDF7F", lg: "transparent" }}>
+      <Box bgColor={{ base: "#a1d2bb", lg: "transparent" }}>
         <Box display={{ base: "none", lg: "block" }}  height="450">
           <ContentWrapper>
             <div
               className={ContentListStyles.ellipse}
-              style={{ top: "-600px", left: "-600px" }}
+              style={{ top: "-700px", left: "-700px" }}
             />
 
             <Box style={{ position: "absolute", top: "142px" }}>
               <Flex alignItems="center" pb={0} pt={5}>
-                <Box alignSelf="center">
-                  <Flex
-                    className={ContentListStyles.contentList__homelink}
-                    minWidth="160"
-                  >
-                    <Box style={{ textDecoration: "underline" }}>
-                      <Link legacyBehavior href="https://www.examplesite.org.uk">
-                        <a>
-                          <h3>Home</h3>
-                        </a>
-                      </Link>
-                    </Box>
-                    <Spacer />
-                    <Box>&gt;</Box>
-                    <Spacer />
-                    <Box style={{ textDecoration: "underline" }}>
-                      <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
-                        <a>
-                          <h3>Blog</h3>
-                        </a>
-                      </Link>
-                    </Box>
-                  </Flex>
-                </Box>
                 <Spacer />
               </Flex>
             </Box>
@@ -84,36 +60,13 @@ export default function PostTopSection(props) {
           pb={0.5}
          
         >
-          <Flex
-            className={ContentListStyles.contentList__homelink}
-            maxW="52"
-            alignSelf="center"
-          >
-            <Box style={{ textDecoration: "underline" }}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk">
-                <a>
-                  <h3>Home</h3>
-                </a>
-              </Link>
-            </Box>
-            <Spacer />
-            <Box>&gt;</Box>
-            <Spacer />
-            <Box style={{ textDecoration: "underline" }}>
-              <Link legacyBehavior href={`${Config.pageMeta.home.slug}`}>
-                <a>
-                  <h3>Blog</h3>
-                </a>
-              </Link>
-            </Box>
-            <Spacer />
-          </Flex>
+        
         </Box>
 
         <Box pt={10} pb={5}>
           <Box display={{ base: "none", lg: "block" }}>
             <ContentWrapper>
-              <Box
+              <Box 
                 style={{
                   position: "absolute",
                   top: "240px",
