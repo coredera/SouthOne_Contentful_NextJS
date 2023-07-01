@@ -107,7 +107,7 @@ export default function Header(props) {
               <div className={HeaderStyles.skipLinkslink}>
                 <ul>
                   <li>
-                    <a href="/covid19">Coronavirus (COVID-19) and Guide Dogs</a>
+                    <a href="/covid19">Coronavirus (COVID-19) and South One</a>
                   </li>
                   <li>
                     <a href="#content" class="skip-to-content">
@@ -125,7 +125,7 @@ export default function Header(props) {
           </Box>
        
 
-          <Box boxSize='100%' alignSelf="start" p={4} >
+          <Box boxSize='100%' maxW="500px" alignSelf="start" p={4} >
             <Link legacyBehavior href="/">
               <a
                 className={HeaderStyles.header__logoContainerLink}
@@ -133,14 +133,14 @@ export default function Header(props) {
               >
 
                     <img
-                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo/s1logo.png`}
+                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/logo/s1logodark.png`}
                           
                         />
               </a>
             </Link>
           </Box>
           <Spacer />
-          <Box pb={[2, 1, 0]} pl={5} pr={5} pt={{base:"0", lg:"14"}}  >
+          <Box pb={[2, 1, 0]} pl={5} pr={5} pt={{base:"0", lg:"10"}}  >
             <form
               onSubmit={(e) => {
                 e.preventDefault();
