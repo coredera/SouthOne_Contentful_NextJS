@@ -402,50 +402,8 @@ export default function Footer() {
                 </Box>
               </Box>
             </Flex>
-            <Flex alignItems="center" direction={{ base: "column", md: "row" }}>
-              <Flex>
-                <Box className={FooterStyles.logos}>
-                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
-                    <a>
-                      <div>
-                        <img
-                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-gift-aid.png`}
-                          className={FooterStyles.logosize}
-                        />
-                      </div>
-                    </a>
-                  </Link>
-                </Box>
-                <Box className={FooterStyles.logos}>
-                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
-                    <a>
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
-                        className={FooterStyles.logosize}
-                      />
-                    </a>
-                  </Link>
-                </Box>
-              </Flex>
-              <Flex>
-                <Box className={FooterStyles.logos}>
-                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
-                    <a>
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
-                        className={FooterStyles.logosize}
-                      />
-                    </a>
-                  </Link>
-                </Box>
-                <Box className={FooterStyles.logos}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/business-disability-forum-logo.png`}
-                    className={FooterStyles.logosize}
-                  />
-                </Box>
-              </Flex>
-            </Flex>
+            
+            
           </Flex>
 
           <Flex direction={{ base: "column", md: "row" }}>
