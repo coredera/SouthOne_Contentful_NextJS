@@ -239,7 +239,7 @@ export default function BlogSearch(props) {
 
   const searchClient = algoliasearch(
     "I8CXOUI8JQ",
-    "b8a8af29d3b1b51be28d9665de97bab9",
+    "16d7ec50ca6f517544eaba5c0a325afd",
   );
 
   //console.log(postSummaries);
