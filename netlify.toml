@@ -8,12 +8,12 @@
 #   status = 404
 ##   status = 200
   
-# [[plugins]]
-# package = "@algolia/netlify-plugin-crawler"
-#   [plugins.inputs]
-#   branches = ['*']
+ [[plugins]]
+ package = "@algolia/netlify-plugin-crawler"
+   [plugins.inputs]
+   branches = ['*']
 #   pathPrefix = "/blog"
-#   renderJavaScript = true
+   renderJavaScript = true
 ##  customDomain = "examplesite.org.uk"
 
 
