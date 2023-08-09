@@ -120,7 +120,7 @@ class MyDocument extends Document {
               <script type="text/javascript">
                 algoliasearchNetlify({
                   appId: 'I8CXOUI8JQ',
-                  apiKey: '<YOUR_ALGOLIA_SEARCH_API_KEY>',
+                  apiKey: '16d7ec50ca6f517544eaba5c0a325afd',
                   siteId: '826eaf7e-b1c5-4dd8-8052-b03d4d9209dd',
                   branch: 'main',
                   selector: 'div#search',
