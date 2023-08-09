@@ -43,10 +43,6 @@ class MyDocument extends Document {
   
 
 
-
-
-
-
                `,
             }}
           />
@@ -83,6 +79,9 @@ class MyDocument extends Document {
             }}
           />
 
+{/* PIWIK PRO */}
+
+
           <script
             dangerouslySetInnerHTML={{
               __html: `
@@ -107,7 +106,32 @@ class MyDocument extends Document {
           />
 
 
+{/* ALGOLIA */}
 
+<Script
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+
+           
+
+              <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.css" />
+              <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"></script>
+              <script type="text/javascript">
+                algoliasearchNetlify({
+                  appId: 'I8CXOUI8JQ',
+                  apiKey: '<YOUR_ALGOLIA_SEARCH_API_KEY>',
+                  siteId: '826eaf7e-b1c5-4dd8-8052-b03d4d9209dd',
+                  branch: 'main',
+                  selector: 'div#search',
+                });
+              </script>
+  
+
+
+               `,
+            }}
+          />
 
 
 
