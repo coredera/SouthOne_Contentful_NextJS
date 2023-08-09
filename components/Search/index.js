@@ -15,7 +15,7 @@ export default function Search() {
     <>
       <InstantSearch 
         searchClient={searchClient} 
-        indexName="netlify_826eaf7e-b1c5-4dd8-8052-b03d4d9209dd_main_all"
+        indexName="searchall"
       
         >
         <SearchBox />
