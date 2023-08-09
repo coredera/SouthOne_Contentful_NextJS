@@ -31,6 +31,7 @@ import {
   AccordionPanel,
   textDecoration,
 } from "@chakra-ui/react";
+import PageContentWrapper from "@components/PageContentWrapper";
 
 export default function BlogBanner(props) {
   const page = props.page;
@@ -50,6 +51,7 @@ export default function BlogBanner(props) {
 
   return (
     <>
+    
  <VStack
   spacing={3}
   align='center'
@@ -64,74 +66,161 @@ export default function BlogBanner(props) {
   spacing={0}
   align='center'
 >  
-<Flex>
-<Box borderTopWidth="1px" borderLeftWidth="1px" borderRightWidth="1px" borderTopRadius="md" borderColor="#2F5767" align='center' flex='1' bg='#38677A'> 
-    <Text px={[10]} py={[1]} fontWeight="700" fontSize='xl' color="white">Star Lane Medical Centre</Text>
-  </Box></Flex>
+<div>
+
+  <Box minWidth={{
+                base: "95vw",
+              sm: "600px",
+               md: "800px",
+               lg: "860px",
+               xl: "1000px",
+      }} borderTopWidth="1px" borderLeftWidth="1px" borderRightWidth="1px" borderTopRadius="md" borderColor="#2F5767" align='center' bg='#136175'
+flexGrow="1"> 
+    <Text px={[1]} py={[1]} fontWeight="700" fontSize='xl' color="white">Star Lane medical Centre</Text>
+  </Box>
   <Box>
-<Flex color='white'>
-<Box bgPosition="center" bgSize="cover" bgRepeat="no-repeat" backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slmcpic.png`} borderTopWidth="1px" borderBottomWidth="1px" borderLeftWidth="1px" borderLeftRadius="md" borderColor="#2F5767" align='center' flex='1'>
+    
+<Flex width={{
+              sm: "600px",
+               md: "800px",
+               lg: "860px",
+               xl: "1000px",
+      }}  color='white'>
+
+  <Box  bgPosition="center" 
+      bgSize="cover" 
+      bgRepeat="no-repeat" 
+      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slmcpic.png`} 
+      borderWidth="1px" borderBottomLeftRadius="md" borderColor="#2F5767" 
+      align='center' 
+      flex='1'>
   </Box>
-  <Box p={[2, 2, 5]} borderTopWidth="1px" borderBottomWidth="1px" borderRightWidth="1px" borderRightRadius="md" borderColor="#2F5767" align='center' flex='1' bg='#ECF3F6'>
-    <Button as={Link} href="https://access.klinik.co.uk/contact/star-lane-medical-centre/" target="_blank" borderRadius={25} my="1" mx={[0, 10]} color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#E76F51" size='lg'>
-    🗓️ Appointments
-  </Button> 
-  <Button as={Link} href="https://www.starlanemedicalcentre.nhs.uk/info.aspx?p=10" target="_blank" borderRadius={25} my="1" mx="0.5" color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F" size='md'>
-    Registration
-  </Button>
-  <Button as={Link} href="https://www.starlanemedicalcentre.nhs.uk/index.aspx?pr=F84017" target="_blank" borderRadius={25} my="1" mx="0.5" color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C" size='md'>
-    Website
-  </Button>
+
+  <Box  borderTopWidth="1px" borderBottomWidth="1px" borderRightWidth="1px" borderBottomRightRadius="md" borderColor="#2F5767" align='center' flex='0.6' bg='#ECF3F6'>
+<VStack spacing={0}>
+  <Container as={Link} href="https://access.klinik.co.uk/contact/star-lane-medical-centre/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#E76F51">
+  <Text fontSize='1.2rem'><b>Appointments</b></Text>
+  </Container>
+  <Container as={Link} href="https://www.starlanemedicalcentre.nhs.uk/new-patients.aspx?t=2" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F">
+  <Text fontSize='1.2rem'><b>Registration</b></Text>
+  </Container>
+  <Container as={Link} href="https://www.starlanemedicalcentre.nhs.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C">
+  <Text fontSize='1.2rem'><b>Website</b></Text>
+  </Container>
+</VStack>
   </Box>
-  </Flex></Box></VStack>
+  </Flex>
+  </Box>
+  </div>
+  </VStack>
+
   <VStack
   spacing={0}
   align='center'
 >  
-<Flex>
-<Box borderTopWidth="1px" borderLeftWidth="1px" borderRightWidth="1px" borderTopRadius="md" borderColor="#2F5767" align='center' flex='1' bg='#38677A'> 
-    <Text px={[10]} py={[1]} fontWeight="700" fontSize='xl' color="white">Custom House Surgery</Text>
-  </Box></Flex>
+<div>
+
+  <Box minWidth={{
+                base: "95vw",
+              sm: "600px",
+               md: "800px",
+               lg: "860px",
+               xl: "1000px",
+      }} borderTopWidth="1px" borderLeftWidth="1px" borderRightWidth="1px" borderTopRadius="md" borderColor="#2F5767" align='center' bg='#136175'
+flexGrow="1"> 
+    <Text px={[1]} py={[1]} fontWeight="700" fontSize='xl' color="white">Custom House Surgery</Text>
+  </Box>
   <Box>
-<Flex color='white'>
-<Box bgPosition="center" bgSize="cover" bgRepeat="no-repeat" backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/chspic.png`} borderTopWidth="1px" borderBottomWidth="1px" borderLeftWidth="1px" borderLeftRadius="md" borderColor="#2F5767" align='center' flex='1'>
+    
+<Flex width={{
+              sm: "600px",
+               md: "800px",
+               lg: "860px",
+               xl: "1000px",
+      }}  color='white'>
+
+  <Box  bgPosition="center" 
+      bgSize="cover" 
+      bgRepeat="no-repeat" 
+      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/chspic.png`} 
+      borderWidth="1px" borderBottomLeftRadius="md" borderColor="#2F5767" 
+      align='center' 
+      flex='1'>
   </Box>
-  <Box p={[2, 2, 5]} borderTopWidth="1px" borderBottomWidth="1px" borderRightWidth="1px" borderRightRadius="md" borderColor="#2F5767" align='center' flex='1' bg='#ECF3F6'>
-    <Button as={Link} href="https://www.online-consult.co.uk/org/custom-house-surgery" target="_blank" borderRadius={25} my="1" mx={[0, 10]} color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#E76F51" size='lg'>
-    🗓️ Appointments
-  </Button> 
-  <Button as={Link} href="https://customhousesurgery.co.uk/pages/Register-with-Our-Practice" target="_blank" borderRadius={25} my="1" mx="0.5" color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F" size='md'>
-    Registration
-  </Button>
-  <Button as={Link} href="https://customhousesurgery.co.uk/" target="_blank" borderRadius={25} my="1" mx="0.5" color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C" size='md'>
-    Website
-  </Button>
+
+  <Box  borderTopWidth="1px" borderBottomWidth="1px" borderRightWidth="1px" borderBottomRightRadius="md" borderColor="#2F5767" align='center' flex='0.6' bg='#ECF3F6'>
+<VStack spacing={0}>
+  <Container as={Link} href="https://www.online-consult.co.uk/org/custom-house-surgery" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#E76F51">
+  <Text fontSize='1.2rem'><b>Appointments</b></Text>
+  </Container>
+  <Container as={Link} href="https://customhousesurgery.co.uk/pages/Register-with-Our-Practice" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F">
+  <Text fontSize='1.2rem'><b>Registration</b></Text>
+  </Container>
+  <Container as={Link} href="https://customhousesurgery.co.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C">
+  <Text fontSize='1.2rem'><b>Website</b></Text>
+  </Container>
+</VStack>
   </Box>
-  </Flex></Box></VStack>
+  </Flex>
+  </Box>
+  </div>
+  </VStack>
+
   <VStack
   spacing={0}
   align='center'
 >  
-<Flex>
-<Box borderTopWidth="1px" borderLeftWidth="1px" borderRightWidth="1px" borderTopRadius="md" borderColor="#2F5767" align='center' flex='1' bg='#38677A'> 
-    <Text px={[10]} py={[1]} fontWeight="700" fontSize='xl' color="white">St Lukes Medical Centre</Text>
-  </Box></Flex>
+<div>
+
+  <Box minWidth={{
+                base: "95vw",
+              sm: "600px",
+               md: "800px",
+               lg: "860px",
+               xl: "1000px",
+      }} borderTopWidth="1px" borderLeftWidth="1px" borderRightWidth="1px" borderTopRadius="md" borderColor="#2F5767" align='center' bg='#136175'
+flexGrow="1"> 
+    <Text px={[1]} py={[1]} fontWeight="700" fontSize='xl' color="white">St Lukes Medical Centre</Text>
+  </Box>
   <Box>
-<Flex color='white'>
-<Box bgPosition="center" bgSize="cover" bgRepeat="no-repeat" backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slpic.png`} borderTopWidth="1px" borderBottomWidth="1px" borderLeftWidth="1px" borderLeftRadius="md" borderColor="#2F5767" align='center' flex='1'>
+    
+<Flex width={{
+              sm: "600px",
+               md: "800px",
+               lg: "860px",
+               xl: "1000px",
+      }}  color='white'>
+
+  <Box  bgPosition="center" 
+      bgSize="cover" 
+      bgRepeat="no-repeat" 
+      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slpic.png`} 
+      borderWidth="1px" borderBottomLeftRadius="md" borderColor="#2F5767" 
+      align='center' 
+      flex='1'>
   </Box>
-  <Box p={[2, 2, 5]} borderTopWidth="1px" borderBottomWidth="1px" borderRightWidth="1px" borderRightRadius="md" borderColor="#2F5767" align='center' flex='1' bg='#ECF3F6'>
-    <Button as={Link} href="https://www.online-consult.co.uk/org/dr-ruiz-st-luke-s-medical-centre" target="_blank" borderRadius={25} my="1" mx={[0, 10]} color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#E76F51" size='lg'>
-    🗓️ Appointments
-  </Button> 
-  <Button as={Link} href="https://registergp.com/start" target="_blank" borderRadius={25} my="1" mx="0.5" color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F" size='md'>
-    Registration
-  </Button>
-  <Button as={Link} href="https://www.stlukesmedicalcentre-drruizanddrjoarder.co.uk/" target="_blank" borderRadius={25} my="1" mx="0.5" color='white' _hover={{ backgroundColor: "#2fa3ab" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C" size='md'>
-    Website
-  </Button>
+
+  <Box  borderTopWidth="1px" borderBottomWidth="1px" borderRightWidth="1px" borderBottomRightRadius="md" borderColor="#2F5767" align='center' flex='0.6' bg='#ECF3F6'>
+<VStack spacing={0}>
+  <Container as={Link} href="https://www.online-consult.co.uk/org/dr-ruiz-st-luke-s-medical-centre" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#E76F51">
+  <Text fontSize='1.2rem'><b>Appointments</b></Text>
+  </Container>
+  <Container as={Link} href="https://registergp.com/start" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F">
+  <Text fontSize='1.2rem'><b>Registration</b></Text>
+  </Container>
+  <Container as={Link} href="https://www.stlukesmedicalcentre-drruizanddrjoarder.co.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C">
+  <Text fontSize='1.2rem'><b>Website</b></Text>
+  </Container>
+</VStack>
   </Box>
-  </Flex></Box></VStack>
+  </Flex>
+  </Box>
+  </div>
+  </VStack>
+
+
+
+
  
 </VStack>
 

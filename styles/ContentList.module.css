@@ -83,11 +83,11 @@
   border-top-left-radius: 1rem;
   border-top-right-radius: 1rem;
   color: white;
-  background-color: #1b9ca4;
+  background-color: #136175;
 
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-body);
-  box-shadow: 0px 12px 1px 0 #1b9ca4;
+  box-shadow: 0px 12px 1px 0 #136175;
 
   font-size: 1.3rem;
   line-height: 1;
@@ -111,11 +111,11 @@
   padding-top: 1.8rem;
   border-radius: 1rem;
   color: white;
-  background-color: #1b9ca4;
+  background-color: #136175;
 
   font-weight: var(--font-weight-bold);
   font-family: var(--font-family-body);
-  box-shadow: 0px 12px 1px 0 #1b9ca4;
+  box-shadow: 0px 12px 1px 0 #136175;
 
   font-size: 1.3rem;
   line-height: 1;
@@ -130,7 +130,7 @@
 }
 
 .contentList__titleLink:hover {
-  color: var(--color-primary);
+  color: #3b4808;
 }
 
 .contentList__titleLink:focus {
@@ -151,11 +151,11 @@
   display: block;
   text-decoration: underline;*/
 
-  background-color: var(--color-button);
+  background-color: #bfd272;
   color: var(--color-foreground);
   text-transform: uppercase;
   font-size: 1rem;
-  border: 0.25rem solid var(--color-button);
+  border: 0.25rem solid #bfd272;
   border-radius: 2rem;
   padding: 0.25rem 0.5rem;
   font-weight: var(--font-weight-bold);
@@ -177,11 +177,11 @@
     display: block;
     text-decoration: underline;*/
 
-  background-color: var(--color-buttonhover);
+  background-color: #cada8a;
   color: var(--color-foreground);
   text-transform: uppercase;
   font-size: 1rem;
-  border: 0.25rem solid var(--color-buttonhover);
+  border: 0.25rem solid #cada8a;
   border-radius: 2rem;
   padding: 0.25rem 0.5rem;
   font-weight: var(--font-weight-bold);

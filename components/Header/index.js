@@ -170,7 +170,7 @@ export default function Header(props) {
                     borderLeftRadius="0px"
                     borderRightRadius="7px"
                     _hover={{
-                      background: "#4EA8DD",
+                      background: "#cada8a",
                     }}
                   >
                     <Box p={1}>

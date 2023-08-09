@@ -35,7 +35,7 @@ export default function Footer() {
 
   const panel1title = "Useful links";
   const panel1body =
-    "Want to find out more about Guide Dogs and sight loss? Here are other helpful links...";
+    "Want to find out more about South One newham ? Here are other helpful links...";
 
   const panel2title = "Keep in touch";
   const panel2body =
@@ -43,7 +43,7 @@ export default function Footer() {
 
   const panel3title = "Social media";
   const panel3body =
-    "Want to keep up to date with all the latest at Guide Dogs? Follow us on social media.";
+    "Want to keep up to date with all the latest at South One Newham? Follow us on social media.";
 
   return (
     <footer className={FooterStyles.footer}>
@@ -368,7 +368,7 @@ export default function Footer() {
               <VStack spacing={3} alignItems="flex-start" pl={12}>
                 <Heading fontSize="2.125rem">Social media</Heading>
                 <Text>
-                  Want to keep up to date with all the latest at Guide Dogs?
+                  Want to keep up to date with all the latest at South One Newham?
                   Follow us on social media.
                 </Text>
               </VStack>
@@ -394,15 +394,11 @@ export default function Footer() {
                   marginBottom={1}
                   pb={5}
                 >
-                  © The Guide Dogs for the Blind Association 2021
+                  © South One Newham 2023
                 </Box>
                 <Box className={TypographyStyles.bodyCopySS} color="white">
-                  Guide Dogs is a working name of The Guide Dogs for the Blind
-                  Association. Registered Office: Hillfields, Burghfield Common,
-                  Reading, Berkshire RG7 3YG. A company limited by guarantee
-                  registered in England and Wales (291646) and a charity
-                  registered in England and Wales (209617) and Scotland
-                  (SC038979)
+                  South One Newham is a Primary Care Network consisting of a group of GP 
+                  surgeries in Newham
                 </Box>
               </Box>
             </Flex>
