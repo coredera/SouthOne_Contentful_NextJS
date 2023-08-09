@@ -238,8 +238,8 @@ export default function BlogSearch(props) {
   const postListType = "/";
 
   const searchClient = algoliasearch(
-    "9JP2M7VJDW",
-    "e16fe5b9512b4405cea4bcfd94c41bfe",
+    "I8CXOUI8JQ",
+    "b8a8af29d3b1b51be28d9665de97bab9",
   );
 
   //console.log(postSummaries);
@@ -377,7 +377,7 @@ export default function BlogSearch(props) {
               </Box>
               <InstantSearch
                 searchClient={searchClient}
-                indexName="searchall"
+                indexName="netlify_826eaf7e-b1c5-4dd8-8052-b03d4d9209dd_main_all"
                 routing={true}
               >
                 <Box style={{ display: "none" }}>
