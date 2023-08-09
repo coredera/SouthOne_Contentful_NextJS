@@ -7,7 +7,7 @@ import CustomHits from "./CustomHits";
 
 const searchClient = algoliasearch(
     "I8CXOUI8JQ",
-  "b8a8af29d3b1b51be28d9665de97bab9",
+  "16d7ec50ca6f517544eaba5c0a325afd",
 );
 
 export default function Search() {
@@ -15,7 +15,7 @@ export default function Search() {
     <>
       <InstantSearch 
         searchClient={searchClient} 
-        indexName="netlify_826eaf7e-b1c5-4dd8-8052-b03d4d9209dd_main_all"
+        indexName="searchall"
       
         >
         <SearchBox />
