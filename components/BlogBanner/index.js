@@ -101,10 +101,10 @@ flexGrow="1">
   <Container as={Link} href="https://access.klinik.co.uk/contact/star-lane-medical-centre/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#0095a6">
   <Text fontSize='1.2rem'><b>Appointments</b></Text>
   </Container>
-  <Container as={Link} href="https://www.starlanemedicalcentre.nhs.uk/new-patients.aspx?t=2" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F">
+  <Container as={Link} href="https://www.starlanemedicalcentre.nhs.uk/new-patients.aspx?t=2" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#d0890d">
   <Text fontSize='1.2rem'><b>Registration</b></Text>
   </Container>
-  <Container as={Link} href="https://www.starlanemedicalcentre.nhs.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C">
+  <Container as={Link} href="https://www.starlanemedicalcentre.nhs.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#96b058">
   <Text fontSize='1.2rem'><b>Website</b></Text>
   </Container>
 </VStack>
@@ -153,10 +153,10 @@ flexGrow="1">
   <Container as={Link} href="https://www.online-consult.co.uk/org/custom-house-surgery" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#0095a6">
   <Text fontSize='1.2rem'><b>Appointments</b></Text>
   </Container>
-  <Container as={Link} href="https://customhousesurgery.co.uk/pages/Register-with-Our-Practice" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F">
+  <Container as={Link} href="https://customhousesurgery.co.uk/pages/Register-with-Our-Practice" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#d0890d">
   <Text fontSize='1.2rem'><b>Registration</b></Text>
   </Container>
-  <Container as={Link} href="https://customhousesurgery.co.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C">
+  <Container as={Link} href="https://customhousesurgery.co.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#96b058">
   <Text fontSize='1.2rem'><b>Website</b></Text>
   </Container>
 </VStack>
@@ -205,10 +205,10 @@ flexGrow="1">
   <Container as={Link} href="https://www.online-consult.co.uk/org/dr-ruiz-st-luke-s-medical-centre" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#0095a6">
   <Text fontSize='1.2rem'><b>Appointments</b></Text>
   </Container>
-  <Container as={Link} href="https://registergp.com/start" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#2A9D8F">
+  <Container as={Link} href="https://registergp.com/start" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#d0890d">
   <Text fontSize='1.2rem'><b>Registration</b></Text>
   </Container>
-  <Container as={Link} href="https://www.stlukesmedicalcentre-drruizanddrjoarder.co.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#BC8F1C">
+  <Container as={Link} href="https://www.stlukesmedicalcentre-drruizanddrjoarder.co.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#96b058">
   <Text fontSize='1.2rem'><b>Website</b></Text>
   </Container>
 </VStack>
