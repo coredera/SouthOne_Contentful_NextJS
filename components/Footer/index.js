@@ -402,79 +402,17 @@ export default function Footer() {
                 </Box>
               </Box>
             </Flex>
-            <Flex alignItems="center" direction={{ base: "column", md: "row" }}>
-              <Flex>
-                <Box className={FooterStyles.logos}>
-                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
-                    <a>
-                      <div>
-                        <img
-                          src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-gift-aid.png`}
-                          className={FooterStyles.logosize}
-                        />
-                      </div>
-                    </a>
-                  </Link>
-                </Box>
-                <Box className={FooterStyles.logos}>
-                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
-                    <a>
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
-                        className={FooterStyles.logosize}
-                      />
-                    </a>
-                  </Link>
-                </Box>
-              </Flex>
-              <Flex>
-                <Box className={FooterStyles.logos}>
-                  <Link legacyBehavior href="https://www.examplesite.org.uk/getting-support/#">
-                    <a>
-                      <img
-                        src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/footer-fundraising-regulator.png`}
-                        className={FooterStyles.logosize}
-                      />
-                    </a>
-                  </Link>
-                </Box>
-                <Box className={FooterStyles.logos}>
-                  <img
-                    src={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/business-disability-forum-logo.png`}
-                    className={FooterStyles.logosize}
-                  />
-                </Box>
-              </Flex>
-            </Flex>
+            
+            
           </Flex>
 
           <Flex direction={{ base: "column", md: "row" }}>
             <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/sitemap">Sitemap</Link>
+              <Link legacyBehavior href="www.southonenewham.com">Sitemap</Link>
             </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/finance-governance">
-                Finance and Governance
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/website-terms-of-use">
-                Website terms of use
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/careers/diversity-and-safeguarding">
-                Safeguarding
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="/privacy-policy">
+                   <Box className={FooterStyles.bottomlinks}>
+              <Link legacyBehavior href="www.southonenewham.com">
                 Privacy policy
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/modern-slavery">
-                Modern Slavery
               </Link>
             </Box>
             <Spacer />
