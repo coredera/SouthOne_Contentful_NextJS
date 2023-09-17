@@ -116,7 +116,7 @@ export default function BlogIndex(props) {
           )}
           </Box>
         </ContentWrapper>
-        <Box bgColor="brand.50" pt={10} pb={20}>
+        <Box bgColor="#2A9D8F" pt={10} pb={20}>
           <ContentWrapper>
             <Flex>
               <Box pr={0} width="100%">

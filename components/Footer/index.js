@@ -408,31 +408,11 @@ export default function Footer() {
 
           <Flex direction={{ base: "column", md: "row" }}>
             <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/sitemap">Sitemap</Link>
+              <Link legacyBehavior href="www.southonenewham.com">Sitemap</Link>
             </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/finance-governance">
-                Finance and Governance
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/website-terms-of-use">
-                Website terms of use
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/about-us/careers/diversity-and-safeguarding">
-                Safeguarding
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="/privacy-policy">
+                   <Box className={FooterStyles.bottomlinks}>
+              <Link legacyBehavior href="www.southonenewham.com">
                 Privacy policy
-              </Link>
-            </Box>
-            <Box className={FooterStyles.bottomlinks}>
-              <Link legacyBehavior href="https://www.examplesite.org.uk/modern-slavery">
-                Modern Slavery
               </Link>
             </Box>
             <Spacer />
