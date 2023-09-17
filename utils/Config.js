@@ -9,15 +9,15 @@
  *
  */ 
  
-const SITE_URL = "https://www.examplesite.org.uk";
+const SITE_URL = "http://www.southonenewham.com";
 
 export const Config = {
   site: {
-    owner: "Guide Dogs UK",
-    title: "Guide Dogs UK Blog in config file",
-    domain: "examplesite.org.uk",
-    email: "jason.fang@examplesite.org.uk",
-    feedDescription: "RSS Feed for examplesite.org.uk",
+    owner: "South One Newham",
+    title: "South One Newham Website",
+    domain: "southonenewham.com",
+    email: "",
+    feedDescription: "RSS Feed for southonenewham.com",
   },
   pageMeta: {
     openGraph: {
@@ -55,8 +55,8 @@ export const Config = {
     },
   },
   pagination: {
-    pageSize: 3,
-    recentPostsSize: 3,
+    pageSize: 5,
+    recentPostsSize: 5,
   },
   menuLinks: [
     {
