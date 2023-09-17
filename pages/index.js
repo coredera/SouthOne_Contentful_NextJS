@@ -75,10 +75,10 @@ export default function BlogIndex(props) {
    * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = page ? page.title : "Blog";
+  const pageTitle = page ? page.title : "South One Newham Website";
   const pageDescription = page
     ? page.description
-    : "examplesite UK Blog";
+    : "South One Newham Website";
 
   //console.log(featuredArticle);
 
