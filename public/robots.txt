@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /api
 
 # Host
-Host: https://www.examplesite.org.uk
+Host: https://main--fanciful-beijinho-c08e0e.netlify.app
 
 # Sitemaps
-Sitemap: https://www.examplesite.org.uk/sitemap.xml
+Sitemap: https://main--fanciful-beijinho-c08e0e.netlify.app/sitemap.xml

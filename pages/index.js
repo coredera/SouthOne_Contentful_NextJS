@@ -75,10 +75,10 @@ export default function BlogIndex(props) {
    * This provides some fallback values to PageMeta so that a page
    * entry is not required for /blog
    */
-  const pageTitle = page ? page.title : "Blog";
+  const pageTitle = page ? page.title : "South One Newham Website";
   const pageDescription = page
     ? page.description
-    : "examplesite UK Blog";
+    : "South One Newham Website";
 
   //console.log(featuredArticle);
 
@@ -116,7 +116,7 @@ export default function BlogIndex(props) {
           )}
           </Box>
         </ContentWrapper>
-        <Box bgColor="brand.50" pt={10} pb={20}>
+        <Box bgColor="#0095a6" pt={10} pb={20}>
           <ContentWrapper>
             <Flex>
               <Box pr={0} width="100%">

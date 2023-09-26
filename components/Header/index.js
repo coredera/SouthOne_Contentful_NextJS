@@ -149,7 +149,7 @@ export default function Header(props) {
             >
               <Stack>
                 <InputGroup>
-                  <Input
+                  <Input 
                     variant="outline"
                     backgroundColor="white"
                     value={value}
