@@ -38,7 +38,7 @@ export default function PopularPosts(props) {
     <>
      
 
-        <Box dangerouslySetInnerHTML={{ __html: `<script type="text/javascript" src="https://www.cqc.org.uk/sites/all/modules/custom/cqc_widget/widget.js?data-id=1-547524452&data-host=https://www.cqc.org.uk&type=location"></script>` }} />
+        <Box dangerouslySetInnerHTML={{ __html: `<script src="//www.cqc.org.uk/sites/all/modules/custom/cqc_widget/widget.js?data-id=1-547524452&amp;data-host=www.cqc.org.uk&amp;type=location" type="text/javascript"></script>` }} />
        
      
     </>
