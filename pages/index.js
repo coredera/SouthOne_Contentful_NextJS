@@ -22,7 +22,6 @@ import PopularTags from "@components/PopularTags";
 import PopularPosts from "@components/PopularPosts";
 import BlogBanner from "@components/BlogBanner";
 import SocialMedia from "@components/SocialMedia";
-import CQC from "@components/CQC";
 
 
 import {
@@ -139,9 +138,7 @@ export default function BlogIndex(props) {
                 <Box pb={5}>
                 <PopularPosts topPostsArray={topPostsArray} />
                 </Box>
-                <Box>
-                <CQC topPostsArray={topPostsArray} />
-              </Box>
+          
               <Box pt={5}>
                 <SocialMedia topPostsArray={topPostsArray} />
               </Box>
@@ -151,9 +148,7 @@ export default function BlogIndex(props) {
             <Flex display={{ base: "block", lg: "none" }} pb={2} pt={10}>
               <PopularPosts topPostsArray={topPostsArray} />
             </Flex>
-            <Flex display={{ base: "block", lg: "none" }} pb={5} pt={5}>
-              <CQC topPostsArray={topPostsArray} />
-            </Flex>
+       
             <Flex display={{ base: "block", lg: "none" }} pb={2} pt={2}>
               <SocialMedia topPostsArray={topPostsArray} />
             </Flex>
