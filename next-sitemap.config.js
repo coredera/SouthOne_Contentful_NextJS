@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 
 module.exports = {
-  siteUrl: "https://main--fanciful-beijinho-c08e0e.netlify.app",
+  siteUrl: "https://southonenewham.com",
   //outDir: "out",
   generateRobotsTxt: true, // (optional)
   generateIndexSitemap: false,
