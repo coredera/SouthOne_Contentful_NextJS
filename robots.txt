@@ -3,7 +3,7 @@ User-agent: *
 Disallow: /api
 
 # Host
-Host: https://main--fanciful-beijinho-c08e0e.netlify.app
+Host: https://southonenewham.com
 
 # Sitemaps
-Sitemap: https://main--fanciful-beijinho-c08e0e.netlify.app/sitemap.xml
+Sitemap: https://southonenewham.com/sitemap.xml
