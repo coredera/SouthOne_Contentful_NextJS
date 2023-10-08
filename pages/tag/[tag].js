@@ -63,7 +63,7 @@ export default function PostWrapper(props) {
         title={`Read the latest ${tag} articles on our blog`}
         description={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
         url={`${Config.pageMeta.home.url}/tag/${tag}`}
-        canonical={`${Config.pageMeta.home.url}/tag/${tag}/`}
+        canonical={`${Config.pageMeta.home.url}/tag/${tag}`}
         metatitle={`Read the latest ${tag} articles on our blog`}
         metadescription={`Visit our blog today as we showcase the latest ${tag} articles. With opinions, insights and more it’s not to be missed!`}
       />
