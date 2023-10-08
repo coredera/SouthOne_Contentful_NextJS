@@ -51,15 +51,11 @@ export default function Populartags(props) {
                      
                       />
                     </Box>
-
-                    <Link legacyBehavior
-                      href={`/tag/inspiring-people`}
-                      className={TypographyStyles.popularTags}
-                    >
+         {/* <Link legacyBehavior href={`/tag/eye-health`}> */}
                       <a className={TypographyStyles.popularTags}>
                         FAQ
                       </a>
-                    </Link>
+                      {/* </Link> */}
                   </Flex>
                   <Box pt={4}></Box>
                   <Flex>
@@ -70,11 +66,11 @@ export default function Populartags(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/eye-health`}>
+                   {/* <Link legacyBehavior href={`/tag/eye-health`}> */}
                       <a className={TypographyStyles.popularTags}>
                         Medication
                       </a>
-                    </Link>
+                    {/* </Link> */}
                   </Flex>
                 </Box>
                 <Spacer />
@@ -87,9 +83,9 @@ export default function Populartags(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/news`}>
+                     {/* <Link legacyBehavior href={`/tag/eye-health`}> */}
                       <a className={TypographyStyles.popularTags}>News</a>
-                    </Link>
+                      {/* </Link> */}
                   </Flex>
                   <Flex pt={4}>
                     <Box pr={5} alignSelf="center">
@@ -99,11 +95,11 @@ export default function Populartags(props) {
                       
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/technology`}>
+                    {/* <Link legacyBehavior href={`/tag/eye-health`}> */}
                       <a className={TypographyStyles.popularTags}>
                         Social
                       </a>
-                    </Link>
+                       {/* </Link> */}
                   </Flex>
                 </Box>
                 <Spacer />
@@ -116,11 +112,11 @@ export default function Populartags(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/campaigns`}>
+                     {/* <Link legacyBehavior href={`/tag/eye-health`}> */}
                       <a className={TypographyStyles.popularTags}>
                         Asthma
                       </a>
-                    </Link>
+                       {/* </Link> */}
                   </Flex>
                   <Flex pt={4}>
                     <Box pr={5} alignSelf="center">
@@ -130,9 +126,9 @@ export default function Populartags(props) {
                        
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/dogs`}>
+                    {/* <Link legacyBehavior href={`/tag/eye-health`}> */}
                       <a className={TypographyStyles.popularTags}>Diabetes</a>
-                    </Link>
+                       {/* </Link> */}
                   </Flex>
                 </Box>
                 <Spacer />
@@ -169,14 +165,14 @@ export default function Populartags(props) {
                       />
                     </Box>
 
-                    <Link legacyBehavior
+                 {/*  <Link legacyBehavior
                       href={`/tag/inspiring-people`}
                       className={TypographyStyles.popularTags}
-                    >
+                    > */} 
                       <a className={TypographyStyles.popularTags}>
                         FAQ
                       </a>
-                    </Link>
+                       {/* </Link> */}
                   </Flex>
 
                   <Flex pt={2}>
@@ -186,11 +182,14 @@ export default function Populartags(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/eye-health`}>
+                      {/*  <Link legacyBehavior
+                      href={`/tag/inspiring-people`}
+                      className={TypographyStyles.popularTags}
+                    > */} 
                       <a className={TypographyStyles.popularTags}>
                         Medication
                       </a>
-                    </Link>
+                       {/* </Link> */}
                   </Flex>
 
                   <Flex pt={2} pb={2}>
@@ -200,10 +199,13 @@ export default function Populartags(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/news`}>
+                     {/*  <Link legacyBehavior
+                      href={`/tag/inspiring-people`}
+                      className={TypographyStyles.popularTags}
+                    > */} 
                       <a className={TypographyStyles.popularTags}>News</a>
-                    </Link>
-                  </Flex>
+    {/* </Link> */}
+                      </Flex>
                 
                   <Flex>
                     <Box pr={5} alignSelf="center">
@@ -212,11 +214,14 @@ export default function Populartags(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/technology`}>
+                    {/*  <Link legacyBehavior
+                      href={`/tag/inspiring-people`}
+                      className={TypographyStyles.popularTags}
+                    > */} 
                       <a className={TypographyStyles.popularTags}>
                         Social
                       </a>
-                    </Link>
+                     {/* </Link> */}
                   </Flex>
 
                   <Flex pt={2}>
@@ -226,11 +231,14 @@ export default function Populartags(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/campaigns`}>
+                     {/*  <Link legacyBehavior
+                      href={`/tag/inspiring-people`}
+                      className={TypographyStyles.popularTags}
+                    > */} 
                       <a className={TypographyStyles.popularTags}>
                         Asthma
                       </a>
-                    </Link>
+                       {/* </Link> */}
                   </Flex>
 
                   <Flex pt={2}>
@@ -240,9 +248,12 @@ export default function Populartags(props) {
                         width="15"
                       />
                     </Box>
-                    <Link legacyBehavior href={`/tag/dogs`}>
+                       {/*  <Link legacyBehavior
+                      href={`/tag/inspiring-people`}
+                      className={TypographyStyles.popularTags}
+                    > */} 
                       <a className={TypographyStyles.popularTags}>Diabetes</a>
-                    </Link>
+                     {/* </Link> */}
                   </Flex>
                 </Box>
                 <Spacer />
