@@ -7,9 +7,9 @@
  * without editing HTML, or change the page size on /blog without
  * touching any of the functional code.
  *
- */ 
+ */  
  
-const SITE_URL = "http://www.southonenewham.com";
+const SITE_URL = "https://southonenewham.com";
 
 export const Config = {
   site: {
