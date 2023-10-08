@@ -667,7 +667,7 @@ export async function changeFunc(tagid) {
 */
 
 function Hit({ hit }) {
-  const url = `https://www.examplesite.org.uk${hit.url}`;
+  const url = `https://southonenewham.com${hit.url}`;
 
   return (
     <>
