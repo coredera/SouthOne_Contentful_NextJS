@@ -90,7 +90,7 @@ flexGrow="1">
   <Box  bgPosition="center" 
       bgSize="cover" 
       bgRepeat="no-repeat" 
-      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slmcpic.png`} 
+      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slmcpic.jpg`} 
       borderWidth="1px" borderBottomLeftRadius="md" borderColor="#2F5767" 
       align='center' 
       flex='1'>
@@ -142,7 +142,7 @@ flexGrow="1">
   <Box  bgPosition="center" 
       bgSize="cover" 
       bgRepeat="no-repeat" 
-      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/chspic.png`} 
+      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/chspic.jpg`} 
       borderWidth="1px" borderBottomLeftRadius="md" borderColor="#2F5767" 
       align='center' 
       flex='1'>
@@ -194,7 +194,7 @@ flexGrow="1">
   <Box  bgPosition="center" 
       bgSize="cover" 
       bgRepeat="no-repeat" 
-      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slpic.png`} 
+      backgroundImage={`${process.env.NEXT_PUBLIC_BASE_PATH}/images/slpic.jpg`} 
       borderWidth="1px" borderBottomLeftRadius="md" borderColor="#2F5767" 
       align='center' 
       flex='1'>
