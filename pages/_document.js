@@ -47,6 +47,7 @@ class MyDocument extends Document {
             }}
           />
 
+{/* 
           <script
             async
             src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID}`}
@@ -78,6 +79,10 @@ class MyDocument extends Document {
                `,
             }}
           />
+
+
+           */}
+
 
 {/* PIWIK PRO */}
 
