@@ -150,7 +150,7 @@ flexGrow="1">
 
   <Box  borderTopWidth="1px" borderBottomWidth="1px" borderRightWidth="1px" borderBottomRightRadius="md" borderColor="#2F5767" align='center' flex='0.6' bg='#ECF3F6'>
 <VStack spacing={0}>
-  <Container as={Link} href="https://www.online-consult.co.uk/org/custom-house-surgery" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#0095a6">
+  <Container as={Link} href="https://access.klinik.co.uk/contact/custom-house-surgery" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#0095a6">
   <Text fontSize='1.2rem'><b>Appointments</b></Text>
   </Container>
   <Container as={Link} href="https://customhousesurgery.co.uk/pages/Register-with-Our-Practice" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#d0890d">
