@@ -106,9 +106,9 @@ export default function Header(props) {
             <div className={HeaderStyles.skipLinks}>
               <div className={HeaderStyles.skipLinkslink}>
                 <ul>
-                  <li>
+                 {/* <li>
                     <a href="/covid19">Coronavirus (COVID-19) and South One</a>
-                  </li>
+                  </li> */}
                   <li>
                     <a href="#content" class="skip-to-content">
                       Skip to content
