@@ -205,7 +205,7 @@ flexGrow="1">
   <Container as={Link} href="https://www.online-consult.co.uk/org/dr-ruiz-st-luke-s-medical-centre" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#0095a6">
   <Text fontSize='1.2rem'><b>Appointments</b></Text>
   </Container>
-  <Container as={Link} href="https://registergp.com/start" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#d0890d">
+  <Container as={Link} href="https://eastlondonregistergp.nhs.uk/start" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#d0890d">
   <Text fontSize='1.2rem'><b>Registration</b></Text>
   </Container>
   <Container as={Link} href="https://www.stlukesmedicalcentre-drruizanddrjoarder.co.uk/" target="_blank" p={[2, 2.5]} _hover={{ backgroundColor: "#4a5a0a" }} _active={{ backgroundColor: "#b1ce20" }} backgroundColor="#96b058">
