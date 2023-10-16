@@ -632,6 +632,10 @@ export default class ContentfulApi {
                     title
                     url
                   }
+                  ... on Page {
+                    title
+                    slug
+                  }
                 }
                 block {
                   sys {
@@ -655,7 +659,10 @@ export default class ContentfulApi {
                     title
                     url
                   }
-                  
+                  ... on Page {
+                    title
+                    slug
+                  }
                 }
               }
               assets {

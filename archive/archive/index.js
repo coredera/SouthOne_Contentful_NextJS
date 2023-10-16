@@ -17,7 +17,7 @@ export default function Home(props) {
 
   const pageDescription = page
     ? page.description
-    : "Welcome to the Guide Dogs UK Blog";
+    : "Welcome to the UK website";
 
   return (
     <>
