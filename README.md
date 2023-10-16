@@ -1,7 +1,7 @@
 # Next.js + Contentful Blog 
 
 
-This repo uses Next.js and Contentful to deliver a blog microsite, using Contentful's GraphQL API.
+This repo uses Next.js and Contentful to deliver a website, using Contentful's GraphQL API.
 
 [Read more about the GraphQL API](https://graphql.contentful.com).
 
