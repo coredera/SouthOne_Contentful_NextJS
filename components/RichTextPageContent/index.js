@@ -9,7 +9,6 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import ReactPlayer from "react-player";
 import { css, cx } from "@emotion/css";
 
-
 import {
   Box,
   Flex,
@@ -169,7 +168,13 @@ export function getRichTextRenderOptions(links, options) {
         var { embedUrl, title } = [];
 
         switch (__typename) {
-          case "BlogPost":
+          case "Article":
+            return (
+              <Link legacyBehavior href={`/${entry.slug}`}>
+                <a className={TypographyStyles.inlineLink}>{entry.title}</a>
+              </Link>
+            );
+          case "Page":
             return (
               <Link legacyBehavior href={`/${entry.slug}`}>
                 <a className={TypographyStyles.inlineLink}>{entry.title}</a>
@@ -200,10 +205,9 @@ export function getRichTextRenderOptions(links, options) {
         const entry = entryMap.get(node.data.target.sys.id);
         const { __typename } = entry;
         var { embedUrl, title } = [];
-        
 
         switch (__typename) {
-          case "BlogPost":
+          case "Article":
             return (
               <Link legacyBehavior href={`/${entry.slug}`}>
                 <a
@@ -211,6 +215,12 @@ export function getRichTextRenderOptions(links, options) {
                 >
                   {entry.title}
                 </a>
+              </Link>
+            );
+          case "Page":
+            return (
+              <Link legacyBehavior href={`/${entry.slug}`}>
+                <a className={TypographyStyles.inlineLink}>{entry.title}</a>
               </Link>
             );
           case "VideoEmbed":
@@ -235,8 +245,8 @@ export function getRichTextRenderOptions(links, options) {
 
             return (
               <>
-              {title} <p />
-              {description}
+                {title} <p />
+                {description}
                 <Box pb={5}>
                   <div style={{ position: "relative" }}>
                     <img
