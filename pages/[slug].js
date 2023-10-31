@@ -65,7 +65,7 @@ export default function PostWrapper(props) {
 
       <ContentWrapper>
         <Box>
-          <Flex display={{ base: "block", lg: "none" }} pb={0} pt={10}>
+          <Flex display={{ base: "block", lg: "none" }}  pb={0} pt={10}>
             <SharePost post={post} />
           </Flex>
           <Flex>
@@ -78,6 +78,7 @@ export default function PostWrapper(props) {
               display={{ base: "none", lg: "block" }}
               minW="368"
               maxW="368"
+             
               pt={10}
               pl={10}
             >
