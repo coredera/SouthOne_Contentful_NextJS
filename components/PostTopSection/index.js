@@ -40,7 +40,7 @@ export default function PostTopSection(props) {
           <ContentWrapper>
             <div
               className={ContentListStyles.ellipse}
-              style={{ top: "-700px", left: "-700px" }}
+              style={{ top: "-700px", left: "-680px" }}
             />
 
             <Box style={{ position: "absolute", top: "142px" }}>
@@ -104,9 +104,10 @@ export default function PostTopSection(props) {
                   <Box maxWidth={600}>
                     <img
                       src={featuredArticle.image.url}
-                      width="1200"
+                      width="400"
                       layout="responsive"
                       objectFit="contain"
+                      
                       alt={featuredArticle.image.description}
                       style={{ borderRadius: "20px" }}
                     />
