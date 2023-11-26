@@ -51,7 +51,7 @@ export default function PopularPosts(props) {
          
             </Box>
             <Box pr={3}>
-              <Link legacyBehavior href="https://twitter.com/intent/follow?source=followbutton&variant=1.0&screen_name=examplesite">
+              <Link legacyBehavior href="https://www.linkedin.com/in/star-lane-medical-centre-783327223/?originalSubdomain=uk">
                 <a>
                   <Box
                     style={{
@@ -69,7 +69,7 @@ export default function PopularPosts(props) {
               </Link>
             </Box>
             <Box pr={3}>
-              <Link legacyBehavior href="https://www.youtube.com/user/examplesiteUK">
+              <Link legacyBehavior href="https://www.youtube.com/@SouthOneNewham/">
                 <a>
                   <Box
                     style={{
